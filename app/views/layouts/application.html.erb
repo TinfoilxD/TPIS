@@ -17,6 +17,12 @@
         <div class="navbar-header">
           <%= link_to 'TPIS', root_path, class: 'navbar-brand' %>
         </div>
+        <ul class="nav navbar-nav">
+          <%if user_signed_in? and current_user.system_admin? then%>
+              <li><%= link_to 'User Controls', '/user_controls'%></li>
+          <%end%>
+          </ul>
+
         <div>
           <ul class="nav navbar-nav pull-right">
             <% if user_signed_in? %>

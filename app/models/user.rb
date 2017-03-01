@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  enum role: [:candidate, :tcf, :admin]
+  enum role: [:candidate, :tcf, :tcf_admin, :system_admin]
 
   def set_default_role
     self.role ||= :candidate

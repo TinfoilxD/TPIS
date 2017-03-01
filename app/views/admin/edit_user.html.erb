@@ -1,0 +1,15 @@
+<%= form_tag do%>
+
+    <div class="field">
+      <%= label_tag :id %>
+      <%= text_field_tag :id, @user.id%>
+    </div>
+
+    <div class="field">
+      <%= label_tag :email %>
+      <%= text_field_tag :email, @user.email%>
+    </div>
+<%end%>
+
+<%= form_for @user, url: admin_user_update_path(@user) do |f|%>
+<%end%>

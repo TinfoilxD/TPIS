@@ -1,0 +1,6 @@
+<tr>
+  <td><%=user.email%></td>
+  <td><%=user.role%></td>
+  <td><%= link_to 'Show', admin_user_edit_path(user), method: :get%></td>
+  <td><%= link_to 'Delete', admin_user_delete_path(user), method: :delete, data: {confirm: 'This will permanently delete an account. Are you sure?'}%></td>
+</tr>

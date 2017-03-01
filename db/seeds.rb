@@ -9,14 +9,63 @@ user = User.new
 user.email = 'tin@sdc.com'
 user.password = 'GSupremeBunnyOverlordCL'
 user.password_confirmation = 'GSupremeBunnyOverlordCL'
-user.role = 'admin'
+user.role = 'system_admin'
 user.skip_confirmation!
 user.save!
 
 user = User.new
-user.email = 'minion@sdc.com'
+user.email = 'sleight@sdc.com'
+user.password = 'IOUndeadLobsterTyrant8A'
+user.password_confirmation = 'IOUndeadLobsterTyrant8A'
+user.role = 'system_admin'
+user.skip_confirmation!
+user.save!
+
+
+user = User.new
+user.email = 'minion1@sdc.com'
 user.password = 'minion1'
 user.password_confirmation = 'minion1'
+user.role = 'tcf_admin'
+user.skip_confirmation!
+user.save!
+
+user = User.new
+user.email = 'minion2@sdc.com'
+user.password = 'minion2'
+user.password_confirmation = 'minion2'
+user.role = 'tcf_admin'
+user.skip_confirmation!
+user.save!
+
+user = User.new
+user.email = 'minion3@sdc.com'
+user.password = 'minion3'
+user.password_confirmation = 'minion3'
+user.role = 'tcf'
+user.skip_confirmation!
+user.save!
+
+user = User.new
+user.email = 'minion4@sdc.com'
+user.password = 'minion4'
+user.password_confirmation = 'minion4'
+user.role = 'tcf'
+user.skip_confirmation!
+user.save!
+
+user = User.new
+user.email = 'minion5@sdc.com'
+user.password = 'minion5'
+user.password_confirmation = 'minion5'
+user.role = 'candidate'
+user.skip_confirmation!
+user.save!
+
+user = User.new
+user.email = 'minion6@sdc.com'
+user.password = 'minion6'
+user.password_confirmation = 'minion6'
 user.role = 'candidate'
 user.skip_confirmation!
 user.save!
