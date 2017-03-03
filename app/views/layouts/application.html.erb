@@ -19,7 +19,7 @@
         </div>
         <ul class="nav navbar-nav">
           <%if user_signed_in? and current_user.system_admin? then%>
-              <li><%= link_to 'User Controls', '/user_controls'%></li>
+              <li><%= link_to 'User Controls', admin_user_controls_path%></li>
           <%end%>
           </ul>
 

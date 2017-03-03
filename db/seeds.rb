@@ -7,16 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 user = User.new
 user.email = 'tin@sdc.com'
-user.password = 'GSupremeBunnyOverlordCL'
-user.password_confirmation = 'GSupremeBunnyOverlordCL'
+user.password = 'GSupremeWarmAndFuzziesCL'
+user.password_confirmation = 'GSupremeWarmAndFuzziesCL'
 user.role = 'system_admin'
 user.skip_confirmation!
 user.save!
 
 user = User.new
 user.email = 'sleight@sdc.com'
-user.password = 'IOUndeadLobsterTyrant8A'
-user.password_confirmation = 'IOUndeadLobsterTyrant8A'
+user.password = 'IOEnergyDrinkTyrantLobsters8A'
+user.password_confirmation = 'IOEnergyDrinkTyrantLobsters8A'
 user.role = 'system_admin'
 user.skip_confirmation!
 user.save!
