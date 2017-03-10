@@ -1,16 +1,21 @@
-<%= form_tag do%>
-
-    <div class="field">
-      <%= label_tag :id %>
-      <%= text_field_tag :id, @user.id%>
-    </div>
-
-    <div class="field">
-      <%= label_tag :email %>
-      <%= text_field_tag :email, @user.email%>
-    </div>
-<%end%>
-
 <%= form_for @user, url: admin_user_update_path(@user) do |f|%>
 
+    <div class="field">
+      <%= f.label :id %>
+      <%= text_field_tag :id, @user.id, :readonly => true%>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %>
+      <%= text_field_tag :email, @user.email%>
+    </div>
+
+    <div class="field">
+      <%= f.label :role%>
+      <%= select_tag :role, options_for_select(User.roles)%>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <%end%>

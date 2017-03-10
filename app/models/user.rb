@@ -8,6 +8,7 @@ class User < ApplicationRecord
   def set_default_role
     self.role ||= :candidate
   end
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 end
