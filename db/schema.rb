@@ -10,7 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170226014115) do
+ActiveRecord::Schema.define(version: 20170311230856) do
+
+  create_table "allignment_types", force: :cascade do |t|
+    t.string   "allignment_type"
+    t.string   "abbrev"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "candidates", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "fax"
+    t.integer  "state_id"
+    t.string   "zipcode"
+    t.integer  "country_id"
+    t.integer  "allignment_type_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

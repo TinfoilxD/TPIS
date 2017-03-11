@@ -1,0 +1,27 @@
+<%= form_for(allignment_type) do |f| %>
+  <% if allignment_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(allignment_type.errors.count, "error") %> prohibited this allignment_type from being saved:</h2>
+
+      <ul>
+      <% allignment_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :allignment_type %>
+    <%= f.text_field :allignment_type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :abbrev %>
+    <%= f.text_field :abbrev %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

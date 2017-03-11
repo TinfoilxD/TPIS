@@ -1,0 +1,2 @@
+module AllignmentTypesHelper
+end

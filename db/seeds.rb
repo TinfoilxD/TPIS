@@ -21,7 +21,6 @@ user.role = 'system_admin'
 user.skip_confirmation!
 user.save!
 
-
 user = User.new
 user.email = 'minion1@sdc.com'
 user.password = 'minion1'
@@ -69,3 +68,9 @@ user.password_confirmation = 'minion6'
 user.role = 'candidate'
 user.skip_confirmation!
 user.save!
+
+AllignmentType.create(allignment_type: 'employee')
+AllignmentType.create(allignment_type: 'contractor')
+AllignmentType.create(allignment_type: 'training_center')
+
+Candidate.create(email: 'minion5@sdc.com')

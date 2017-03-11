@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @candidate.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @candidate.last_name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @candidate.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @candidate.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @candidate.phone %>
+</p>
+
+<p>
+  <strong>Fax:</strong>
+  <%= @candidate.fax %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @candidate.state_id %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @candidate.zipcode %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @candidate.country_id %>
+</p>
+
+<p>
+  <strong>Assignment type:</strong>
+  <%= @candidate.allignment_type_id %>
+</p>
+
+<%= link_to 'Edit', edit_candidate_path(@candidate) %> |
+<%= link_to 'Back', candidates_path %>
