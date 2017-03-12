@@ -21,6 +21,15 @@
           <%if user_signed_in? and current_user.system_admin? then%>
               <li><%= link_to 'User Controls', admin_user_controls_path%></li>
           <%end%>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Candidate
+              <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">New Candidate</a></li>
+              <li><a href="#">Edit Candidate</a></li>
+              <li><a href="#">TestExistingCandidateLink</a></li>
+            </ul>
+          </li>
           </ul>
 
         <div>

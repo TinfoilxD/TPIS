@@ -2,18 +2,14 @@
 
 <h1>Candidates</h1>
 
-<table>
+<table class='table table-hover'>
   <thead>
     <tr>
       <th>First name</th>
       <th>Last name</th>
-      <th>Address</th>
       <th>Email</th>
       <th>Phone</th>
-      <th>Fax</th>
-      <th>State</th>
       <th>Zipcode</th>
-      <th>Country</th>
       <th>Assignment type</th>
       <th colspan="3"></th>
     </tr>
@@ -24,17 +20,13 @@
       <tr>
         <td><%= candidate.first_name %></td>
         <td><%= candidate.last_name %></td>
-        <td><%= candidate.address %></td>
         <td><%= candidate.email %></td>
         <td><%= candidate.phone %></td>
-        <td><%= candidate.fax %></td>
-        <td><%= candidate.state_id %></td>
         <td><%= candidate.zipcode %></td>
-        <td><%= candidate.country_id %></td>
         <td><%= candidate.allignment_type_id %></td>
         <td><%= link_to 'Show', candidate %></td>
         <td><%= link_to 'Edit', edit_candidate_path(candidate) %></td>
-        <td><%= link_to 'Destroy', candidate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', candidate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
