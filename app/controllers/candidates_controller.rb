@@ -1,5 +1,6 @@
 class CandidatesController < ApplicationController
   before_action :set_candidate, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /candidates
   # GET /candidates.json
@@ -14,7 +15,8 @@ class CandidatesController < ApplicationController
 
   # GET /candidates/new
   def new
-    @candidate = Candidate.new
+      @candidate = Candidate.new
+      @email = current_user.email
   end
 
   # GET /candidates/1/edit

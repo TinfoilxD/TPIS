@@ -14,3 +14,19 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$( document ).on('turbolinks:load', function() {
+    setNaviToggle()
+});
+
+function setNaviToggle() {
+    $('ul.nav li.dropdown').hover(function() {
+        $(this).find('.dropdown-menu').toggle();
+        $(this).toggleClass('active')
+    }, function() {
+        $(this).find('.dropdown-menu').toggle();
+        $(this).toggleClass('active')
+
+    });
+}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170311230856) do
+ActiveRecord::Schema.define(version: 20170312011319) do
 
   create_table "allignment_types", force: :cascade do |t|
     t.string   "allignment_type"
@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(version: 20170311230856) do
     t.string   "email"
     t.string   "phone"
     t.string   "fax"
-    t.integer  "state_id"
+    t.string   "state"
     t.string   "zipcode"
-    t.integer  "country_id"
+    t.string   "country"
     t.integer  "allignment_type_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false

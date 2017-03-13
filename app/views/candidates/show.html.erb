@@ -32,7 +32,7 @@
 
 <p>
   <strong>State:</strong>
-  <%= @candidate.state_id %>
+  <%= @candidate.state %>
 </p>
 
 <p>
@@ -42,12 +42,12 @@
 
 <p>
   <strong>Country:</strong>
-  <%= @candidate.country_id %>
+  <%= @candidate.country %>
 </p>
 
 <p>
   <strong>Assignment type:</strong>
-  <%= @candidate.allignment_type_id %>
+  <%= @candidate.allignment_type.allignment_type %>
 </p>
 
 <%= link_to 'Edit', edit_candidate_path(@candidate) %> |
