@@ -17,56 +17,67 @@
   </div>
 
   <div class="field">
-    <%= f.label "Please pick a training center to assign with." %>
+    <%= f.label :training_center_id, "Please pick a training center to assign with." %>
     <%= f.collection_select :training_center_id, TrainingCenter.all, :id, :training_center_name %>
   </div>
 
   <div class="field">
-    <%= f.label "Which course are you applying for?" %>
+    <%= f.label :course_id, "Which course are you applying for?" %>
     <%= f.collection_select :course_id, Course.all, :id, :course_identifier %>
   </div>
 
   <div class="field">
-    <%= f.label "Why do you want to become an AHA instructor?" %>
+    <%= f.label :aha_instructor_motivation, "Why do you want to become an AHA instructor?" %>
     <br>
     <%= f.text_area :aha_instructor_motivation, size: "60x5"%>
   </div>
 
   <div class="field">
-    <%= f.label "How did you hear about Therapeutical Professionals?" %>
+    <%= f.label :marketing_origin, "How did you hear about Therapeutical Professionals?" %>
     <br>
     <%= f.text_area :marketing_origin, size: "60x5"%>
   </div>
 
   <div class="field">
-    <%= f.label "How often do you plan to teach your classes?" %>
+    <%= f.label :teaching_frequency, "How often do you plan to teach your classes?" %>
     <%= f.text_field :teaching_frequency %>
   </div>
 
   <div class="field">
-    <%= f.label "Do you own teaching equipment?" %>
-    <%= f.check_box :owned_equipment %>
+    <%= f.label :owned_equipment, "Do you own teaching equipment?" %>
+    <%= f.radio_button :owned_equipment, true %>
+    <%= f.label :owned_equipent, "Yes" %>
+    <%= f.radio_button :owned_equipment, false %>
+    <%= f.label "No" %>
+
+
   </div>
 
   <div class="field">
     <%= f.label "Will your classes be open to the public?" %>
-    <%= f.check_box :public_class_availability %>
+    <%= f.radio_button :public_class_availability, true %>
+    <%= f.label "Yes" %>
+    <%= f.radio_button :public_class_availability, false %>
+    <%= f.label "No" %>
   </div>
 
 
   <div class="field">
     <%= f.label "Do you have a location to teach from?" %>
-    <%= f.check_box :teaching_location %>
+    <%= f.radio_button :teaching_location, true %>
+    <%= f.label "Yes" %>
+    <%= f.radio_button :teaching_location, false %>
+    <%= f.label "No" %>
   </div>
 
   <div class="field">
-    <%= f.label :screening_form_agreement %>
-    <%= f.check_box :screening_form_agreement %>
-  </div>
+  <p>
+    <%= f.check_box :aha_form_agreement %> Instructor Commitment: As an AHA Instructor, I agree to teach at least 4 courses in 2 years in accordance
 
-  <div class="field">
-    <%= f.label :aha_form_agreement %>
-    <%= f.check_box :aha_form_agreement %>
+with the guidelines of the American Heart Association.<br> I also agree to strengthen and support the Chain of
+
+Survival and the mission of the American Heart Association in my community.
+  </p>
   </div>
 
     <div class="field">
@@ -74,6 +85,6 @@
       <%= f.text_field :date_agreed %>
     </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit'Submit', data: {confirm: 'By submitting this application, I acknowledge that I have answered each question completely and truthfully to the best of my ability.'} %>
   </div>
 <% end %>
