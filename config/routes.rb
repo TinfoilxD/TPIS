@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :experiences
   resources :allignment_types
   resources :candidates
   devise_for :users
