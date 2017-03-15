@@ -13,10 +13,6 @@
 
 
 
-    <div class="field">
-      <%= f.label :email %>
-      <%= f.text_field :email, :value => current_user.email, :readonly => true %>
-    </div>
 
   <div class="field">
     <%= f.label :first_name %>
@@ -42,6 +38,11 @@
     <%= f.label :fax %>
     <%= f.text_field :fax %>
   </div>
+
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.text_field :email, :value => current_user.email, :readonly => true %>
+    </div>
 
   <div class="field">
     <%= f.label :state %>
