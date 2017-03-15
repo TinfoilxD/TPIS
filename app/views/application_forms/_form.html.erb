@@ -1,0 +1,82 @@
+<%= form_for(application_form) do |f| %>
+  <% if application_form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(application_form.errors.count, "error") %> prohibited this application_form from being saved:</h2>
+
+      <ul>
+      <% application_form.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :candidate_id %>
+    <%= f.number_field :candidate_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :training_center_id %>
+    <%= f.number_field :training_center_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :course_id %>
+    <%= f.number_field :course_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :aha_instructor_motivation %>
+    <%= f.text_field :aha_instructor_motivation %>
+  </div>
+
+  <div class="field">
+    <%= f.label :marketing_origin %>
+    <%= f.text_field :marketing_origin %>
+  </div>
+
+  <div class="field">
+    <%= f.label :teaching_frequency %>
+    <%= f.text_field :teaching_frequency %>
+  </div>
+
+  <div class="field">
+    <%= f.label :owned_equipment %>
+    <%= f.check_box :owned_equipment %>
+  </div>
+
+  <div class="field">
+    <%= f.label :class_availability %>
+    <%= f.text_field :class_availability %>
+  </div>
+
+  <div class="field">
+    <%= f.label :boolean %>
+    <%= f.text_field :boolean %>
+  </div>
+
+  <div class="field">
+    <%= f.label :teaching_location %>
+    <%= f.check_box :teaching_location %>
+  </div>
+
+  <div class="field">
+    <%= f.label :screening_form_agreement %>
+    <%= f.check_box :screening_form_agreement %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_agreed %>
+    <%= f.date_select :date_agreed %>
+  </div>
+
+  <div class="field">
+    <%= f.label :aha_form_agreement %>
+    <%= f.text_field :aha_form_agreement %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

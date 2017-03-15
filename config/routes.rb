@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :application_forms
+  resources :training_centers
+  resources :courses
+  resources :course_types
   resources :experiences
   resources :allignment_types
   resources :candidates

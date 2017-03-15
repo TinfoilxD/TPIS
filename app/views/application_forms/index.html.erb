@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Application Forms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Candidate</th>
+      <th>Training center</th>
+      <th>Course</th>
+      <th>Aha instructor motivation</th>
+      <th>Marketing origin</th>
+      <th>Teaching frequency</th>
+      <th>Owned equipment</th>
+      <th>Class availability</th>
+      <th>Boolean</th>
+      <th>Teaching location</th>
+      <th>Screening form agreement</th>
+      <th>Date agreed</th>
+      <th>Aha form agreement</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @application_forms.each do |application_form| %>
+      <tr>
+        <td><%= application_form.candidate_id %></td>
+        <td><%= application_form.training_center_id %></td>
+        <td><%= application_form.course_id %></td>
+        <td><%= application_form.aha_instructor_motivation %></td>
+        <td><%= application_form.marketing_origin %></td>
+        <td><%= application_form.teaching_frequency %></td>
+        <td><%= application_form.owned_equipment %></td>
+        <td><%= application_form.class_availability %></td>
+        <td><%= application_form.boolean %></td>
+        <td><%= application_form.teaching_location %></td>
+        <td><%= application_form.screening_form_agreement %></td>
+        <td><%= application_form.date_agreed %></td>
+        <td><%= application_form.aha_form_agreement %></td>
+        <td><%= link_to 'Show', application_form %></td>
+        <td><%= link_to 'Edit', edit_application_form_path(application_form) %></td>
+        <td><%= link_to 'Destroy', application_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Application Form', new_application_form_path %>

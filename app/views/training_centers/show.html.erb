@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Training center name:</strong>
+  <%= @training_center.training_center_name %>
+</p>
+
+<p>
+  <strong>Primary contact:</strong>
+  <%= @training_center.primary_contact %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @training_center.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @training_center.email %>
+</p>
+
+<%= link_to 'Edit', edit_training_center_path(@training_center) %> |
+<%= link_to 'Back', training_centers_path %>
