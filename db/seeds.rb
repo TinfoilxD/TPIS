@@ -78,28 +78,28 @@ Candidate.create(email: 'minion5@sdc.com')
 CourseType.create([{course_type: 'BLS'},{course_type: 'HS'}, {course_type: 'ACLS'}, {course_type: 'PALS'}])
 
 Course.create(course_type_id: CourseType.where(course_type: 'BLS').first.id,
-              course_start_date: Date.new,
+              course_start_date: DateTime.now.to_date,
               course_address: 'That rock by the third crater',
               course_city: 'Mare Serenitatis',
               state: 'N/A',
               country: 'N/A',
               course_zipcode: 'N/A')
 Course.create(course_type_id: CourseType.where(course_type: 'HS').first.id,
-              course_start_date: Date.new,
+              course_start_date: DateTime.now.to_date,
               course_address: 'That rock by the fourth crater',
               course_city: 'Mare Serenitatis',
               state: 'N/A',
               country: 'N/A',
               course_zipcode: 'N/A')
 Course.create(course_type_id: CourseType.where(course_type: 'ACLS').first.id,
-              course_start_date: Date.new,
+              course_start_date: DateTime.now.to_date,
               course_address: 'By the southern outer rim',
               course_city: 'Mare Serenitatis',
               state: 'N/A',
               country: 'N/A',
               course_zipcode: 'N/A')
 Course.create(course_type_id: CourseType.where(course_type: 'BLS').first.id,
-              course_start_date: Date.new,
+              course_start_date: DateTime.now.to_date,
               course_address: 'By the highest peak',
               course_city: 'Mare Serenitatis',
               state: 'N/A',
