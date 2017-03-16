@@ -16,6 +16,7 @@
     <%= f.number_field :candidate_id %>
   </div>
 
+    <div id="ic_screening_form">
   <div class="field">
     <%= f.label :training_center_id, "Please pick a training center to assign with." %>
     <%= f.collection_select :training_center_id, TrainingCenter.all, :id, :training_center_name %>
@@ -70,6 +71,10 @@
     <%= f.label "No" %>
   </div>
 
+      <button type="button" onclick="show_aha_form()">Continue</button>
+
+    </div>
+    <div id="aha_form">
   <div class="field">
   <p>
     <%= f.check_box :aha_form_agreement %> Instructor Commitment: As an AHA Instructor, I agree to teach at least 4 courses in 2 years in accordance
@@ -79,7 +84,6 @@ with the guidelines of the American Heart Association.<br> I also agree to stren
 Survival and the mission of the American Heart Association in my community.
   </p>
   </div>
-
     <div class="field">
       <%= f.label :date_agreed %>
       <%= f.text_field :date_agreed %>
@@ -87,4 +91,5 @@ Survival and the mission of the American Heart Association in my community.
   <div class="actions">
     <%= f.submit'Submit', data: {confirm: 'By submitting this application, I acknowledge that I have answered each question completely and truthfully to the best of my ability.'} %>
   </div>
+      </div>
 <% end %>
