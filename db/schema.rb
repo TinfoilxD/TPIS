@@ -10,13 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170312011319) do
+ActiveRecord::Schema.define(version: 20170315184050) do
 
   create_table "allignment_types", force: :cascade do |t|
     t.string   "allignment_type"
     t.string   "abbrev"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "application_forms", force: :cascade do |t|
+    t.integer  "candidate_id"
+    t.integer  "training_center_id"
+    t.integer  "course_id"
+    t.string   "aha_instructor_motivation"
+    t.string   "marketing_origin"
+    t.string   "teaching_frequency"
+    t.boolean  "owned_equipment"
+    t.boolean  "public_class_availability"
+    t.boolean  "teaching_location"
+    t.boolean  "screening_form_agreement"
+    t.date     "date_agreed"
+    t.boolean  "aha_form_agreement"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "candidates", force: :cascade do |t|
@@ -32,6 +49,40 @@ ActiveRecord::Schema.define(version: 20170312011319) do
     t.integer  "allignment_type_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "course_types", force: :cascade do |t|
+    t.string   "course_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.integer  "course_type_id"
+    t.date     "course_start_date"
+    t.string   "course_address"
+    t.string   "course_city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "course_zipcode"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  create_table "experiences", force: :cascade do |t|
+    t.string   "experience_description"
+    t.integer  "candidate_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "training_centers", force: :cascade do |t|
+    t.string   "training_center_name"
+    t.string   "primary_contact"
+    t.string   "phone"
+    t.string   "email"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   create_table "users", force: :cascade do |t|

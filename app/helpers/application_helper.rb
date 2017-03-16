@@ -7,6 +7,9 @@ module ApplicationHelper
     else return ""
     end
   end
+  def yesno(x)
+    x ? "Yes" : "No"
+  end
   def us_states
     [
         ['Alabama', 'AL'],

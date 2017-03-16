@@ -1,0 +1,37 @@
+<%= form_for(training_center) do |f| %>
+  <% if training_center.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(training_center.errors.count, "error") %> prohibited this training_center from being saved:</h2>
+
+      <ul>
+      <% training_center.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :training_center_name %>
+    <%= f.text_field :training_center_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :primary_contact %>
+    <%= f.text_field :primary_contact %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

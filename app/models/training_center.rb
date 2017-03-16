@@ -1,0 +1,2 @@
+class TrainingCenter < ApplicationRecord
+end

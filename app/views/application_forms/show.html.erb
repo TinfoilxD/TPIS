@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Candidate:</strong>
+  <%= @application_form.candidate_id %>
+</p>
+
+<p>
+  <strong>Training center:</strong>
+  <%= @application_form.training_center_id %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @application_form.course_id %>
+</p>
+
+<p>
+  <strong>Aha instructor motivation:</strong>
+  <%= @application_form.aha_instructor_motivation %>
+</p>
+
+<p>
+  <strong>Marketing origin:</strong>
+  <%= @application_form.marketing_origin %>
+</p>
+
+<p>
+  <strong>Teaching frequency:</strong>
+  <%= @application_form.teaching_frequency %>
+</p>
+
+<p>
+  <strong>Owned equipment:</strong>
+  <%= @application_form.owned_equipment %>
+</p>
+
+<p>
+  <strong>Class availability:</strong>
+  <%= @application_form.public_class_availability %>
+</p>
+
+
+<p>
+  <strong>Teaching location:</strong>
+  <%= @application_form.teaching_location %>
+</p>
+
+<p>
+  <strong>Screening form agreement:</strong>
+  <%= @application_form.screening_form_agreement %>
+</p>
+
+<p>
+  <strong>Date agreed:</strong>
+  <%= @application_form.date_agreed %>
+</p>
+
+<p>
+  <strong>Aha form agreement:</strong>
+  <%= @application_form.aha_form_agreement %>
+</p>
+
+<%= link_to 'Edit', edit_application_form_path(@application_form) %> |
+<%= link_to 'Back', application_forms_path %>

@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  candidate_id: 1
+  training_center_id: 1
+  course_id: 1
+  aha_instructor_motivation: MyString
+  marketing_origin: MyString
+  teaching_frequency: MyString
+  owned_equipment: false
+  class_availability: MyString
+  boolean: MyString
+  teaching_location: false
+  screening_form_agreement: false
+  date_agreed: 2017-03-15
+  aha_form_agreement: MyString
+
+two:
+  candidate_id: 1
+  training_center_id: 1
+  course_id: 1
+  aha_instructor_motivation: MyString
+  marketing_origin: MyString
+  teaching_frequency: MyString
+  owned_equipment: false
+  class_availability: MyString
+  boolean: MyString
+  teaching_location: false
+  screening_form_agreement: false
+  date_agreed: 2017-03-15
+  aha_form_agreement: MyString
