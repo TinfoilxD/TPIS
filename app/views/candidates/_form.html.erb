@@ -59,7 +59,14 @@
     <%= f.select :country, options_for_select(countries, "United States")%>
   </div>
 
-  <div class="field">
+    <div class="field">
+      <%= f.label :occupation %>
+      <%= f.text_field :occupation %>
+    </div>
+
+
+
+    <div class="field">
     <%= f.label :allignment_type_id %>
     <%= f.collection_select :allignment_type_id, AllignmentType.all, :id, :allignment_type%>
   </div>
