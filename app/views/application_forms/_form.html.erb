@@ -70,9 +70,7 @@
     <%= f.radio_button :teaching_location, false %>
     <%= f.label "No" %>
   </div>
-
-      <button type="button" onclick="show_aha_form()">Continue</button>
-
+      <button type="button" id="continue_button">Continue to AHA Agreement</button>
     </div>
     <div id="aha_form">
   <div class="field">
@@ -88,8 +86,9 @@ Survival and the mission of the American Heart Association in my community.
       <%= f.label :date_agreed %>
       <%= f.text_field :date_agreed %>
     </div>
-  <div class="actions">
-    <%= f.submit'Submit', data: {confirm: 'By submitting this application, I acknowledge that I have answered each question completely and truthfully to the best of my ability.'} %>
+      <div class="actions">
+        <button type="button" id="back_button">Back to IC Screening Form</button>
+        <%= f.submit'Submit', data: {confirm: 'By submitting this application, I acknowledge that I have answered each question completely and truthfully to the best of my ability.'} %>
   </div>
       </div>
 <% end %>
