@@ -6,10 +6,6 @@ $(document).on 'turbolinks:load', ->
   $("#aha_form").hide()
   return
 
-alert_test = ->
-  alert "hello"
-  return
-
 show_aha_form = ->
   $("#ice_screening_form").hide()
   $("#aha_form").show()
