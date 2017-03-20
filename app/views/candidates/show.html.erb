@@ -54,7 +54,7 @@
 
 <p>
   <strong>Allignment type:</strong>
-  <%= @candidate.allignment_type.allignment_type %>
+  <%=@candidate.allignment_type&.allignment_type%>
 </p>
 
 <%= link_to 'Edit', edit_candidate_path(@candidate) %> |

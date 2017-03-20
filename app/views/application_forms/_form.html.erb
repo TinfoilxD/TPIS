@@ -13,14 +13,12 @@
 
 
     <div class="field">
-      <%current_candidate = Candidate.where(email: current_user.email).first%>
-      <%= f.hidden_field :candidate_id, value: current_candidate.id %>
+      <%= f.hidden_field :candidate_id, value: @current_candidate.id %>
     </div>
 
 
     <div class="field">
-    <%= f.label :candidate_id, "Name" %>
-    <%= text_field_tag :value => current_candidate.full_name, :readonly => true %>
+    <%= f.label :candidate_id, "For Candidate: #{@current_candidate.full_name}" %>
   </div>
 
 

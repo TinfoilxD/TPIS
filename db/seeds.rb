@@ -73,7 +73,8 @@ AllignmentType.create(allignment_type: 'employee')
 AllignmentType.create(allignment_type: 'contractor')
 AllignmentType.create(allignment_type: 'training_center')
 
-Candidate.create(email: 'minion5@sdc.com')
+Candidate.create(email: 'tin@sdc.com', first_name: 'Hamburger', last_name: 'Steak')
+Candidate.create(email: 'minion5@sdc.com', first_name: 'minion', last_name: '5')
 
 CourseType.create([{course_type: 'BLS'},{course_type: 'HS'}, {course_type: 'ACLS'}, {course_type: 'PALS'}])
 
