@@ -23,6 +23,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'bootstrap-sass'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'momentjs-rails'
+gem 'fullcalendar-rails'
 gem 'sprockets-rails'
 gem 'bootstrap'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

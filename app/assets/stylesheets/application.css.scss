@@ -11,8 +11,14 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree
+ *= require fullcalendar
  *= require_self
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.fc-agendaWeek-view tr
+{
+  height: 50px
+}

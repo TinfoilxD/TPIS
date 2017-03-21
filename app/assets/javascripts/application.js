@@ -13,20 +13,57 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap
+//= require moment
+//= require fullcalendar
 //= require_tree .
 
 
+
+
 $( document ).on('turbolinks:load', function() {
-    setNaviToggle()
+    // setNaviToggle()
+    setFullCalendar()
+    //overrideArrowButtons()
 });
 
-function setNaviToggle() {
-    $('ul.nav li.dropdown').hover(function() {
-        $(this).find('.dropdown-menu').toggle();
-        $(this).toggleClass('active')
-    }, function() {
-        $(this).find('.dropdown-menu').toggle();
-        $(this).toggleClass('active')
-
+function setFullCalendar()
+{
+    $('#calendar').fullCalendar({
+        header: {
+            left   : 'prev,next',
+            center : 'title',
+            right : 'none'
+        },
+        defaultView: 'agendaWeek',
+        slotDuration: '01:00:00',
+        slotLabelInterval: '01:00:00',
+        minTime: '09:00',
+        maxTime: '18:00',
+        contentHeight: 'auto',
+        allDaySlot: false
     });
 }
+
+function overrideArrowButtons()
+{
+    var prevButton = $('.fc-button-prev')
+    var nextButton = $('.fc-button-next')
+    prevButton.addClass('fc-state-disabled')
+    prevButton.click(function(){
+    });
+    nextButton.click(function(){
+    });
+}
+
+//Uncomment this if we want to have dropdowns expand on hover instead of click
+// function setNaviToggle() {
+//     $('ul.nav li.dropdown').hover(function() {
+//         $(this).find('.dropdown-menu').toggle();
+//         $(this).toggleClass('active')
+//     }, function() {
+//         $(this).find('.dropdown-menu').toggle();
+//         $(this).toggleClass('active')
+//
+//     });
+// }
