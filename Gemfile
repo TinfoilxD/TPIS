@@ -40,6 +40,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 # Devise for Authentication
 gem 'devise'
+# Rolify to supplement Devise
+gem 'rolify'
 # CanCanCan for Authorization
 gem 'cancancan'
 group :development, :test do
