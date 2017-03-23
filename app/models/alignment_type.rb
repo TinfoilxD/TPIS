@@ -1,0 +1,2 @@
+class AlignmentType < ApplicationRecord
+end

@@ -1,10 +1,10 @@
-class AllignmentTypesController < ApplicationController
+class AlignmentTypesController < ApplicationController
   before_action :set_allignment_type, only: [:show, :edit, :update, :destroy]
 
   # GET /allignment_types
   # GET /allignment_types.json
   def index
-    @allignment_types = AllignmentType.all
+    @allignment_types = AlignmentType.all
   end
 
   # GET /allignment_types/1
@@ -14,7 +14,7 @@ class AllignmentTypesController < ApplicationController
 
   # GET /allignment_types/new
   def new
-    @allignment_type = AllignmentType.new
+    @allignment_type = AlignmentType.new
   end
 
   # GET /allignment_types/1/edit
@@ -24,7 +24,7 @@ class AllignmentTypesController < ApplicationController
   # POST /allignment_types
   # POST /allignment_types.json
   def create
-    @allignment_type = AllignmentType.new(allignment_type_params)
+    @allignment_type = AlignmentType.new(allignment_type_params)
 
     respond_to do |format|
       if @allignment_type.save
@@ -43,7 +43,7 @@ class AllignmentTypesController < ApplicationController
     respond_to do |format|
       if @allignment_type.update(allignment_type_params)
         format.html { redirect_to @allignment_type, notice: 'Allignment type was successfully updated.' }
-        format.json { render :show, status: :ok, location: @allignment_type }
+        format.json { render :show, status: :ok, location: @alignment_type }
       else
         format.html { render :edit }
         format.json { render json: @allignment_type.errors, status: :unprocessable_entity }
@@ -56,7 +56,7 @@ class AllignmentTypesController < ApplicationController
   def destroy
     @allignment_type.destroy
     respond_to do |format|
-      format.html { redirect_to allignment_types_url, notice: 'Allignment type was successfully destroyed.' }
+      format.html { redirect_to alignmentTypes_url, notice: 'Allignment type was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,7 +64,7 @@ class AllignmentTypesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_allignment_type
-      @allignment_type = AllignmentType.find(params[:id])
+      @allignment_type = AlignmentType.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

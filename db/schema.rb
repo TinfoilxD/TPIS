@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170323224422) do
+ActiveRecord::Schema.define(version: 20170323234848) do
 
-  create_table "allignment_types", force: :cascade do |t|
-    t.string   "allignment_type"
+  create_table "alignment_types", force: :cascade do |t|
+    t.string   "alignment_type"
     t.string   "abbrev"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "application_forms", force: :cascade do |t|
