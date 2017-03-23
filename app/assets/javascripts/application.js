@@ -24,7 +24,7 @@
 $( document ).on('turbolinks:load', function() {
     // setNaviToggle()
     setFullCalendar()
-    //overrideArrowButtons()
+    overrideArrowButtons()
 });
 
 function setFullCalendar()
@@ -47,12 +47,18 @@ function setFullCalendar()
 
 function overrideArrowButtons()
 {
-    var prevButton = $('.fc-button-prev')
-    var nextButton = $('.fc-button-next')
-    prevButton.addClass('fc-state-disabled')
+    var prevButton = $('.fc-prev-button')
+    var nextButton = $('.fc-next-button')
+    prevButton.css('display','none')
     prevButton.click(function(){
+        nextButton.css('display','inline')
+        prevButton.css('display','none')
+
     });
     nextButton.click(function(){
+        prevButton.css('display','inline')
+        nextButton.css('display','none')
+
     });
 }
 
