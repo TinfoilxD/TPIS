@@ -21,15 +21,17 @@
         <ul class="nav navbar-nav">
           <%if user_signed_in? and current_user.system_admin? then%>
               <li><%= link_to 'User Controls', admin_user_controls_path%></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Candidate <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+
+                  <li><%= link_to 'New Candidate', new_candidate_path%></li>
+                  <li><%= link_to 'Show Candidates', candidates_path%></li>
+                  <li><a href="#">Test Existing Candidate Link</a></li>
+                </ul>
+              </li>
           <%end%>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Candidate <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><%= link_to 'New Candidate', new_candidate_path%></li>
-              <li><%= link_to 'Show Candidates', candidates_path%></li>
-              <li><a href="#">TestExistingCandidateLink</a></li>
-            </ul>
-          </li>
+
           </ul>
 
         <div>
