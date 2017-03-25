@@ -169,7 +169,7 @@ user.email = 'sarahDJ111@gmail.com'
 user.password = 'aspartameisb4d'
 user.password_confirmation = 'aspartameisb4d'
 user.role = 'candidate'
-user.skip_confirmation!
+user.skip_confirmag tion!
 user.save!
 
 user = User.new
@@ -318,3 +318,5 @@ TrainingCenter.create(training_center_name: 'MSM Training',
                       primary_contact: 'The Martian',
                       phone: 'N/A',
                       email: 'martian@moon.com')
+
+
