@@ -765,3 +765,4 @@ TrainingCenter.create(training_center_name: 'MSM Training',
                       email: 'martian@moon.com')
 
 
+f
