@@ -1,5 +1,6 @@
 class FacultiesController < ApplicationController
   before_action :set_faculty, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /faculties
   # GET /faculties.json
@@ -15,6 +16,7 @@ class FacultiesController < ApplicationController
   # GET /faculties/new
   def new
     @faculty = Faculty.new
+    @email = current_user.email
   end
 
   # GET /faculties/1/edit

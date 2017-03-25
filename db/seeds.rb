@@ -169,7 +169,7 @@ user.email = 'sarahDJ111@gmail.com'
 user.password = 'aspartameisb4d'
 user.password_confirmation = 'aspartameisb4d'
 user.role = 'candidate'
-user.skip_confirmag tion!
+user.skip_confirmation!
 user.save!
 
 user = User.new
@@ -764,5 +764,9 @@ TrainingCenter.create(training_center_name: 'MSM Training',
                       phone: 'N/A',
                       email: 'martian@moon.com')
 
+#Faculty
+FacultyType.create(job_title: 'placeholder faculty type 1')
+FacultyType.create(job_title: 'placeholder faculty type 2')
 
-f
+Faculty.create(first_name: 'Ashley' , last_name: 'Micheal', faculty_type: 'placeholder faculty type 1', email: 'ashmchl@hotmail.com', phone: '713-455-2309' ,  office_address: '3354 Stafford Rd.' ,  state: 'Texas' , zipcode: '77006' , country: 'United States')
+Faculty.create(first_name: 'Jessica' , last_name: 'Sheng', faculty_type: 'placeholder faculty type 1', email: 'jesssheng@hotmail.com', phone: '713-333-4309' ,  office_address: '3355 Chimary Rock Rd.' ,  state: 'Texas' , zipcode: '76005' , country: 'United States')

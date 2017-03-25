@@ -23,12 +23,12 @@
 
   <div class="field">
     <%= f.label :faculty_type %>
-    <%= f.collection_select :faculty_type_id, FacultyType.all, :id, :faculty_type_name %>
+    <%= f.collection_select :faculty_type, FacultyType.all, :id, :job_title %>
   </div>
 
   <div class="field">
     <%= f.label :email %>
-    <%= f.text_field :email, :value => current_user.email, :readonly => true %>
+    <%= f.text_field :email, :value => @email, :readonly => true %>
   </div>
 
   <div class="field">
