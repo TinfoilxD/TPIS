@@ -26,7 +26,7 @@
         <td><%= candidate.zipcode %></td>
         <td><%= candidate.occupation %> </td>
         <td><%= candidate.alignment_type&.alignment_type %></td>
-        <td><%= link_to 'Show', candidate %></td>
+        <td><%= link_to 'View Profile', candidate %></td>
         <td><%= link_to 'Edit', edit_candidate_path(candidate) %></td>
         <td><%= link_to 'Delete', candidate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
