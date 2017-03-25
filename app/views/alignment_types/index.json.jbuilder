@@ -1,1 +1,1 @@
-json.array! @allignment_types, partial: 'allignment_types/allignment_type', as: :allignment_type
+json.array! @alignment_types, partial: 'alignment_types/alignment_type', as: :alignment_type
