@@ -17,7 +17,7 @@
         <td><%= allignment_type.allignment_type %></td>
         <td><%= allignment_type.abbrev %></td>
         <td><%= link_to 'Show', allignment_type %></td>
-        <td><%= link_to 'Edit', edit_allignment_type_path(allignment_type) %></td>
+        <td><%= link_to 'Edit', edit_alignmentType_path(allignment_type) %></td>
         <td><%= link_to 'Destroy', allignment_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Allignment Type', new_allignment_type_path %>
+<%= link_to 'New Allignment Type', new_alignmentType_path %>

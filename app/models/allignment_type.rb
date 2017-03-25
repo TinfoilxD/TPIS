@@ -1,2 +1,0 @@
-class AllignmentType < ApplicationRecord
-end
