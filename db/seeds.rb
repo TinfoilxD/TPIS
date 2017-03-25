@@ -634,10 +634,10 @@ user.save!
 #========== End User Accounts ==========#
 
 # original Alignment types
-AlignmentType.create(Alignment_type: 'employee')
-AlignmentType.create(Alignment_type: 'independent contractor')
-AlignmentType.create(Alignment_type: 'training_center')
-AlignmentType.create(Alignment_type: 'contract employee')
+AlignmentType.create(alignment_type: 'employee')
+AlignmentType.create(alignment_type: 'independent contractor')
+AlignmentType.create(alignment_type: 'training_center')
+AlignmentType.create(alignment_type: 'contract employee')
 
 
 
