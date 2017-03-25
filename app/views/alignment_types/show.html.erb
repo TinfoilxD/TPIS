@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Alignment type:</strong>
+  <%= @alignment_type.alignment_type %>
+</p>
+
+<p>
+  <strong>Abbrev:</strong>
+  <%= @alignment_type.abbrev %>
+</p>
+
+<%= link_to 'Edit', edit_alignmentType_path(@alignment_type) %> |
+<%= link_to 'Back', alignment_type_path %>

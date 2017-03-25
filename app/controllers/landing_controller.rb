@@ -1,5 +1,13 @@
 class LandingController < ApplicationController
-  def index
+  def default_landing
+  end
+  def candidate_landing
+  end
+  def system_admin_landing
+  end
+  def tcf_admin_landing
+  end
+  def tcf_landing
   end
   def error
     params.permit(:error_message)

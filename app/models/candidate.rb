@@ -1,5 +1,5 @@
 class Candidate < ApplicationRecord
-  belongs_to :allignment_type
+  belongs_to :alignment_type
   has_many :experiences
 
   def full_name

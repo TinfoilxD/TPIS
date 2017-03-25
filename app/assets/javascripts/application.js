@@ -41,7 +41,8 @@ function setFullCalendar()
         minTime: '09:00',
         maxTime: '18:00',
         contentHeight: 'auto',
-        allDaySlot: false
+        allDaySlot: false,
+        disableDragging: true
     });
 }
 
