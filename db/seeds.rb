@@ -768,5 +768,5 @@ TrainingCenter.create(training_center_name: 'MSM Training',
 FacultyType.create(job_title: 'placeholder faculty type 1')
 FacultyType.create(job_title: 'placeholder faculty type 2')
 
-Faculty.create(first_name: 'Ashley' , last_name: 'Micheal', faculty_type: 'placeholder faculty type 1', email: 'ashmchl@hotmail.com', phone: '713-455-2309' ,  office_address: '3354 Stafford Rd.' ,  state: 'Texas' , zipcode: '77006' , country: 'United States')
-Faculty.create(first_name: 'Jessica' , last_name: 'Sheng', faculty_type: 'placeholder faculty type 1', email: 'jesssheng@hotmail.com', phone: '713-333-4309' ,  office_address: '3355 Chimary Rock Rd.' ,  state: 'Texas' , zipcode: '76005' , country: 'United States')
+Faculty.create(first_name: 'Ashley' , last_name: 'Micheal', faculty_type_id: FacultyType.where(job_title: 'placeholder faculty type 1').first, email: 'ashmchl@hotmail.com', phone: '713-455-2309' ,  office_address: '3354 Stafford Rd.' ,  state: 'Texas' , zip_code: '77006' , country: 'United States')
+Faculty.create(first_name: 'Jessica' , last_name: 'Sheng', faculty_type_id: FacultyType.where(job_title:'placeholder faculty type 2').first, email: 'jesssheng@hotmail.com', phone: '713-333-4309' ,  office_address: '3355 Chimary Rock Rd.' ,  state: 'Texas' , zip_code: '76005' , country: 'United States')
