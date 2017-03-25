@@ -1,9 +1,6 @@
 class UserControlsController < ApplicationController
   def user_controls
     @users = User.all
-
-
-
   end
   def edit_user
     @user = User.find(params[:id])
@@ -26,6 +23,14 @@ class UserControlsController < ApplicationController
 
   def user_params
     params.permit(:id, :email, :role)
+  end
+
+  def candidate
+    @candidates = User.where(role: :candidate)
+  end
+
+  def staff
+    @staffs  = User.where.not(role: :candidate)
   end
 
 end

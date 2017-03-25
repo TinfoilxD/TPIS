@@ -11,14 +11,13 @@
 
 
 
-    <%= link_to 'Staff', staff_path, class: 'link-to-text-color'  %>
-
+  <%= link_to 'Staff', staff_path, class: 'link-to-text-color'  %>
 
   <%= link_to 'Candidate', candidate_role_path, class: 'link-to-text-color'  %>
 
-<%@users.each do |user|%>
-    <%=render 'user', user: user%>
-<%end%>
+  <%@staffs.each do |user|%>
+      <%=render 'user', user: user%>
+  <%end%>
 
-</tbody>
+  </tbody>
 </table>

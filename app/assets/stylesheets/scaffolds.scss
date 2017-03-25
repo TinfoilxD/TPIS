@@ -87,3 +87,19 @@ div {
 label {
   display: block;
 }
+
+.link-to-text-color {
+  margin: 10px;
+  background-color: #eee;
+  padding: 10px;
+
+  &:visited {
+    color: #666;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+
+}
