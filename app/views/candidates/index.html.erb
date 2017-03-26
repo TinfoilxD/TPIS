@@ -27,7 +27,7 @@
         <td><%= candidate.occupation %> </td>
         <td><%= candidate.alignment_type&.alignment_type %></td>
         <td><%= link_to 'View Profile', candidate %></td>
-        <td><%= link_to 'Edit', edit_candidate_path(candidate) %></td>
+        <td><%= link_to 'Edit Profile', edit_candidate_path(candidate) %></td>
         <td><%= link_to 'Delete', candidate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Candidate', new_candidate_path %>
+<%= link_to 'New Candidate', new_candidate_path %> 

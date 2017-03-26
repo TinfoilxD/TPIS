@@ -28,4 +28,7 @@ Rails.application.routes.draw do
   delete '/user_controls/:id', to: 'user_controls#destroy', as: :admin_user_delete
   patch '/users_controls/:id', to: 'user_controls#update', as: :admin_user_update
   get '/appointments/candidate_new', to: 'appointments#candidate_new', as: :candidate_new_appointment
+  
+  get '/candidates/1/edit', to: 'candidates#edit', as: :candidate_edit
+  
 end
