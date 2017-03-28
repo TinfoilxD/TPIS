@@ -39,10 +39,17 @@
       <!--- row 3 ----------->
           <div class="row">
 
-         <div class="field">
-            <%= f.label :state %>
+         <div class="control-group">
+            <%= f.label 'State', class:'State' %>
+           <div class="controls">
             <%= f.select :state, options_for_select(us_states, "TX")%>
          </div>
+          </div>
+
+
+
+
+
 
           <div class="col-xs-4">
              <label for="zipcode">Zip code</label>
@@ -84,13 +91,15 @@
             <input type="occupation" class="form-control" id="occupation" placeholder="occupation">
          </div>
 
-         <div class="field">
-            <%= f.label :alignment_type_id %>
-            <%= f.collection_select :alignment_type_id, AlignmentType.all, :id, :alignment_type%>
-          </div>
+           <div class="field">
+             <%= f.label :alignment_type_id %>
+             <%= f.collection_select :alignment_type_id, AlignmentType.all, :id, :alignment_type%>
+           </div>
 
           </div>
             <br>
+
+
       <!--- Submit Button ----------->
            <button type="submit" class="btn btn-primary">Save Profile</button>
 
@@ -98,3 +107,5 @@
           </div>
 
 <% end %>
+
+
