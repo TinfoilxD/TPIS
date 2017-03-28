@@ -30,6 +30,11 @@ $( document ).on('turbolinks:load', function() {
 function setFullCalendar()
 {
     $('#calendar').fullCalendar({
+        dayClick: function(date, jsEvent, view) {
+            alert('Clicked on: ' + date.format());
+            alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+
+        },
         header: {
             left   : 'prev,next',
             center : 'title',
