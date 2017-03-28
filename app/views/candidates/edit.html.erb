@@ -2,5 +2,12 @@
 
 <%= render 'form', candidate: @candidate %>
 
-<%= link_to 'Show', @candidate %> |
-<%= link_to 'Back', candidates_path %>
+<%= link_to 'View Profile', @candidate %> |
+
+<%if user_signed_in? and current_user.system_admin? then%>
+    <%= link_to 'Back', candidates_path %>
+<%end%>
+
+<%if user_signed_in? and current_user.candidate? then%>
+    <%= link_to 'Back', candidate_landing_path %>
+<%end%>

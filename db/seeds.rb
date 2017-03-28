@@ -716,10 +716,10 @@ Candidate.create(email: 'umi.omigowa@gmail.com', first_name: 'Umi', last_name: '
 
 
 # Old
-Candidate.create(email: 'tin@sdc.com', first_name: 'Hamburger', last_name: 'Steak')
-Candidate.create(email: 'minion5@sdc.com', first_name: 'minion', last_name: '5')
-Candidate.create(email: '', first_name: 'Mike', last_name: 'Jones')
-Candidate.create(email: 'minion5@sdc.com', first_name: 'minion', last_name: '5')
+Candidate.create(email: 'tin@sdc.com', first_name: 'Hamburger', last_name: 'Steak', phone: '9999')
+Candidate.create(email: 'minion5@sdc.com', first_name: 'minion', last_name: '5', phone: '8888')
+Candidate.create(email: '', first_name: 'Mike', last_name: 'Jones', phone: '7777')
+Candidate.create(email: 'minion5@sdc.com', first_name: 'minion', last_name: '5', phone: '6666')
 
 
 CourseType.create([{course_type: 'BLS'},{course_type: 'HS'}, {course_type: 'ACLS'}, {course_type: 'PALS'}])

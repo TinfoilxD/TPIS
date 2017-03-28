@@ -58,4 +58,12 @@
 </p>
 
 <%= link_to 'Edit', edit_candidate_path(@candidate) %> |
-<%= link_to 'Back', candidate_landing_path %>
+
+<%if user_signed_in? and current_user.system_admin? then%>
+    <%= link_to 'Back', candidates_path %>
+<%end%>
+
+<%if user_signed_in? and current_user.candidate? then%>
+    <%= link_to 'Back', candidate_landing_path %>
+<%end%>
+
