@@ -42,7 +42,9 @@ function setFullCalendar()
         maxTime: '18:00',
         contentHeight: 'auto',
         allDaySlot: false,
-        disableDragging: true
+        disableDragging: true,
+
+
     });
 }
 
@@ -74,3 +76,5 @@ function overrideArrowButtons()
 //
 //     });
 // }
+
+
