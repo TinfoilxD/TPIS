@@ -22,3 +22,28 @@
 {
   height: 50px
 }
+
+.navbar-brand {
+  padding: 0px;
+  padding-bottom: 20px;
+}
+
+.navbar-brand>img {
+  height: 100px;
+  padding: 15px;
+  width: auto;
+}
+
+.navbar-nav>li{
+  padding-top: 25px;
+  padding-left: -10px;
+}
+
+.logo_container
+{
+  padding-top: -20px;
+  padding-right: 65px;
+  height: 100px;
+  width: 80px;
+
+}

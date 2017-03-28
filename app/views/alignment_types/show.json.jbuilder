@@ -1,1 +1,1 @@
-json.partial! "alignment_types/allignment_type", alignment_type: @alignment_type
+json.partial! "alignment_types/alignment_type", alignment_type: @alignment_type
