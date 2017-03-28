@@ -16,14 +16,22 @@
      <div class="container-fluid">
        <div class="navbar-header">
          <div class="logo_container">
-         <%= link_to root_path, class: 'navbar-brand' do %>
-          <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '90px' %>
-             <% end %>
+           <% if user_signed_in? and current_user.candidate? then%>
+               <%= link_to candidate_landing_path, class: 'navbar-brand' do %>
+               <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '90px' %>
+               <%end%>
+           <%end%>
+           <% if user_signed_in? and current_user.system_admin? then%>
+             <%= link_to system_admin_landing_path, class: 'navbar-brand' do %>
+             <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '90px' %>
+           <% end %>
+         <% end %>
          </div>
        </div>
        <ul class="nav navbar-nav">
          <%if user_signed_in? and current_user.system_admin? then%>
              <li><%= link_to 'User Controls', admin_user_controls_path%></li>
+             <li><%= link_to 'Candidate Application Forms', admin_view_applications_path%></li>
              <li class="dropdown">
                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Candidate <span class="caret"></span></a>
                <ul class="dropdown-menu">
@@ -31,7 +39,8 @@
                  <li><%= link_to 'View Candidates', candidates_path%></li>
                  <li><a href="#">Test Existing Candidate Link</a></li>
                </ul>
-             </li>
+
+
          <%end%>
 
          </ul>
