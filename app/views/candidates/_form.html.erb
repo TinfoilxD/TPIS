@@ -1,4 +1,4 @@
-<%= form_for(candidate) do |f| %>
+  <%= form_for(candidate) do |f| %>
   <% if candidate.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(candidate.errors.count, "error") %> prohibited this candidate from being saved:</h2>
@@ -11,67 +11,101 @@
     </div>
   <% end %>
 
+      <div class="container-fluid">
+    <form class="form-inline">
+      <!--- row 1 ----------->
+        <div class="row">
+        <div class="col-xs-4">
+           <label for="first_name"> First name</label>
+           <input type="text" class="form-control" id="first_name" placeholder="First name">
+        </div>
+
+        <div class="col-xs-4">
+           <label for="last_name">Last name</label>
+           <input type="last_name" class="form-control" id="last_name" placeholder="Last name">
+        </div>
+        </div>
+          <br>
+      <!--- row 2 ----------->
+         <div class="row">
+          <div class="col-xs-10">
+           <label for="address">Street address</label>
+           <input type="address" class="form-control" id="address" placeholder="Address">
+         </div>
+          </div>
+
+
+          <br>
+      <!--- row 3 ----------->
+          <div class="row">
+
+         <div class="control-group">
+            <%= f.label 'State', class:'State' %>
+           <div class="controls">
+            <%= f.select :state, options_for_select(us_states, "TX")%>
+         </div>
+          </div>
 
 
 
-  <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= f.label :phone %>
-    <%= f.text_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= f.label :fax %>
-    <%= f.text_field :fax %>
-  </div>
-
-    <div class="field">
-      <%= f.label :email %>
-      <%= f.text_field :email, :value => current_user.email, :readonly => true %>
-    </div>
-
-  <div class="field">
-    <%= f.label :state %>
-    <%= f.select :state, options_for_select(us_states, "TX")%>
-  </div>
-
-  <div class="field">
-    <%= f.label :zipcode %>
-    <%= f.text_field :zipcode %>
-  </div>
-
-  <div class="field">
-    <%= f.label :country %>
-    <%= f.select :country, options_for_select(countries, "United States")%>
-  </div>
-
-    <div class="field">
-      <%= f.label :occupation %>
-      <%= f.text_field :occupation %>
-    </div>
 
 
 
-    <div class="field">
-    <%= f.label :alignment_type_id %>
-    <%= f.collection_select :alignment_type_id, AlignmentType.all, :id, :alignment_type%>
-  </div>
+          <div class="col-xs-4">
+             <label for="zipcode">Zip code</label>
+             <input type="zipcode" class="form-control" id="zipcode" placeholder="Zipcode">
+           </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+         <div class="field">
+           <%= f.label :country %>
+           <%= f.select :country, options_for_select(countries, "United States")%>
+         </div>
+
+         </div>
+
+      <!--- row 4 ----------->
+        <div class="row">
+        <div class="col-xs-4">
+          <label for="phone">Phone number</label>
+          <input type="phone" class="form-control" id="phone" placeholder="Phone Number">
+        </div>
+
+         <div class="col-xs-4"><label for="fax">Fax number</label>
+         <input type="fax" class="form-control" id="fax" placeholder="Fax Number">
+         </div>
+        </div>
+
+         <br>
+
+         <div class="field">
+            <%= f.label :email %>
+            <%= f.text_field :email, :value => current_user.email, :readonly => true %>
+         </div>
+
+
+         <br>
+      <!--- row 5 ----------->
+         <div class="row">
+         <div class="col-xs-4">
+            <label for="occupation">Occupation</label>
+            <input type="occupation" class="form-control" id="occupation" placeholder="occupation">
+         </div>
+
+           <div class="field">
+             <%= f.label :alignment_type_id %>
+             <%= f.collection_select :alignment_type_id, AlignmentType.all, :id, :alignment_type%>
+           </div>
+
+          </div>
+            <br>
+
+
+      <!--- Submit Button ----------->
+           <button type="submit" class="btn btn-primary">Save Profile</button>
+
+          </form>
+          </div>
+
 <% end %>
+
+
