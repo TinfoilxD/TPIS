@@ -22,7 +22,7 @@ class CandidatesController < ApplicationController
   # GET /candidates/1/edit
   def edit
       #@candidate = Candidate.find_by id: session[:candidate_id]
-      #@candidate = Candidate.find(params[:id])
+      @candidate = Candidate.find(params[:id])
   end
 
   # POST /candidates
