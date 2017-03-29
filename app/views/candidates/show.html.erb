@@ -1,63 +1,70 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @candidate.first_name %>
-</p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @candidate.last_name %>
-</p>
+<div class="container">
+  <div class ="container-body">
+    <table class = "table table-hover">
 
-<p>
-  <strong>Address:</strong>
-  <%= @candidate.address %>
-</p>
+      <p>
+        <strong>First name:</strong>
+        <%= @candidate.first_name %>
+      </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @candidate.email %>
-</p>
+      <p>
+        <strong>Last name:</strong>
+        <%= @candidate.last_name %>
+      </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @candidate.phone %>
-</p>
+      <p>
+        <strong>Address:</strong>
+        <%= @candidate.address %>
+      </p>
 
-<p>
-  <strong>Fax:</strong>
-  <%= @candidate.fax %>
-</p>
+      <p>
+        <strong>Email:</strong>
+        <%= @candidate.email %>
+      </p>
 
-<p>
-  <strong>State:</strong>
-  <%= @candidate.state %>
-</p>
+      <p>
+        <strong>Phone:</strong>
+        <%= @candidate.phone %>
+      </p>
 
-<p>
-  <strong>Zipcode:</strong>
-  <%= @candidate.zipcode %>
-</p>
+      <p>
+        <strong>Fax:</strong>
+        <%= @candidate.fax %>
+      </p>
 
-<p>
-  <strong>Country:</strong>
-  <%= @candidate.country %>
-</p>
+      <p>
+        <strong>State:</strong>
+        <%= @candidate.state %>
+      </p>
 
+      <p>
+        <strong>Zipcode:</strong>
+        <%= @candidate.zipcode %>
+      </p>
 
-<p>
-  <strong> Occupation: </strong>
-  <%= @candidate.occupation %>
-</p>
-
-
-<p>
-  <strong>Alignment type:</strong>
-  <%=@candidate.alignment_type&.alignment_type%>
-</p>
+      <p>
+        <strong>Country:</strong>
+        <%= @candidate.country %>
+      </p>
 
 
+      <p>
+        <strong> Occupation: </strong>
+        <%= @candidate.occupation %>
+      </p>
+
+
+      <p>
+        <strong>Alignment type:</strong>
+        <%=@candidate.alignment_type&.alignment_type%>
+      </p>
+
+    </table>
+  </div>
+</div>
 
 
 

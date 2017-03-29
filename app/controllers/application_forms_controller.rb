@@ -11,6 +11,12 @@ class ApplicationFormsController < ApplicationController
   # GET /application_forms/1
   # GET /application_forms/1.json
   def show
+    @current_candidate = Candidate.where(email: current_user.email).first
+    if @current_candidate.nil?
+      redirect_to error_path(:error_message => 0)
+    end
+    @application_form = ApplicationForm.new
+
   end
 
   # GET /application_forms/new
@@ -29,6 +35,9 @@ class ApplicationFormsController < ApplicationController
     if @current_candidate.nil?
       redirect_to error_path(:error_message => 0)
     end
+    @application_form = ApplicationForm.new
+
+
   end
 
   # POST /application_forms
@@ -72,13 +81,14 @@ class ApplicationFormsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_application_form
-      @application_form = ApplicationForm.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_application_form
+    @application_form = ApplicationForm.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def application_form_params
-      params.require(:application_form).permit(:candidate_id, :training_center_id, :course_id, :aha_instructor_motivation, :marketing_origin, :teaching_frequency, :owned_equipment, :class_availability, :boolean, :teaching_location, :screening_form_agreement, :date_agreed, :aha_form_agreement)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def application_form_params
+    params.require(:application_form).permit(:candidate_id, :training_center_id, :course_id, :aha_instructor_motivation, :marketing_origin, :teaching_frequency, :owned_equipment, :class_availability, :boolean, :teaching_location, :screening_form_agreement, :date_agreed, :aha_form_agreement)
+  end
 end
+

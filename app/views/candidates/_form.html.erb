@@ -1,49 +1,49 @@
-  <%= form_for(candidate) do |f| %>
-  <% if candidate.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(candidate.errors.count, "error") %> prohibited this candidate from being saved:</h2>
+<%= form_for(candidate) do |f| %>
+    <% if candidate.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(candidate.errors.count, "error") %> prohibited this candidate from being saved:</h2>
 
-      <ul>
-      <% candidate.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <ul>
+            <% candidate.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
 
-      <div class="container-fluid">
-    <form class="form-inline">
-      <!--- row 1 ----------->
+    <div class="container-fluid">
+      <form class="form-inline">
+        <!--- row 1 ----------->
         <div class="row">
-        <div class="col-xs-4">
-           <label for="first_name"> First name</label>
-           <input type="text" class="form-control" id="first_name" placeholder="First name">
-        </div>
-
-        <div class="col-xs-4">
-           <label for="last_name">Last name</label>
-           <input type="last_name" class="form-control" id="last_name" placeholder="Last name">
-        </div>
-        </div>
-          <br>
-      <!--- row 2 ----------->
-         <div class="row">
-          <div class="col-xs-10">
-           <label for="address">Street address</label>
-           <input type="address" class="form-control" id="address" placeholder="Address">
-         </div>
+          <div class="col-xs-4">
+            <label for="first_name"> First name</label>
+            <%=f.text_field :first_name, placeholder: 'First Name', class: 'form-control'%>
           </div>
 
+          <div class="col-xs-4">
+            <label for="last_name">Last name</label>
+            <%=f.text_field :last_name, placeholder: 'Last Name', class: 'form-control'%>
+          </div>
+        </div>
+        <br>
+        <!--- row 2 ----------->
+        <div class="row">
+          <div class="col-xs-10">
+            <label for="address">Street address</label>
+            <%=f.text_field :address, placeholder: 'Address', class: 'form-control'%>
+          </div>
+        </div>
 
-          <br>
-      <!--- row 3 ----------->
-          <div class="row">
 
-         <div class="control-group">
+        <br>
+        <!--- row 3 ----------->
+        <div class="row">
+
+          <div class="control-group">
             <%= f.label 'State', class:'State' %>
-           <div class="controls">
-            <%= f.select :state, options_for_select(us_states, "TX")%>
-         </div>
+            <div class="controls">
+              <%= f.select :state, options_for_select(us_states, "TX")%>
+            </div>
           </div>
 
 
@@ -52,60 +52,59 @@
 
 
           <div class="col-xs-4">
-             <label for="zipcode">Zip code</label>
-             <input type="zipcode" class="form-control" id="zipcode" placeholder="Zipcode">
-           </div>
+            <label for="zipcode">Zip code</label>
+            <%=f.text_field :zipcode, placeholder: 'Zip Code', class: 'form-control'%>
+          </div>
 
-         <div class="field">
-           <%= f.label :country %>
-           <%= f.select :country, options_for_select(countries, "United States")%>
-         </div>
+          <div class="field">
+            <%= f.label :country %>
+            <%= f.select :country, options_for_select(countries, "United States")%>
+          </div>
 
-         </div>
+        </div>
 
-      <!--- row 4 ----------->
+        <!--- row 4 ----------->
         <div class="row">
-        <div class="col-xs-4">
-          <label for="phone">Phone number</label>
-          <input type="phone" class="form-control" id="phone" placeholder="Phone Number">
+          <div class="col-xs-4">
+            <label for="phone">Phone number</label>
+            <%=f.text_field :phone, placeholder: 'Phone number', class: 'form-control'%>
+          </div>
+
+          <div class="col-xs-4"><label for="fax">Fax number</label>
+            <%=f.text_field :fax, placeholder: 'Fax number', class: 'form-control'%>
+          </div>
         </div>
 
-         <div class="col-xs-4"><label for="fax">Fax number</label>
-         <input type="fax" class="form-control" id="fax" placeholder="Fax Number">
-         </div>
+        <br>
+
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.text_field :email, :value => current_user.email, :readonly => true %>
         </div>
 
-         <br>
 
-         <div class="field">
-            <%= f.label :email %>
-            <%= f.text_field :email, :value => current_user.email, :readonly => true %>
-         </div>
-
-
-         <br>
-      <!--- row 5 ----------->
-         <div class="row">
-         <div class="col-xs-4">
+        <br>
+        <!--- row 5 ----------->
+        <div class="row">
+          <div class="col-xs-4">
             <label for="occupation">Occupation</label>
-            <input type="occupation" class="form-control" id="occupation" placeholder="occupation">
-         </div>
-
-           <div class="field">
-             <%= f.label :alignment_type_id %>
-             <%= f.collection_select :alignment_type_id, AlignmentType.all, :id, :alignment_type%>
-           </div>
-
+            <%=f.text_field :occupation, placeholder: 'Occupation', class: 'form-control'%>
           </div>
-            <br>
 
-
-      <!--- Submit Button ----------->
-           <button type="submit" class="btn btn-primary">Save Profile</button>
-
-          </form>
+          <div class="field">
+            <%= f.label :alignment_type_id %>
+            <%= f.collection_select :alignment_type_id, AlignmentType.all, :id, :alignment_type%>
           </div>
+
+        </div>
+        <br>
+
+
+        <!--- Submit Button ----------->
+        <button type="submit" class="btn btn-primary">Save Profile</button>
+
+      </form>
+    </div>
 
 <% end %>
-
 

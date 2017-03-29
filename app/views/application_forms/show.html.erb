@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<div class="workers">
+  <div class ="workers-body">
+    <table class = "table table-hover">
+
 <p>
   <strong>Candidate:</strong>
   <%= @application_form.candidate_id %>
@@ -60,6 +64,11 @@
   <strong>Aha form agreement:</strong>
   <%= @application_form.aha_form_agreement %>
 </p>
+
+    </table>
+  </div>
+</div>
+
 
 <%= link_to 'Edit', edit_application_form_path(@application_form) %> |
 <%= link_to 'Back', application_forms_path %>
