@@ -57,6 +57,10 @@
   <%=@candidate.alignment_type&.alignment_type%>
 </p>
 
+
+
+
+
 <%= link_to 'Edit', edit_candidate_path(@candidate) %> |
 
 <%if user_signed_in? and current_user.system_admin? then%>

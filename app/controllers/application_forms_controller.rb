@@ -25,6 +25,10 @@ class ApplicationFormsController < ApplicationController
 
   # GET /application_forms/1/edit
   def edit
+    @current_candidate = Candidate.where(email: current_user.email).first
+    if @current_candidate.nil?
+      redirect_to error_path(:error_message => 0)
+    end
   end
 
   # POST /application_forms
