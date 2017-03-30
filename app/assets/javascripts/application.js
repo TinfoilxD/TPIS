@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require bootstrap
 //= require moment
+//= require date
 //= require fullcalendar
 //= require_tree .
 
@@ -25,7 +26,8 @@ $( document ).on('turbolinks:load', function() {
     // setNaviToggle()
     setTimeslotCalendar()
     setBookingCalendar()
-    //overrideArrowButtons()
+    setAppointmentCalendar()
+    overrideArrowButtons()
 });
 
 function setTimeslotCalendar()
@@ -73,15 +75,16 @@ function setTimeslotCalendar()
         contentHeight: 'auto',
         allDaySlot: false,
         disableDragging: true,
-        allDayDefault: false
+        allDayDefault: false,
+        timezone: 'America/Chicago'
     });
 
 }
 
 function overrideArrowButtons()
 {
-    var prevButton = $('.fc-prev-button')
-    var nextButton = $('.fc-next-button')
+    var prevButton = $('#booking_calendar .fc-prev-button')
+    var nextButton = $('#booking_calendar .fc-next-button')
     prevButton.css('display','none')
     prevButton.click(function(){
         nextButton.css('display','inline')
@@ -98,32 +101,37 @@ function overrideArrowButtons()
 function setBookingCalendar()
 {
     $('#booking_calendar').fullCalendar({
-        dayClick: function(date, jsEvent, view) {
-            eventData = {timeslot: {start: date.format()}}
-            $.ajax({
-                url: "/timeslots/create",
-                type: "POST",
-                data: eventData,
-                dataType: 'json',
-                success: function(json) {
-                    $("#timeslot_calendar").fullCalendar('refetchEvents')
-                    $("#timeslot_calendar").fullCalendar('rerenderEvents');
-                }
-            });
+        eventClick: function(calEvent, jsEvent, view)
+        {
+            //eventData = {appointment: {start: calEvent.start.format()}}
+            eventDate = Date.parse((calEvent.start.format()))
+            eventDate.setTimezone('America/Chicago')
+            //2017-3-29 10:00:00
+            eventData = {appointment: {start: eventDate.toString("yyyy-M-dd HH:mm:ss")}}
+            //eventEnd = new Date(eventDate.setHours(eventDate.getHours()+1))
+            //month = eventDate.getMonth() + "-"
+            //dayofMonth = eventDate.getDate() + "-"
+            //year = eventDate.getFullYear() + " "
+            //hour = eventDate.getHours()
+            if (confirm('Create an appointment on ' +
+                        eventDate.toString("M/dd/yyyy") + " from " + eventDate.toString("hh:mm") + " to "
+                        + (eventDate.add(1).hours()).toString("hh:mm")
+                        + '?')
+            )
+            {
+                $.ajax({
+                    url: "/book_appointment",
+                    type: "POST",
+                    data: eventData,
+                    datatype: 'json',
+                    success: function(json) {
 
-        },
-        eventClick: function(calEvent, jsEvent, view) {
-            eventData = {start: calEvent.start.format()}
-            $.ajax({
-                url: "/timeslots/delete_where",
-                type: "POST",
-                data: eventData,
-                datatype: 'json',
-                success: function(json) {
-                    $("#timeslot_calendar").fullCalendar('refetchEvents')
-                    $("#timeslot_calendar").fullCalendar('rerenderEvents')
-                }
-            });
+                        $("#booking_calendar").fullCalendar('refetchEvents')
+                        $("#booking_calendar").fullCalendar('rerenderEvents')
+                        //location.href = "appointments/"
+                    }
+                });
+            }
         },
         header: {
             left   : 'prev,next',
@@ -139,10 +147,36 @@ function setBookingCalendar()
         contentHeight: 'auto',
         allDaySlot: false,
         disableDragging: true,
-        allDayDefault: false
+        allDayDefault: false,
+        timezone: 'America/Chicago'
     });
 
 }
+
+function setAppointmentCalendar()
+{
+    $('#appointment_calendar').fullCalendar({
+
+        header: {
+            left   : 'prev,next',
+            center : 'title',
+            right : 'none'
+        },
+        eventSources: [{url : '/appointments_list', color: 'rgb(89,26,20)'}],
+        defaultView: 'agendaWeek',
+        slotDuration: '01:00:00',
+        slotLabelInterval: '01:00:00',
+        minTime: '09:00',
+        maxTime: '18:00',
+        contentHeight: 'auto',
+        allDaySlot: false,
+        disableDragging: true,
+        allDayDefault: false,
+        timezone: 'America/Chicago'
+    });
+
+}
+
 
 //Uncomment this if we want to have dropdowns expand on hover instead of click
 // function setNaviToggle() {

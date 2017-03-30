@@ -65,9 +65,9 @@ class TimeslotsController < ApplicationController
   def delete_where
     if params.has_key?(:start)
       Timeslot.where(start: params[:start].to_datetime).delete_all
-      render :json => {sucess: true}
+      render :json => {success: true}
     else
-      render :json => {sucess: false}
+      render :json => {success: false}
     end
   end
 
