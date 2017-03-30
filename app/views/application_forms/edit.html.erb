@@ -2,5 +2,13 @@
 
 <%= render 'form', application_form: @application_form %>
 
-<%= link_to 'Show', @application_form %> |
+<%= link_to 'Show', @application_form %> 
+
+<%if user_signed_in? and current_user.system_admin? then%>|
 <%= link_to 'Back', application_forms_path %>
+<%end%>
+
+<%if user_signed_in? and current_user.candidate? then%>
+    <%= link_to 'Back', candidate_landing_path %>
+<%end%>
+
