@@ -16,6 +16,12 @@
      <div class="container-fluid">
        <div class="navbar-header">
          <div class="logo_container">
+           <% if user_signed_in? == false then %>
+               <%=link_to root_path, class:'navbar-brand' do %>
+                   <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '90px' %>
+                   <%end%>
+               <%end%>
+
            <% if user_signed_in? and current_user.candidate? then%>
                <%= link_to candidate_landing_path, class: 'navbar-brand' do %>
                <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '90px' %>

@@ -65,6 +65,9 @@ class CandidatesController < ApplicationController
     end
   end
 
+  #Try to create a function to check filled profile.
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_candidate
@@ -75,4 +78,7 @@ class CandidatesController < ApplicationController
     def candidate_params
       params.require(:candidate).permit(:first_name, :last_name, :address, :email, :phone, :fax, :state_id, :zipcode, :country_id, :occupation, :allignment_type_id)
     end
+
+
 end
+

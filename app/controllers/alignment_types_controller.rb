@@ -41,7 +41,7 @@ class AlignmentTypesController < ApplicationController
   # PATCH/PUT /allignment_types/1.json
   def update
     respond_to do |format|
-      if @alignment_type.update(allignment_type_params)
+      if @alignment_type.update(alignment_type_params)
         format.html { redirect_to @alignment_type, notice: 'Allignment type was successfully updated.' }
         format.json { render :show, status: :ok, location: @alignment_type }
       else
