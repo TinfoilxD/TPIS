@@ -23,14 +23,15 @@
 
 $( document ).on('turbolinks:load', function() {
     // setNaviToggle()
-    setFullCalendar()
-    overrideArrowButtons()
+    setTimeslotCalendar()
+    setBookingCalendar()
+    //overrideArrowButtons()
 });
 
-function setFullCalendar()
+function setTimeslotCalendar()
 {
 
-    $('#calendar').fullCalendar({
+    $('#timeslot_calendar').fullCalendar({
         dayClick: function(date, jsEvent, view) {
             eventData = {timeslot: {start: date.format()}}
             $.ajax({
@@ -39,8 +40,8 @@ function setFullCalendar()
                 data: eventData,
                 dataType: 'json',
                 success: function(json) {
-                    $("#calendar").fullCalendar('refetchEvents')
-                    $("#calendar").fullCalendar('rerenderEvents');
+                    $("#timeslot_calendar").fullCalendar('refetchEvents')
+                    $("#timeslot_calendar").fullCalendar('rerenderEvents');
                 }
             });
 
@@ -53,8 +54,8 @@ function setFullCalendar()
                 data: eventData,
                 datatype: 'json',
                 success: function(json) {
-                    $("#calendar").fullCalendar('refetchEvents')
-                    $("#calendar").fullCalendar('rerenderEvents')
+                    $("#timeslot_calendar").fullCalendar('refetchEvents')
+                    $("#timeslot_calendar").fullCalendar('rerenderEvents')
                 }
             });
         },
@@ -92,6 +93,55 @@ function overrideArrowButtons()
         nextButton.css('display','none')
 
     });
+}
+
+function setBookingCalendar()
+{
+    $('#booking_calendar').fullCalendar({
+        dayClick: function(date, jsEvent, view) {
+            eventData = {timeslot: {start: date.format()}}
+            $.ajax({
+                url: "/timeslots/create",
+                type: "POST",
+                data: eventData,
+                dataType: 'json',
+                success: function(json) {
+                    $("#timeslot_calendar").fullCalendar('refetchEvents')
+                    $("#timeslot_calendar").fullCalendar('rerenderEvents');
+                }
+            });
+
+        },
+        eventClick: function(calEvent, jsEvent, view) {
+            eventData = {start: calEvent.start.format()}
+            $.ajax({
+                url: "/timeslots/delete_where",
+                type: "POST",
+                data: eventData,
+                datatype: 'json',
+                success: function(json) {
+                    $("#timeslot_calendar").fullCalendar('refetchEvents')
+                    $("#timeslot_calendar").fullCalendar('rerenderEvents')
+                }
+            });
+        },
+        header: {
+            left   : 'prev,next',
+            center : 'title',
+            right : 'none'
+        },
+        eventSources: [{url : '/timeslots/list', color: 'rgb(40,167,255)'}],
+        defaultView: 'agendaWeek',
+        slotDuration: '01:00:00',
+        slotLabelInterval: '01:00:00',
+        minTime: '09:00',
+        maxTime: '18:00',
+        contentHeight: 'auto',
+        allDaySlot: false,
+        disableDragging: true,
+        allDayDefault: false
+    });
+
 }
 
 //Uncomment this if we want to have dropdowns expand on hover instead of click
