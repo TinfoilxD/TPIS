@@ -652,11 +652,11 @@ c5=Candidate.create(email:'alliecat5050@aol.com', first_name: 'Allison', last_na
 # 2nd round
 
 # 1-5
-Candidate.create(email:'cpatino66@gmail.com', first_name: 'Chrissy', last_name: 'Patino', address: '1135 Terrel Hills Rd', phone: '210-555-8848', state:'Texas', zipcode: '78244', country: 'United States', occupation: 'Physical Therapy' , alignment_type_id: '1')
-Candidate.create(email:'JSimms@yahoo.com', first_name: 'Jonathan', last_name: 'Simmons', address: '1153 Densel Rd', phone: '210-555-7776', state:'Texas', zipcode: '78111', country: 'United States', occupation: 'Masseuse' , alignment_type_id: '1')
-Candidate.create(email:'acarrera6@yahoo.com', first_name: 'Alonzo', last_name: 'Carrera', address: '533 Akali Rd', phone: '210-555-2101', state:'Texas', zipcode: '78211', country: 'United States', occupation: 'BLS' , alignment_type_id: '1')
-Candidate.create(email:'alcapont45@gmail.com', first_name: 'Alex', last_name: 'Capont', address: '14003 Richmond Ave', phone: '832-555-6030', state:'Texas', zipcode: '77030', country: 'United States', occupation: 'PT' , alignment_type_id: '1')
-Candidate.create(email:'candlemandell@gmail.com', first_name: 'Joseph', last_name: 'Mandell', address: '858 Crepe St', phone: '281-555-2011', state:'Texas', zipcode: '77401', country: 'United States', occupation: 'Masseuse' , alignment_type_id: '1')
+c6=Candidate.create(email:'cpatino66@gmail.com', first_name: 'Chrissy', last_name: 'Patino', address: '1135 Terrel Hills Rd', phone: '210-555-8848', state:'Texas', zipcode: '78244', country: 'United States', occupation: 'Physical Therapy' , alignment_type_id: '1')
+c7=Candidate.create(email:'JSimms@yahoo.com', first_name: 'Jonathan', last_name: 'Simmons', address: '1153 Densel Rd', phone: '210-555-7776', state:'Texas', zipcode: '78111', country: 'United States', occupation: 'Masseuse' , alignment_type_id: '1')
+c8=Candidate.create(email:'acarrera6@yahoo.com', first_name: 'Alonzo', last_name: 'Carrera', address: '533 Akali Rd', phone: '210-555-2101', state:'Texas', zipcode: '78211', country: 'United States', occupation: 'BLS' , alignment_type_id: '1')
+c9=Candidate.create(email:'alcapont45@gmail.com', first_name: 'Alex', last_name: 'Capont', address: '14003 Richmond Ave', phone: '832-555-6030', state:'Texas', zipcode: '77030', country: 'United States', occupation: 'PT' , alignment_type_id: '1')
+c10=Candidate.create(email:'candlemandell@gmail.com', first_name: 'Joseph', last_name: 'Mandell', address: '858 Crepe St', phone: '281-555-2011', state:'Texas', zipcode: '77401', country: 'United States', occupation: 'Masseuse' , alignment_type_id: '1')
 
 # 6-10
 Candidate.create(email:'sunrisegoddess@yahoo.com', first_name: 'Sarah', last_name: 'Jones', address: '11482 Sunkissed Rd', phone: '713-555-5030', state:'Texas', zipcode: '79201', country: 'United States', occupation: 'none' , alignment_type_id: '1')
@@ -774,14 +774,25 @@ Faculty.create(first_name: 'Jessica' , last_name: 'Sheng', faculty_type_id: Facu
 # Application Form
 #1-5
 ApplicationForm.create(candidate: c1,training_center_id: t1,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS' ,marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
-                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: '4/28/17' , aha_form_agreement: 'Yes' )
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
 ApplicationForm.create(candidate: c2,training_center_id: t2,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS' ,marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'No' ,
-                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: '4/17/17' , aha_form_agreement: 'No' )
-ApplicationForm.create(candidate: c4,training_center_id: t1,course_id: CourseType.where(course_type: 'ACLS').first.id, aha_instructor_motivation: 'Because' ,marketing_origin: 'Friend',teaching_frequency: '3 weeks', owned_equipment: 'Yes' ,
-                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: '4/31/17' , aha_form_agreement: 'Yes' )
-ApplicationForm.create(candidate: c3,training_center_id: t2,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because' ,marketing_origin: 'Family',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
-                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: '5/1/17' , aha_form_agreement: 'Yes' )
-ApplicationForm.create(candidate: c5,training_center_id: t1,course_id: CourseType.where(course_type: 'BLS').first.id, aha_instructor_motivation: 'Because' ,marketing_origin: 'Online',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
-                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: '5/1/17' , aha_form_agreement: 'Yes' )
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/28/2017', "%m/%d/%Y") , aha_form_agreement: 'No' )
+ApplicationForm.create(candidate: c4,training_center_id: t1,course_id: CourseType.where(course_type: 'ACLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach ACLS ' ,marketing_origin: 'Friend',teaching_frequency: '3 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/29/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
+ApplicationForm.create(candidate: c3,training_center_id: t2,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS' ,marketing_origin: 'Family',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('05/1/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
+ApplicationForm.create(candidate: c5,training_center_id: t1,course_id: CourseType.where(course_type: 'BLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach BLS' ,marketing_origin: 'Online',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('05/2/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
 
 #6-10
+
+ApplicationForm.create(candidate: c6,training_center_id: t1,course_id: CourseType.where(course_type: 'ACLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach ACLS' ,marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'Yes', teaching_location: 'Yes', screening_form_agreement: 'Yes' , date_agreed: DateTime.strptime('04/25/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
+ApplicationForm.create(candidate: c8,training_center_id: t2,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS' ,marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'No' ,
+                       public_class_availability: 'Yes', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/24/2017', "%m/%d/%Y"), aha_form_agreement: 'No' )
+ApplicationForm.create(candidate: c7,training_center_id: t1,course_id: CourseType.where(course_type: 'ACLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach ACLS ' ,marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'Yes', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/30/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
+ApplicationForm.create(candidate: c10,training_center_id: t2,course_id: CourseType.where(course_type: 'BLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach BLS' ,marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'Yes' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
+ApplicationForm.create(candidate: c9,training_center_id: t1,course_id: CourseType.where(course_type: 'BLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach BLS' ,marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
