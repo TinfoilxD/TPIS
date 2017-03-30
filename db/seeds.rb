@@ -668,7 +668,7 @@ Candidate.create(email:'conventionalking@gmail.com', first_name: 'Julio', last_n
 # 11-15
 Candidate.create(email:'scorpioking@yahoo.com', first_name: 'Kevin', last_name: 'Sucho', address: '111 Dumax Rd', phone: '713-555-1100', state:'Texas', zipcode: '77055', country: 'United States', occupation: 'Nurse' , alignment_type_id: '1')
 Candidate.create(email:'amIevenreal@gmail.com', first_name: 'Amelia', last_name: 'Emiliano', address: '420 Westheimer', phone: '832-555-6666', state:'Texas', zipcode: '77009', country: 'United States', occupation: 'Masseuse' , alignment_type_id: '1')
-# Candidate.create(email:'candycandice@aol.com', first_name: 'Candice', last_name: 'Candy', address: '2011 Sugar Ln.', phone: '832-555-1311', state:'Texas', zipcode: '77095', country: 'United States', occupation: 'Yoga Instructor' , alignment_type_id: '1')
+Candidate.create(email:'candycandice@aol.com', first_name: 'Candice', last_name: 'Candy', address: '2011 Sugar Ln.', phone: '832-555-1311', state:'Texas', zipcode: '77095', country: 'United States', occupation: 'Yoga Instructor' , alignment_type_id: '1')
 Candidate.create(email:'alexiag11@gmail.com', first_name: 'Alexia', last_name: 'Guadiano', address: '880 Richgirl Rd', phone: '713-555-5666', state:'Texas', zipcode: '77001', country: 'United States', occupation: 'Nurse' , alignment_type_id: '1')
 Candidate.create(email:'RichardZ312@fmail.com', first_name: 'Richard', last_name: 'Zambrano', address: '440 Diggler Rd', phone: '281-555-4020', state:'Texas', zipcode: '77501', country: 'United States', occupation: 'Nurse' , alignment_type_id: '1')
 
