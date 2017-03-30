@@ -34,7 +34,9 @@
          <% end %>
          </div>
        </div>
+       <div class=" navbar-collapse navbar-ex1-collapse collapse in" aria-expanded="true">
        <ul class="nav navbar-nav">
+
          <%if user_signed_in? and current_user.system_admin? then%>
              <li><%= link_to 'User Controls', admin_user_controls_path%></li>
              <li><%= link_to 'Candidate Application Forms', admin_view_applications_path%></li>
@@ -45,7 +47,7 @@
                  <li><%= link_to 'View Candidates', candidates_path%></li>
                  <li><a href="#">Test Existing Candidate Link</a></li>
                </ul>
-
+          </div>
 
          <%end%>
 
