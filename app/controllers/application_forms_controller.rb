@@ -12,20 +12,6 @@ class ApplicationFormsController < ApplicationController
   # GET /application_forms/1.json
   def show
 
-    #@current_candidate = Candidate.where(email: current_user.email).first
-    #if @current_candidate.nil?
-     # redirect_to error_path(:error_message => 0)
-    #end
-    #@application_form = ApplicationForm.new
-    #@candidate = Candidate.find(params[:id])
-
-    @current_candidate = Candidate.where(email: current_user.email).first
-    if @current_candidate.nil?
-      redirect_to error_path(:error_message => 0)
-    end
-    @application_form = ApplicationForm.new
-
-
   end
 
 
