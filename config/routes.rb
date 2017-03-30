@@ -38,4 +38,6 @@ Rails.application.routes.draw do
   get '/timeslots/list', to: 'timeslots#list'
   post '/timeslots/create', to: 'timeslots#create'
   post '/timeslots/delete_where', to: 'timeslots#delete_where'
+  get '/application_forms/:id', to: 'application_forms#show'
+
 end
