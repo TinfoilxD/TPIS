@@ -65,6 +65,11 @@ class TimeslotsController < ApplicationController
   def input_timeslots
   end
 
+  def list
+    @Timeslots = Timeslot.all
+    render :json => @Timeslots
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_timeslot

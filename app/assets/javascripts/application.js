@@ -29,6 +29,7 @@ $( document ).on('turbolinks:load', function() {
 
 function setFullCalendar()
 {
+
     $('#calendar').fullCalendar({
         dayClick: function(date, jsEvent, view) {
             alert('Clicked on: ' + date.format());
@@ -40,6 +41,7 @@ function setFullCalendar()
             center : 'title',
             right : 'none'
         },
+        eventSources: [{url : '/timeslots/list'}],
         defaultView: 'agendaWeek',
         slotDuration: '01:00:00',
         slotLabelInterval: '01:00:00',
@@ -47,8 +49,10 @@ function setFullCalendar()
         maxTime: '18:00',
         contentHeight: 'auto',
         allDaySlot: false,
-        disableDragging: true
+        disableDragging: true,
+        allDayDefault: false
     });
+
 }
 
 function overrideArrowButtons()

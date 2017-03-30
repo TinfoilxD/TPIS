@@ -770,3 +770,10 @@ FacultyType.create(job_title: 'placeholder faculty type 2')
 
 Faculty.create(first_name: 'Ashley' , last_name: 'Micheal', faculty_type_id: FacultyType.where(job_title: 'placeholder faculty type 1').first, email: 'ashmchl@hotmail.com', phone: '713-455-2309' ,  office_address: '3354 Stafford Rd.' ,  state: 'Texas' , zip_code: '77006' , country: 'United States')
 Faculty.create(first_name: 'Jessica' , last_name: 'Sheng', faculty_type_id: FacultyType.where(job_title:'placeholder faculty type 2').first, email: 'jesssheng@hotmail.com', phone: '713-333-4309' ,  office_address: '3355 Chimary Rock Rd.' ,  state: 'Texas' , zip_code: '76005' , country: 'United States')
+f3 = Faculty.create(first_name: 'Cookies', last_name: 'Cream', faculty_type_id: FacultyType.where(job_title: 'placeholder faculty type 1').first, email: 'tin@sdc.com', phone: 'num-num-yumm', office_address: 'Dark Side', state: 'Mare Solaris', zip_code: '99999', country: 'Sol')
+
+Timeslot.create(start: '2017-3-29 10:00:00',end: '2017-3-29 11:00:00', faculty_id: f3.id)
+Timeslot.create(start: '2017-3-30 10:00:00',end: '2017-3-30 11:00:00', faculty_id: f3.id)
+Timeslot.create(start: '2017-3-30 13:00:00',end: '2017-3-30 14:00:00', faculty_id: f3.id)
+Timeslot.create(start: '2017-3-31 10:00:00',end: '2017-3-31 11:00:00', faculty_id: f3.id)
+Timeslot.create(start: '2017-4-01 15:00:00',end: '2017-4-01 16:00:00', faculty_id: f3.id)

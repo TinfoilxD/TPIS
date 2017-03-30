@@ -35,4 +35,5 @@ Rails.application.routes.draw do
   get '/application_forms', to: 'application_forms#index', as: :admin_view_applications
 
   get '/timeslots/input', to: 'timeslots#input_timeslots', as: :input_available_timeslots
+  get 'timeslots/list', to: 'timeslots#list'
 end
