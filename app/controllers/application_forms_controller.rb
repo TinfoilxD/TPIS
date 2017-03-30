@@ -17,7 +17,9 @@ class ApplicationFormsController < ApplicationController
     end
     @application_form = ApplicationForm.new
 
+
   end
+
 
   # GET /application_forms/new
   def new
