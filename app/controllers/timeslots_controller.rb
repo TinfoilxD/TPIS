@@ -72,7 +72,6 @@ class TimeslotsController < ApplicationController
   end
 
 
-
   def input_timeslots
   end
 
