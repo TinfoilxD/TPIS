@@ -25,14 +25,15 @@ class TimeslotsController < ApplicationController
   # POST /timeslots.json
   def create
     @timeslot = Timeslot.new(timeslot_params)
+    @timeslot.title = 'Timeslot Available'
+    @timeslot.end = (@timeslot.start.to_time + 1.hours).to_datetime
+    @timeslot.save
 
     respond_to do |format|
       if @timeslot.save
-        format.html { redirect_to @timeslot, notice: 'Timeslot was successfully created.' }
-        format.json { render :show, status: :created, location: @timeslot }
+        format.json {render :json => @timeslot}
       else
-        format.html { render :new }
-        format.json { render json: @timeslot.errors, status: :unprocessable_entity }
+        format.json {render :status => 400}
       end
     end
   end
@@ -60,6 +61,16 @@ class TimeslotsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def delete_where
+    if params.has_key?(:start)
+      Timeslot.where(start: params[:start].to_datetime).delete_all
+      render :json => {sucess: true}
+    else
+      render :json => {sucess: false}
+    end
+  end
+
 
 
   def input_timeslots

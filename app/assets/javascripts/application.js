@@ -32,16 +32,38 @@ function setFullCalendar()
 
     $('#calendar').fullCalendar({
         dayClick: function(date, jsEvent, view) {
-            alert('Clicked on: ' + date.format());
-            alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+            eventData = {timeslot: {start: date.format()}}
+            $.ajax({
+                url: "/timeslots/create",
+                type: "POST",
+                data: eventData,
+                dataType: 'json',
+                success: function(json) {
+                    $("#calendar").fullCalendar('refetchEvents')
+                    $("#calendar").fullCalendar('rerenderEvents');
+                }
+            });
 
+        },
+        eventClick: function(calEvent, jsEvent, view) {
+            eventData = {start: calEvent.start.format()}
+            $.ajax({
+                url: "/timeslots/delete_where",
+                type: "POST",
+                data: eventData,
+                datatype: 'json',
+                success: function(json) {
+                    $("#calendar").fullCalendar('refetchEvents')
+                    $("#calendar").fullCalendar('rerenderEvents')
+                }
+            });
         },
         header: {
             left   : 'prev,next',
             center : 'title',
             right : 'none'
         },
-        eventSources: [{url : '/timeslots/list'}],
+        eventSources: [{url : '/timeslots/list', color: 'rgb(40,167,255)'}],
         defaultView: 'agendaWeek',
         slotDuration: '01:00:00',
         slotLabelInterval: '01:00:00',
@@ -50,12 +72,7 @@ function setFullCalendar()
         contentHeight: 'auto',
         allDaySlot: false,
         disableDragging: true,
-<<<<<<< HEAD
         allDayDefault: false
-=======
-
-
->>>>>>> master
     });
 
 }

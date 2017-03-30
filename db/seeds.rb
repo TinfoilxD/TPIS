@@ -799,8 +799,8 @@ ApplicationForm.create(candidate: c9,training_center_id: t1,course_id: CourseTyp
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
 
 
-Timeslot.create(start: '2017-3-29 10:00:00',end: '2017-3-29 11:00:00', faculty_id: f3.id)
-Timeslot.create(start: '2017-3-30 10:00:00',end: '2017-3-30 11:00:00', faculty_id: f3.id)
-Timeslot.create(start: '2017-3-30 13:00:00',end: '2017-3-30 14:00:00', faculty_id: f3.id)
-Timeslot.create(start: '2017-3-31 10:00:00',end: '2017-3-31 11:00:00', faculty_id: f3.id)
-Timeslot.create(start: '2017-4-01 15:00:00',end: '2017-4-01 16:00:00', faculty_id: f3.id)
+Timeslot.create(start: '2017-3-29 10:00:00', title: 'Timeslot Available', end: '2017-3-29 11:00:00', faculty_id: f3.id)
+Timeslot.create(start: '2017-3-30 10:00:00', title: 'Timeslot Available', end: '2017-3-30 11:00:00', faculty_id: f3.id)
+Timeslot.create(start: '2017-3-30 13:00:00', title: 'Timeslot Available', end: '2017-3-30 14:00:00', faculty_id: f3.id)
+Timeslot.create(start: '2017-3-31 10:00:00', title: 'Timeslot Available', end: '2017-3-31 11:00:00', faculty_id: f3.id)
+Timeslot.create(start: '2017-4-01 15:00:00', title: 'Timeslot Available', end: '2017-4-01 16:00:00', faculty_id: f3.id)
