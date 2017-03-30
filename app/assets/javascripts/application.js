@@ -50,7 +50,12 @@ function setFullCalendar()
         contentHeight: 'auto',
         allDaySlot: false,
         disableDragging: true,
+<<<<<<< HEAD
         allDayDefault: false
+=======
+
+
+>>>>>>> master
     });
 
 }
@@ -83,3 +88,5 @@ function overrideArrowButtons()
 //
 //     });
 // }
+
+

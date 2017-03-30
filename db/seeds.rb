@@ -644,19 +644,19 @@ AlignmentType.create(alignment_type: 'contract employee')
 # Begin Candidate Profiles
 
 # Daniels Candidates
-Candidate.create(email:'jessiek@gmail.com',first_name: 'Jessie' , last_name: 'Klein', address: '3010 Lake St' , phone: '713-555-2038' ,  state: 'Texas' , zipcode: '77098' , country: 'United States' , occupation: 'Massage Therapist' , alignment_type_id: '1')
-Candidate.create(email:'sarahDJ111@gmail.com' ,first_name: 'Sarah' , last_name:'Johann'  , address: '111 Ellen' , phone: '832-555-2084'  , state: 'Texas' , zipcode: '77102' , country: 'United States' , occupation: 'Physical Trainer' , alignment_type_id: '2')
-Candidate.create(email:'davjo333@yahoo.com'  ,first_name: 'David' , last_name: 'Jacques' , address: '1030 Alabama St' , phone: '832-555-3020' , fax: '281-201-2929' , state: 'Texas' , zipcode: '77084' , country: 'United States' , occupation: 'Masseuse' , alignment_type_id: '1')
-Candidate.create(email:'sissymissy55@hotmail.com' ,first_name: 'Michelle' , last_name: 'Sasser' , address: '2 Kings Way'  , phone: '281-555-2010' , state: 'Texas', zipcode: '77406' , country: 'United States' , occupation: 'Masseuse' , alignment_type_id: '2')
-Candidate.create(email:'alliecat5050@aol.com', first_name: 'Allison', last_name: 'Castilliano', address: '1500 Richmond Ave', phone: '832-555-3200', state:'Texas', zipcode: '77006', country: 'United States', occupation: 'PT' , alignment_type_id: '3')
+c1=Candidate.create(email:'jessiek@gmail.com',first_name: 'Jessie' , last_name: 'Klein', address: '3010 Lake St' , phone: '713-555-2038' ,  state: 'Texas' , zipcode: '77098' , country: 'United States' , occupation: 'Massage Therapist' , alignment_type_id: '1')
+c2=Candidate.create(email:'sarahDJ111@gmail.com' ,first_name: 'Sarah' , last_name:'Johann'  , address: '111 Ellen' , phone: '832-555-2084'  , state: 'Texas' , zipcode: '77102' , country: 'United States' , occupation: 'Physical Trainer' , alignment_type_id: '2')
+c3=Candidate.create(email:'davjo333@yahoo.com'  ,first_name: 'David' , last_name: 'Jacques' , address: '1030 Alabama St' , phone: '832-555-3020' , fax: '281-201-2929' , state: 'Texas' , zipcode: '77084' , country: 'United States' , occupation: 'Masseuse' , alignment_type_id: '1')
+c4=Candidate.create(email:'sissymissy55@hotmail.com' ,first_name: 'Michelle' , last_name: 'Sasser' , address: '2 Kings Way'  , phone: '281-555-2010' , state: 'Texas', zipcode: '77406' , country: 'United States' , occupation: 'Masseuse' , alignment_type_id: '2')
+c5=Candidate.create(email:'alliecat5050@aol.com', first_name: 'Allison', last_name: 'Castilliano', address: '1500 Richmond Ave', phone: '832-555-3200', state:'Texas', zipcode: '77006', country: 'United States', occupation: 'PT' , alignment_type_id: '3')
 # 2nd round
 
 # 1-5
-Candidate.create(email:'cpatino66@gmail.com', first_name: 'Chrissy', last_name: 'Patino', address: '1135 Terrel Hills Rd', phone: '210-555-8848', state:'Texas', zipcode: '78244', country: 'United States', occupation: 'Physical Therapy' , alignment_type_id: '1')
-Candidate.create(email:'JSimms@yahoo.com', first_name: 'Jonathan', last_name: 'Simmons', address: '1153 Densel Rd', phone: '210-555-7776', state:'Texas', zipcode: '78111', country: 'United States', occupation: 'Masseuse' , alignment_type_id: '1')
-Candidate.create(email:'acarrera6@yahoo.com', first_name: 'Alonzo', last_name: 'Carrera', address: '533 Akali Rd', phone: '210-555-2101', state:'Texas', zipcode: '78211', country: 'United States', occupation: 'BLS' , alignment_type_id: '1')
-Candidate.create(email:'alcapont45@gmail.com', first_name: 'Alex', last_name: 'Capont', address: '14003 Richmond Ave', phone: '832-555-6030', state:'Texas', zipcode: '77030', country: 'United States', occupation: 'PT' , alignment_type_id: '1')
-Candidate.create(email:'candlemandell@gmail.com', first_name: 'Joseph', last_name: 'Mandell', address: '858 Crepe St', phone: '281-555-2011', state:'Texas', zipcode: '77401', country: 'United States', occupation: 'Masseuse' , alignment_type_id: '1')
+c6=Candidate.create(email:'cpatino66@gmail.com', first_name: 'Chrissy', last_name: 'Patino', address: '1135 Terrel Hills Rd', phone: '210-555-8848', state:'Texas', zipcode: '78244', country: 'United States', occupation: 'Physical Therapy' , alignment_type_id: '1')
+c7=Candidate.create(email:'JSimms@yahoo.com', first_name: 'Jonathan', last_name: 'Simmons', address: '1153 Densel Rd', phone: '210-555-7776', state:'Texas', zipcode: '78111', country: 'United States', occupation: 'Masseuse' , alignment_type_id: '1')
+c8=Candidate.create(email:'acarrera6@yahoo.com', first_name: 'Alonzo', last_name: 'Carrera', address: '533 Akali Rd', phone: '210-555-2101', state:'Texas', zipcode: '78211', country: 'United States', occupation: 'BLS' , alignment_type_id: '1')
+c9=Candidate.create(email:'alcapont45@gmail.com', first_name: 'Alex', last_name: 'Capont', address: '14003 Richmond Ave', phone: '832-555-6030', state:'Texas', zipcode: '77030', country: 'United States', occupation: 'PT' , alignment_type_id: '1')
+c10=Candidate.create(email:'candlemandell@gmail.com', first_name: 'Joseph', last_name: 'Mandell', address: '858 Crepe St', phone: '281-555-2011', state:'Texas', zipcode: '77401', country: 'United States', occupation: 'Masseuse' , alignment_type_id: '1')
 
 # 6-10
 Candidate.create(email:'sunrisegoddess@yahoo.com', first_name: 'Sarah', last_name: 'Jones', address: '11482 Sunkissed Rd', phone: '713-555-5030', state:'Texas', zipcode: '79201', country: 'United States', occupation: 'none' , alignment_type_id: '1')
@@ -752,25 +752,52 @@ Course.create(course_type_id: CourseType.where(course_type: 'BLS').first.id,
               state: 'N/A',
               country: 'N/A',
               course_zipcode: 'N/A')
-
-TrainingCenter.create(training_center_name: 'Therapeutical Professionals',
+t1=TrainingCenter.create(training_center_name: 'Therapeutical Professionals',
                       primary_contact: 'Mary Turner',
                       phone: 'lemonade',
                       email: 'lemmings@lemonade.com')
 
-
-TrainingCenter.create(training_center_name: 'MSM Training',
+t2=TrainingCenter.create(training_center_name: 'MSM Training',
                       primary_contact: 'The Martian',
                       phone: 'N/A',
                       email: 'martian@moon.com')
 
-#Faculty
+# Faculties
+#1-2
 FacultyType.create(job_title: 'placeholder faculty type 1')
 FacultyType.create(job_title: 'placeholder faculty type 2')
 
+#1-2
 Faculty.create(first_name: 'Ashley' , last_name: 'Micheal', faculty_type_id: FacultyType.where(job_title: 'placeholder faculty type 1').first, email: 'ashmchl@hotmail.com', phone: '713-455-2309' ,  office_address: '3354 Stafford Rd.' ,  state: 'Texas' , zip_code: '77006' , country: 'United States')
 Faculty.create(first_name: 'Jessica' , last_name: 'Sheng', faculty_type_id: FacultyType.where(job_title:'placeholder faculty type 2').first, email: 'jesssheng@hotmail.com', phone: '713-333-4309' ,  office_address: '3355 Chimary Rock Rd.' ,  state: 'Texas' , zip_code: '76005' , country: 'United States')
 f3 = Faculty.create(first_name: 'Cookies', last_name: 'Cream', faculty_type_id: FacultyType.where(job_title: 'placeholder faculty type 1').first, email: 'tin@sdc.com', phone: 'num-num-yumm', office_address: 'Dark Side', state: 'Mare Solaris', zip_code: '99999', country: 'Sol')
+
+# Application Form
+#1-5
+ApplicationForm.create(candidate: c1,training_center_id: t1,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS' ,marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
+ApplicationForm.create(candidate: c2,training_center_id: t2,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS' ,marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'No' ,
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/28/2017', "%m/%d/%Y") , aha_form_agreement: 'No' )
+ApplicationForm.create(candidate: c4,training_center_id: t1,course_id: CourseType.where(course_type: 'ACLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach ACLS ' ,marketing_origin: 'Friend',teaching_frequency: '3 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/29/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
+ApplicationForm.create(candidate: c3,training_center_id: t2,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS' ,marketing_origin: 'Family',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('05/1/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
+ApplicationForm.create(candidate: c5,training_center_id: t1,course_id: CourseType.where(course_type: 'BLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach BLS' ,marketing_origin: 'Online',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('05/2/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
+
+#6-10
+
+ApplicationForm.create(candidate: c6,training_center_id: t1,course_id: CourseType.where(course_type: 'ACLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach ACLS' ,marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'Yes', teaching_location: 'Yes', screening_form_agreement: 'Yes' , date_agreed: DateTime.strptime('04/25/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
+ApplicationForm.create(candidate: c8,training_center_id: t2,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS' ,marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'No' ,
+                       public_class_availability: 'Yes', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/24/2017', "%m/%d/%Y"), aha_form_agreement: 'No' )
+ApplicationForm.create(candidate: c7,training_center_id: t1,course_id: CourseType.where(course_type: 'ACLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach ACLS ' ,marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'Yes', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/30/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
+ApplicationForm.create(candidate: c10,training_center_id: t2,course_id: CourseType.where(course_type: 'BLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach BLS' ,marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'Yes' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
+ApplicationForm.create(candidate: c9,training_center_id: t1,course_id: CourseType.where(course_type: 'BLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach BLS' ,marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
+
 
 Timeslot.create(start: '2017-3-29 10:00:00',end: '2017-3-29 11:00:00', faculty_id: f3.id)
 Timeslot.create(start: '2017-3-30 10:00:00',end: '2017-3-30 11:00:00', faculty_id: f3.id)
