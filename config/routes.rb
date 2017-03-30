@@ -33,5 +33,6 @@ Rails.application.routes.draw do
   get '/candidates/:id', to: 'candidates#show'
 
   get '/application_forms', to: 'application_forms#index', as: :admin_view_applications
+  get '/application_forms/:id', to: 'application_forms#show'
   
 end
