@@ -12,6 +12,8 @@
 
 
  <body>
+ <div id="wrapper">
+ <div class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
    <nav class="navbar navbar-inverse">
      <div class="container-fluid">
        <div class="navbar-header">
@@ -36,26 +38,8 @@
        </div>
 
        <!---- System Admin Navigation --->
-       <div class=" navbar-collapse" aria-expanded="true">
-       <ul class="nav navbar-nav">
 
-         <%if user_signed_in? and current_user.system_admin? then%>
-             <li><%= link_to 'User Controls', admin_user_controls_path%></li>
-             <li><%= link_to 'Candidate Application Forms', admin_view_applications_path%></li>
-             <li class="dropdown">
-               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Candidate <span class="caret"></span></a>
-               <ul class="dropdown-menu">
-                 <li><%= link_to 'New Candidate', new_candidate_path%></li>
-                 <li><%= link_to 'View Candidates', candidates_path%></li>
-                 <li><a href="#">Test Existing Candidate Link</a></li>
-               </ul>
-          </div>
 
-         <%end%>
-
-         </ul>
-
-         
          <!--- Candidate Navigation --->
          <ul class="nav navbar-nav">
          <%if user_signed_in? and current_user.candidate? then%>
