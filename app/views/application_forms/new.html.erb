@@ -1,5 +1,5 @@
 
-<%= render 'form', application_form: @application_form %>
+<%= render 'form', application_form: @current_application_form %>
 
 <%if user_signed_in? and current_user.system_admin? then%>|
 <%= link_to 'Back', application_forms_path %>
