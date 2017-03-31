@@ -20,7 +20,7 @@ class ApplicationFormsController < ApplicationController
     if @current_candidate.nil?
       redirect_to error_path(:error_message => 0)
     end
-    @application_form = ApplicationForm.new
+    @current_application_form = ApplicationForm.new
 
   end
 
