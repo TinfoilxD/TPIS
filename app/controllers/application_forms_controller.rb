@@ -11,7 +11,6 @@ class ApplicationFormsController < ApplicationController
   # GET /application_forms/1
   # GET /application_forms/1.json
   def show
-
   end
 
 
@@ -27,11 +26,14 @@ class ApplicationFormsController < ApplicationController
 
   # GET /application_forms/1/edit
   def edit
-    @current_candidate = Candidate.where(email: current_user.email).first
-    if @current_candidate.nil?
-      redirect_to error_path(:error_message => 0)
-    end
-    @application_form = ApplicationForm.new
+    # @current_candidate = Candidate.where(email: current_user.email).first
+    # if @current_candidate.nil?
+    #   redirect_to error_path(:error_message => 0)
+    # end
+    # @application_form = ApplicationForm.new
+
+    @current_application_form = ApplicationForm.find(params[:id])
+    @current_candidate = Candidate.where(id: @current_application_form.candidate_id).first
 
   end
 
