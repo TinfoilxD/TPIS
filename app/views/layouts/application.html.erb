@@ -34,7 +34,9 @@
          <% end %>
          </div>
        </div>
-       <div class=" navbar-collapse navbar-ex1-collapse collapse in" aria-expanded="true">
+
+       <!---- System Admin Navigation --->
+       <div class=" navbar-collapse" aria-expanded="true">
        <ul class="nav navbar-nav">
 
          <%if user_signed_in? and current_user.system_admin? then%>
@@ -53,7 +55,7 @@
 
          </ul>
          
-         
+         <!--- Candidate Navigation --->
          <ul class="nav navbar-nav">
          <%if user_signed_in? and current_user.candidate? then%>
              <li class="dropdown">
