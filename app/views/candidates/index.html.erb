@@ -30,9 +30,9 @@
         <td><%= candidate.zipcode %></td>
         <td><%= candidate.occupation %> </td>
         <td><%= candidate.alignment_type&.alignment_type %></td>
-        <td><%= link_to 'View Profile', candidate %></td>
-        <td><%= link_to 'Edit Profile', edit_candidate_path(candidate) %></td>
-        <td><%= link_to 'Delete', candidate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'View Profile', candidate , class:'btn btn-default btn-S' %></td>
+        <td><%= link_to 'Edit Profile', edit_candidate_path(candidate), class:'btn btn-default btn-S'  %></td>
+        <td><%= link_to 'Delete', candidate, method: :delete, data: { confirm: 'Are you sure?' } , class:'btn btn-default btn-S' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -43,4 +43,4 @@
 
 <br>
 
-<%= link_to 'New Candidate', new_candidate_path %> 
+<%= link_to 'New Candidate', new_candidate_path, class:'btn btn-default btn-S'  %>
