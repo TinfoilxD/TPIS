@@ -76,7 +76,7 @@ function setTimeslotCalendar()
         allDaySlot: false,
         disableDragging: true,
         allDayDefault: false,
-        timezone: 'America/Chicago'
+        timezone: 'local'
     });
 
 }
@@ -104,10 +104,10 @@ function setBookingCalendar()
         eventClick: function(calEvent, jsEvent, view)
         {
             //eventData = {appointment: {start: calEvent.start.format()}}
+
             eventDate = Date.parse((calEvent.start.format()))
-            eventDate.setTimezone('America/Chicago')
             //2017-3-29 10:00:00
-            eventData = {appointment: {start: eventDate.toString("yyyy-M-dd HH:mm:ss")}}
+            eventData = {appointment: {start: calEvent.start.format()}}
             //eventEnd = new Date(eventDate.setHours(eventDate.getHours()+1))
             //month = eventDate.getMonth() + "-"
             //dayofMonth = eventDate.getDate() + "-"
@@ -148,7 +148,7 @@ function setBookingCalendar()
         allDaySlot: false,
         disableDragging: true,
         allDayDefault: false,
-        timezone: 'America/Chicago'
+        timezone: 'local'
     });
 
 }
@@ -172,7 +172,7 @@ function setAppointmentCalendar()
         allDaySlot: false,
         disableDragging: true,
         allDayDefault: false,
-        timezone: 'America/Chicago'
+        timezone: 'local'
     });
 
 }
