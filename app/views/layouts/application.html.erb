@@ -52,6 +52,7 @@
                    <span class="sr-only">User</span>
                  </button>
                  <ul class="dropdown-menu">
+                  <%current_candidate = Candidate.where(email: current_user.email).first
                    <li><%= link_to 'View Profile', profile_show_path(Candidate.where(email: current_user.email).first)%></li>
                  </ul>
                </div>
