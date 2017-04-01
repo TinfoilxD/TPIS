@@ -2,9 +2,10 @@
 
 <h1>Application Forms</h1>
 
-
-<table>
-  <thead>
+<div class="container">
+  <div class ="container-body">
+    <table class='table table-hover'>
+      <thead>
     <tr>
       <div class="application_view_headers">
       <th>Name</th>
@@ -37,8 +38,6 @@
         <td><%= yesno(application_form.screening_form_agreement) %></td>
         <td><%= application_form.date_agreed %></td>
         <td><%= yesno(application_form.aha_form_agreement) %></td>
-      </tr>
-      <tr>
         <td class="CRUD"><%= link_to 'View Application Form', application_form, class:'btn btn-default btn-S' %></td>
         <td class="CRUD">
         <%= link_to 'Edit Profile', edit_application_form_path(application_form), class:'btn btn-default btn-S'  %>
@@ -48,5 +47,8 @@
     <% end %>
   </tbody>
 </table>
+</div>
+  </div>
+
 <br>
 <%= link_to 'New Application Form', new_application_form_path, class:'btn btn-default btn-S'  %>
