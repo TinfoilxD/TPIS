@@ -55,7 +55,10 @@
 
                  <ul class="dropdown-menu">
                    <li><%= link_to 'View Profile', profile_show_path(Candidate.where(email: current_user.email).first)%></li>
-                   <li><%= link_to 'Log out', destroy_user_session_path, method: :delete%></li>
+
+                   <li class="divider"></li>
+                   <li> <%= link_to 'Log out', destroy_user_session_path, method: :delete%></li>
+
                  </ul>
 
                </div>
