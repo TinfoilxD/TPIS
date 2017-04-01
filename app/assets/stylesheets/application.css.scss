@@ -37,6 +37,7 @@
 .navbar-nav>li{
   padding-top: 25px;
   padding-left: -10px;
+  position: relative;
 }
 
 .navbar-brand
@@ -46,5 +47,18 @@
   height: 100px;
   width: 80px;
 
+}
+
+
+.btn-group {
+  
+  right: 0;
+  left: auto;
+
+}
+
+div ul li {
+  left:auto;
+  position: relative;
 }
 
