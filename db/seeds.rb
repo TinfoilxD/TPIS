@@ -83,6 +83,8 @@ user.email = 'jessiek@gmail.com'
 user.password = 'pancakesandfl0wers'
 user.password_confirmation = 'pancakesandfl0wers'
 user.role = 'candidate'
+user.skip_confirmation!
+user.save!
 
 user = User.new
 user.email = 'freeman17.twsami@therapeuticprofessionals.com'
