@@ -14,8 +14,19 @@ class ApplicationFormsController < ApplicationController
   end
 
   def appform_candidate
-    @application_forms = ApplicationForm.all
-    #@application_form = ApplicationForm.where(candidate_id: current_user.candidate_id)
+    @current_candidate = Candidate.where(email: current_user.email).first
+    @application_forms = ApplicationForm.where(candidate_id: @current_candidate.id)
+    
+    #@application_forms = ApplicationForm.select(:candidate_id).joins(:candidate)
+    #@application_forms = ApplicationForm.where(candidate_id = current_user.candidate_id).candidate_id
+    #@application_forms = ApplicationForm.find_or_initialize_by(candidate: 2)
+    #@application_forms = ApplicationFrom.find_by_sql("SELECT * FROM application_form INNER JOIN candidate ON application_form.candidate_id = candidate.candidate_id")
+    
+    # WorkerAppt.select(:worker_id, 'count(appointment_id)').joins(:appointments).group(:worker_id).order(:worker_id)
+    # This generates the following sql:
+    # SELECT "workers"."name", count(assignments) FROM "workers"
+    # INNER JOIN "assignments" ON "assignments"."worker_id" = "workers"."id"
+    # GROUP BY "workers"."name" ORDER BY "workers"."name" ASC
   end
 
   # GET /application_forms/new

@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   
   get '/candidates/:id/edit', to: 'candidates#edit', as: :profile_edit
   get '/candidates/:id', to: 'candidates#show', as: :profile_show
-  get '/application_forms_all', to: 'application_forms#appform_candidate', as: :appform_show
+  get '/application_forms_all', to: 'application_forms#appform_candidate', as: :appform_all
 
   get '/application_forms', to: 'application_forms#index', as: :admin_view_applications
 
