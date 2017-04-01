@@ -44,6 +44,7 @@ class ApplicationFormsController < ApplicationController
 
     respond_to do |format|
       if @application_form.save
+        NotificationMailer.application_form_notification(@application_form).deliver_now
         format.html { redirect_to @application_form, notice: 'Application form was successfully created.' }
         format.json { render :show, status: :created, location: @application_form }
       else
