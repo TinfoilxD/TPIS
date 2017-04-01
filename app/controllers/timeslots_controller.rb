@@ -1,5 +1,6 @@
 class TimeslotsController < ApplicationController
   before_action :set_timeslot, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /timeslots
   # GET /timeslots.json
@@ -25,7 +26,9 @@ class TimeslotsController < ApplicationController
   # POST /timeslots.json
   def create
     @timeslot = Timeslot.new(timeslot_params)
-    @timeslot.title = 'Timeslot Available'
+    @current_faculty = Faculty.where(email: current_user.email).first
+    @timeslot.faculty_id = @current_faculty.id
+    @timeslot.title = "Timeslot Available for #{@current_faculty.full_name}"
     @timeslot.end = (@timeslot.start.to_time + 1.hours).to_datetime
     @timeslot.save
 
