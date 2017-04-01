@@ -15,7 +15,7 @@ class ApplicationFormsController < ApplicationController
 
   def appform_for_candidate
     #@application_forms = ApplicationForm.all
-    @application_form = ApplicationForm.where(candidate_id: current_user.candidate_id)
+    #@application_form = ApplicationForm.where(candidate_id: current_user.candidate_id)
   end
 
   # GET /application_forms/new
