@@ -76,6 +76,10 @@ class TimeslotsController < ApplicationController
 
 
   def input_timeslots
+    @current_faculty = Faculty.where(email: current_user.email).first
+    if @current_faculty.nil?
+      redirect_to error_path(:error_message => 1)
+    end
   end
 
   def list

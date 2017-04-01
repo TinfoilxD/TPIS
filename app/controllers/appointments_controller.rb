@@ -18,6 +18,10 @@ class AppointmentsController < ApplicationController
   end
 
   def book_appointment
+    @current_candidate = Candidate.where(email: current_user.email).first
+    if @current_candidate.nil?
+      redirect_to error_path(:error_message => 0)
+    end
   end
   # GET /appointments/new
   def new
