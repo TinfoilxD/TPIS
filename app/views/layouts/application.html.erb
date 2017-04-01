@@ -64,7 +64,7 @@
                <ul class="dropdown-menu">
                 <%current_candidate = Candidate.where(email: current_user.email).first%>
                 <%if current_candidate%>
-                 <li><%= link_to 'Edit Profile', profile_edit_path(Candidate.where(email: current_user.email).first)%></li>
+                 <li><%= link_to 'View Profile', profile_show_path(Candidate.where(email: current_user.email).first)%></li>
                  <%end%>
                </ul>
              </li>

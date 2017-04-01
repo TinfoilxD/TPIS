@@ -31,7 +31,8 @@ Rails.application.routes.draw do
   get '/book_appointment', to: 'appointments#book_appointment', as: :candidate_book_appointment
   
   get '/candidates/:id/edit', to: 'candidates#edit', as: :profile_edit
-  get '/candidates/:id', to: 'candidates#show'
+  get '/candidates/:id', to: 'candidates#show', as: :profile_show
+  
 
   get '/application_forms', to: 'application_forms#index', as: :admin_view_applications
 
