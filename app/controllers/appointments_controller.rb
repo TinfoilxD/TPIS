@@ -1,5 +1,6 @@
 class AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /appointments
   # GET /appointments.json
@@ -17,6 +18,10 @@ class AppointmentsController < ApplicationController
   end
 
   def book_appointment
+    @current_candidate = Candidate.where(email: current_user.email).first
+    if @current_candidate.nil?
+      redirect_to error_path(:error_message => 0)
+    end
   end
   # GET /appointments/new
   def new
@@ -32,8 +37,13 @@ class AppointmentsController < ApplicationController
   def create
     if params.has_key?(:appointment)
       @appointment = Appointment.new(appointment_params)
+      @selected_timeslot = Timeslot.where(start: @appointment.start.to_datetime).first
       @appointment.end = (@appointment.start.to_time + 1.hours).to_datetime
-      @appointment.title = "Placeholder Title"
+      @appointment.faculty_id = @selected_timeslot.faculty_id
+      @current_candidate = Candidate.where(email: current_user.email).first
+      @appointment.candidate_id = @current_candidate.id
+      @responsible_faculty = Faculty.find(@selected_timeslot.faculty_id)
+      @appointment.title = "Appt. for #{@current_candidate.full_name} with #{@responsible_faculty.full_name}"
       @appointment.save
       Timeslot.where(start: @appointment.start.to_datetime).delete_all
       render :json => {success: true}
