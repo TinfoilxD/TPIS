@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :appointments
   resources :faculty_types
   resources :faculties
   resources :application_forms
@@ -27,10 +28,11 @@ Rails.application.routes.draw do
   get '/user_controls/:id', to: 'user_controls#edit_user', as: :admin_user_edit
   delete '/user_controls/:id', to: 'user_controls#destroy', as: :admin_user_delete
   patch '/users_controls/:id', to: 'user_controls#update', as: :admin_user_update
-  get '/appointments/candidate_new', to: 'appointments#candidate_new', as: :candidate_new_appointment
+  get '/book_appointment', to: 'appointments#book_appointment', as: :candidate_book_appointment
   
   get '/candidates/:id/edit', to: 'candidates#edit', as: :profile_edit
-  get '/candidates/:id', to: 'candidates#show'
+  get '/candidates/:id', to: 'candidates#show', as: :profile_show
+  
 
   get '/application_forms', to: 'application_forms#index', as: :admin_view_applications
 
@@ -38,6 +40,9 @@ Rails.application.routes.draw do
   get '/timeslots/list', to: 'timeslots#list'
   post '/timeslots/create', to: 'timeslots#create'
   post '/timeslots/delete_where', to: 'timeslots#delete_where'
+  post '/book_appointment', to: 'appointments#create'
+  get '/appointments_list', to: 'appointments#list'
+  get '/appointments_calendar_list', to: 'appointments#calendar_index'
   get '/application_forms/:id', to: 'application_forms#show'
 
 end

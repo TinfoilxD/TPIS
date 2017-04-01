@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'datejs-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 # Devise for Authentication
@@ -44,6 +44,7 @@ gem 'devise'
 gem 'rolify'
 # CanCanCan for Authorization
 gem 'cancancan'
+gem 'mail'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

@@ -18,9 +18,8 @@
 
 
     <div class="field">
-    <%= f.label :candidate_id, "For Candidate: #{@current_candidate.full_name}" %>
+    <%= f.label :candidate_id, "For Candidate: #{@current_application_form.candidate&.full_name}" %>
   </div>
-
 
     <div id="ic_screening_form">
   <div class="field">
@@ -75,7 +74,7 @@
     <%= f.radio_button :teaching_location, false %>
     <%= f.label "No" %>
   </div>
-      <button type="button" id="continue_button">Continue to AHA Agreement</button>
+      <button type="button" class="btn btn-default" id="continue_button">Continue to AHA Agreement</button>
     </div>
     <div id="aha_form">
   <div class="field">
@@ -92,8 +91,8 @@ Survival and the mission of the American Heart Association in my community.
       <%= f.text_field :date_agreed %>
     </div>
       <div class="actions">
-        <button type="button" id="back_button">Back to IC Screening Form</button>
-        <%= f.submit'Submit', data: {confirm: 'By submitting this application, I acknowledge that I have answered each question completely and truthfully to the best of my ability.'} %>
+        <button type="button" class="btn btn-default" id="back_button">Back to IC Screening Form</button>
+        <%= f.submit'Submit', data: {confirm: 'By submitting this application, I acknowledge that I have answered each question completely and truthfully to the best of my ability.'} , class:'btn btn-default btn-S' %>
   </div>
       </div>
 <% end %>

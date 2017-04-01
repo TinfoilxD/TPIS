@@ -1,7 +1,12 @@
 class LandingController < ApplicationController
+  before_action :authenticate_user!
   def default_landing
   end
   def candidate_landing
+    @current_candidate = Candidate.where(email: current_user.email).first
+    if !@current_candidate
+      redirect_to new_candidate_path
+    end
   end
   def system_admin_landing
   end
@@ -22,7 +27,9 @@ class LandingController < ApplicationController
   def evaluate_error_message(error_code)
     case error_code
       when '0' then
-        return 'We did not find a candidate profile matching your account. Please create a candidate profile first.'
+        return 'We did not find a candidate profile matching your account. Please fill out your candidate profile first.'
+      when '1' then
+        return 'We did not find a faculty profile matching your account. Please fill out your faculty profile first.'
       else
         return 'Sorry. This page has encountered an error.'
     end
