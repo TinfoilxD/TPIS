@@ -14,6 +14,15 @@ user.skip_confirmation!
 user.save!
 
 user = User.new
+user.email = 'emely.sheng@gmail.com'
+user.password = 'LowdNagxlParntT5AI'
+user.password_confirmation = 'LowdNagxlParntT5AI'
+user.role = 'system_admin'
+user.skip_confirmation!
+user.save!
+
+
+user = User.new
 user.email = 'sleight@sdc.com'
 user.password = 'IOEnergyDrinkTyrantLobsters8A'
 user.password_confirmation = 'IOEnergyDrinkTyrantLobsters8A'
@@ -76,7 +85,7 @@ user.password_confirmation = 'pancakesandfl0wers'
 user.role = 'candidate'
 
 user = User.new
-user.email = 'freeman.twsami@therapeuticprofessionals.com'
+user.email = 'freeman17.twsami@therapeuticprofessionals.com'
 user.password = 'hkhihhhohi3643#'
 user.password_confirmation = 'hkhihhhohi3643#'
 user.role = 'system_admin'
