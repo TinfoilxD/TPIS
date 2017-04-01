@@ -1,15 +1,15 @@
-<h1>Main Page - Candidate View</h1>
+<h1 class="page-header">Candidate Landing Page</h1>
 
 <br>
 
-<li>
-  <!--If statement to check if a profile exists for the candidate, if not it goes to new.-->
- <% if Candidate.exists?(email: current_user.email) then %>
-      <%= link_to 'Profile', profile_edit_path(Candidate.where(email: current_user.email).first)%>
-  <%else%>
-      <%= link_to 'Profile', new_candidate_path%>
-  <%end%>
+<!--<li> -->
+  <!--If statement to check if a profile exists for the candidate, if not it goes to new. -->
+ <!-- % if Candidate.exists?(email: current_user.email) then %>-->
+      <!-- %= link_to 'Profile', profile_edit_path(Candidate.where(email: current_user.email).first)%> -->
+  <!-- %else%> -->
+      <!-- %= link_to 'Profile', new_candidate_path%> -->
+  <!-- %end%> -->
+<!--</li> -->
 
-</li>
 <li> <%= link_to 'Application', new_application_form_path%> </li>
 <li> <%= link_to 'Appointment', candidate_book_appointment_path%></li>
