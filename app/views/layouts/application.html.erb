@@ -54,8 +54,12 @@
                  </button>
 
                  <ul class="dropdown-menu">
-                  <%current_candidate = Candidate.where(email: current_user.email).first
+                  <%current_candidate = Candidate.where(email: current_user.email).first%>
+                  <%if current_candidate%>
                    <li><%= link_to 'View Profile', profile_show_path(Candidate.where(email: current_user.email).first)%></li>
+                   <li><%= link_to 'View Application', appform_show_path(Candidate.where(email: current_user.email).first)%></li>
+                   <%end%>
+                   <!--admin_view_applications_path-->
                    <li><%= link_to 'Log out', destroy_user_session_path, method: :delete%></li>
                  </ul>
 
