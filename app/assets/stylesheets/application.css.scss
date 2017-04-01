@@ -50,15 +50,21 @@
 }
 
 
-.btn-group {
-  
-  right: 0;
-  left: auto;
+.nav  {
+  margin-left: auto;
+  padding: 25px;
 
 }
 
-div ul li {
-  left:auto;
-  position: relative;
+
+.dropdown-menu .divider {
+  height:1px;
+  margin:9x 0;
+  overflow:hidden;
+  background: #e5e5e5;
 }
+
+
+
+
 
