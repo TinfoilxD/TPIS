@@ -8,6 +8,11 @@ class ApplicationFormsController < ApplicationController
     @application_forms = ApplicationForm.all
   end
 
+  def specan
+
+    @application_forms = ApplicationForm.where(candidate_id: params[:id])
+  end
+
   # GET /application_forms/1
   # GET /application_forms/1.json
   def show

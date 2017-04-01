@@ -26,7 +26,7 @@
             <td><%= candidate.occupation %> </td>
             <td><%= candidate.alignment_type&.alignment_type %></td>
             <td><%= link_to 'Create Application', admin_create_app_for_path(candidate), class:'btn btn-default btn-xs'  %></td>
-
+            <td><%= link_to 'View Applications', admin_view_all_apps_path(candidate), class:'btn btn-default btn-xs'  %></td>
           </tr>
       <% end %>
       </tbody>

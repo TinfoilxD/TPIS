@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :alignment_types
   resources :candidates
   devise_for :users
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'landing#default_landing'
   get '/error', to:'landing#error', as: :error
@@ -34,8 +35,10 @@ Rails.application.routes.draw do
   get '/candidates/:id', to: 'candidates#show', as: :profile_show
 
   # Create_Application_For task from quest log routes
+  # specan = "Specific Candidate"
   get '/createapp', to: 'candidates#createapp', as: :admin_create_app_for_index
   get '/createapp/:id/new', to: 'application_forms#new', as: :admin_create_app_for
+  get '/specan/:id', to: 'application_forms#specan', as: :admin_view_all_apps
 
   get '/application_forms', to: 'application_forms#index', as: :admin_view_applications
 
