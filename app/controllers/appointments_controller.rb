@@ -18,6 +18,10 @@ class AppointmentsController < ApplicationController
   end
 
   def book_appointment
+    @application_form = ApplicationForm.find(params[:id])
+    if @application_form.nil?
+      redirect_to error_path(:error_message => 2)
+    end
     @current_candidate = Candidate.where(email: current_user.email).first
     if @current_candidate.nil?
       redirect_to error_path(:error_message => 0)
@@ -40,10 +44,10 @@ class AppointmentsController < ApplicationController
       @selected_timeslot = Timeslot.where(start: @appointment.start.to_datetime).first
       @appointment.end = (@appointment.start.to_time + 1.hours).to_datetime
       @appointment.faculty_id = @selected_timeslot.faculty_id
-      @current_candidate = Candidate.where(email: current_user.email).first
-      @appointment.candidate_id = @current_candidate.id
+      @application_form = ApplicationForm.find(@appointment.application_form_id)
+      @candidate = Candidate.find(@application_form.candidate_id)
       @responsible_faculty = Faculty.find(@selected_timeslot.faculty_id)
-      @appointment.title = "Appt. for #{@current_candidate.full_name} with #{@responsible_faculty.full_name}"
+      @appointment.title = "Appt. for #{@candidate.full_name} with #{@responsible_faculty.full_name}"
       @appointment.save
       Timeslot.where(start: @appointment.start.to_datetime).delete_all
       render :json => {success: true}
@@ -88,6 +92,6 @@ class AppointmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def appointment_params
-      params.require(:appointment).permit(:start, :end, :candidate_id, :faculty_id)
+      params.require(:appointment).permit(:start, :end, :application_form_id, :faculty_id)
     end
 end

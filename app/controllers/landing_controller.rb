@@ -30,6 +30,8 @@ class LandingController < ApplicationController
         return 'We did not find a candidate profile matching your account. Please fill out your candidate profile first.'
       when '1' then
         return 'We did not find a faculty profile matching your account. Please fill out your faculty profile first.'
+      when '2' then
+        return 'We did not find the application form you are creating an appointment for.'
       else
         return 'Sorry. This page has encountered an error.'
     end
