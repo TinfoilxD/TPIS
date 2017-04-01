@@ -8,6 +8,10 @@ class CandidatesController < ApplicationController
     @candidates = Candidate.all
   end
 
+  def createapp
+    @candidates = Candidate.all
+  end
+
   # GET /candidates/1
   # GET /candidates/1.json
   def show
