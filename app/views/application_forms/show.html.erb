@@ -71,6 +71,7 @@
 
 
 <%= link_to 'Edit', edit_application_form_path(@application_form), class:'btn btn-default btn-S'  %> |
+<%= link_to 'Create Appointment', "/book_appointment/#{@application_form.id}", class:'btn btn-default btn-S'  %> |
 
 <%if user_signed_in? and current_user.system_admin? then%>|
 <%= link_to 'Back', application_forms_path, class:'btn btn-default btn-S'  %>

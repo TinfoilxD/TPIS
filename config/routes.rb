@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   get '/user_controls/:id', to: 'user_controls#edit_user', as: :admin_user_edit
   delete '/user_controls/:id', to: 'user_controls#destroy', as: :admin_user_delete
   patch '/users_controls/:id', to: 'user_controls#update', as: :admin_user_update
-  get '/book_appointment', to: 'appointments#book_appointment', as: :candidate_book_appointment
+  get '/book_appointment/:id', to: 'appointments#book_appointment', as: :candidate_book_appointment
   
   get '/candidates/:id/edit', to: 'candidates#edit', as: :profile_edit
   get '/candidates/:id', to: 'candidates#show', as: :profile_show

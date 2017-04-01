@@ -107,7 +107,7 @@ function setBookingCalendar()
 
             eventDate = Date.parse((calEvent.start.format()))
             //2017-3-29 10:00:00
-            eventData = {appointment: {start: calEvent.start.format()}}
+            eventData = {appointment: {start: calEvent.start.format(), application_form_id: $('#application_form_id').val()}}
             //eventEnd = new Date(eventDate.setHours(eventDate.getHours()+1))
             //month = eventDate.getMonth() + "-"
             //dayofMonth = eventDate.getDate() + "-"
