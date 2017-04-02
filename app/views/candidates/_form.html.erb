@@ -42,7 +42,10 @@
           <div class="control-group">
             <%= f.label 'State', class:'State' %>
             <div class="controls">
-              <%= f.select :state, options_for_select(us_states, "TX")%>
+              <select class="input-medium bfh-states" data-country="US">
+
+              </select>
+
             </div>
           </div>
 
@@ -93,7 +96,7 @@
 
           <div class="field">
             <%= f.label :alignment_type_id %>
-            <%= f.collection_select :alignment_type_id, AlignmentType.all, :id, :alignment_type%>
+            <%= f.collection_select(:alignment_type_id, AlignmentType.all, :id, :alignment_type) %>
           </div>
 
         </div>

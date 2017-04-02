@@ -8,6 +8,10 @@ class CandidatesController < ApplicationController
     @candidates = Candidate.all
   end
 
+  def createapp
+    @candidates = Candidate.all
+  end
+
   # GET /candidates/1
   # GET /candidates/1.json
   def show
@@ -77,7 +81,7 @@ class CandidatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def candidate_params
-      params.require(:candidate).permit(:first_name, :last_name, :address, :email, :phone, :fax, :state_id, :zipcode, :country_id, :occupation, :allignment_type_id)
+      params.require(:candidate).permit(:first_name, :last_name, :address, :email, :phone, :fax, :state, :zipcode, :country, :occupation, :alignment_type_id)
     end
 
 
