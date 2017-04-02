@@ -160,7 +160,7 @@ function setAppointmentCalendar()
         header: {
             left   : 'prev,next',
             center : 'title',
-            right : 'none'
+            right : 'agendaWeek, month'
         },
         eventSources: [{url : '/appointments_list', color: 'rgb(89,26,20)'}],
         defaultView: 'agendaWeek',
