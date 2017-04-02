@@ -85,6 +85,14 @@ class AppointmentsController < ApplicationController
   def list
     render :json => Appointment.all
   end
+
+  def bycandidate
+
+   @application_form_id = ApplicationForm.where(candidate_id: params[:id])
+
+   @appointments = Appointment.where(application_form_id: @application_form_id )
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_appointment

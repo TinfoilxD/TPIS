@@ -37,8 +37,6 @@ Rails.application.routes.draw do
 
   get '/application_forms_all', to: 'application_forms#appform_candidate', as: :appform_all
 
-  get '/application_forms_all', to: 'application_forms#appform_candidate', as: :appform_all
-
 
   # Create_Application_For task from quest log routes
   # specan = "Specific Candidate"
@@ -58,5 +56,9 @@ Rails.application.routes.draw do
   get '/appointments_list', to: 'appointments#list'
   get '/appointments_calendar_list', to: 'appointments#calendar_index'
   get '/application_forms/:id', to: 'application_forms#show'
+
+  #show appointments by candidates
+
+  get '/bycandidate/:id', to: 'appointments#bycandidate', as: :admin_view_appt_percandidate
 
 end
