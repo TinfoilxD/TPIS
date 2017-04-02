@@ -2,7 +2,9 @@
 
 <h1>Appointments</h1>
 
-<table>
+<div class="container">
+  <div class ="container-body">
+    <table class='table table-hover'>
   <thead>
     <tr>
       <th>Start</th>
@@ -26,7 +28,8 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
+  </div>
 <br>
 
 <%= link_to 'New Appointment', new_appointment_path %>
