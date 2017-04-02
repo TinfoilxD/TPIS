@@ -10,7 +10,6 @@
         <th> First name </th>
         <th> Last name </th>
         <th> Email </th>
-
         <th> Occupation</th>
         <th> Alignment type </th>
         <th colspan="3"></th>
@@ -27,6 +26,7 @@
             <td><%= candidate.alignment_type&.alignment_type %></td>
             <td><%= link_to 'Create Application', admin_create_app_for_path(candidate), class:'btn btn-default btn-xs'  %></td>
             <td><%= link_to 'View Applications', admin_view_all_apps_path(candidate), class:'btn btn-default btn-xs'  %></td>
+            <td><%= link_to 'View Appointments', admin_view_appt_percandidate_path(candidate) %> </td>
           </tr>
       <% end %>
       </tbody>
