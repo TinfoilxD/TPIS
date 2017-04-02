@@ -50,6 +50,7 @@ class AppointmentsController < ApplicationController
       @appointment.title = "Appt. for #{@candidate.full_name} with #{@responsible_faculty.full_name}"
       @appointment.save
       Timeslot.where(start: @appointment.start.to_datetime).delete_all
+      NotificationMailer.appointment_notification(@appointment).deliver_later
       render :json => {success: true}
     else
       render :json => {success: false}
