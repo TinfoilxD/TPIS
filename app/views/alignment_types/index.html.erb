@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Alignment Types</h1>
-
-<table>
+<div class="container">
+  <div class ="container-body">
+    <table class='table table-hover'>
   <thead>
     <tr>
       <th>Alignment type</th>
@@ -23,6 +24,9 @@
     <% end %>
   </tbody>
 </table>
+   </div>
+  </div>
+
 <br>
 
 <%= link_to 'New Alignment Type', new_alignment_type_path %>
