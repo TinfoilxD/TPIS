@@ -8,7 +8,10 @@
 <%= link_to 'Back', application_forms_path %>
 <%end%>
 
+
+
 <%if user_signed_in? and current_user.candidate? then%>
     <%= link_to 'Back', candidate_landing_path %>
 <%end%>
+
 

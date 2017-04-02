@@ -1,10 +1,14 @@
 
 <%= render 'form', application_form: @current_application_form %>
 
-<%if user_signed_in? and current_user.system_admin? then%>|
-<%= link_to 'Back', application_forms_path, class:'btn btn-default btn-S'  %>
+<%if user_signed_in? and current_user.system_admin? then%>
+    <%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %>
 <%end%>
 
 <%if user_signed_in? and current_user.candidate? then%>
     <%= link_to 'Back', candidate_landing_path, class:'btn btn-default btn-S'  %>
+<%end%>
+
+<%if user_signed_in? and current_user.tcf_admin? then%>
+    <%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %>
 <%end%>
