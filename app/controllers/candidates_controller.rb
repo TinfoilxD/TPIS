@@ -36,7 +36,7 @@ class CandidatesController < ApplicationController
 
     respond_to do |format|
       if @candidate.save
-          NotificationMailer.profile_notification(@candidate).deliver_now
+          NotificationMailer.profile_notification(@candidate).deliver_later
         format.html { redirect_to @candidate, notice: 'Candidate was successfully created.' }
         format.json { render :show, status: :created, location: @candidate }
       else
