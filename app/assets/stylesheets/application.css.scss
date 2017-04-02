@@ -68,9 +68,58 @@
 
 
 // Wrappers //
-
+/*
 #wrapper {
   width: 100%;
   margin-top: 50px;
 }
 
+*/
+.wrapper-alert {
+
+  padding-top: 60px;
+
+}
+
+
+.wrapper-alert.container .alter{
+
+  padding-bottom: -100px;
+  background-color: rebeccapurple;
+}
+
+
+.wrapper-alert .container .alter .alert-warning{
+
+  padding-bottom: -100px;
+  background-color: rebeccapurple;
+}
+
+/*
+.wrapper-page .container {
+   padding-top: 200px;
+
+}
+
+/*
+.container-session {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+
+.alter .alert-info{
+
+  padding-top: 30px;
+  background-color: rebeccapurple;
+}
+
+
+.alter .alert-warning{
+
+  padding-top: 100px;
+  background-color: rebeccapurple;
+}
+*/

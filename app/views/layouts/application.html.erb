@@ -53,13 +53,10 @@
                  </button>
 
                  <ul class="dropdown-menu">
-                  <%current_candidate = Candidate.where(email: current_user.email).first%>
-                  <%if current_candidate%>
+                   <%if user_signed_in? and current_user.candidate? then%>
                    <li><%= link_to 'View Profile', profile_show_path(Candidate.where(email: current_user.email).first)%></li>
-                   <li><%= link_to 'View Application', appform_all_path(Candidate.where(email: current_user.email).first)%></li>
-                   <%end%>
-                   <!--admin_view_applications_path-->
-                   <li><%= link_to 'Log out', destroy_user_session_path, method: :delete%></li>
+                       <li><%= link_to 'View Application', appform_all_path(Candidate.where(email: current_user.email).first)%></li>
+                    <%end%>
                    <li class="divider"></li>
                    <li> <%= link_to 'Log out', destroy_user_session_path, method: :delete%></li>
 
@@ -77,6 +74,7 @@
      </div>
    </nav>
 
+  <div class="wrapper-alert">
    <div class="container">
 
      <% flash.each do |key, value| %>
@@ -85,6 +83,8 @@
          </div>
      <% end %>
    </div>
+
    <%= yield %>
+  </div>
  </body>
 </html>
