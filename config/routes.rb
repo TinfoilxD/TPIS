@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   get '/candidates/:id/edit', to: 'candidates#edit', as: :profile_edit
   get '/candidates/:id', to: 'candidates#show', as: :profile_show
 
+
   get '/application_forms_all', to: 'application_forms#appform_candidate', as: :appform_all
 
 
@@ -42,6 +43,7 @@ Rails.application.routes.draw do
   get '/createapp', to: 'candidates#createapp', as: :admin_create_app_for_index
   get '/createapp/:id/new', to: 'application_forms#new', as: :admin_create_app_for
   get '/specan/:id', to: 'application_forms#specan', as: :admin_view_all_apps
+
 
 
   get '/application_forms', to: 'application_forms#index', as: :admin_view_applications
@@ -55,5 +57,8 @@ Rails.application.routes.draw do
   get '/appointments_calendar_list', to: 'appointments#calendar_index'
   get '/application_forms/:id', to: 'application_forms#show'
 
+  #show appointments by candidates
+
+  get '/bycandidate/:id', to: 'appointments#bycandidate', as: :admin_view_appt_percandidate
 
 end

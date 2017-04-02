@@ -12,30 +12,40 @@
 
  <body>
  <div id="wrapper">
- <!---<div class="navbar navbar-defult  role="navigation"> -->
-    <!---<nav class="navbar navbar-inverse bg-primary"> -->
-   <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom:0; background-color: #3f3f3f;">
-     <!div class="container-fluid">
+   <!---<div class="navbar navbar-defult  role="navigation"> -->
+   <!---<nav class="navbar navbar-inverse bg-primary"> --> <!---<div class="navbar navbar-defult  role="navigation"> -->
+   <!---<nav class="navbar navbar-inverse bg-primary"> -->
+
+
+   <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0; background-color: #3f3f3f;">
        <div class="navbar-header">
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+           <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
          <div class="navbar-brand">
            <% if user_signed_in? == false then %>
                <%=link_to root_path, class:'navbar-brand' do %>
                    <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '90px' %>
-                   <%end%>
                <%end%>
+           <%end%>
 
            <% if user_signed_in? and current_user.candidate? then%>
                <%= link_to candidate_landing_path, class: 'navbar-brand' do %>
-               <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '90px' %>
+                   <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '90px' %>
                <%end%>
            <%end%>
            <% if user_signed_in? and current_user.system_admin? then%>
-             <%= link_to system_admin_landing_path, class: 'navbar-brand' do %>
-             <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '90px' %>
+               <%= link_to system_admin_landing_path, class: 'navbar-brand' do %>
+                   <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '90px' %>
+               <% end %>
            <% end %>
-         <% end %>
          </div>
        </div>
+
+
 
 
          <!--- Candidate Navigation --->
@@ -66,6 +76,7 @@
                </div>
 
            <% else %>
+
                <li><%= link_to 'Log In', new_user_session_path,class:'btn btn-default btn-sm' %></li>
                <li><%= link_to 'Sign Up', new_user_registration_path, class:'btn btn-default btn-sm' %></li>
            <% end %>
@@ -75,17 +86,18 @@
      </div>
    </nav>
 
-  <div class="wrapper-alert">
-   <div class="container">
+  <div class="wrapper-container">
+
 
      <% flash.each do |key, value| %>
          <div class="alert alert-<%=alert_check key%>">
            <%= value %>
-         </div>
-     <% end %>
-   </div>
 
-   <%= yield %>
+     <% end %>
+    </div>
   </div>
+ </div>
+ <%= yield %>
  </body>
+
 </html>
