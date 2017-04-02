@@ -38,10 +38,23 @@
         <td><%= yesno(application_form.screening_form_agreement) %></td>
         <td><%= application_form.date_agreed %></td>
         <td><%= yesno(application_form.aha_form_agreement) %></td>
-        <td class="CRUD"><%= link_to 'View Application Form', application_form, class:'btn btn-default btn-S' %></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td class="CRUD">
-        <%= link_to 'Edit Profile', edit_application_form_path(application_form), class:'btn btn-default btn-S'  %>
-        <%= link_to 'Delete', application_form, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default btn-S'  %>
+          <%= link_to 'View Application', application_form, class:'btn btn-default btn-sm' %></td>
+        <td class="CRUD">
+          <%= link_to 'Edit Application', edit_application_form_path(application_form), class:'btn btn-default btn-sm'  %>
+        </td>
+        <td class="CRUD">
+          <%= link_to 'Delete', application_form, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default btn-sm'  %>
         </td>
       </tr>
     <% end %>
