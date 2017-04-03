@@ -24,8 +24,9 @@
             <td><%= candidate.email %></td>
             <td><%= candidate.occupation %> </td>
             <td><%= candidate.alignment_type&.alignment_type %></td>
-            <td><%= link_to 'Create Application', admin_create_app_for_path(candidate), class:'btn btn-default btn-xs'  %></td>
-            <td><%= link_to 'View Applications', admin_view_all_apps_path(candidate), class:'btn btn-default btn-xs'  %></td>
+            <td></td>
+            <td></td>
+            <td><%= link_to 'View Appointments', admin_view_appt_percandidate_path(candidate), class: 'btn btn-default btn-xs'  %> </td>
           </tr>
       <% end %>
       </tbody>
@@ -36,4 +37,4 @@
 
 <br>
 
-<%= link_to 'New Candidate', new_candidate_path, class:'btn btn-default btn-S'  %>
+<%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %>
