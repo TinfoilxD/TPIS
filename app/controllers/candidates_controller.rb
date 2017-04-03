@@ -72,6 +72,10 @@ class CandidatesController < ApplicationController
 
   #Try to create a function to check filled profile.
 
+  #Create function to load page to view candidates and then their appointments
+  def viewappt
+    @candidates = Candidate.all
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

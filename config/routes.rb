@@ -60,5 +60,7 @@ Rails.application.routes.draw do
   #show appointments by candidates
 
   get '/bycandidate/:id', to: 'appointments#bycandidate', as: :admin_view_appt_percandidate
+  get '/viewappt', to: 'candidates#viewappt', as: :admin_view_appointments_index
+
 
 end
