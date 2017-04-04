@@ -42,6 +42,11 @@
                    <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '90px' %>
                <% end %>
            <% end %>
+           <% if user_signed_in? and current_user.tcf_admin? then%>
+               <%= link_to tcf_admin_landing_path, class: 'navbar-brand' do %>
+                   <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '90px' %>
+               <% end %>
+           <% end %>
          </div>
        </div>
 
