@@ -14,7 +14,7 @@ user.skip_confirmation!
 user.save!
 
 user = User.new
-user.email = 'emely.sheng@gmail.com'
+user.email = 'sdc4375@gmail.com'
 user.password = 'LowdNagxlParntT5AI'
 user.password_confirmation = 'LowdNagxlParntT5AI'
 user.role = 'system_admin'
