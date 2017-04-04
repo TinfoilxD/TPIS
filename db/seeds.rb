@@ -858,7 +858,7 @@ Timeslot.create(start: '2017-4-08 10:00:00', title: 'Timeslot Available', end: '
 Timeslot.create(start: '2017-4-07 15:00:00', title: 'Timeslot Available', end: '2017-4-06 16:00:00', faculty_id: f1.id)
 
 
-                                                                  s
+
 # Appointment Seed Data for the c# applications
 
 # f3 time slot appointments
