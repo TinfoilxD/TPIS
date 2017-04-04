@@ -191,17 +191,12 @@ function setAppointmentCalendar()
 // }
 
 
-<script type="text/javascript">
-    $(function () {
-        $('#datetimepicker6').datetimepicker();
-        $('#datetimepicker7').datetimepicker({
-            useCurrent: false //Important! See issue #1075
-        });
-        $("#datetimepicker6").on("dp.change", function (e) {
-            $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
-        });
-        $("#datetimepicker7").on("dp.change", function (e) {
-            $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
-        });
-    });
-</script>
+
+
+
+$('#demo').daterangepicker({
+    "startDate": "03/29/2017",
+    "endDate": "04/04/2017"
+}, function(start, end, label) {
+    console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+});
