@@ -128,7 +128,7 @@ function setBookingCalendar()
 
                         $("#booking_calendar").fullCalendar('refetchEvents')
                         $("#booking_calendar").fullCalendar('rerenderEvents')
-                        //location.href = "appointments/"
+                        location.href = "/"
                     }
                 });
             }
