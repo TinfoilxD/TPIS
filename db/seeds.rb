@@ -737,32 +737,32 @@ CourseType.create([{course_type: 'BLS'},{course_type: 'HS'}, {course_type: 'ACLS
 
 Course.create(course_type_id: CourseType.where(course_type: 'BLS').first.id,
               course_start_date: DateTime.now.to_date,
-              course_address: 'That rock by the third crater',
-              course_city: 'Mare Serenitatis',
-              state: 'N/A',
-              country: 'N/A',
-              course_zipcode: 'N/A')
+              course_address: '3334 Grand Lane',
+              course_city: 'Houston',
+              state: 'TX',
+              country: 'United States',
+              course_zipcode: '77204')
 Course.create(course_type_id: CourseType.where(course_type: 'HS').first.id,
               course_start_date: DateTime.now.to_date,
-              course_address: 'That rock by the fourth crater',
-              course_city: 'Mare Serenitatis',
-              state: 'N/A',
-              country: 'N/A',
-              course_zipcode: 'N/A')
+              course_address: '5134 Bissonet Road',
+              course_city: 'Houston',
+              state: 'TX',
+              country: 'United States',
+              course_zipcode: '77004')
 Course.create(course_type_id: CourseType.where(course_type: 'ACLS').first.id,
               course_start_date: DateTime.now.to_date,
-              course_address: 'By the southern outer rim',
-              course_city: 'Mare Serenitatis',
-              state: 'N/A',
-              country: 'N/A',
-              course_zipcode: 'N/A')
+              course_address: '754 Virginia Lane',
+              course_city: 'Houston',
+              state: 'TX',
+              country: 'United States',
+              course_zipcode: '77459')
 Course.create(course_type_id: CourseType.where(course_type: 'BLS').first.id,
               course_start_date: DateTime.now.to_date,
-              course_address: 'By the highest peak',
-              course_city: 'Mare Serenitatis',
-              state: 'N/A',
-              country: 'N/A',
-              course_zipcode: 'N/A')
+              course_address: '4123 Yale Road',
+              course_city: 'Houston',
+              state: 'TX',
+              country: 'United States',
+              course_zipcode: '77022')
 t1=TrainingCenter.create(training_center_name: 'Therapeutical Professionals',
                       primary_contact: 'Mary Turner',
                       phone: 'lemonade',
