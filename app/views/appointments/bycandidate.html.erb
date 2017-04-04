@@ -1,6 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Appointments</h1>
+<% @appointments.each do |appointment| %>
+
+<% @id = appointment.application_form_id %>
+<% @fapp = ApplicationForm.find(params[:id]) %>
+<% @id = @fapp.candidate_id %>
+<% @can = Candidate.find(params[:id])%>
+<%end%>
+<h1>Appointments for <%= @can.full_name %></h1>
 
 <table>
   <thead>
@@ -14,16 +21,32 @@
   </thead>
 
   <tbody>
+
   <% @appointments.each do |appointment| %>
+
+  <!--Messy Logic to handle variables.-->
+      <% @id = appointment.faculty_id %>
+      <% @faculty = Faculty.find(params[:id]) %>
+      <% @id = appointment.application_form_id %>
+      <% @fapp = ApplicationForm.find(params[:id]) %>
+      <% @id = @fapp.candidate_id %>
+      <% @can = Candidate.find(params[:id])%>
+
+
       <tr>
-        <td><%= appointment.start %></td>
-        <td><%= appointment.end %></td>
-        <td><%= appointment.faculty_id %></td>
-        <td><%= link_to 'Show', appointment %></td>
-        <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
-        <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= appointment.start.strftime('%B %e, %H %l:%M  ') %></td>
+        <td><%= appointment.end.strftime('%B %e, %H %l:%M') %></td>
+        <td><%= @can.full_name%> </td>
+        <td><%= @faculty.full_name%></td>
+        <td><%= link_to 'Show', appointment , class:'btn btn-default btn-xs'%></td>
+        <td><%= link_to 'Edit', edit_appointment_path(appointment) ,class:'btn btn-default btn-xs'%></td>
+        <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } ,class:'btn btn-default btn-xs'%></td>
       </tr>
-  <% end %>
+
+
+  <% end %><tr>
+    <div class="h-divider"></div>
+  </tr>
   </tbody>
 </table>
 

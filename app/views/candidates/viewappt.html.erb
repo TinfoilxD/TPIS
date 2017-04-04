@@ -26,7 +26,9 @@
             <td><%= candidate.alignment_type&.alignment_type %></td>
             <td></td>
             <td></td>
-            <td><%= link_to 'View Appointments', admin_view_appt_percandidate_path(candidate), class: 'btn btn-default btn-xs'  %> </td>
+            <td>
+              <!--Logic to see if Candidate has application form -->
+              <%= link_to 'View Appointments', admin_view_appt_percandidate_path(candidate), class: 'btn btn-default btn-xs'  %> </td>
           </tr>
       <% end %>
       </tbody>
