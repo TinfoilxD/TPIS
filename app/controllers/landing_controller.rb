@@ -1,6 +1,7 @@
 class LandingController < ApplicationController
   before_action :authenticate_user!
   def default_landing
+    redirect_to pathing_path
   end
   def candidate_landing
     @current_candidate = Candidate.where(email: current_user.email).first
@@ -9,8 +10,13 @@ class LandingController < ApplicationController
     end
   end
   def system_admin_landing
+
   end
   def tcf_admin_landing
+    @current_faculty = Faculty.where(email: current_user.email).first
+    if !@current_faculty
+      redirect_to new_faculty_path
+    end
   end
   def tcf_landing
   end
