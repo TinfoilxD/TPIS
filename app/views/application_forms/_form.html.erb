@@ -54,6 +54,20 @@
     <%= f.text_area :aha_instructor_motivation, size: "60x5"%>
   </div>
   
+   <div class="field">
+    <%= f.label "Do you have any experience teaching?" %>
+    <%= f.radio_button :experience_check, true %>
+    <%= f.label "Yes" %>
+    <%= f.radio_button :experience_check, false %>
+    <%= f.label "No" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :experience_description, "If yes, please explain:" %>
+    <br>
+    <%= f.text_area :experience_description, size: "60x5"%>
+  </div>
+  
   <div class="field">
     <%= f.label "Do you have any experience teaching?" %>
     <%= f.radio_button :experience_check, true %>
