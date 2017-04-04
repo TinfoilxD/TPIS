@@ -63,4 +63,7 @@ Rails.application.routes.draw do
   get '/viewappt', to: 'candidates#viewappt', as: :admin_view_appointments_index
 
 
+  get '/report/:id', to: 'report#report', as: :report
+
+
 end
