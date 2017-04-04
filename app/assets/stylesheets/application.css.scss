@@ -65,6 +65,14 @@
   background: #e5e5e5;
 }
 
+.dropdown {
+  height:1px;
+  margin:9x 0;
+  overflow:hidden;
+  background: #e5e5e5;
+}
+
+
 
 
 // Wrappers //
@@ -128,4 +136,82 @@ p{
   background-color: rebeccapurple;
 }
 */
+
+
+.alert-warning {
+
+  padding-top: 60px;
+  padding-bottom: -90px;
+}
+
+
+
+
+// Sesssion //
+.col-md-4 {
+  position: relative;
+  min-height:1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  box-sizing: border-box;
+}
+
+
+
+.panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+
+}
+
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  color:inherit;
+
+
+}
+div {
+  display: block;
+
+}
+
+
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+
+.panel-default>.panel-heading {
+  color: #333;
+  background-color: #f5f5f5;
+  border-color: #ddd;
+}
+
+
+
+
+.panel-body {
+  padding: 15px;
+}
+
+
+fieldset {
+  padding: .35em .625em .75em;
+  margin: 0 2px;
+  border: 1px solid silver;
+
+}
+
+
+
+
+
+
 
