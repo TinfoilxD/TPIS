@@ -12,12 +12,27 @@
   <% end %>
 
 
-    <div class="field">
+    <div id="form-wrapper" style="min-height: 535px">
+      <div class="col-lg-12">
+        <h1 class="page-header">Theraputic Professionals Application </h1>
+      </div>
+      <div class="row">
+     <div class="col-lg-12">
+     <div class="panel panel-default">
+
+       <div class="panel-heading"> Applciation Screening Form </div>
+
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-lg-6">
+        <form role="form">
+
+    <div class="group-form">
       <%= f.hidden_field :candidate_id, value: @current_candidate.id %>
     </div>
 
 
-    <div class="field">
+    <div class="form-group">
     <%= f.label :candidate_id, "For Candidate: #{@current_application_form.candidate&.full_name}" %>
   </div>
 
@@ -32,10 +47,25 @@
     <%= f.collection_select :course_id, Course.all, :id, :course_identifier %>
   </div>
 
+
   <div class="field">
     <%= f.label :aha_instructor_motivation, "Why do you want to become an AHA instructor?" %>
     <br>
     <%= f.text_area :aha_instructor_motivation, size: "60x5"%>
+  </div>
+  
+  <div class="field">
+    <%= f.label "Do you have any experience teaching?" %>
+    <%= f.radio_button :experience_check, true %>
+    <%= f.label "Yes" %>
+    <%= f.radio_button :experience_check, false %>
+    <%= f.label "No" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :experience_description, "If yes, please explain:" %>
+    <br>
+    <%= f.text_area :experience_description, size: "60x5"%>
   </div>
 
   <div class="field">
@@ -46,7 +76,7 @@
 
   <div class="field">
     <%= f.label :teaching_frequency, "How often do you plan to teach your classes?" %>
-    <%= f.text_field :teaching_frequency %>
+    <%= f.text_field :teaching_frequency%>
   </div>
 
   <div class="field">
@@ -74,6 +104,7 @@
     <%= f.radio_button :teaching_location, false %>
     <%= f.label "No" %>
   </div>
+
       <button type="button" class="btn btn-default" id="continue_button">Continue to AHA Agreement</button>
     </div>
     <div id="aha_form">
@@ -88,14 +119,23 @@ Survival and the mission of the American Heart Association in my community.
   </div>
     <div class="field">
       <%= f.label :date_agreed %>
-      <%= f.text_field :date_agreed %>
+      <%= f.text_field :date_agreed, :placeholder =>"mm/dd/yyyy" %>
     </div>
       <div class="actions">
         <button type="button" class="btn btn-default" id="back_button">Back to IC Screening Form</button>
         <%= f.submit'Submit', data: {confirm: 'By submitting this application, I acknowledge that I have answered each question completely and truthfully to the best of my ability.'} , class:'btn btn-default btn-S' %>
   </div>
       </div>
+        </form>
+    </div>
+</div>
+     </div>
+     </div>
+     </div>
+      </div>
 <% end %>
+
+</div>
 
 
 
