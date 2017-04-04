@@ -50,7 +50,15 @@
 
          <!--- Candidate Navigation --->
 
+
+
+
+
+
+
+
        <div>
+
          <ul class="nav navbar-nav pull-right">
            <% if user_signed_in? %>
 
@@ -61,6 +69,7 @@
                    <span class="caret"></span>
                    <span class="sr-only">User</span>
                  </button>
+
 
                  <ul class="dropdown-menu">
                    <%signed_candidate = Candidate.where(email: current_user.email).first%>
@@ -77,8 +86,9 @@
 
            <% else %>
 
-               <li><%= link_to 'Log In', new_user_session_path,class:'btn btn-default btn-sm' %></li>
-               <li><%= link_to 'Sign Up', new_user_registration_path, class:'btn btn-default btn-sm' %></li>
+               <li><%= link_to 'Log In', new_user_session_path %></li>
+               <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+
            <% end %>
          </ul>
        </div>
