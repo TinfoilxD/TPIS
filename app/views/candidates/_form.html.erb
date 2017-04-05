@@ -28,30 +28,42 @@
         <br>
         <!--- row 2 ----------->
         <div class="row">
-          <div class="col-xs-10">
+          <div class="col-xs-8">
             <label for="address">Street address</label>
             <%=f.text_field :address, placeholder: 'Address', class: 'form-control'%>
           </div>
         </div>
 
 
+       
+
         <br>
         <!--- row 3 ----------->
-        <div class="row">
-
-          <div class="control-group">
+      <div class="row">
+          
+        <div class="col-xs-4">
+            <label for="city"> City</label>
+            <%=f.text_field :city, placeholder: 'City', class: 'form-control'%>
+        </div>
+        
+       <div class="col-xs-4">
             <%= f.label 'State', class:'State' %>
-            <div class="controls">
+        </div>
+      
+      </div>      
+      
+      
+      <div class="row">
+             <div class="controls">
+               <%= f.label :country %>
+            <%= f.select :country, options_for_select(countries, "United States")%>
+            
               <select class="input-medium bfh-states" data-country="US">
-
               </select>
-
-            </div>
-          </div>
-
-
-
-
+          </div> 
+      </div>
+        <!--<div class="control-group">-->
+        
 
 
           <div class="col-xs-4">
@@ -59,10 +71,7 @@
             <%=f.text_field :zipcode, placeholder: 'Zip Code', class: 'form-control'%>
           </div>
 
-          <div class="field">
-            <%= f.label :country %>
-            <%= f.select :country, options_for_select(countries, "United States")%>
-          </div>
+        
 
         </div>
 
