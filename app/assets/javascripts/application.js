@@ -16,6 +16,7 @@
 //= require bootstrap
 //= require moment
 //= require date
+//= require maskedinput
 //= require fullcalendar
 //= require_tree .
 
@@ -174,7 +175,6 @@ function setAppointmentCalendar()
         allDayDefault: false,
         timezone: 'local'
     });
-
 }
 
 
