@@ -14,7 +14,7 @@ user.skip_confirmation!
 user.save!
 
 user = User.new
-user.email = 'emely.sheng@gmail.com'
+user.email = 'sdc4375@gmail.com'
 user.password = 'LowdNagxlParntT5AI'
 user.password_confirmation = 'LowdNagxlParntT5AI'
 user.role = 'system_admin'
@@ -737,41 +737,38 @@ CourseType.create([{course_type: 'BLS'},{course_type: 'HS'}, {course_type: 'ACLS
 
 Course.create(course_type_id: CourseType.where(course_type: 'BLS').first.id,
               course_start_date: DateTime.now.to_date,
-              course_address: 'That rock by the third crater',
-              course_city: 'Mare Serenitatis',
-              state: 'N/A',
-              country: 'N/A',
-              course_zipcode: 'N/A')
+              course_address: '3334 Grand Lane',
+              course_city: 'Houston',
+              state: 'TX',
+              country: 'United States',
+              course_zipcode: '77204')
 Course.create(course_type_id: CourseType.where(course_type: 'HS').first.id,
               course_start_date: DateTime.now.to_date,
-              course_address: 'That rock by the fourth crater',
-              course_city: 'Mare Serenitatis',
-              state: 'N/A',
-              country: 'N/A',
-              course_zipcode: 'N/A')
+              course_address: '5134 Bissonet Road',
+              course_city: 'Houston',
+              state: 'TX',
+              country: 'United States',
+              course_zipcode: '77004')
 Course.create(course_type_id: CourseType.where(course_type: 'ACLS').first.id,
               course_start_date: DateTime.now.to_date,
-              course_address: 'By the southern outer rim',
-              course_city: 'Mare Serenitatis',
-              state: 'N/A',
-              country: 'N/A',
-              course_zipcode: 'N/A')
+              course_address: '754 Virginia Lane',
+              course_city: 'Houston',
+              state: 'TX',
+              country: 'United States',
+              course_zipcode: '77459')
 Course.create(course_type_id: CourseType.where(course_type: 'BLS').first.id,
               course_start_date: DateTime.now.to_date,
-              course_address: 'By the highest peak',
-              course_city: 'Mare Serenitatis',
-              state: 'N/A',
-              country: 'N/A',
-              course_zipcode: 'N/A')
+              course_address: '4123 Yale Road',
+              course_city: 'Houston',
+              state: 'TX',
+              country: 'United States',
+              course_zipcode: '77022')
 t1=TrainingCenter.create(training_center_name: 'Therapeutical Professionals',
                       primary_contact: 'Mary Turner',
-                      phone: 'lemonade',
-                      email: 'lemmings@lemonade.com')
+                      phone: '281-702-1243',
+                      email: 'mary.turner@therapeuticprofessionals.com')
 
-t2=TrainingCenter.create(training_center_name: 'MSM Training',
-                      primary_contact: 'The Martian',
-                      phone: 'N/A',
-                      email: 'martian@moon.com')
+
 
 # Faculties
 #1-2
@@ -787,51 +784,51 @@ f3 = Faculty.create(first_name: 'Cookies', last_name: 'Cream', faculty_type_id: 
 # Application Form
 
 
-afc2 = ApplicationForm.create(candidate: c2,training_center_id: t2,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS' ,marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'No' ,
+afc2 = ApplicationForm.create(candidate: c2,training_center_id: t1,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'No' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/28/2017', "%m/%d/%Y") , aha_form_agreement: 'No' )
-ApplicationForm.create(candidate: c2,training_center_id: t2,course_id: CourseType.where(course_type: 'BLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach BLS' ,marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'No' ,
+ApplicationForm.create(candidate: c2,training_center_id: t1,course_id: CourseType.where(course_type: 'BLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach BLS' , experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'No' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/28/2017', "%m/%d/%Y") , aha_form_agreement: 'No' )
-ApplicationForm.create(candidate: c2,training_center_id: t2,course_id: CourseType.where(course_type: 'ACLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach ACLS' ,marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'No' ,
+ApplicationForm.create(candidate: c2,training_center_id: t1,course_id: CourseType.where(course_type: 'ACLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach ACLS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'No' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/28/2017', "%m/%d/%Y") , aha_form_agreement: 'No' )
 
-afc3 = ApplicationForm.create(candidate: c3,training_center_id: t2,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS' ,marketing_origin: 'Family',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+afc3 = ApplicationForm.create(candidate: c3,training_center_id: t1,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Family',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('05/1/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
-ApplicationForm.create(candidate: c3,training_center_id: t2,course_id: CourseType.where(course_type: 'BLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS' ,marketing_origin: 'Family',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+ApplicationForm.create(candidate: c3,training_center_id: t1,course_id: CourseType.where(course_type: 'BLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Family',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('05/1/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
-ApplicationForm.create(candidate: c3,training_center_id: t2,course_id: CourseType.where(course_type: 'ACLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS' ,marketing_origin: 'Family',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+ApplicationForm.create(candidate: c3,training_center_id: t1,course_id: CourseType.where(course_type: 'ACLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Family',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('05/1/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
 
-afc5 = ApplicationForm.create(candidate: c5,training_center_id: t1,course_id: CourseType.where(course_type: 'BLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach BLS' ,marketing_origin: 'Online',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+afc5 = ApplicationForm.create(candidate: c5,training_center_id: t1,course_id: CourseType.where(course_type: 'BLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach BLS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('05/2/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
-ApplicationForm.create(candidate: c5,training_center_id: t1,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS' ,marketing_origin: 'Online',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+ApplicationForm.create(candidate: c5,training_center_id: t1,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('05/2/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
 
-afc1 = ApplicationForm.create(candidate: c1,training_center_id: t1,course_id: CourseType.where(course_type: 'BLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach BLS' ,marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+afc1 = ApplicationForm.create(candidate: c1,training_center_id: t1,course_id: CourseType.where(course_type: 'BLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach BLS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
-ApplicationForm.create(candidate: c1,training_center_id: t1,course_id: CourseType.where(course_type: 'ACLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach ACLS' ,marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+ApplicationForm.create(candidate: c1,training_center_id: t1,course_id: CourseType.where(course_type: 'ACLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach ACLS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
-ApplicationForm.create(candidate: c1,training_center_id: t1,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS' ,marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+ApplicationForm.create(candidate: c1,training_center_id: t1,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
 
-afc4 = ApplicationForm.create(candidate: c4,training_center_id: t1,course_id: CourseType.where(course_type: 'BLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach BLS ' ,marketing_origin: 'Friend',teaching_frequency: '3 weeks', owned_equipment: 'Yes' ,
+afc4 = ApplicationForm.create(candidate: c4,training_center_id: t1,course_id: CourseType.where(course_type: 'BLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach BLS ', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Friend',teaching_frequency: '3 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/29/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
-ApplicationForm.create(candidate: c4,training_center_id: t1,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS ' ,marketing_origin: 'Friend',teaching_frequency: '3 weeks', owned_equipment: 'Yes' ,
+ApplicationForm.create(candidate: c4,training_center_id: t1,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS ', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Friend',teaching_frequency: '3 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/29/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
-ApplicationForm.create(candidate: c4,training_center_id: t1,course_id: CourseType.where(course_type: 'ACLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach ACLS ' ,marketing_origin: 'Friend',teaching_frequency: '3 weeks', owned_equipment: 'Yes' ,
+ApplicationForm.create(candidate: c4,training_center_id: t1,course_id: CourseType.where(course_type: 'ACLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach ACLS ', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Friend',teaching_frequency: '3 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/29/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
 
-afc10 = ApplicationForm.create(candidate: c10,training_center_id: t2,course_id: CourseType.where(course_type: 'BLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach BLS' ,marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+afc10 = ApplicationForm.create(candidate: c10,training_center_id: t1,course_id: CourseType.where(course_type: 'BLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach BLS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'Yes' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
-ApplicationForm.create(candidate: c10,training_center_id: t2,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS' ,marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+ApplicationForm.create(candidate: c10,training_center_id: t1,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'Yes' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
-ApplicationForm.create(candidate: c10,training_center_id: t2,course_id: CourseType.where(course_type: 'ACLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach ACLS' ,marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+ApplicationForm.create(candidate: c10,training_center_id: t1,course_id: CourseType.where(course_type: 'ACLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach ACLS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'Yes' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
 
-afc9 = ApplicationForm.create(candidate: c9,training_center_id: t1,course_id: CourseType.where(course_type: 'BLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach BLS' ,marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'Yes' ,
+afc9 = ApplicationForm.create(candidate: c9,training_center_id: t1,course_id: CourseType.where(course_type: 'BLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach BLS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
-ApplicationForm.create(candidate: c9,training_center_id: t1,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS' ,marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'Yes' ,
+ApplicationForm.create(candidate: c9,training_center_id: t1,course_id: CourseType.where(course_type: 'HS').first.id, aha_instructor_motivation: 'Because I my passion is to teach HS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
-ApplicationForm.create(candidate: c9,training_center_id: t1,course_id: CourseType.where(course_type: 'ACLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach ACLS' ,marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'Yes' ,
+ApplicationForm.create(candidate: c9,training_center_id: t1,course_id: CourseType.where(course_type: 'ACLS').first.id, aha_instructor_motivation: 'Because I my passion is to teach ACLS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' )
 
 # Timeslot seed data to use for testing

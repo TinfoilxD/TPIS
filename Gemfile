@@ -42,6 +42,9 @@ gem 'datejs-rails'
 gem 'devise'
 # Rolify to supplement Devise
 gem 'rolify'
+# Masked input for phone numbers
+gem 'maskedinput-rails'
+
 # CanCanCan for Authorization
 gem 'cancancan'
 gem 'mail'
