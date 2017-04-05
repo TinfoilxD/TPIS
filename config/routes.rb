@@ -63,4 +63,6 @@ Rails.application.routes.draw do
   get '/viewappt', to: 'candidates#viewappt', as: :admin_view_appointments_index
 
   get '/report_sample_action', to: 'report#sample_action'
+  get 'report_report/',:to=>'report#report',:as=>'report_report'
+
 end

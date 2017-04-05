@@ -19,6 +19,8 @@
 //= require maskedinput
 //= require fullcalendar
 //= require_tree .
+//= require bootstrap-datetimepicker
+
 
 
 
@@ -190,13 +192,3 @@ function setAppointmentCalendar()
 //     });
 // }
 
-
-
-
-
-$('#demo').daterangepicker({
-    "startDate": "03/29/2017",
-    "endDate": "04/04/2017"
-}, function(start, end, label) {
-    console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
-});
