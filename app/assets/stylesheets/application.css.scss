@@ -108,34 +108,9 @@ p{
   margin-left: 10px;
 }
 
-/*
-.wrapper-page .container {
-   padding-top: 200px;
-
-}
-
-/*
-.container-session {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  padding-left: 60px;
-  padding-right: 60px;
-}
 
 
-.alter .alert-info{
 
-  padding-top: 30px;
-  background-color: rebeccapurple;
-}
-
-
-.alter .alert-warning{
-
-  padding-top: 100px;
-  background-color: rebeccapurple;
-}
-*/
 
 
 .alert-warning {
@@ -202,14 +177,8 @@ body {
 }
 
 
-fieldset {
-  padding: .35em .625em .75em;
-  margin: 0 2px;
-  border: 1px solid silver;
 
-}
-
-/* CSS for bycandidate view */
+/* CSS for by candidate view */
 .bycan{
 
   padding-right: 15px;
@@ -254,3 +223,33 @@ button, input, select, textarea {
 }
 
 
+ol, ul {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.navbar-collapse {
+
+  background-color:#3f3f3f ;
+
+}
+.nav {
+  padding-left:0;
+  margin-bottom:0;
+  list-style: none;
+
+}
+
+.navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+  max-height: 340px;
+}
+
+
+.container {
+  .container {
+    padding: inherit;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+}

@@ -1,19 +1,21 @@
 <!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/metisMenu/2.7.0/metisMenu.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/metisMenu/2.7.0/metisMenu.min.js"></script>
+<link rel="stylesheet" href="system_admin_landing.css.scss">
+</head>
 <html>
 <!---- System Admin Navigation --->
-<body>
+<body data-gr-c-s-loaded="true">
     <div id="wrapper">
       <!-- /.navbar-header -->
-                  <ul class="nav navbar-top-links navbar-right">
-                    <li class="dropdown">
-                    <!-- /.dropdown -->
-                  </ul>
+
+
                   <!-- /.navbar-top-links -->
-                  <div class="navbar-default  sidebar" role="navigation">
-                    <div class="sidebar-nav navbar-collapse collapse in" aria-expanded='true'>
-                      <ul class="nav nav-pills nav-stacked">
-                      <li class="sidebar-search">
-                      <div class="input-group custom-search-form">
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav side-nav">
+          <li class="active">
                             <%if user_signed_in? and current_user.system_admin? then%>
                             <li><%= link_to 'User Controls', admin_user_controls_path%></li>
                             <li><%= link_to 'Candidate Application Forms', admin_view_applications_path%></li>
@@ -29,14 +31,17 @@
                   <!-- /.navbar-static-side -->
 
 
+      <!----------- Right Display ------------------------->
+
                 <div id="page-wrapper">
                   <div class="row">
                     <div class="col-lg-12">
-                      <h1 class="page-header"> System Dashboard</h1>
+                      <h1 class="page-header">Dashboard</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                   </div>
                   <!-- /.row -->
+
                   <div class="row">
                     <div class="col-lg-3 col-md-6">
                       <div class="panel panel-primary">
@@ -133,3 +138,5 @@
       </div>
     </body>
 </html>
+
+
