@@ -29,8 +29,46 @@ $( document ).on('turbolinks:load', function() {
     setBookingCalendar()
     setAppointmentCalendar()
     overrideArrowButtons()
+    addListeners()
 });
 
+
+function addListeners()
+{
+    $('#get_security_question').click(function() {
+        userData = {email: $('#user_email').val()}
+        $.ajax({
+            url: "/user_controls/security_question_render",
+            type: "POST",
+            data: userData,
+            dataType: 'json',
+            success: function(json) {
+                $('#security_question_area').empty()
+                $('#security_question_area').append("<br> Please answer your security question: " + json.security_question +
+                "<br> <input type='text' id='security_question_answer'/>")
+                $('#submit_area').empty()
+                $('#submit_area').append("<input type='button' id='form_submission' value='Send Password Reset Email'/>")
+                $('#form_submission').click(function()
+                {
+                    userQuestionData = {email: $('#user_email').val(), answer: $('#security_question_answer').val()}
+                    $.ajax({
+                        url: '/answer_check/',
+                        type: "POST",
+                        data: userQuestionData,
+                        dataType: 'json',
+                        success: function(json) {
+                            if(json.correct == true)
+                                $('#new_user').submit()
+                            else
+                                $('#security_question_area').prepend("<div class='alert alert-danger'>Your answer is not correct.</div>")
+                        }
+                    });
+                })
+
+            }
+        })
+    })
+}
 function setTimeslotCalendar()
 {
 

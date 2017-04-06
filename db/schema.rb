@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170404234311) do
+ActiveRecord::Schema.define(version: 20170405220310) do
 
   create_table "alignment_types", force: :cascade do |t|
     t.string   "alignment_type"
@@ -146,6 +146,8 @@ ActiveRecord::Schema.define(version: 20170404234311) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.integer  "role"
+    t.integer  "security_question"
+    t.string   "security_answer"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
