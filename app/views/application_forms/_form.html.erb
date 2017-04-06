@@ -54,7 +54,7 @@
     <%= f.text_area :aha_instructor_motivation, size: "60x5"%>
   </div>
   
-  <div class="field">
+   <div class="field">
     <%= f.label "Do you have any experience teaching?" %>
     <%= f.radio_button :experience_check, true %>
     <%= f.label "Yes" %>
@@ -67,7 +67,7 @@
     <br>
     <%= f.text_area :experience_description, size: "60x5"%>
   </div>
-
+  
   <div class="field">
     <%= f.label :marketing_origin, "How did you hear about Therapeutical Professionals?" %>
     <br>
@@ -105,7 +105,7 @@
     <%= f.label "No" %>
   </div>
 
-      <button type="button" class="btn btn-default" id="continue_button">Continue to AHA Agreement</button>
+      <button type="button" class="btn btn-default" id="continue_button">Continue</button>
     </div>
     <div id="aha_form">
   <div class="field">
@@ -122,7 +122,7 @@ Survival and the mission of the American Heart Association in my community.
       <%= f.text_field :date_agreed, :placeholder =>"mm/dd/yyyy" %>
     </div>
       <div class="actions">
-        <button type="button" class="btn btn-default" id="back_button">Back to IC Screening Form</button>
+        <button type="button" class="btn btn-default" id="back_button">Back</button>
         <%= f.submit'Submit', data: {confirm: 'By submitting this application, I acknowledge that I have answered each question completely and truthfully to the best of my ability.'} , class:'btn btn-default btn-S' %>
   </div>
       </div>

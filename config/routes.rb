@@ -33,8 +33,6 @@ Rails.application.routes.draw do
   
   get '/candidates/:id/edit', to: 'candidates#edit', as: :profile_edit
   get '/candidates/:id', to: 'candidates#show', as: :profile_show
-
-
   get '/application_forms_all', to: 'application_forms#appform_candidate', as: :appform_all
 
 
@@ -62,6 +60,8 @@ Rails.application.routes.draw do
   get '/bycandidate/:id', to: 'appointments#bycandidate', as: :admin_view_appt_percandidate
   get '/viewappt', to: 'candidates#viewappt', as: :admin_view_appointments_index
 
-  get '/bycandidate/:id', to: 'appointments#bycandidate', as: :view_my_appointment
+  post '/user_controls/security_question_render', to: 'user_controls#security_question_render'
+  post '/answer_check/', to: 'user_controls#answer_check'
 
+  get '/bycandidate/:id', to: 'appointments#bycandidate', as: :view_my_appointment
 end
