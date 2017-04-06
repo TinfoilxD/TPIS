@@ -10,6 +10,10 @@ module ApplicationHelper
   def yesno(x)
     x ? "Yes" : "No"
   end
+  def security_questions
+    [['What is your favorite color?', 0],
+     ['What was the make and model of your first car?', 1]]
+  end
   def us_states
     [
         ['Alabama', 'AL'],
