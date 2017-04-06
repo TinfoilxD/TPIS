@@ -43,6 +43,18 @@
             <label for="address">Street address</label>
             <%=f.text_field :address, placeholder: 'Address', class: 'form-control'%>
           </div>
+
+          <div class="col-xs-4">
+            <label for="city">City</label>
+            <%=f.text_field :city, placeholder: 'City', class: 'form-control'%>
+          </div>
+
+          <div class="field">
+            <%= f.label 'State', class:'State' %>
+            <%= f.select :state, options_for_select(us_states, "TX")%>
+
+          </div>
+
         </div>
 
 
@@ -50,21 +62,11 @@
         <!--- row 3 ----------->
         <div class="row">
 
-          <div class="field">
-            <%= f.label 'State', class:'State' %>
-              <%= f.select :state, options_for_select(us_states, "TX")%>
-              </select>
-
-            </div>
-          </div>
-
-
-
-
           <div class="col-xs-2">
             <label for="zipcode">Zip code</label>
             <%=f.text_field :zipcode, placeholder: 'Zip Code', class: 'form-control'%>
           </div>
+
 
           <div class="field">
             <%= f.label :country %>
