@@ -17,7 +17,29 @@ class Candidate < ApplicationRecord
     return full_name
   end
 
+  def has_application?(candidate)
+    if ApplicationForm.exists?(candidate)
+      true
+    else
+      false
+    end
+  end
 
+
+
+  def has_appointment?(candidate)
+
+    if candidate.has_application?(candidate) then
+      if Appointment.exists?(ApplicationForm.find(candidate))
+        true
+      else
+        false
+      end
+    else
+      false
+    end
+
+  end
 
 end
 

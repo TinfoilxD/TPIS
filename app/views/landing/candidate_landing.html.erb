@@ -1,4 +1,5 @@
-<h1 class="page-header">Candidate Landing Page</h1>
+<p id="notice"><%= notice %></p>
+<h1 class="page-header">My Home Page</h1>
 
 <br>
 
@@ -13,9 +14,11 @@
 
 
 
-<p><%= link_to 'Application', new_application_form_path,class:'btn btn-default' %></p>
-<p><%= link_to 'Appointment',new_application_form_path,class:'btn btn-default' %></p>
+<p><%= link_to 'Application', new_application_form_path, class:'btn btn-default' %></p>
+<p><%= link_to 'My Appointment', view_my_appointment_path(@current_candidate), class:'btn btn-default' %>
 
+
+</p>
 <!--Avi: change the 'appointment' link like example 'new_application_form_path', for now for button to show-->
 
 

@@ -28,7 +28,11 @@
             <td></td>
             <td>
               <!--Logic to see if Candidate has application form -->
-              <%= link_to 'View Appointments', admin_view_appt_percandidate_path(candidate), class: 'btn btn-default btn-xs'  %> </td>
+              <% if candidate.has_appointment?(candidate) & candidate.has_application?(candidate)  %>
+                <%= link_to 'View Appointments', admin_view_appt_percandidate_path(candidate), class: 'btn btn-default btn-xs'  %>
+              <% else link_to 'View Appointments', class: 'btn btn-default btn-xs' %>
+              <% end %>
+            </td>
           </tr>
       <% end %>
       </tbody>
