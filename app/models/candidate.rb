@@ -17,8 +17,10 @@ class Candidate < ApplicationRecord
     return full_name
   end
 
+  # Check if Candidate Has Application Form
   def application?(candidate)
-    if ApplicationForm.exists?(candidate)
+    @cid = candidate.id
+    if ApplicationForm.exists?(:candidate_id => @cid)
       true
     else
       false
@@ -26,9 +28,12 @@ class Candidate < ApplicationRecord
   end
 
   def appointment?(candidate)
+    @candidate = candidate.id
 
     if candidate.application?(candidate) == true
-      if Appointment.exists?(ApplicationForm.find(candidate.id)) == true
+      @pp = ApplicationForm.where(candidate_id: candidate)
+
+      if Appointment.exists?(:application_form_id => @pp) == true
         true
       else
         false
