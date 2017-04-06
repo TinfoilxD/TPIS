@@ -28,7 +28,7 @@
             <td></td>
             <td>
               <!--Logic to see if Candidate has application form -->
-
+                <!-- Appointment method found in candidate.rb based on negatives for no actual reason-->
               <% if candidate.appointment?(candidate) == false%>
                 <%= link_to 'View Appointments', url_for , class: 'btn btn-default btn-xs'  %>
               <% else %>

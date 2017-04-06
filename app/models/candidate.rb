@@ -19,23 +19,24 @@ class Candidate < ApplicationRecord
 
   # Check if Candidate Has Application Form
   def application?(candidate)
-    @cid = candidate.id
-    if ApplicationForm.exists?(:candidate_id => @cid)
+    @cid = candidate.id # Grab Candidate ID
+    if ApplicationForm.exists?(:candidate_id => @cid) # Does an App form with their id exist?
       true
-    else
+    else # if no app form exists exit down below
       false
     end
   end
 
   def appointment?(candidate)
-    @candidate = candidate.id
+    @candidate = candidate.id # Grab Candidate ID
 
-    if candidate.application?(candidate) == true
-      @pp = ApplicationForm.where(candidate_id: candidate)
+    if candidate.application?(candidate) == true #Call application function above
+      @pp = ApplicationForm.where(candidate_id: candidate) # Find Appliation Form with Candidate ID
 
+      # Loop to check if appointment with App ID exists
       if Appointment.exists?(:application_form_id => @pp) == true
         true
-      else
+      else # No appointment with APP id exit and return false
         false
       end
     else
