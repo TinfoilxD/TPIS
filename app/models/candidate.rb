@@ -17,7 +17,7 @@ class Candidate < ApplicationRecord
     return full_name
   end
 
-  def has_application?(candidate)
+  def application?(candidate)
     if ApplicationForm.exists?(candidate)
       true
     else
@@ -25,12 +25,10 @@ class Candidate < ApplicationRecord
     end
   end
 
+  def appointment?(candidate)
 
-
-  def has_appointment?(candidate)
-
-    if candidate.has_application?(candidate) then
-      if Appointment.exists?(ApplicationForm.find(candidate))
+    if candidate.application?(candidate) == true
+      if Appointment.exists?(ApplicationForm.find(candidate.id)) == true
         true
       else
         false
@@ -38,7 +36,6 @@ class Candidate < ApplicationRecord
     else
       false
     end
-
   end
 
 end
