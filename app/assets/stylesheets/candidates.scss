@@ -10,9 +10,6 @@
 }
 
 
-
-
-
 .table td {
   text-align:left;
 }
@@ -37,11 +34,14 @@ thead {
 
 }
 
-table {
+.profile-table {
   display: table;
   border-collapse: separate;
-  border-spacing: 2px;
-  border-color: grey;
+  border-spacing: 15px;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  border-bottom-style: none;
 
 }
 
