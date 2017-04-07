@@ -75,6 +75,7 @@
 
                  <ul class="dropdown-menu">
 
+<<<<<<< Updated upstream
                    <%signed_candidate = Candidate.where(email: current_user.email).first%>
                    <%if user_signed_in? and current_user.candidate? and signed_candidate then%>
                       <li><%= link_to 'View Profile', profile_show_path(signed_candidate)%></li>
@@ -83,6 +84,10 @@
                    <li class="divider"></li>
                    <li> <%= link_to 'Log out', destroy_user_session_path, method: :delete%></li>
 
+=======
+                   <li><%= link_to 'View Profile', profile_show_path(Candidate.where(email: current_user.email).first)%></li>
+                   <li><%= link_to 'Log out', destroy_user_session_path, method: :delete%></li>
+>>>>>>> Stashed changes
                  </ul>
 
                </div>
