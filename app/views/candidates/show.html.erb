@@ -1,85 +1,110 @@
 <p id="notice"><%= notice %></p>
+<head>
+  <link rel="stylesheet" href="...app/stylesheets/candidates.scss">
+</head>
+
+<div class="profile-container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
+
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Instructor Candidate Profile</h3>
+      </div>
+
+      <div class="panel-body" >
+        <div class="row">
+          <div class="col-lg-12">
+            <table class="profile-table table-profile-information ">
+              <tbody>
+              <tr>
+                <td><strong>First name:</strong></td>
+                <td> <%= @candidate.first_name %></td>
+              </tr>
+
+              <tr>
+                <td><strong>Last name:</strong></td>
+                <td><%= @candidate.last_name %></td>
+              </tr>
+
+              <tr>
+                <td>  <strong>Address:</strong></td>
+                <td><%= @candidate.address %></td>
+              </tr>
+
+              <tr>
+                <td><strong>Email:</strong></td>
+                <td><<%= @candidate.email %>/td>
+              </tr>
+
+              <tr>
+                <td><strong>Phone:</strong></td>
+                <td><%= @candidate.phone %></td>
+              </tr>
+
+              <tr>
+                <td> <strong>Fax: </strong></td>
+                <td> <%= @candidate.fax %></td>
+              </tr>
+
+              <tr>
+                <td><strong>City:</strong></td>
+                <td><%= @candidate.city %></td>
+              </tr>
+
+              <tr>
+                <td> <strong>State:</strong></td>
+                <td> <%= @candidate.state %></td>
+              </tr>
+
+              <tr>
+                <td><strong>Zipcode:</strong></td>
+                <td> <%= @candidate.zipcode %></td>
+              </tr>
+
+              <tr>
+                <td><strong>Country:</strong></td>
+                <td> <%= @candidate.country %></td>
+              </tr>
 
 
-<div class="container">
-  <div class ="container-body">
-    <table class = "table table-hover">
-
-<p>
-  <strong>First name:</strong>
-  <%= @candidate.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @candidate.last_name %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @candidate.address %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @candidate.email %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @candidate.phone %>
-</p>
-
-<p>
-  <strong>Fax: </strong>
-  <%= @candidate.fax %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @candidate.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @candidate.state %>
-</p>
-
-<p>
-  <strong>Zipcode:</strong>
-  <%= @candidate.zipcode %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @candidate.country %>
-</p>
+              <tr>
+                <td> <strong> Occupation: </strong></td>
+                <td> <%= @candidate.occupation %></td>
+              </tr>
 
 
-<p>
-  <strong> Occupation: </strong>
-  <%= @candidate.occupation %>
-</p>
+              <tr>
+                <td><strong>Alignment type:</strong></td>
+                <td><%=@candidate.alignment_type&.alignment_type%></td>
+              </tr>
+              </tbody>
+            </table>
 
 
-<p>
-  <strong>Alignment type:</strong>
-  <%=@candidate.alignment_type&.alignment_type%>
-</p>
+            <div id="panel-footer">
 
-    </table>
+  <span class="pull-right">
+ <%= link_to 'Edit Profile', edit_candidate_path(@candidate), class:'btn btn-primary'  %>
+
+
+    <%if user_signed_in? and current_user.system_admin? then%>
+  <%= link_to 'Back', candidates_path, class:'btn btn-default btn-S'  %>
+<%end%>
+
+    <%if user_signed_in? and current_user.candidate? then%>
+  <%= link_to 'Back', candidate_landing_path , class:'btn btn-default btn-S' %>
+<%end%></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
 </div>
 
 
 
-<%= link_to 'Edit', edit_candidate_path(@candidate), class:'btn btn-default btn-S'  %> |
 
-<%if user_signed_in? and current_user.system_admin? then%>
-    <%= link_to 'Back', candidates_path, class:'btn btn-default btn-S'  %>
-<%end%>
-
-<%if user_signed_in? and current_user.candidate? then%>
-    <%= link_to 'Continue', candidate_landing_path , class:'btn btn-default btn-S' %>
-<%end%>
 
