@@ -1,6 +1,6 @@
 <h1>Editing Candidate</h1>
 
-<%= render 'form', candidate: @candidate %> 
+<%= render 'form', candidate: @candidate %>
 
 <%if user_signed_in? and current_user.system_admin? then%>
     <%= link_to 'Back', candidates_path, class:'btn btn-default btn-S'  %>

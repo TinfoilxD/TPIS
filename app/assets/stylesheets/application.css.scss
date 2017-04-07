@@ -84,6 +84,11 @@
 
 */
 
+#form-wrapper {
+  min-height: 535px;
+}
+
+
 .wrapper-container {
 
   padding-top: 60px;
@@ -147,6 +152,11 @@ p{
   font-size: 16px;
   color:inherit;
 
+  #panel-footer {
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 10px;
+  }
 
 }
 div {

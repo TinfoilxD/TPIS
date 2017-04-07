@@ -1,3 +1,78 @@
 // Place all the styles related to the candidates controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.row {
+  margin-left:0px;
+  margin-right: 0px;
+
+}
+
+
+
+
+
+.table td {
+  text-align:left;
+}
+
+
+td {
+  text-align: left;
+
+}
+
+.panel-footer {
+  border-top: 2px solid #92b2ce;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  padding: 15px;
+}
+
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+
+}
+
+table {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 2px;
+  border-color: grey;
+
+}
+
+
+.profile-container {
+
+  padding-left: 170px;
+  padding-right: 170px;
+}
+
+
+
+
+.dropdown-user:hover {
+  cursor: pointer;
+}
+
+.table-user-information > tbody > tr {
+  border-top: 1px solid rgb(221, 221, 221);
+}
+
+.table-user-information > tbody > tr:first-child {
+  border-top: 0;
+}
+
+
+.table-user-information > tbody > tr > td {
+  border-top: 0;
+}
+.toppad
+{margin-top:20px;
+}
+
+
