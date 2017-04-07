@@ -31,6 +31,7 @@ $( document ).on('turbolinks:load', function() {
     setBookingCalendar()
     setAppointmentCalendar()
     overrideArrowButtons()
+    datePickerSet()
 });
 
 function setTimeslotCalendar()
@@ -192,3 +193,36 @@ function setAppointmentCalendar()
 //     });
 // }
 
+// $('.input-group.date').datepicker({changeMonth: true,
+//     changeYear: true});
+
+
+function datePickerSet()
+{
+   $('#datetimepicker6').datetimepicker({format: 'MM/DD/YYYY'});
+   $('#datetimepicker7').datetimepicker({format: 'MM/DD/YYYY'});
+   $('#find_between_button').click(function(){
+       start_var = $('#start_value').val()
+       end_var =  $('#end_value').val()
+       ajaxData = {start: start_var, end: end_var}
+        $.ajax({
+            url: "/appointment_date_between",
+            type: "POST",
+            data: ajaxData,
+            datatype: 'json',
+            success: function(data) {
+                for(key in data) {
+                    start_date = Date.parse(data[key].start)
+                    end_date = Date.parse(data[key].end)
+
+                    $('#report_display_table').append("<tr><td></td><td></td><td></td><td></td><td>"
+                        + start_date.toString("MM/dd/yyyy") + "</td><td>"
+                        + start_date.toString("HH:mm") + "</td><td>"
+                        + end_date.toString("HH:mm") + "</td></tr>")
+                }
+
+
+            }
+        })
+    })
+}

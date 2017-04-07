@@ -62,7 +62,8 @@ Rails.application.routes.draw do
   get '/bycandidate/:id', to: 'appointments#bycandidate', as: :admin_view_appt_percandidate
   get '/viewappt', to: 'candidates#viewappt', as: :admin_view_appointments_index
 
+  get '/report_index', to: 'report#index'
   get '/report_sample_action', to: 'report#sample_action'
-  get 'report_report/',:to=>'report#report',:as=>'report_report'
+  post '/appointment_date_between', to: 'report#apply'
 
 end
