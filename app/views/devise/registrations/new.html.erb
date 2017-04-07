@@ -29,7 +29,16 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="actions">
+  <div class="field">
+    <%= f.label :security_question, 'Please choose a security question for account recovery:' %><br />
+    <%= f.select :security_question, options_for_select(security_questions)%>
+  </div>
+
+  <div class="field">
+    <%= f.label :security_answer, 'Answer:' %><br />
+    <%= f.text_field :security_answer%>
+  </div>
+            <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
