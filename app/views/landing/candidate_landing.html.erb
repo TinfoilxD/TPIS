@@ -15,15 +15,26 @@
 <!--</li> -->
 
 
+<!--Logic for displaying actions only if appointments or applications exist.-->
 
-
-<p><%= link_to 'Application', new_application_form_path, class:'btn btn-default' %></p>
-<p><%= link_to 'My Appointment', view_my_appointment_path(@current_candidate), class:'btn btn-default' %>
+<!--Normal Buttons for fresh candidate-->
+<% if @current_candidate.application?(@current_candidate) == false %>
+    <p><%= "It seems you do not have not yet applied. Click below to begin an application." %></p>
+<%end%>
 <p><%= link_to 'Click To Begin Application', new_application_form_path,class:'btn btn-default' %></p>
-<p><%= link_to 'Appointment',new_application_form_path,class:'btn btn-default' %></p>
-
-
+<!--If application exists show option for view applications nad new appointment -->
+<p>
+  <% if @current_candidate.application?(@current_candidate) %>
+      <%= link_to 'My Applications', view_my_application_path(@current_candidate.id),  class:'btn btn-default' %></p>
+  <% end %>
+<!--If candidate has appointment -->
+<p>
+  <% if @current_candidate.appointment?(@current_candidate) %>
+    <%= link_to 'My Appointments', view_my_appointment_path(@current_candidate), class:'btn btn-default' %>
+  <% end %>
 </p>
+
+
 <!--Avi: change the 'appointment' link like example 'new_application_form_path', for now for button to show-->
 
 

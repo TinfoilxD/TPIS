@@ -878,3 +878,11 @@ Appointment.create(start: '2017-4-04 14:00:00', end:'2017-4-03 15:00:00',  facul
 Appointment.create(start: '2017-4-05 13:00:00', end:'2017-4-05 14:00:00',  faculty_id:f1.id,  title:'sure is an appointment', application_form_id:afc3.id)
 Appointment.create(start: '2017-4-06 10:00:00', end:'2017-4-06 11:00:00',  faculty_id:f1.id,  title:'sure is an appointment', application_form_id:afc4.id)
 Appointment.create(start: '2017-4-06 15:00:00', end:'2017-4-06 16:00:00',  faculty_id:f1.id,  title:'sure is an appointment', application_form_id:afc5.id)
+
+user = User.new
+user.email = 'ghreek@gmail.com'
+user.password = 'slammer3'
+user.password_confirmation = 'slammer3'
+user.role = 'candidate'
+user.skip_confirmation!
+user.save!

@@ -64,4 +64,7 @@ Rails.application.routes.draw do
   post '/answer_check/', to: 'user_controls#answer_check'
 
   get '/bycandidate/:id', to: 'appointments#bycandidate', as: :view_my_appointment
+
+  # show applications by candidates
+  get '/specan/:id', to: 'application_forms#specan', as: :view_my_application
 end

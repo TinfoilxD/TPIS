@@ -2,15 +2,12 @@ class Candidate < ApplicationRecord
   belongs_to :alignment_type
   has_many :experiences
   has_many :application_forms
-  
-  
-   validates :first_name, presence: true
-   validates :last_name, presence: true
-   validates :email, presence: true
-   validates :phone, presence: true
 
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :email, presence: true
+  validates :phone, presence: true
 
-  
 
   def full_name
     full_name = "#{first_name} #{last_name}"
@@ -27,6 +24,7 @@ class Candidate < ApplicationRecord
     end
   end
 
+  # Check if candidate has appointment
   def appointment?(candidate)
     @candidate = candidate.id # Grab Candidate ID
 
@@ -39,7 +37,7 @@ class Candidate < ApplicationRecord
       else # No appointment with APP id exit and return false
         false
       end
-    else
+    else # false if application? returns false
       false
     end
   end
