@@ -82,5 +82,6 @@ Rails.application.routes.draw do
   get '/report_index', to: 'report#index'
   get '/report_sample_action', to: 'report#sample_action'
   post '/appointment_date_between', to: 'report#apply'
-
+  get 'report_candidates_by_month', to: 'report#candidates_by_month'
+  get 'report_candidates_by_allignment_type', to: 'report#candidates_by_allignment_type'
 end
