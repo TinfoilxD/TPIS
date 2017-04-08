@@ -55,7 +55,7 @@ Rails.application.routes.draw do
   get '/appointments_calendar_list', to: 'appointments#calendar_index'
   get '/application_forms/:id', to: 'application_forms#show'
 
-  #show appointments by candidates
+  # show appointments by candidates
 
   get '/bycandidate/:id', to: 'appointments#bycandidate', as: :admin_view_appt_percandidate
   get '/viewappt', to: 'candidates#viewappt', as: :admin_view_appointments_index
@@ -78,12 +78,9 @@ Rails.application.routes.draw do
 
 
 
-
-
-
-
-
   # reports
   get '/report_index', to: 'report#index'
   get '/report_sample_action', to: 'report#sample_action'
   post '/appointment_date_between', to: 'report#apply'
+
+end

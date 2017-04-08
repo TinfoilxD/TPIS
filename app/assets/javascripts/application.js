@@ -249,14 +249,22 @@ function datePickerSet()
             data: ajaxData,
             datatype: 'json',
             success: function(data) {
+                $('#report_display_table tbody tr').remove();
                 for(key in data) {
+                    candidate_first_name = data[key].cfn
+                    candidate_last_name = data[key].cln
+                    course_name = data[key].course_name
+                    faculty_name = ((data[key].ffn) + " ").concat(data[key].fln)
                     start_date = Date.parse(data[key].start)
                     end_date = Date.parse(data[key].end)
 
-                    $('#report_display_table').append("<tr><td></td><td></td><td></td><td></td><td>"
-                        + start_date.toString("MM/dd/yyyy") + "</td><td>"
-                        + start_date.toString("HH:mm") + "</td><td>"
-                        + end_date.toString("HH:mm") + "</td></tr>")
+                    $('#report_display_table tbody').append("<tr><td>"
+                        + candidate_first_name + "</td><td>"
+                        + candidate_last_name + "</td><td>"
+                        + course_name + "</td><td>"
+                        + faculty_name + "</td><td>"
+                        + start_date.toString("MM/dd/yyyy") + "</td><td>")
+
                 }
 
 
