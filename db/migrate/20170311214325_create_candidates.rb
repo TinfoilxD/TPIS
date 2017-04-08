@@ -10,7 +10,7 @@ class CreateCandidates < ActiveRecord::Migration[5.0]
       t.integer :state_id
       t.string :zipcode
       t.integer :country_id
-      t.integer :allignment_type_id
+      t.integer :alignment_type_id
 
       t.timestamps
     end
