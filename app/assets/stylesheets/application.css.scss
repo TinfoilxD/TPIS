@@ -267,9 +267,21 @@ ol, ul {
 
 }
 
-.navbar-default .navbar-nav > li > a {
-  color: #FFFFFF;
+
+// Sidebar nav hyperliniks //
+.side-nav li a {
+  color:#ffffff;
+
+  &:visited {
+    color: #BBBBBB;
+  }
+
+  &:hover {
+    color: #ffffff;
+    background-color: none;
+  }
 }
+
 
 
 

@@ -266,7 +266,7 @@ function datePickerSet()
                         + candidate_last_name + "</td><td>"
                         + course_name + "</td><td>"
                         + faculty_name + "</td><td>"
-                        + created_at.toString('mm-dd-yyyy') + "</td><td>")
+                        + created_at.toString('mm-dd-yyyy') + "</td> ")
 
                 }
 
