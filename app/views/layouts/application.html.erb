@@ -28,23 +28,23 @@
          <div class="navbar-brand">
            <% if user_signed_in? == false then %>
                <%=link_to root_path, class:'navbar-brand' do %>
-                   <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '90px' %>
+                   <%= image_tag "/TPIS_logowtext.png", class: "logolink", height: '90px' %>
                <%end%>
            <%end%>
 
            <% if user_signed_in? and current_user.candidate? then%>
                <%= link_to candidate_landing_path, class: 'navbar-brand' do %>
-                   <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '90px' %>
+                   <%= image_tag "/TPIS_logowtext.png", class: "logolink", height: '90px' %>
                <%end%>
            <%end%>
            <% if user_signed_in? and current_user.system_admin? then%>
                <%= link_to system_admin_landing_path, class: 'navbar-brand' do %>
-                   <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '90px' %>
+                   <%= image_tag "/TPIS_logowtext.png", class: "logolink", height: '90px' %>
                <% end %>
            <% end %>
            <% if user_signed_in? and current_user.tcf_admin? then%>
                <%= link_to tcf_admin_landing_path, class: 'navbar-brand' do %>
-                   <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '90px' %>
+                   <%= image_tag "/TPIS_logowtext.png", class: "logolink", height: '90px' %>
                <% end %>
            <% end %>
          </div>
@@ -60,22 +60,22 @@
 
 
 
-       <div>
+    <!--- Candidate Navigation --->
 
-         <ul class="nav navbar-nav pull-right">
-           <% if user_signed_in? %>
+    <div>
 
-               <div class="btn-group">
-                 <%= link_to current_user.email, edit_user_registration_path, class:'btn btn-default' %>
-                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                   <span class="caret"></span>
-                   <span class="sr-only">User</span>
-                 </button>
+      <ul class="nav navbar-nav pull-right">
+        <% if user_signed_in? %>
+
+            <div class="btn-group">
+              <%= link_to current_user.email, edit_user_registration_path, class:'btn btn-default' %>
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">User</span>
+              </button>
 
 
                  <ul class="dropdown-menu">
-
-<<<<<<< Updated upstream
                    <%signed_candidate = Candidate.where(email: current_user.email).first%>
                    <%if user_signed_in? and current_user.candidate? and signed_candidate then%>
                       <li><%= link_to 'View Profile', profile_show_path(signed_candidate)%></li>
@@ -84,38 +84,34 @@
                    <li class="divider"></li>
                    <li> <%= link_to 'Log out', destroy_user_session_path, method: :delete%></li>
 
-=======
-                   <li><%= link_to 'View Profile', profile_show_path(Candidate.where(email: current_user.email).first)%></li>
-                   <li><%= link_to 'Log out', destroy_user_session_path, method: :delete%></li>
->>>>>>> Stashed changes
-                 </ul>
+              </ul>
 
-               </div>
+            </div>
 
-           <% else %>
+        <% else %>
 
-               <li><%= link_to 'Log In', new_user_session_path %></li>
-               <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+            <li><%= link_to 'Log In', new_user_session_path %></li>
+            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
 
-           <% end %>
-         </ul>
-       </div>
+        <% end %>
+      </ul>
+    </div>
 
-   </nav>
+  </nav>
 
 
   <div class="wrapper-container">
 
 
-     <% flash.each do |key, value| %>
-         <div class="alert alert-<%=alert_check key%>">
-           <%= value %>
+    <% flash.each do |key, value| %>
+        <div class="alert alert-<%=alert_check key%>">
+          <%= value %>
 
-     <% end %>
+    <% end %>
     </div>
   </div>
- </div>
- <%= yield %>
- </body>
+</div>
+<%= yield %>
+</body>
 
 </html>

@@ -61,12 +61,29 @@ Rails.application.routes.draw do
   get '/viewappt', to: 'candidates#viewappt', as: :admin_view_appointments_index
 
 
-  get '/report_index', to: 'report#index'
-  get '/report_sample_action', to: 'report#sample_action'
-  post '/appointment_date_between', to: 'report#apply'
-
-
   post '/user_controls/security_question_render', to: 'user_controls#security_question_render'
   post '/answer_check/', to: 'user_controls#answer_check'
 
-end
+
+  get '/bycandidate/:id', to: 'appointments#bycandidate', as: :view_my_appointment
+
+  # show applications by candidates
+  get '/specan/:id', to: 'application_forms#specan', as: :view_my_application
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  # reports
+  get '/report_index', to: 'report#index'
+  get '/report_sample_action', to: 'report#sample_action'
+  post '/appointment_date_between', to: 'report#apply'

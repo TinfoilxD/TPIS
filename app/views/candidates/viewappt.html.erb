@@ -28,7 +28,13 @@
             <td></td>
             <td>
               <!--Logic to see if Candidate has application form -->
-              <%= link_to 'View Appointments', admin_view_appt_percandidate_path(candidate), class: 'btn btn-default btn-xs'  %> </td>
+                <!-- Appointment method found in candidate.rb based on negatives for no actual reason-->
+              <% if candidate.appointment?(candidate) == false%>
+                <%= link_to 'View Appointments', url_for , class: 'btn btn-default btn-xs'  %>
+              <% else %>
+                <%=  link_to 'View Appointments',admin_view_appt_percandidate_path(candidate) , class: 'btn btn-default btn-xs' %>
+              <% end %>
+            </td>
           </tr>
       <% end %>
       </tbody>
