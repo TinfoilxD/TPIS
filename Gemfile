@@ -44,7 +44,8 @@ gem 'devise'
 gem 'rolify'
 # Masked input for phone numbers
 gem 'maskedinput-rails'
-
+#Gem for creating charts
+gem 'chartkick'
 # CanCanCan for Authorization
 gem 'cancancan'
 gem 'mail'

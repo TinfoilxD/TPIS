@@ -37,4 +37,10 @@ class ReportController < ApplicationController
     render :json => results
   end
 
+  def candidates_by_month
+
+  end
+  def candidates_by_allignment_type
+
+  end
 end
