@@ -17,16 +17,11 @@ class ReportController < ApplicationController
     formatted_start_time = parsed_start_time.strftime("%Y/%m/%d")
     formatted_end_time = parsed_end_time.strftime("%Y/%m/%d")
     @appointments = Appointment.where(:start => formatted_start_time.to_date.beginning_of_day..formatted_end_time.to_date.end_of_day)
-
-    records_array = ActiveRecord::Base.connection.execute( Appointment.joins(:category, :comments))
-
-
     render :json => @appointments
 
-
+    records_array = ActiveRecord::Base.connection.execute( Report.joins(:appoitnment, :candidate, :course))
 
 
   end
 
 end
-4

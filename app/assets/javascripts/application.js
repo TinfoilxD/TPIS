@@ -31,11 +31,8 @@ $( document ).on('turbolinks:load', function() {
     setBookingCalendar()
     setAppointmentCalendar()
     overrideArrowButtons()
-<<<<<<< HEAD
     datePickerSet()
-=======
     addListeners()
->>>>>>> 43e72754b594fe3546caa0c6f007b98fe55c1766
 });
 
 
