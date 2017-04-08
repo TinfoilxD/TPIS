@@ -21,14 +21,10 @@
     <%= f.datetime_select :end %>
   </div>
 
-  <div class="field">
-    <%= f.label :candidate_id %>
-    <%= f.number_field :candidate_id %>
-  </div>
 
   <div class="field">
     <%= f.label :faculty_id %>
-    <%= f.number_field :faculty_id %>
+    <%= collection_select(:appointment, :faculty_id, Faculty.all, :id, :full_name )  %>
   </div>
 
   <div class="actions">

@@ -10,11 +10,8 @@
   <tbody>
 
 
-
-    <%= link_to 'Staff', staff_path, class: 'link-to-text-color'  %>
-
-
-  <%= link_to 'Candidate', candidate_role_path, class: 'link-to-text-color'  %>
+<p><%= link_to 'Staff', staff_path, class:'btn btn-default btn-xs'  %>
+<%= link_to 'Candidate', candidate_role_path, class:'btn btn-default btn-xs'  %></p>
 
 <%@users.each do |user|%>
     <%=render 'user', user: user%>
@@ -22,3 +19,6 @@
 
 </tbody>
 </table>
+
+
+
