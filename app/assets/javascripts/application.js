@@ -19,6 +19,8 @@
 //= require maskedinput
 //= require fullcalendar
 //= require_tree .
+//= require bootstrap-datetimepicker
+
 
 
 
@@ -29,6 +31,7 @@ $( document ).on('turbolinks:load', function() {
     setBookingCalendar()
     setAppointmentCalendar()
     overrideArrowButtons()
+    datePickerSet()
     addListeners()
 });
 
@@ -228,4 +231,45 @@ function setAppointmentCalendar()
 //     });
 // }
 
+// $('.input-group.date').datepicker({changeMonth: true,
+//     changeYear: true});
 
+
+function datePickerSet()
+{
+   $('#datetimepicker6').datetimepicker({format: 'MM/DD/YYYY'});
+   $('#datetimepicker7').datetimepicker({format: 'MM/DD/YYYY'});
+   $('#find_between_button').click(function(){
+       start_var = $('#start_value').val()
+       end_var =  $('#end_value').val()
+       ajaxData = {start: start_var, end: end_var}
+        $.ajax({
+            url: "/appointment_date_between",
+            type: "POST",
+            data: ajaxData,
+            datatype: 'json',
+            success: function(data) {
+                $('#report_display_table tbody tr').remove();
+                for(key in data) {
+                    candidate_first_name = data[key].cfn
+                    candidate_last_name = data[key].cln
+                    course_name = data[key].course_name
+                    faculty_name = ((data[key].ffn) + " ").concat(data[key].fln)
+                    //2017-04-06 19:09:39.719376
+                    created_at_substring = (data[key].created_at).substring(0,10)
+                    created_at = Date.parseExact(created_at_substring, 'yyyy-mm-dd')
+
+                    $('#report_display_table tbody').append("<tr><td>"
+                        + candidate_first_name + "</td><td>"
+                        + candidate_last_name + "</td><td>"
+                        + course_name + "</td><td>"
+                        + faculty_name + "</td><td>"
+                        + created_at.toString('mm-dd-yyyy') + "</td><td>")
+
+                }
+
+
+            }
+        })
+    })
+}
