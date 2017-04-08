@@ -20,6 +20,8 @@ pre {
   font-size: 11px;
 }
 
+// hyperlink color control //
+
 a {
   color: #000;
 
@@ -28,10 +30,14 @@ a {
   }
 
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: none;
+    background-color: none;
   }
 }
+
+
+
+
 
 th {
   padding-bottom: 5px;

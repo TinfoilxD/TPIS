@@ -1,6 +1,6 @@
 <div class="container">
   <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-    <div class="panel panel-info" >
+    <div class="panel panel-primary" >
       <div class="panel-heading">
         <div class="panel-title">Sign Up</div>
       </div>
@@ -30,7 +30,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :security_question, 'Please choose a security question for account recovery:' %><br />
+    <%= f.label :security_question, 'Please choose a password reset question:' %><br />
     <%= f.select :security_question, options_for_select(security_questions)%>
   </div>
 
@@ -39,7 +39,7 @@
     <%= f.text_field :security_answer%>
   </div>
             <div class="actions">
-    <%= f.submit "Sign up" %>
+              <button type="submit" class="btn btn-primary">Sign up</button>
   </div>
 <% end %>
 
