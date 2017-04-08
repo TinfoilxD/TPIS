@@ -196,7 +196,7 @@ body {
   text-decoration: none;
 }
 
-.side-nav>li>ul>li>a:hover {
+.side-nav>ul>li>a:hover {
   color: red;
 }
 
@@ -206,4 +206,7 @@ body {
   .side-nav{right:auto;left: 0;}
 }
 
+.navbar-collapse .nav ul li {
+  color:red;
 
+}

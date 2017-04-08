@@ -235,6 +235,7 @@ button, input, select, textarea {
   line-height: inherit;
 }
 
+
 ol, ul {
   margin-top: 0;
   margin-bottom: 10px;
@@ -265,3 +266,23 @@ ol, ul {
   }
 
 }
+
+
+// Sidebar nav hyperliniks //
+.side-nav li a {
+  color:#ffffff;
+
+  &:visited {
+    color: #BBBBBB;
+  }
+
+  &:hover {
+    color: #ffffff;
+    background-color: none;
+  }
+}
+
+
+
+
+
