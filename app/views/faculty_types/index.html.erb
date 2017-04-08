@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Job title</th>
+      <th>Faculty Type Title</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,15 +13,18 @@
   <tbody>
     <% @faculty_types.each do |faculty_type| %>
       <tr>
-        <td><%= faculty_type.job_title %></td>
-        <td><%= link_to 'Show', faculty_type %></td>
-        <td><%= link_to 'Edit', edit_faculty_type_path(faculty_type) %></td>
-        <td><%= link_to 'Destroy', faculty_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><p><%= faculty_type.job_title %></p></td>
+        <td><p><%= link_to 'Show', faculty_type, class:'btn btn-default btn-xs' %></p></td>
+        <td><p><%= link_to 'Edit', edit_faculty_type_path(faculty_type), class:'btn btn-default btn-xs' %></p></td>
+        <td><p><%= link_to 'Delete', faculty_type, method: :delete, class:'btn btn-default btn-xs', data: { confirm: 'Are you sure?' } %></p></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Faculty Type', new_faculty_type_path %>
+  <p>
+    <%= link_to 'New Faculty Type', new_faculty_type_path, class:'btn btn-default btn-S' %>
+    |
+    <%= link_to 'Back', admin_crud_path, class:'btn btn-default btn-S' %>
+  </p>

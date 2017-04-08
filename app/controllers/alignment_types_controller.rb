@@ -7,17 +7,17 @@ class AlignmentTypesController < ApplicationController
     @alignment_types = AlignmentType.all
   end
 
-  # GET /allignment_types/1
-  # GET /allignment_types/1.json
+  # GET /alignment_types/1
+  # GET /alignment_types/1.json
   def show
   end
 
-  # GET /allignment_types/new
+  # GET /alignment_types/new
   def new
     @alignment_type = AlignmentType.new
   end
 
-  # GET /allignment_types/1/edit
+  # GET /alignment_types/1/edit
   def edit
   end
 

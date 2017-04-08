@@ -7,7 +7,7 @@
 
 <p>
   <strong>Course start date:</strong>
-  <%= @course.course_start_date %>
+  <%= @course.course_start_date.strftime('%B %e, %Y') %>
 </p>
 
 <p>
@@ -35,5 +35,5 @@
   <%= @course.course_zipcode %>
 </p>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+<%= link_to 'Edit', edit_course_path(@course), class:'btn btn-default btn-xs' %> |
+<%= link_to 'Back', courses_path, class:'btn btn-default btn-xs' %>
