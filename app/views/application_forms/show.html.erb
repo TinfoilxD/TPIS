@@ -20,13 +20,13 @@
 </p>
 
 <p>
-  <strong>Aha instructor motivation:</strong>
+  <strong>AHA instructor motivation:</strong>
   <%= @application_form.aha_instructor_motivation %>
 </p>
 
 <p>
   <strong>Experience:</strong>
-  <%= @application_form.experience_check %>
+  <%= yesno(@application_form.experience_check)%>
 </p>
 
 <p>
@@ -46,23 +46,23 @@
 
 <p>
   <strong>Owned equipment:</strong>
-  <%= @application_form.owned_equipment %>
+  <%= yesno(@application_form.owned_equipment) %>
 </p>
 
 <p>
   <strong>Class availability:</strong>
-  <%= @application_form.public_class_availability %>
+  <%= yesno(@application_form.public_class_availability) %>
 </p>
 
 
 <p>
   <strong>Teaching location:</strong>
-  <%= @application_form.teaching_location %>
+  <%= yesno(@application_form.teaching_location) %>
 </p>
 
 <p>
   <strong>Screening form agreement:</strong>
-  <%= @application_form.screening_form_agreement %>
+  <%= yesno(@application_form.screening_form_agreement) %>
 </p>
 
 <p>
@@ -71,8 +71,8 @@
 </p>
 
 <p>
-  <strong>Aha form agreement:</strong>
-  <%= @application_form.aha_form_agreement %>
+  <strong>AHA form agreement:</strong>
+  <%= yesno(@application_form.aha_form_agreement) %>
 </p>
 
     </table>

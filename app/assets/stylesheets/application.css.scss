@@ -15,8 +15,11 @@
  *= require_self
  */
 
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'bootstrap-datetimepicker';
+
 
 .fc-agendaWeek-view tr
 {
@@ -232,7 +235,6 @@ button, input, select, textarea {
   line-height: inherit;
 }
 
-
 ol, ul {
   margin-top: 0;
   margin-bottom: 10px;
@@ -263,8 +265,3 @@ ol, ul {
   }
 
 }
-
-
-
-
-
