@@ -18,6 +18,8 @@
 //= require date
 //= require maskedinput
 //= require fullcalendar
+//= require Chart.bundle
+//= require chartkick
 //= require_tree .
 //= require bootstrap-datetimepicker
 
