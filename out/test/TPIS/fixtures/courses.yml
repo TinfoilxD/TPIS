@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course_type_id: 1
+  course_start_date: 2017-03-15
+  course_address: MyString
+  course_city: MyString
+  state: MyString
+  country: MyString
+  course_zipcode: MyString
+
+two:
+  course_type_id: 1
+  course_start_date: 2017-03-15
+  course_address: MyString
+  course_city: MyString
+  state: MyString
+  country: MyString
+  course_zipcode: MyString

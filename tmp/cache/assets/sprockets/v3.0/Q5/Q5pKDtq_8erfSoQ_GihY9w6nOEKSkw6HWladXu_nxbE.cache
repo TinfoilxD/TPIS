@@ -1,0 +1,9 @@
+I"—(function() {
+  $(document).on('turbolinks:load', function() {
+    return $('#faculty_phone').mask("(999) 999-9999");
+  });
+
+  return;
+
+}).call(this);
+:ET

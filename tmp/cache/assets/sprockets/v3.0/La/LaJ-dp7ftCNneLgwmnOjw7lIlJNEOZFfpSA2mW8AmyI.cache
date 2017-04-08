@@ -1,0 +1,25 @@
+I"(function() {
+  var show_aha_form, show_ic_screening_form;
+
+  $(document).on('turbolinks:load', function() {
+    $("#aha_form").hide();
+    $("#continue_button").click(function() {
+      return show_aha_form();
+    });
+    $("#back_button").click(function() {
+      return show_ic_screening_form();
+    });
+  });
+
+  show_aha_form = function() {
+    $("#ic_screening_form").hide();
+    $("#aha_form").show();
+  };
+
+  show_ic_screening_form = function() {
+    $("#ic_screening_form").show();
+    $("#aha_form").hide();
+  };
+
+}).call(this);
+:ET

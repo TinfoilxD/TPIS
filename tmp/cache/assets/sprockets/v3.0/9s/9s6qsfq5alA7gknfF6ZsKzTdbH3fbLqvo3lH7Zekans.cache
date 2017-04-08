@@ -1,0 +1,10 @@
+I"É(function() {
+  $(document).on('turbolinks:load', function() {
+    $('#candidate_phone').mask("(999) 999-9999");
+    return $('#candidate_fax').mask("(999) 999-9999");
+  });
+
+  return;
+
+}).call(this);
+:ET
