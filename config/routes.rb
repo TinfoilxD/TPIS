@@ -79,7 +79,7 @@ Rails.application.routes.draw do
 
 
   # reports
-  get '/report_index', to: 'report#index'
+  get '/candidate_created_appointments_by_date', to: 'report#index'
   get '/report_sample_action', to: 'report#sample_action'
   post '/appointment_date_between', to: 'report#apply'
 

@@ -255,15 +255,16 @@ function datePickerSet()
                     candidate_last_name = data[key].cln
                     course_name = data[key].course_name
                     faculty_name = ((data[key].ffn) + " ").concat(data[key].fln)
-                    start_date = Date.parse(data[key].start)
-                    end_date = Date.parse(data[key].end)
+                    //2017-04-06 19:09:39.719376
+                    created_at_substring = (data[key].created_at).substring(0,10)
+                    created_at = Date.parseExact(created_at_substring, 'yyyy-mm-dd')
 
                     $('#report_display_table tbody').append("<tr><td>"
                         + candidate_first_name + "</td><td>"
                         + candidate_last_name + "</td><td>"
                         + course_name + "</td><td>"
                         + faculty_name + "</td><td>"
-                        + start_date.toString("MM/dd/yyyy") + "</td><td>")
+                        + created_at.toString('mm-dd-yyyy') + "</td><td>")
 
                 }
 
