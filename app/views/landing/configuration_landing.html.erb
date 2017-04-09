@@ -1,0 +1,135 @@
+<html>
+<!---- System Admin Navigation --->
+<body data-gr-c-s-loaded="true">
+<div id="wrapper">
+  <!-- /.navbar-header -->
+
+
+  <!-- /.navbar-top-links -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav side-nav">
+
+      <%if user_signed_in? and current_user.system_admin? then%>
+          <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
+          <li><%= link_to 'User Controls', admin_user_controls_path%></li>
+          <li><%= link_to 'Candidate Application Forms', admin_view_applications_path%></li>
+          <li><%= link_to 'New Candidate', new_candidate_path%></li>
+          <li><%= link_to 'Input Available Times', input_available_timeslots_path%></li>
+          <li><%= link_to 'View Appointments', appointments_calendar_list_path%></li>
+          <li><%= link_to 'Reports', reports_landing_path%></li>
+          <li><%= link_to 'Configurations', admin_configurations_path%></li>
+
+          </ul>
+      <%end%>
+      </div>
+  <!-- /.sidebar-collapse -->
+</div>
+<!-- /.navbar-static-side -->
+
+<!----------- Right Display ------------------------->
+
+<div id="page-wrapper">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Update Drop-Down Tables</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+  </div>
+  <!-- /.row -->
+
+  <div class="row">
+    <div class="col-lg-3 col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-3">
+              <i class="fa fa-comments fa-5x"></i>
+            </div>
+            <div class="col-xs-9 text-right">
+
+              <div>Courses</div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <%= link_to 'Edit Courses', admin_course_crud_path %></br>
+          <%= link_to 'Edit Course-Types', admin_course_type_crud_path%>
+          <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+          <div class="clearfix"></div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-3">
+              <i class="fa fa-tasks fa-5x"></i>
+            </div>
+            <div class="col-xs-9 text-right">
+              <div>Alignment Type</div>
+            </div>
+          </div>
+        </div>
+        <a href="#">
+          <div class="panel-footer">
+            <%= link_to 'Edit Alignment Types', admin_alignment_type_crud_path %>
+            <span class="pull-left"></span>
+            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+            <div class="clearfix"></div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-3">
+              <i class="fa fa-shopping-cart fa-5x"></i>
+            </div>
+            <div class="col-xs-9 text-right">
+              <div>Faculty</div>
+            </div>
+          </div>
+        </div>
+        <a href="#">
+          <div class="panel-footer">
+            <%= link_to 'Edit Faculty Types', faculty_type_crud_path  %>
+            <span class="pull-left">
+
+                            </span>
+            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+            <div class="clearfix"></div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-3">
+              <i class="fa fa-support fa-5x"></i>
+            </div>
+            <div class="col-xs-9 text-right">
+              <div>Nothing Yet</div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <%= link_to 'Create Application', admin_create_app_for_index_path %>
+          <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+          <div class="clearfix"></div>
+        </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- /#page-wrapper -->
+</div>
+</div>
+</body>
+</html>
