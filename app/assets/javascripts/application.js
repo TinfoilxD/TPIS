@@ -257,15 +257,16 @@ function datePickerSet()
                     candidate_last_name = data[key].cln
                     course_name = data[key].course_name
                     faculty_name = ((data[key].ffn) + " ").concat(data[key].fln)
-                    start_date = Date.parse(data[key].start)
-                    end_date = Date.parse(data[key].end)
+                    //2017-04-06 19:09:39.719376
+                    created_at_substring = (data[key].created_at).substring(0,10)
+                    created_at = Date.parseExact(created_at_substring, 'yyyy-mm-dd')
 
                     $('#report_display_table tbody').append("<tr><td>"
                         + candidate_first_name + "</td><td>"
                         + candidate_last_name + "</td><td>"
                         + course_name + "</td><td>"
                         + faculty_name + "</td><td>"
-                        + start_date.toString("MM/dd/yyyy") + "</td><td>")
+                        + created_at.toString('mm-dd-yyyy') + "</td> ")
 
                 }
 
@@ -274,3 +275,55 @@ function datePickerSet()
         })
     })
 }
+
+
+// Search Function for User Controls //
+
+$(document).ready(function() {
+    var activeSystemClass = $('.list-group-item.active');
+
+    //something is entered in search form
+    $('#system-search').keyup( function() {
+        var that = this;
+        // affect all table rows on in systems table
+        var tableBody = $('.table-list-search tbody');
+        var tableRowsClass = $('.table-list-search tbody tr');
+        $('.search-sf').remove();
+        tableRowsClass.each( function(i, val) {
+
+            //Lower text for case insensitive
+            var rowText = $(val).text().toLowerCase();
+            var inputText = $(that).val().toLowerCase();
+            if(inputText != '')
+            {
+                $('.search-query-sf').remove();
+                tableBody.prepend('<tr class="search-query-sf"><td colspan="6"><strong>Searching for: "'
+                    + $(that).val()
+                    + '"</strong></td></tr>');
+            }
+            else
+            {
+                $('.search-query-sf').remove();
+            }
+
+            if( rowText.indexOf( inputText ) == -1 )
+            {
+                //hide rows
+                tableRowsClass.eq(i).hide();
+
+            }
+            else
+            {
+                $('.search-sf').remove();
+                tableRowsClass.eq(i).show();
+            }
+        });
+        //all tr elements are hidden
+        if(tableRowsClass.children(':visible').length == 0)
+        {
+            tableBody.append('<tr class="search-sf"><td class="text-muted" colspan="6">No entries found.</td></tr>');
+        }
+    });
+});
+
+

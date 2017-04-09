@@ -1,10 +1,5 @@
 <!DOCTYPE html>
-<head>
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/metisMenu/2.7.0/metisMenu.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/metisMenu/2.7.0/metisMenu.min.js"></script>
-<link rel="stylesheet" href="system_admin_landing.css.scss">
-</head>
+
 <html>
 <!---- System Admin Navigation --->
 <body data-gr-c-s-loaded="true">
@@ -15,14 +10,16 @@
                   <!-- /.navbar-top-links -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
-          <li class="active">
+
                             <%if user_signed_in? and current_user.system_admin? then%>
+                            <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
                             <li><%= link_to 'User Controls', admin_user_controls_path%></li>
                             <li><%= link_to 'Candidate Application Forms', admin_view_applications_path%></li>
                             <li><%= link_to 'New Candidate', new_candidate_path%></li>
-                            <li><%= link_to 'View Candidates', candidates_path%></li>
                             <li><%= link_to 'Input Available Times', input_available_timeslots_path%></li>
                             <li><%= link_to 'View Appointments', appointments_calendar_list_path%></li>
+                            <li><%= link_to 'Reports', reports_landing_path%></li>
+
                             </ul>
                         <%end%>
                           </div>
@@ -52,7 +49,7 @@
                             </div>
                             <div class="col-xs-9 text-right">
 
-                              <div>New Candidates</div>
+                              <div>Candidates</div>
                             </div>
                           </div>
                         </div>
@@ -72,13 +69,15 @@
                               <i class="fa fa-tasks fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                              <div>Something else?</div>
+                              <div>Candidate Appointments</div>
                             </div>
                           </div>
                         </div>
                         <a href="#">
                           <div class="panel-footer">
-                            <span class="pull-left">View Details</span>
+                            <span class="pull-left">
+                              <%= link_to 'View Appointments', admin_view_appointments_index_path  %>
+                            </span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                             <div class="clearfix"></div>
                           </div>
@@ -93,13 +92,16 @@
                               <i class="fa fa-shopping-cart fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                              <div>Appointments</div>
+                              <div>Candidate Applications</div>
                             </div>
                           </div>
                         </div>
                         <a href="#">
                           <div class="panel-footer">
-                            <%= link_to 'View Appointments', admin_view_appointments_index_path  %>
+                            <%= link_to 'Create Application', admin_create_app_for_index_path %>
+                            </br>
+                            <%= link_to 'View Applications for', admin_create_app_for_index_path %>
+
                             <span class="pull-left">
 
                             </span>
@@ -117,14 +119,12 @@
                               <i class="fa fa-support fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                              <div>Applications</div>
+                              <div>Faculty Availability</div>
                             </div>
                           </div>
                         </div>
                           <div class="panel-footer">
-                            <%= link_to 'Create Application', admin_create_app_for_index_path %>
-                            </br>
-                            <%= link_to 'View Applications for', admin_create_app_for_index_path %>
+
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                             <div class="clearfix"></div>
                           </div>
