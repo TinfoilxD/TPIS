@@ -156,26 +156,8 @@ body {
 
 
 /* Side Navigation */
-/*
-@media(min-width:800px) {
-  .side-nav {
-    position: fixed;
-    top: 51px;
-    left: 180px;
-    width: 245px;
-    margin-left: -215px;
-    border: none;
-    border-radius: 0;
-    overflow-y: auto;
-    background-color: #3f3f3f;
-    bottom: 0;
-    overflow-x: hidden;
-    padding-bottom: 30px;
 
-  }
-*/
   @media (min-width: 768px) {
-
 .side-nav {
   position: fixed;
   top: 51px;
@@ -199,11 +181,14 @@ body {
   }
 
   .side-nav li a:hover,
-  .side-nav li a:focus {
+  .side-nav li a:focus
+   {
     outline: none;
-    background-color: #000 !important;
+    background-color: #000000 !important;
   }
 }
+
+
 
 
 .side-nav>li>ul {
@@ -216,9 +201,7 @@ body {
   text-decoration: none;
 }
 
-.side-nav>ul>li>a:hover {
-  color: red;
-}
+
 
 @media (min-width: 800px){
   #wrapper {
@@ -226,7 +209,5 @@ body {
   .side-nav{right:auto;left: 0;}
 }
 
-.navbar-collapse .nav ul li {
-  color:red;
 
-}
+
