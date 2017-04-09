@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+<!---- System Admin Navigation --->
+<body data-gr-c-s-loaded="true">
+<div id="wrapper">
+  <!-- /.navbar-header -->
+
+
+  <!-- /.navbar-top-links -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav side-nav">
+
+      <%if user_signed_in? and current_user.system_admin? then%>
+          <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
+          <li><%= link_to 'Candidate by Ranged Appointments', candidate_created_appointments_by_date_path%></li>
+          <li><%= link_to'Charts', report_candidates_by_allignment_type_path %> </li>
+
+
+      <%end%>
+    </ul>
+    <!-- /.sidebar-collapse -->
+  </div>
+  <!-- /.navbar-static-side -->
+</div>
+</body>
+</html>

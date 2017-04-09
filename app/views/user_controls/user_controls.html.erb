@@ -1,3 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-0">
+      <div class="panel panel-primary">
+        <!-- Default panel contents -->
+
+
+
+
+
 <h1>User Controls</h1>
 <table class="table table-hover">
   <thead>
@@ -11,10 +21,10 @@
 
 
 
-    <%= link_to 'Staff', staff_path, class: 'link-to-text-color'  %>
+    <%= link_to 'Staff', staff_path, class: 'btn btn-default'  %>
 
 
-  <%= link_to 'Candidate', candidate_role_path, class: 'link-to-text-color'  %>
+  <%= link_to 'Candidate', candidate_role_path, class: 'btn btn-default'  %>
 
 <%@users.each do |user|%>
     <%=render 'user', user: user%>
@@ -22,3 +32,7 @@
 
 </tbody>
 </table>
+      </div>
+    </div>
+  </div>
+</div>
