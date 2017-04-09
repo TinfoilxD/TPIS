@@ -1,3 +1,4 @@
+
 <div id="wrapper">
   <!-- /.navbar-header -->
 
@@ -9,7 +10,7 @@
       <%if user_signed_in? and current_user.system_admin? then%>
           <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
           <li><%= link_to 'Candidate by Ranged Appointments', candidate_created_appointments_by_date_path%></li>
-          <li><%= link_to'Charts', report_candidates_by_allignment_type_path %> </li>
+          <li><%= link_to'Charts', report_candidates_by_alignment_type_path %> </li>
 
 
       <%end%>
@@ -19,24 +20,48 @@
   <!-- /.navbar-static-side -->
 </div>
 
-
+<!---- Pie graph for Alignment Type Report --------------->
 <div id="page-wrapper">
   <div class="row">
     <div class="col-md-10">
       <div class="panel panel-default">
         <div class="panel-heading"> Candidates by Alignment Type </div>
-
-        <%
-          sql_statement =  "SELECT alignment_types.alignment_type as an, count(*) "\
+        <% sql_statement =  "SELECT alignment_types.alignment_type as an, count(*) "\
                     "FROM alignment_types "\
                     "JOIN candidates ON alignment_types.id = candidates.alignment_type_id GROUP BY an"
-
-          results = ActiveRecord::Base.connection.execute(sql_statement)
-        %>
+          results = ActiveRecord::Base.connection.execute(sql_statement) %>
         <%= pie_chart results%>
 
+<br>
+<!-------- Table to support the Alignment Type Chart Report ------------>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+    <th> First name </th>
+    <th> Last name </th>
+    <th> Alignment type </th>
+    </tr>
 
+        </thead>
+        <tbody>
+  <% @candidates.each do |candidate| %>
+      <tr>
+        <td><%= candidate.first_name %></td>
+        <td><%= candidate.last_name %></td>
+        <td><%= candidate.alignment_type&.alignment_type %></td>
+    </tr>
+  <% end %>
+  </table>
+
+        </tbody>
       </div>
     </div>
   </div>
 </div>
+      </div>
+    </div>
+  </div>
+

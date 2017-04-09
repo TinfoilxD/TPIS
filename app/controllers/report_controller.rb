@@ -1,10 +1,8 @@
 class ReportController < ApplicationController
-    def index
-    end
+
 
   # GET /courses/new
-  def sample_action
-
+  def index
   end
 
   # GET /courses/1/edit
@@ -41,6 +39,10 @@ class ReportController < ApplicationController
 
   end
   def candidates_by_allignment_type
-
+    sql_statement =  "SELECT alignment_types.alignment_type as an, count(*) "\
+                    "FROM alignment_types "\
+                    "JOIN candidates ON alignment_types.id = candidates.alignment_type_id GROUP BY an"
+    @results = ActiveRecord::Base.connection.execute(sql_statement)
+    @candidates = Candidate.all
   end
 end
