@@ -1,30 +1,64 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-offset-0">
-      <div class="panel panel-primary">
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+  <ul class="nav navbar-nav side-nav">
+
+    <%if user_signed_in? and current_user.system_admin? then%>
+        <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
+        <li><%= link_to 'User Controls', admin_user_controls_path%></li>
+        <li><%= link_to 'Candidate Application Forms', admin_view_applications_path%></li>
+        <li><%= link_to 'New Candidate', new_candidate_path%></li>
+        <li><%= link_to 'Input Available Times', input_available_timeslots_path%></li>
+        <li><%= link_to 'View Appointments', appointments_calendar_list_path%></li>
+        <li><%= link_to 'Reports', reports_landing_path%></li>
+
+        </ul>
+    <%end%>
+    </div>
+<!-- /.sidebar-collapse -->
+</div>
+<!-- /.navbar-static-side -->
+
+
+
+
+
+<div id="page-wrapper">
+
         <!-- Default panel contents -->
 
 
 
+        <h2 class="page-header">User Controls </h2>
 
+        <br>
+        <div class="col-md-5">
+        <form action="#" method="get">
+          <div class="input-group">
+            <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
+            <input class="form-control" id="system-search" name="q" placeholder="Search for" required>
+            <span class="input-group-btn">
+                        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                    </span>
+          </div>
+        </form>
+          <br>
+          </div>
 
-<h1>User Controls</h1>
-<table class="table table-hover">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+<table class="table table-striped table-list-search">
   <thead>
   <tr>
     <th>Email</th>
     <th>Role</th>
     <th colspan="3"></th>
+
+  </tr>
   </tr>
   </thead>
   <tbody>
 
 
-
-    <%= link_to 'Staff', staff_path, class: 'btn btn-default'  %>
-
-
-  <%= link_to 'Candidate', candidate_role_path, class: 'btn btn-default'  %>
 
 <%@users.each do |user|%>
     <%=render 'user', user: user%>

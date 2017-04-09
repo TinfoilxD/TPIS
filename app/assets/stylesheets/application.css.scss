@@ -61,6 +61,7 @@
 }
 
 
+
 .dropdown-menu .divider {
   height:1px;
   margin:9x 0;
@@ -297,5 +298,21 @@ ol, ul {
   -webkit-font-smoothing: antialiased;
 }
 
+
+
+// user controls //
+.results tr[visible='false'],
+.no-result{
+  display:none;
+}
+
+.results tr[visible='true']{
+  display:table-row;
+}
+
+.counter{
+  padding:8px;
+  color:#ccc;
+}
 
 
