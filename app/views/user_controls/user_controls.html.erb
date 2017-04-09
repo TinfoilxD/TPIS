@@ -5,10 +5,10 @@
         <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
         <li><%= link_to 'User Controls', admin_user_controls_path%></li>
         <li><%= link_to 'Candidate Application Forms', admin_view_applications_path%></li>
-        <li><%= link_to 'New Candidate', new_candidate_path%></li>
         <li><%= link_to 'Input Available Times', input_available_timeslots_path%></li>
         <li><%= link_to 'View Appointments', appointments_calendar_list_path%></li>
         <li><%= link_to 'Reports', reports_landing_path%></li>
+        <li><%= link_to 'Configurations', admin_configurations_path%></li>
 
         </ul>
     <%end%>
@@ -26,14 +26,12 @@
         <!-- Default panel contents -->
 
 
-
         <h2 class="page-header">User Controls </h2>
 
         <br>
         <div class="col-md-5">
         <form action="#" method="get">
           <div class="input-group">
-            <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
             <input class="form-control" id="system-search" name="q" placeholder="Search for" required>
             <span class="input-group-btn">
                         <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>

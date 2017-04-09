@@ -280,7 +280,7 @@ function datePickerSet()
 // Search Function for User Controls //
 
 $(document).ready(function() {
-    var activeSystemClass = $('.list-group-item.active');
+   var activeSystemClass = $('.list-group-item.active');
 
     //something is entered in search form
     $('#system-search').keyup( function() {
@@ -325,3 +325,5 @@ $(document).ready(function() {
         }
     });
 });
+
+
