@@ -1,10 +1,8 @@
 class ReportController < ApplicationController
-    def index
-    end
+
 
   # GET /courses/new
-  def sample_action
-
+  def index
   end
 
   # GET /courses/1/edit
