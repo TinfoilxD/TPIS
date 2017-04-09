@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170405220310) do
+ActiveRecord::Schema.define(version: 20170408210018) do
 
   create_table "alignment_types", force: :cascade do |t|
     t.string   "alignment_type"
@@ -42,10 +42,11 @@ ActiveRecord::Schema.define(version: 20170405220310) do
     t.datetime "start"
     t.datetime "end"
     t.integer  "faculty_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "title"
     t.integer  "application_form_id"
+    t.boolean  "complete",            default: false
   end
 
   create_table "candidates", force: :cascade do |t|

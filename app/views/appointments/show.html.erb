@@ -15,6 +15,13 @@
   <%= @appointment.faculty_id %>
 </p>
 
+<p>
+  <strong>Interview Complete:</strong>
+  <%= yesno(@appointment.complete) %>
+</p>
+
+
 <%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+<%= link_to 'Interview', interview_questions_path(@appointment) %> |
 <%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %>
 

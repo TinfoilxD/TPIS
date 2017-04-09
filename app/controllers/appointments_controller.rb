@@ -93,6 +93,16 @@ class AppointmentsController < ApplicationController
    @appointments = Appointment.where(application_form_id: @application_form_id )
   end
 
+  def interview_questions
+    @appointment = Appointment.find(params[:id])
+  end
+  def interview_complete
+    @appointment = Appointment.find(params[:id])
+    @appointment.complete = true
+    @appointment.save
+    redirect_to @appointment
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_appointment
@@ -103,4 +113,5 @@ class AppointmentsController < ApplicationController
     def appointment_params
       params.require(:appointment).permit(:start, :end, :application_form_id, :faculty_id)
     end
+
 end
