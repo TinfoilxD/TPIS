@@ -235,6 +235,7 @@ button, input, select, textarea {
   line-height: inherit;
 }
 
+
 ol, ul {
   margin-top: 0;
   margin-bottom: 10px;
@@ -265,3 +266,36 @@ ol, ul {
   }
 
 }
+
+
+// Sidebar nav hyperliniks //
+.side-nav li a {
+  color:#ffffff;
+
+  &:visited {
+    color: #BBBBBB;
+  }
+
+  &:hover {
+    color: #ffffff;
+    background-color: none;
+  }
+}
+
+// second leve css//
+
+.fa-fw {
+  width: 1.28571429em;
+  text-align: center;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+

@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get '/system_admin_landing', to: 'landing#system_admin_landing', as: :system_admin_landing
   get '/tcf_admin_landing', to: 'landing#tcf_admin_landing', as: :tcf_admin_landing
   get '/tcf_landing', to: 'landing#tcf_landing', as: :tcf_landing
-
+  get '/reports_landing', to: 'landing#reports_landing', as: :reports_landing
 
   get '/staff', to: 'user_controls#staff', as: :staff
   get '/role_candidate', to: 'user_controls#candidate', as: :candidate_role
@@ -79,7 +79,7 @@ Rails.application.routes.draw do
 
 
   # reports
-  get '/report_index', to: 'report#index'
+  get '/candidate_created_appointments_by_date', to: 'report#index'
   get '/report_sample_action', to: 'report#sample_action'
   post '/appointment_date_between', to: 'report#apply'
 
