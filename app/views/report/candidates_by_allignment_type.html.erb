@@ -1,9 +1,20 @@
-<h3>Candidates by Alignment Type</h3>
-<%
-  sql_statement =  "SELECT alignment_types.alignment_type as an, count(*) "\
+<div id="page-wrapper">
+  <div class="row">
+    <div class="col-md-10">
+      <div class="panel panel-default">
+        <div class="panel-heading"> Candidates by Alignment Type </div>
+
+        <%
+          sql_statement =  "SELECT alignment_types.alignment_type as an, count(*) "\
                     "FROM alignment_types "\
                     "JOIN candidates ON alignment_types.id = candidates.alignment_type_id GROUP BY an"
 
-  results = ActiveRecord::Base.connection.execute(sql_statement)
-%>
-<%= pie_chart results%>
+          results = ActiveRecord::Base.connection.execute(sql_statement)
+        %>
+        <%= pie_chart results%>
+
+
+      </div>
+    </div>
+  </div>
+</div>
