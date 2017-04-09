@@ -4,17 +4,31 @@
 
 <%= pie_chart @results%>
 
+</div>
+<br>
+  <!--<div class="container">-->
+    <!--<div class="row">-->
+      <!--<div class="col-md-6 col-md-offset-3 ">-->
+        <!--<div class="panel panel-default">-->
+          <!--<div class="panel-heading">-->
+          <!--</div>-->
+          <!--<div class="panel-body">-->
+          <!--</div>-->
+          <!--<table class="table table-hover" id="dev-table">-->
 
-<table class="table table-hover" id="report_display_table">
-  <thead>
-  <tr>
+    <!--<tr>-->
+
+<main class="container pt-5">
+  <div class="card mb-5">
+    <div class="card-block p-0">
+      <table class="table table-bordered table-sm m-0">
+        <thead class="">
+        <tr>
     <th> First name </th>
     <th> Last name </th>
     <th> Alignment type </th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
-  <tbody>
+    </tr>
+
   <% @candidates.each do |candidate| %>
       <tr>
         <td><%= candidate.first_name %></td>
@@ -22,7 +36,35 @@
         <td><%= candidate.alignment_type&.alignment_type %></td>
     </tr>
   <% end %>
-  </tbody>
-</table>
-</table>
-</div>
+
+
+  <div class="card-footer p-0">
+    <nav aria-label="...">
+      <ul class="pagination justify-content-end mt-3 mr-3">
+        <li class="page-item disabled">
+          <span class="page-link">Previous</span>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active">
+                            <span class="page-link">2<span class="sr-only">(current)</span>
+                            </span>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+    </div>
+  </div>
+
+
+  <!---->
+                      <!--</table>-->
+                  <!--</div>-->
+              <!--</div>-->
+          <!--</div>-->
+    <!--</div>-->
+
+
