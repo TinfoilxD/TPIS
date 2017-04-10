@@ -71,9 +71,12 @@ Rails.application.routes.draw do
   # show applications by candidates
   get '/specan/:id', to: 'application_forms#specan', as: :view_my_application
 
-
-
-
+  # Crud views for lookup tables
+  get '/configurations', to: 'landing#configuration_landing', as: :admin_configurations
+  get '/course_types', to: 'course_types#index', as: :admin_course_type_crud
+  get '/courses', to: 'courses#index', as: :admin_course_crud
+  get '/alignment_types', to: 'alignment_types#index', as: :admin_alignment_type_crud
+  get '/faculty_types', to: 'faculty_types#index', as: :faculty_type_crud
 
 
 
@@ -81,8 +84,8 @@ Rails.application.routes.draw do
 
   # reports
   get '/candidate_created_appointments_by_date', to: 'report#index'
-  get '/report_sample_action', to: 'report#sample_action'
   post '/appointment_date_between', to: 'report#apply'
-  get 'report_candidates_by_month', to: 'report#candidates_by_month'
-  get 'report_candidates_by_allignment_type', to: 'report#candidates_by_allignment_type'
+
+  get '/report_candidates_by_month', to: 'report#candidates_by_month'
+  get '/report_candidates_by_alignment_type', to: 'report#candidates_by_allignment_type'
 end
