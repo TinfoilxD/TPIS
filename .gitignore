@@ -24,3 +24,4 @@ out/
 
 TPIS1.iml
 */.DS_Store
+db/schema.rb
