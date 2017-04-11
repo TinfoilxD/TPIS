@@ -15,6 +15,9 @@ class AppointmentsController < ApplicationController
   # GET /appointments/1
   # GET /appointments/1.json
   def show
+    @faculty = Faculty.find(@appointment.faculty_id)
+    @application_form = ApplicationForm.find(@appointment.application_form_id)
+    @candidate = Candidate.find(@application_form.candidate_id)
   end
 
   def book_appointment
@@ -97,9 +100,11 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
   end
   def interview_complete
-    @appointment = Appointment.find(params[:id])
+    @appointment = Appointment.find(params[:appointment_id])
     @appointment.complete = true
+    @appointment.comments = params[:comments]
     @appointment.save
+    NotificationMailer.interview_comments_notification(@appointment).deliver_later
     redirect_to @appointment
   end
 

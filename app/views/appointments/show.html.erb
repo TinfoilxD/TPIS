@@ -12,12 +12,24 @@
 
 <p>
   <strong>Faculty:</strong>
-  <%= @appointment.faculty_id %>
+  <%=@faculty.full_name%>
 </p>
+
+<p>
+  <strong>Candidate:</strong>
+  <%=@candidate.full_name%>
+</p>
+
+<p><%=link_to 'View Application',application_forms_path(@application_form)%></p>
 
 <p>
   <strong>Interview Complete:</strong>
   <%= yesno(@appointment.complete) %>
+</p>
+
+<p>
+  <strong>Interview Comments:</strong>
+  <%=@appointment.comments%>
 </p>
 
 

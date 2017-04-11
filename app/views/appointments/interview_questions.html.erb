@@ -1,6 +1,5 @@
 <h5>TCF will contact IC and discuss the following:</h5>
 
-<input type="hidden" name="appointment_id" value="<%=@appointment.id%>">
 
 <input type="checkbox" name="" value="1">Teaching Experience<br>
 <input type="checkbox" name="" value="1">Why the IC wants to be an AHA Instructor (purpose, goals, target audience, number of students they plan to teach each year, etc.<br>
@@ -18,8 +17,10 @@
 <input type="checkbox" name="" value="1">Schedule Monitoring - Establish date to be monitored. (If date unknown remind about 30 days no additional charge - $105 thereafter, 6 months forfeit), 3 student requirement, TS - get own students, TC-optional (Students register and pay through TP)<br>
 <input type="checkbox" name="" value="1">Registration & Payment $350 should be paid 2 weeks before the class.<br>
 
-Interview Summary/Comments:<br>
-<textarea rows="15" cols="110">
-    </textarea>
-<br>
-<%=link_to 'Submit', interview_complete_path(id: @appointment.id), method: :post%>
+<%=form_tag interview_complete_path do%>
+    <input type="hidden" name="appointment_id" id="appointment_id" value="<%=@appointment.id%>">
+    Interview Summary/Comments:<br>
+    <%= text_area_tag(:comments, nil, size: '110x15') %>
+    <br>
+    <%=submit_tag 'Submit'%>
+<%end%>

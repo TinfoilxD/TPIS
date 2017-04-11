@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170409152259) do
+ActiveRecord::Schema.define(version: 20170410223646) do
 
   create_table "alignment_types", force: :cascade do |t|
     t.string   "alignment_type"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20170409152259) do
     t.string   "title"
     t.integer  "application_form_id"
     t.boolean  "complete",            default: false
+    t.string   "comments"
   end
 
   create_table "candidates", force: :cascade do |t|
