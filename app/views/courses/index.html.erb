@@ -21,8 +21,8 @@
   <tbody>
     <% @courses.each do |course| %>
       <tr>
-        <td><%= course.course_type_id %></td>
-        <td><%= course.course_start_date %></td>
+        <td><%= Course.find(course.course_type_id)&.course_type.course_type %></td>
+        <td><%= course.course_start_date.strftime('%B %d, %Y ') %></td>
         <td><%= course.course_address %></td>
         <td><%= course.course_city %></td>
         <td><%= course.state %></td>
