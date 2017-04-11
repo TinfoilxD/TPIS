@@ -1,0 +1,26 @@
+<h5>TCF will contact IC and discuss the following:</h5>
+
+
+<input type="checkbox" name="" value="1">Teaching Experience<br>
+<input type="checkbox" name="" value="1">Why the IC wants to be an AHA Instructor (purpose, goals, target audience, number of students they plan to teach each year, etc.<br>
+<input type="checkbox" name="" value="1">Therapeutic Professionals mission, values, culture, and critical thinking<br>
+<input type="checkbox" name="" value="1">Difference between HS & BLS Instructor<br>
+<input type="checkbox" name="" value="1">How to become an AHA Instructor(current card, skills, instructor essentials, instructor course, monitoring)<br>
+<input type="checkbox" name="" value="1">Course Materials - Instructor manuals, student manuals, stop watch<br>
+<input type="checkbox" name="" value="1">Preparing for the class - read instructor manuals in advance, bring questions<br>
+<input type="checkbox" name="" value="1">Alignment Types with TP<br>
+<input type="checkbox" name="" value="1">Fee for Use of AHA website to list courses -- courses add by TP<br>
+<input type="checkbox" name="" value="1">Training Center Instructors -- embroidered shirt and fee<br>
+<input type="checkbox" name="" value="1">Training Site Application, approval process and fee, insurance, course card fee<br>
+<input type="checkbox" name="" value="1">Where to purchase manuals, equipment, and supplies<br>
+<input type="checkbox" name="" value="1">Course Dates<br>
+<input type="checkbox" name="" value="1">Schedule Monitoring - Establish date to be monitored. (If date unknown remind about 30 days no additional charge - $105 thereafter, 6 months forfeit), 3 student requirement, TS - get own students, TC-optional (Students register and pay through TP)<br>
+<input type="checkbox" name="" value="1">Registration & Payment $350 should be paid 2 weeks before the class.<br>
+
+<%=form_tag interview_complete_path do%>
+    <input type="hidden" name="appointment_id" id="appointment_id" value="<%=@appointment.id%>">
+    Interview Summary/Comments:<br>
+    <%= text_area_tag(:comments, nil, size: '110x15') %>
+    <br>
+    <%=submit_tag 'Submit'%>
+<%end%>

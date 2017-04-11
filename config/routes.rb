@@ -66,7 +66,8 @@ Rails.application.routes.draw do
 
 
   get '/bycandidate/:id', to: 'appointments#bycandidate', as: :view_my_appointment
-
+  get '/:id/interview_questions', to: 'appointments#interview_questions', as: :interview_questions
+  post '/interview_complete', to: 'appointments#interview_complete', as: :interview_complete
   # show applications by candidates
   get '/specan/:id', to: 'application_forms#specan', as: :view_my_application
 
