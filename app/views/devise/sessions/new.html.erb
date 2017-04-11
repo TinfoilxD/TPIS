@@ -4,12 +4,14 @@
     <div class="panel panel-primary" >
       <div class="panel-heading">
         <div class="panel-title">Sign In</div>
+
       </div>
 
       <div style="padding-top:30px" class="panel-body" >
+
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-
+</br>
             <div class="form-group row">
               <div class="col-sm-12">
               <%= f.email_field :email,class: 'form-control', autofocus: true, placeholder:'Email address' %>
