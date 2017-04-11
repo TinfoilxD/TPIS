@@ -43,6 +43,6 @@ class ReportController < ApplicationController
   end
 
   def upcoming_appointments
-    @appointments = Appointment.where('start BETWEEN ? AND ?', Time.now, Time.now + 2.weeks).order(start: :desc)
+    @appointments = Appointment.where('start BETWEEN ? AND ?', Time.now, Time.now + 2.weeks).order(:start)
   end
 end
