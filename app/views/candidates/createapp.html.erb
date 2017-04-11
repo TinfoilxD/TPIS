@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Candidate Application View</h1>
+
+<h1>Create Applications and Appointments</h1>
 
 <div class="container">
   <div class ="container-body">
@@ -22,10 +23,9 @@
             <td><%= candidate.first_name %></td>
             <td><%= candidate.last_name %></td>
             <td><%= candidate.email %></td>
-            <td><%= candidate.occupation %> </td>
+            <td><%= candidate.occupation %></td>
             <td><%= candidate.alignment_type&.alignment_type %></td>
             <td><%= link_to 'Create Application', admin_create_app_for_path(candidate), class:'btn btn-default btn-xs'  %></td>
-            <td><%= link_to 'View Applications', admin_view_all_apps_path(candidate), class:'btn btn-default btn-xs'  %></td>
           </tr>
       <% end %>
       </tbody>
@@ -35,5 +35,7 @@
 
 
 <br>
-
-<%= link_to 'New Candidate', new_candidate_path, class:'btn btn-default btn-S'  %>
+<p>
+<%= link_to 'New Candidate', new_candidate_path, class:'btn btn-default btn-S'  %> |
+<%= link_to 'Back', system_admin_landing_path, class:'btn btn-default btn-S'  %>
+</p>

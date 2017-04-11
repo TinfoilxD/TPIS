@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
+<ol class="breadcrumb">
+  <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
+  <li><%=link_to 'Appointments/Applications', admin_view_appointments_index_path%></li>
+  <li><%= 'Appointments for candidate' %> </li>
+</ol>
 <% @appointments.each do |appointment| %>
     <% @name = appointment.get_candidate(appointment) %>
     <% end %>
@@ -6,7 +11,7 @@
 
 <h1>Appointments for <%= @name %> </h1>
 
-<table>
+<table class="table table-striped">
   <thead>
   <tr class="bycandidate">
     <th>Start</th>
