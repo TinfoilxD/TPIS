@@ -52,4 +52,5 @@ class ReportController < ApplicationController
   def applications_without_appointments
     @application_forms = ApplicationForm.where.not(id: Appointment.pluck(:application_form_id).reject {|x| x.nil?})
   end
+
 end
