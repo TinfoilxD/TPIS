@@ -21,7 +21,8 @@
 .byebug_history
 .idea/
 out/
-
+TPIS.iml
 TPIS1.iml
 */.DS_Store
 db/schema.rb
+.gitignore

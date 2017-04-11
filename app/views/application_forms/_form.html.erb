@@ -125,7 +125,7 @@
   </br>
 
   <div class="row">
-    <div class="col-lg-12"
+    <div class="col-lg-12">
    <%= f.label :training_center, "If no, please provide the Training Center name." %>
     </div>
     <div class="col-md-6">
@@ -185,7 +185,7 @@ Survival and the mission of the American Heart Association in my community.
 
 
     <div class="row">
-        <div class="col-lg-12"
+        <div class="col-lg-12">
       <%= f.label :date_agreed %>
       </div>
       <div class="col-md-2">
@@ -195,7 +195,7 @@ Survival and the mission of the American Heart Association in my community.
         <br>
       <div class="actions">
         <button type="button" class="btn btn-default" id="back_button">Back</button>
-        <%= f.submit'Submit', data: {confirm: 'By submitting this application, I acknowledge that I have answered each question completely and truthfully to the best of my ability.'} , class:'btn btn-primary btn-S' %>
+        <%= f.submit 'Submit', data: {confirm: 'By submitting this application, I acknowledge that I have answered each question completely and truthfully to the best of my ability.'} , class:'btn btn-primary btn-S' %>
   </div>
       </div>
       </div>
@@ -206,4 +206,5 @@ Survival and the mission of the American Heart Association in my community.
       </div>
      </div>
         </div>
+    </div>
 <% end %>
