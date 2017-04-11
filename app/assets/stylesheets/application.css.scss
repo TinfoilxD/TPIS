@@ -13,6 +13,7 @@
  *= require_tree
  *= require fullcalendar
  *= require_self
+*= require dataTables/jquery.dataTables
  */
 
 
@@ -298,11 +299,3 @@ ol, ul {
   padding:8px;
   color:#ccc;
 }
-
-
-
-/// other
-
-
-
-
