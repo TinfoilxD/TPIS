@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require dataTables/jquery.dataTables
 //= require turbolinks
 //= require bootstrap
 //= require moment
@@ -35,6 +36,7 @@ $( document ).on('turbolinks:load', function() {
     overrideArrowButtons()
     datePickerSet()
     addListeners()
+    systemSearch()
 });
 
 
@@ -279,11 +281,14 @@ function datePickerSet()
 
 // Search Function for User Controls //
 
-$(document).ready(function() {
-   var activeSystemClass = $('.list-group-item.active');
+// $(document).ready(function() {
+function systemSearch()
+{
+   // var activeSystemClass = $('.list-group-item.active');
 
     //something is entered in search form
     $('#system-search').keyup( function() {
+        console.log("Start system search");
         var that = this;
         // affect all table rows on in systems table
         var tableBody = $('.table-list-search tbody');
@@ -324,6 +329,47 @@ $(document).ready(function() {
             tableBody.append('<tr class="search-sf"><td class="text-muted" colspan="6">No entries found.</td></tr>');
         }
     });
-});
+}
 
 
+
+
+
+
+function sortTable(n) {
+    var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+    table = document.getElementById("myTable");
+    switching = true;
+    dir = "asc";
+    while (switching) {
+        switching = false;
+        rows = table.getElementsByTagName("TR");
+        for (i = 1; i < (rows.length - 1); i++) {
+            shouldSwitch = false;
+            x = rows[i].getElementsByTagName("TD")[n];
+            y = rows[i + 1].getElementsByTagName("TD")[n];
+            if (dir == "asc") {
+                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                    shouldSwitch= true;
+                    break;
+                }
+            } else if (dir == "desc") {
+                if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                    //if so, mark as a switch and break the loop:
+                    shouldSwitch= true;
+                    break;
+                }
+            }
+        }
+        if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+            switchcount ++;
+        } else {
+            if (switchcount == 0 && dir == "asc") {
+                dir = "desc";
+                switching = true;
+            }
+        }
+    }
+}

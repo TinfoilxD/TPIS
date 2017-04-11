@@ -12,8 +12,7 @@
         <ul class="nav navbar-nav side-nav">
 
                             <%if user_signed_in? and current_user.system_admin? then%>
-                            <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
-                            <li><%= link_to 'User Controls', admin_user_controls_path%></li>
+                            <li class="active"><%= link_to 'Dashboard', system_admin_landing_path%></li>
                             <li><%= link_to 'Candidate Application Forms', admin_view_applications_path%></li>
                             <li><%= link_to 'Input Available Times', input_available_timeslots_path%></li>
                             <li><%= link_to 'View Appointments', appointments_calendar_list_path%></li>
@@ -59,7 +58,6 @@
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                             <div class="clearfix"></div>
                           </div>
-
                       </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
