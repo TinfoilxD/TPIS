@@ -121,14 +121,15 @@ body {
 
 /*
 
-.sidebar ul li {
-  border-bottom: 2px solid;
+.nav .navbar-nav .side-nav
   a {
     &.active {
       background-color:blue;
     }
   }
-}*/
+
+
+/*
 
 .sidebar .arrow {
   float: right;
@@ -181,12 +182,14 @@ body {
   }
 
   .side-nav li a:hover,
-  .side-nav li a:focus
+  .side-nav li a:focus,
+  .side-nav li a:active
    {
     outline: none;
     background-color: #000000 !important;
   }
 }
+
 
 
 
