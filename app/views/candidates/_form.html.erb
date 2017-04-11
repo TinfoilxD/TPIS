@@ -26,7 +26,7 @@
                 <div class="col-lg-6">
                   <form role="form">
     <div class="container-fluid">
-      <form class="form-inline">
+      <form>
         <!--- row 1 ----------->
         <div class="row">
           <div class="col-xs-4">
@@ -52,23 +52,26 @@
             <%=f.text_field :city, placeholder: 'City', class: 'form-control'%>
           </div>
 
-        </div>
-
-        <br>
-        <!--- row 3 ----------->
-        <div class="row">.
-          <div class="field">
+          <div class="col-xs-8">
             <%= f.label 'State', class:'State' %>
             <%= f.select :state, options_for_select(us_states, "TX")%>
 
           </div>
+        </div>
+
+        <br>
+        <!--- row 3 ----------->
+
+
+        <div class="row">
+
           <div class="col-xs-2">
             <label for="zipcode">Zip code</label>
             <%=f.text_field :zipcode, placeholder: 'Zip Code', class: 'form-control'%>
           </div>
 
 
-          <div class="field">
+          <div class="mr-sm-8">
             <%= f.label :country %>
             <%= f.select :country, options_for_select(countries, "United States")%>
           </div>
@@ -91,7 +94,7 @@
 
         <div class="field">
           <%= f.label :email %>
-          <%= f.text_field :email, :value => current_user.email, :readonly => true %>
+          <%= f.text_field :email, :value => current_user.email, :readonly => true,class:'form-control' %>
         </div>
 
         <br>
@@ -102,9 +105,11 @@
             <%=f.text_field :occupation, placeholder: 'Occupation', class: 'form-control'%>
           </div>
 
-          <div class="field">
+
+
+          <div class="form-group">
             <%= f.label :alignment_type_id %>
-            <%= f.collection_select(:alignment_type_id, AlignmentType.all, :id, :alignment_type) %>
+            <%= f.collection_select(:alignment_type_id, AlignmentType.all, :id, :alignment_type, class:'custom-select') %>
           </div>
 
         </div>

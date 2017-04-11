@@ -28,9 +28,9 @@
         <td><%= course.state %></td>
         <td><%= course.country %></td>
         <td><%= course.course_zipcode %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', course, class:'btn btn-default btn-xs' %></td>
+        <td><%= link_to 'Edit', edit_course_path(course), class:'btn btn-default btn-xs' %></td>
+        <td><%= link_to 'Delete', course, method: :delete,class:'btn btn-default btn-xs' ,data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -39,4 +39,7 @@
   </div>
 <br>
 
-<%= link_to 'New Course', new_course_path %>
+<p>
+<%= link_to 'New Course', new_course_path, class:'btn btn-default btn-S' %> |
+<%= link_to 'Back', admin_configurations_path, class:'btn btn-default btn-S'  %>
+</p>

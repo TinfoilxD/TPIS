@@ -93,33 +93,32 @@
   min-height: 535px;
 }
 
+// Alert container //
 
-.wrapper-container {
+.wrapper-alert {
 
   padding-top: 60px;
 
 }
 
 
-.wrapper-alert.container .alter{
+.alert .alert {
 
-  padding-bottom: -100px;
-  background-color: rebeccapurple;
+  padding-top: 60px;
+  position: relative;
+
 }
 
-
-.wrapper-alert .container .alter .alert-warning{
-
-  padding-bottom: -100px;
-  background-color: rebeccapurple;
-}
 
 p{
   margin-left: 10px;
 }
 
 
+.alert-info {
 
+  padding-bottom: -90px;
+}
 
 
 

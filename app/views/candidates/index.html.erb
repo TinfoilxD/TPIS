@@ -16,7 +16,6 @@
       <th onclick="sortTable(0)"> Last name </th>
       <th onclick="sortTable(0)"> Email </th>
       <th onclick="sortTable(0)"> Phone number</th>
-      <th onclick="sortTable(0)"> Fax number </th>
       <th onclick="sortTable(0)"> Zip code </th>
       <th onclick="sortTable(0)"> Occupation</th>
       <th onclick="sortTable(0)"> Alignment type </th>
@@ -31,13 +30,12 @@
         <td><%= candidate.last_name %></td>
         <td><%= candidate.email %></td>
         <td><%= candidate.phone %></td>
-        <td><%= candidate.fax%></td>
         <td><%= candidate.zipcode %></td>
         <td><%= candidate.occupation %> </td>
         <td><%= candidate.alignment_type&.alignment_type %></td>
-        <td><%= link_to 'View Profile', candidate , class:'btn btn-default btn-S' %></td>
-        <td><%= link_to 'Edit Profile', edit_candidate_path(candidate), class:'btn btn-default btn-S'  %></td>
-        <td><%= link_to 'Delete', candidate, method: :delete, data: { confirm: 'Are you sure?' } , class:'btn btn-default btn-S' %></td>
+        <td><%= link_to 'View Profile', candidate , class:'btn btn-default btn-xs' %></td>
+        <td><%= link_to 'Edit Profile', edit_candidate_path(candidate), class:'btn btn-default btn-xs'  %></td>
+        <td><%= link_to 'Delete', candidate, method: :delete, data: { confirm: 'Are you sure?' } , class:'btn btn-default btn-xs' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -48,5 +46,7 @@
 
 <br>
 
-<%= link_to 'New Candidate', new_candidate_path, class:'btn btn-default btn-S'  %>
-
+  <p>
+  <%= link_to 'New Candidate', new_candidate_path, class:'btn btn-default btn-S'  %> |
+  <%= link_to 'Back', system_admin_landing_path, class: 'btn btn-default btn-S' %>
+  </p>

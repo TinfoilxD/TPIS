@@ -14,10 +14,6 @@ class ReportController < ApplicationController
     parsed_end_time = Date.strptime(params[:end],"%m/%d/%Y")
     formatted_start_time = parsed_start_time.strftime("%Y-%m-%d")
     formatted_end_time = parsed_end_time.strftime("%Y-%m-%d")
-    # @appointments = Appointment.where(:start => formatted_start_time.to_date.beginning_of_day..formatted_end_time.to_date.end_of_day)
-    # #render :json => @appointments
-  #candidate:firstname,lastname, application_form.courses.course_type, faculty:name, appointment:start, end
-    #2017-04-03 11:00:00
     sql_statement = "SELECT candidates.first_name as cfn, "\
                     "candidates.last_name as cln, "\
                     "faculties.first_name as ffn, "\
@@ -44,5 +40,9 @@ class ReportController < ApplicationController
                     "JOIN candidates ON alignment_types.id = candidates.alignment_type_id GROUP BY an"
     @results = ActiveRecord::Base.connection.execute(sql_statement)
     @candidates = Candidate.all
+  end
+
+  def upcoming_appointments
+    @appointments = Appointment.where('start BETWEEN ? AND ?', Time.now, Time.now + 2.weeks).order(:start)
   end
 end

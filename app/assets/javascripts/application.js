@@ -36,6 +36,7 @@ $( document ).on('turbolinks:load', function() {
     overrideArrowButtons()
     datePickerSet()
     addListeners()
+    systemSearch()
 });
 
 
@@ -280,11 +281,14 @@ function datePickerSet()
 
 // Search Function for User Controls //
 
-$(document).ready(function() {
-   var activeSystemClass = $('.list-group-item.active');
+// $(document).ready(function() {
+function systemSearch()
+{
+   // var activeSystemClass = $('.list-group-item.active');
 
     //something is entered in search form
     $('#system-search').keyup( function() {
+        console.log("Start system search");
         var that = this;
         // affect all table rows on in systems table
         var tableBody = $('.table-list-search tbody');
@@ -325,7 +329,7 @@ $(document).ready(function() {
             tableBody.append('<tr class="search-sf"><td class="text-muted" colspan="6">No entries found.</td></tr>');
         }
     });
-});
+}
 
 
 
