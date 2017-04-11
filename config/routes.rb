@@ -88,4 +88,5 @@ Rails.application.routes.draw do
 
   get '/report_candidates_by_month', to: 'report#candidates_by_month'
   get '/report_candidates_by_alignment_type', to: 'report#candidates_by_allignment_type'
+  get '/report_upcoming_appointments', to: 'report#upcoming_appointments'
 end
