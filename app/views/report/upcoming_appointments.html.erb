@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Appointments</h1>
+
+<div class="container">
+  <div class ="container-body">
+
+    <table class="table table-bordered table-striped table-highlight" id="report_display_table">
+      <thead>
+      <tr>
+
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Course Type </th>
+        <th>Interviewer Name  </th>
+        <th>Appointment Date</th>
+        <th colspan="2"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @appointments.each do |appointment| %>
+          <tr>
+            <td><%= appointment&.application_form&.candidate.first_name %></td>
+            <td><%= appointment&.application_form&.candidate.last_name %></td>
+            <td><%= appointment&.application_form&.course&.course_type&.course_type %></td>
+            <td><%= Faculty.find(appointment&.faculty_id)&.full_name %></td>
+            <td><%= appointment&.start.strftime('%B %e, %l:%M %p')%></td>
+            <td><%= link_to 'Show', appointment %></td>
+           </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+

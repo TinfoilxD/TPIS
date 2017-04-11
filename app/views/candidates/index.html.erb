@@ -11,7 +11,6 @@
       <th> Last name </th>
       <th> Email </th>
       <th> Phone number</th>
-      <th> Fax number </th>
       <th> Zip code </th>
       <th> Occupation</th>
       <th> Alignment type </th>
@@ -26,13 +25,12 @@
         <td><%= candidate.last_name %></td>
         <td><%= candidate.email %></td>
         <td><%= candidate.phone %></td>
-        <td><%= candidate.fax%></td>
         <td><%= candidate.zipcode %></td>
         <td><%= candidate.occupation %> </td>
         <td><%= candidate.alignment_type&.alignment_type %></td>
-        <td><%= link_to 'View Profile', candidate , class:'btn btn-default btn-S' %></td>
-        <td><%= link_to 'Edit Profile', edit_candidate_path(candidate), class:'btn btn-default btn-S'  %></td>
-        <td><%= link_to 'Delete', candidate, method: :delete, data: { confirm: 'Are you sure?' } , class:'btn btn-default btn-S' %></td>
+        <td><%= link_to 'View Profile', candidate , class:'btn btn-default btn-xs' %></td>
+        <td><%= link_to 'Edit Profile', edit_candidate_path(candidate), class:'btn btn-default btn-xs'  %></td>
+        <td><%= link_to 'Delete', candidate, method: :delete, data: { confirm: 'Are you sure?' } , class:'btn btn-default btn-xs' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -42,5 +40,7 @@
 
 
 <br>
-
-<%= link_to 'New Candidate', new_candidate_path, class:'btn btn-default btn-S'  %>
+  <p>
+  <%= link_to 'New Candidate', new_candidate_path, class:'btn btn-default btn-S'  %> |
+  <%= link_to 'Back', system_admin_landing_path, class: 'btn btn-default btn-S' %>
+  </p>

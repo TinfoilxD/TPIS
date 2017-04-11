@@ -730,7 +730,7 @@ Candidate.create(email: 'umi.omigowa@gmail.com', first_name: 'Umi', last_name: '
 Candidate.create(email: 'tin@sdc.com', first_name: 'Hamburger', last_name: 'Steak', phone: '9999')
 Candidate.create(email: 'minion5@sdc.com', first_name: 'minion', last_name: '5', phone: '8888')
 Candidate.create(email: '', first_name: 'Mike', last_name: 'Jones', phone: '7777')
-Candidate.create(email: 'minion5@sdc.com', first_name: 'minion', last_name: '5', phone: '6666')
+
 
 
 CourseType.create([{course_type: 'BLS'},{course_type: 'HS'}, {course_type: 'ACLS'}, {course_type: 'PALS'}])
@@ -772,13 +772,13 @@ t1=TrainingCenter.create(training_center_name: 'Therapeutical Professionals',
 
 # Faculties
 #1-2
-FacultyType.create(job_title: 'placeholder faculty type 1')
-FacultyType.create(job_title: 'placeholder faculty type 2')
+FacultyType.create(job_title: 'TCF Admin')
+FacultyType.create(job_title: 'Cheri')
 
 #1-2
 f1 = Faculty.create(first_name: 'Ashley' , last_name: 'Micheal', faculty_type_id: FacultyType.where(job_title: 'placeholder faculty type 1').first, email: 'ashmchl@hotmail.com', phone: '713-455-2309' ,  office_address: '3354 Stafford Rd.' ,  state: 'Texas' , zip_code: '77006' , country: 'United States')
 f2 = Faculty.create(first_name: 'Jessica' , last_name: 'Sheng', faculty_type_id: FacultyType.where(job_title:'placeholder faculty type 2').first, email: 'jesssheng@hotmail.com', phone: '713-333-4309' ,  office_address: '3355 Chimary Rock Rd.' ,  state: 'Texas' , zip_code: '76005' , country: 'United States')
-f3 = Faculty.create(first_name: 'Cookies', last_name: 'Cream', faculty_type_id: FacultyType.where(job_title: 'placeholder faculty type 1').first, email: 'tin@sdc.com', phone: 'num-num-yumm', office_address: 'Dark Side', state: 'Mare Solaris', zip_code: '99999', country: 'Sol')
+f3 = Faculty.create(first_name: 'Cheri', last_name: 'Berry', faculty_type_id: FacultyType.where(job_title: 'placeholder faculty type 1').first, email: 'tin@sdc.com', phone: 'num-num-yumm', office_address: 'Dark Side', state: 'Mare Solaris', zip_code: '99999', country: 'Sol')
 
 
 # Application Form
@@ -834,50 +834,50 @@ ApplicationForm.create(candidate: c9,training_center_id: t1,course_id: CourseTyp
 # Timeslot seed data to use for testing
 
 # f3
-Timeslot.create(start: '2017-4-04 10:00:00', title: 'Timeslot Available', end: '2017-4-03 11:00:00', faculty_id: f3.id)
-Timeslot.create(start: '2017-4-04 12:00:00', title: 'Timeslot Available', end: '2017-4-03 13:00:00', faculty_id: f3.id)
-Timeslot.create(start: '2017-4-05 13:00:00', title: 'Timeslot Available', end: '2017-4-05 14:00:00', faculty_id: f3.id)
-Timeslot.create(start: '2017-4-06 10:00:00', title: 'Timeslot Available', end: '2017-4-06 11:00:00', faculty_id: f3.id)
-Timeslot.create(start: '2017-4-06 15:00:00', title: 'Timeslot Available', end: '2017-4-06 16:00:00', faculty_id: f3.id)
+Timeslot.create(start: '2017-4-12 10:00:00', title: 'Timeslot Available for Cheri Berry',    end: '2017-4-12 11:00:00', faculty_id: f3.id)
+Timeslot.create(start: '2017-4-14 12:00:00', title: 'Timeslot Available for Cheri Berry',    end: '2017-4-14 13:00:00', faculty_id: f3.id)
+Timeslot.create(start: '2017-4-15 13:00:00', title: 'Timeslot Available for Cheri Berry',    end: '2017-4-15 14:00:00', faculty_id: f3.id)
+Timeslot.create(start: '2017-4-16 10:00:00', title: 'Timeslot Available for Cheri Berry',    end: '2017-4-16 11:00:00', faculty_id: f3.id)
+Timeslot.create(start: '2017-4-16 15:00:00', title: 'Timeslot Available for Cheri Berry',    end: '2017-4-16 16:00:00', faculty_id: f3.id)
 
 # f2
-Timeslot.create(start: '2017-4-03 11:00:00', title: 'Timeslot Available', end: '2017-4-03 12:00:00', faculty_id: f2.id)
-Timeslot.create(start: '2017-4-03 14:00:00', title: 'Timeslot Available', end: '2017-4-03 15:00:00', faculty_id: f2.id)
-Timeslot.create(start: '2017-4-05 9:00:00',  title: 'Timeslot Available', end: '2017-4-05 10:00:00', faculty_id: f2.id)
-Timeslot.create(start: '2017-4-06 11:00:00', title: 'Timeslot Available', end: '2017-4-06 12:00:00', faculty_id: f2.id)
-Timeslot.create(start: '2017-4-06 15:00:00', title: 'Timeslot Available', end: '2017-4-06 16:00:00', faculty_id: f2.id)
+Timeslot.create(start: '2017-4-13 11:00:00', title: 'Timeslot Available for Jessica Sheng',  end: '2017-4-13 12:00:00', faculty_id: f2.id)
+Timeslot.create(start: '2017-4-13 14:00:00', title: 'Timeslot Available for Jessica Sheng',  end: '2017-4-13 15:00:00', faculty_id: f2.id)
+Timeslot.create(start: '2017-4-15 9:00:00',  title: 'Timeslot Available for Jessica Sheng',  end: '2017-4-15 10:00:00', faculty_id: f2.id)
+Timeslot.create(start: '2017-4-16 11:00:00', title: 'Timeslot Available for Jessica Sheng',  end: '2017-4-16 12:00:00', faculty_id: f2.id)
+Timeslot.create(start: '2017-4-16 15:00:00', title: 'Timeslot Available for Jessica Sheng',  end: '2017-4-16 16:00:00', faculty_id: f2.id)
 
 # f1
-Timeslot.create(start: '2017-4-04 11:00:00', title: 'Timeslot Available', end: '2017-4-03 12:00:00', faculty_id: f1.id)
-Timeslot.create(start: '2017-4-03 14:00:00', title: 'Timeslot Available', end: '2017-4-03 15:00:00', faculty_id: f1.id)
-Timeslot.create(start: '2017-4-05 13:00:00', title: 'Timeslot Available', end: '2017-4-05 14:00:00', faculty_id: f1.id)
-Timeslot.create(start: '2017-4-08 10:00:00', title: 'Timeslot Available', end: '2017-4-06 11:00:00', faculty_id: f1.id)
-Timeslot.create(start: '2017-4-07 15:00:00', title: 'Timeslot Available', end: '2017-4-06 16:00:00', faculty_id: f1.id)
+Timeslot.create(start: '2017-4-14 11:00:00', title: 'Timeslot Available for Ashley Michael', end: '2017-4-14 12:00:00', faculty_id: f1.id)
+Timeslot.create(start: '2017-4-13 14:00:00', title: 'Timeslot Available for Ashley Michael', end: '2017-4-13 15:00:00', faculty_id: f1.id)
+Timeslot.create(start: '2017-4-15 13:00:00', title: 'Timeslot Available for Ashley Michael', end: '2017-4-15 14:00:00', faculty_id: f1.id)
+Timeslot.create(start: '2017-4-18 10:00:00', title: 'Timeslot Available for Ashley Michael', end: '2017-4-18 11:00:00', faculty_id: f1.id)
+Timeslot.create(start: '2017-4-17 15:00:00', title: 'Timeslot Available for Ashley Michael', end: '2017-4-17 16:00:00', faculty_id: f1.id)
 
 
 
 # Appointment Seed Data for the c# applications
 
 # f3 time slot appointments
-Appointment.create(start: '2017-4-04 10:00:00', end:'2017-4-03 11:00:00',  faculty_id:f3.id,  title:'sure is an appointment', application_form_id:afc1.id)
-Appointment.create(start: '2017-4-04 12:00:00', end:'2017-4-03 13:00:00',  faculty_id:f3.id,  title:'sure is an appointment', application_form_id:afc2.id)
-Appointment.create(start: '2017-4-05 13:00:00', end:'2017-4-05 14:00:00',  faculty_id:f3.id,  title:'sure is an appointment', application_form_id:afc3.id)
-Appointment.create(start: '2017-4-06 10:00:00', end:'2017-4-06 11:00:00',  faculty_id:f3.id,  title:'sure is an appointment', application_form_id:afc4.id)
-Appointment.create(start: '2017-4-06 15:00:00', end:'2017-4-06 16:00:00',  faculty_id:f3.id,  title:'sure is an appointment', application_form_id:afc5.id)
+Appointment.create(start: '2017-4-12 10:00:00', end:'2017-4-12 11:00:00',  faculty_id:f3.id,  title:'sure is an appointment', application_form_id:afc1.id)
+Appointment.create(start: '2017-4-14 12:00:00', end:'2017-4-14 13:00:00',  faculty_id:f3.id,  title:'sure is an appointment', application_form_id:afc2.id)
+Appointment.create(start: '2017-4-15 13:00:00', end:'2017-4-15 14:00:00',  faculty_id:f3.id,  title:'sure is an appointment', application_form_id:afc3.id)
+Appointment.create(start: '2017-4-16 10:00:00', end:'2017-4-16 11:00:00',  faculty_id:f3.id,  title:'sure is an appointment', application_form_id:afc4.id)
+Appointment.create(start: '2017-4-16 15:00:00', end:'2017-4-16 16:00:00',  faculty_id:f3.id,  title:'sure is an appointment', application_form_id:afc5.id)
 
 # f2 time slot appointments
-Appointment.create(start: '2017-4-03 11:00:00', end:'2017-4-03 12:00:00',  faculty_id:f2.id,  title:'sure is an appointment', application_form_id:afc9.id)
-Appointment.create(start: '2017-4-03 14:00:00', end:'2017-4-03 15:00:00',  faculty_id:f2.id,  title:'sure is an appointment', application_form_id:afc9.id)
-Appointment.create(start: '2017-4-05 9:00:00',  end:'2017-4-05 10:00:00',  faculty_id:f2.id,  title:'sure is an appointment', application_form_id:afc9.id)
-Appointment.create(start: '2017-4-06 11:00:00', end:'2017-4-06 12:00:00',  faculty_id:f2.id,  title:'sure is an appointment', application_form_id:afc9.id)
-Appointment.create(start: '2017-4-06 15:00:00', end:'2017-4-06 16:00:00',  faculty_id:f2.id,  title:'sure is an appointment', application_form_id:afc10.id)
+Appointment.create(start: '2017-4-13 11:00:00', end:'2017-4-13 12:00:00',  faculty_id:f2.id,  title:'sure is an appointment', application_form_id:afc9.id)
+Appointment.create(start: '2017-4-13 14:00:00', end:'2017-4-13 15:00:00',  faculty_id:f2.id,  title:'sure is an appointment', application_form_id:afc9.id)
+Appointment.create(start: '2017-4-15 9:00:00',  end:'2017-4-15 10:00:00',  faculty_id:f2.id,  title:'sure is an appointment', application_form_id:afc9.id)
+Appointment.create(start: '2017-4-16 11:00:00', end:'2017-4-16 12:00:00',  faculty_id:f2.id,  title:'sure is an appointment', application_form_id:afc9.id)
+Appointment.create(start: '2017-4-16 15:00:00', end:'2017-4-16 16:00:00',  faculty_id:f2.id,  title:'sure is an appointment', application_form_id:afc10.id)
 
 # f1 time slot appointments
-Appointment.create(start: '2017-4-04 11:00:00', end:'2017-4-03 12:00:00',  faculty_id:f1.id,  title:'sure is an appointment', application_form_id:afc1.id)
-Appointment.create(start: '2017-4-04 14:00:00', end:'2017-4-03 15:00:00',  faculty_id:f1.id,  title:'sure is an appointment', application_form_id:afc2.id)
-Appointment.create(start: '2017-4-05 13:00:00', end:'2017-4-05 14:00:00',  faculty_id:f1.id,  title:'sure is an appointment', application_form_id:afc3.id)
-Appointment.create(start: '2017-4-06 10:00:00', end:'2017-4-06 11:00:00',  faculty_id:f1.id,  title:'sure is an appointment', application_form_id:afc4.id)
-Appointment.create(start: '2017-4-06 15:00:00', end:'2017-4-06 16:00:00',  faculty_id:f1.id,  title:'sure is an appointment', application_form_id:afc5.id)
+Appointment.create(start: '2017-4-14 11:00:00', end:'2017-4-14 12:00:00',  faculty_id:f1.id,  title:'sure is an appointment', application_form_id:afc1.id)
+Appointment.create(start: '2017-4-13 14:00:00', end:'2017-4-13 15:00:00',  faculty_id:f1.id,  title:'sure is an appointment', application_form_id:afc2.id)
+Appointment.create(start: '2017-4-15 13:00:00', end:'2017-4-15 14:00:00',  faculty_id:f1.id,  title:'sure is an appointment', application_form_id:afc3.id)
+Appointment.create(start: '2017-4-18 10:00:00', end:'2017-4-18 11:00:00',  faculty_id:f1.id,  title:'sure is an appointment', application_form_id:afc4.id)
+Appointment.create(start: '2017-4-17 15:00:00', end:'2017-4-17 16:00:00',  faculty_id:f1.id,  title:'sure is an appointment', application_form_id:afc5.id)
 
 user = User.new
 user.email = 'ghreek@gmail.com'
