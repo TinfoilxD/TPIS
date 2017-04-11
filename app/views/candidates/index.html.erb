@@ -1,20 +1,25 @@
 <p id="notice"><%= notice %></p>
 
+
+
+
 <h1>Instructor Candidate Profile</h1>
+
 
 <div class="container">
   <div class ="container-body">
-<table class='table table-hover'>
+    <table id="myTable" class='table table-hover'>
+
   <thead>
     <tr>
-      <th> First name </th>
-      <th> Last name </th>
-      <th> Email </th>
-      <th> Phone number</th>
-      <th> Fax number </th>
-      <th> Zip code </th>
-      <th> Occupation</th>
-      <th> Alignment type </th>
+      <th onclick="sortTable(0)"> First name </th>
+      <th onclick="sortTable(0)"> Last name </th>
+      <th onclick="sortTable(0)"> Email </th>
+      <th onclick="sortTable(0)"> Phone number</th>
+      <th onclick="sortTable(0)"> Fax number </th>
+      <th onclick="sortTable(0)"> Zip code </th>
+      <th onclick="sortTable(0)"> Occupation</th>
+      <th onclick="sortTable(0)"> Alignment type </th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -44,3 +49,4 @@
 <br>
 
 <%= link_to 'New Candidate', new_candidate_path, class:'btn btn-default btn-S'  %>
+
