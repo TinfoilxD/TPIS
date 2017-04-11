@@ -1,7 +1,8 @@
-<h1>Editing Candidate</h1>
+<div id="form-wrapper">
+<h1 class="page-header">Editing Candidate</h1>
 
 <%= render 'form', candidate: @candidate %>
-<span class="pull-left">
+
 <%if user_signed_in? and current_user.system_admin? then%>
     <%= link_to 'Back', candidates_path, class:'btn btn-default btn-S'  %>
 <%end%>
@@ -9,4 +10,5 @@
 <%if user_signed_in? and current_user.candidate? then%>
     <%= link_to 'Back', profile_show_path, class:'btn btn-default btn-S'  %>
 <%end%>
-  </span>
+
+</div>
