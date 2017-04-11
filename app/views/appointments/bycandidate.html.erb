@@ -4,6 +4,8 @@
   <li><%=link_to 'Appointments/Applications', admin_view_appointments_index_path%></li>
   <li><%= 'Appointments for candidate' %> </li>
 </ol>
+
+
 <% @appointments.each do |appointment| %>
     <% @name = appointment.get_candidate(appointment) %>
     <% end %>
