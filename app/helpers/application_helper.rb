@@ -7,6 +7,7 @@ module ApplicationHelper
     else return ""
     end
   end
+
   def yesno(x)
     x ? "Yes" : "No"
   end
