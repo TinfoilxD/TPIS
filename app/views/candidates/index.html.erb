@@ -3,12 +3,22 @@
 
 
 
-<h1>Instructor Candidate Profile</h1>
-
 
 <div class="container">
+  <ol class="breadcrumb">
+    <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
+    <li class="active">Instructor Candidate ProfileCourse Location</li>
+  </ol>
+  <h1 class="page-header">Instructor Candidate Profile</h1>
+  <div class="pull-right">
+    <%= link_to 'Create New Candidate', new_candidate_path, class:'btn btn-info btn-S'  %>
+  </div>
+
+  <div class="col-md-12">
+    </br>
+    <div class="panel panel-default">
   <div class ="container-body">
-    <table id="myTable" class='table table-hover'>
+    <table id="myTable" class='table table-hover table-striped'>
 
 
   <thead>
@@ -35,8 +45,8 @@
         <td><%= candidate.occupation %> </td>
         <td><%= candidate.alignment_type&.alignment_type %></td>
         <td><%= link_to 'View Profile', candidate , class:'btn btn-default btn-xs' %></td>
-        <td><%= link_to 'Edit Profile', edit_candidate_path(candidate), class:'btn btn-default btn-xs'  %></td>
-        <td><%= link_to 'Delete', candidate, method: :delete, data: { confirm: 'Are you sure?' } , class:'btn btn-default btn-xs' %></td>
+        <td><%= link_to 'Edit Profile', edit_candidate_path(candidate), class:'btn btn-warning btn-xs'  %></td>
+        <td><%= link_to 'Delete', candidate, method: :delete, data: { confirm: 'Are you sure?' } , class:'btn btn-danger btn-xs' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -48,6 +58,7 @@
 <br>
 
   <p>
-  <%= link_to 'New Candidate', new_candidate_path, class:'btn btn-default btn-S'  %> |
   <%= link_to 'Back', system_admin_landing_path, class: 'btn btn-default btn-S' %>
   </p>
+</div>
+  </div>

@@ -14,7 +14,7 @@
       <%if user_signed_in? and current_user.system_admin? then%>
           <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
           <li><%= link_to 'Candidate Appointments By Date Range Selector', candidate_created_appointments_by_date_path%></li>
-          <li><%= link_to'Charts', report_candidates_by_alignment_type_path %> </li>
+          <li><%= link_to 'Charts', report_candidates_by_allignment_type_path %> </li>
 
 
       <%end%>
@@ -24,6 +24,13 @@
   <!-- /.navbar-static-side -->
 </div>
 
+
+<div id="page-wrapper">
+  <%=link_to 'Upcoming Appointments', report_upcoming_appointments_path%><br>
+  <%=link_to 'Candidates without Applications', report_candidates_without_applications_path%><br>
+  <%=link_to 'Applications Without Appointments', report_applications_without_appointments_path%><br>
+
+</div>
 
 
 </body>

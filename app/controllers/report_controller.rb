@@ -45,4 +45,12 @@ class ReportController < ApplicationController
   def upcoming_appointments
     @appointments = Appointment.where('start BETWEEN ? AND ?', Time.now, Time.now + 2.weeks).order(:start)
   end
+
+  def candidates_without_applications
+    @candidates = Candidate.where.not(id: ApplicationForm.pluck(:candidate_id).reject {|x| x.nil?})
+  end
+  def applications_without_appointments
+    @application_forms = ApplicationForm.where.not(id: Appointment.pluck(:application_form_id).reject {|x| x.nil?})
+  end
+
 end

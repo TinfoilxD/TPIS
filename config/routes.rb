@@ -86,7 +86,9 @@ Rails.application.routes.draw do
   get '/candidate_created_appointments_by_date', to: 'report#index'
   post '/appointment_date_between', to: 'report#apply'
 
-  get '/report_candidates_by_month', to: 'report#candidates_by_month'
-  get '/report_candidates_by_alignment_type', to: 'report#candidates_by_allignment_type'
-  get '/report_upcoming_appointments', to: 'report#upcoming_appointments'
+  get '/report_candidates_by_month', to: 'report#candidates_by_month', as: :report_candidates_by_month
+  get '/report_candidates_by_alignment_type', to: 'report#candidates_by_allignment_type', as: :report_candidates_by_allignment_type
+  get '/report_upcoming_appointments', to: 'report#upcoming_appointments', as: :report_upcoming_appointments
+  get 'report_candidates_without_applications', to: 'report#candidates_without_applications', as: :report_candidates_without_applications
+  get 'report_applications_without_appointments', to: 'report#applications_without_appointments', as: :report_applications_without_appointments
 end
