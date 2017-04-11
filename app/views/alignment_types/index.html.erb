@@ -1,9 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Alignment Types</h1>
 <div class="container">
-  <div class ="container-body">
-    <table class='table table-hover'>
+  <h1 class="page-header">Alignment Type</h1>
+  <div class="pull-right">
+    <%= link_to 'Create New Alignment Type', new_alignment_type_path, class:'btn btn-info btn-S' %>
+  </div>
+
+  <div class="col-md-12">
+    </br>
+    <div class="panel panel-default">
+      <table class="table table-striped">
       <thead>
       <tr>
         <th>Alignment type</th>
@@ -17,9 +23,9 @@
           <tr>
             <td><%= alignment_type.alignment_type %></td>
             <td><%= alignment_type.abbrev %></td>
-            <td><%= link_to 'Show', alignment_type, class:'btn btn-default btn-xs' %></td>
-            <td><%= link_to 'Edit', edit_alignment_type_path(alignment_type), class:'btn btn-default btn-xs' %></td>
-            <td><%= link_to 'Delete', alignment_type, method: :delete, class:'btn btn-default btn-xs', data: { confirm: 'Are you sure?' } %></td>
+
+            <td><%= link_to 'Edit', edit_alignment_type_path(alignment_type), class:'btn btn-warning btn-xs' %></td>
+            <td><%= link_to 'Delete', alignment_type, method: :delete, class:'btn btn-danger btn-xs', data: { confirm: 'Are you sure?' } %></td>
           </tr>
       <% end %>
       </tbody>
@@ -30,6 +36,6 @@
 <br>
 
 <p>
-  <%= link_to 'New Alignment Type', new_alignment_type_path, class:'btn btn-default btn-S' %>
-  |
+
+
 <%= link_to 'Back', admin_configurations_path, class:'btn btn-default btn-S' %>

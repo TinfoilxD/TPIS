@@ -1,8 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Faculty Types</h1>
+<div class="container">
+  <ol class="breadcrumb">
+    <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
+    <li> <%=link_to 'Configurations',admin_configurations_path%> </li>
+    <li class="active">Faculty User Types</li>
+  </ol>
+  <h1 class="page-header">Faculty User Types</h1>
+  <div class="pull-right">
+    <%= link_to ' Create New Faculty Type', new_faculty_type_path, class:'btn btn-info btn-S' %>
+  </div>
 
-<table>
+  <div class="col-md-12">
+    </br>
+    <div class="panel panel-default">
+      <table class="table table-striped">
   <thead>
   <tr>
     <th>Faculty Type Title</th>
@@ -10,21 +22,21 @@
   </tr>
   </thead>
 
+  </div>
   <tbody>
   <% @faculty_types.each do |faculty_type| %>
       <tr>
         <td><p><%= faculty_type.job_title %></p></td>
-        <td><p><%= link_to 'Show', faculty_type, class:'btn btn-default btn-xs' %></p></td>
-        <td><p><%= link_to 'Edit', edit_faculty_type_path(faculty_type), class:'btn btn-default btn-xs' %></p></td>
-        <td><p><%= link_to 'Delete', faculty_type, method: :delete, class:'btn btn-default btn-xs', data: { confirm: 'Are you sure?' } %></p></td>
+
+        <td><p><%= link_to 'Edit', edit_faculty_type_path(faculty_type), class:'btn btn-warning btn-xs' %></p></td>
+        <td><p><%= link_to 'Delete', faculty_type, method: :delete, class:'btn btn-danger btn-xs', data: { confirm: 'Are you sure?' } %></p></td>
       </tr>
   <% end %>
   </tbody>
 </table>
+  </div>
 
 <br>
 <p>
-  <%= link_to 'New Faculty Type', new_faculty_type_path, class:'btn btn-default btn-S' %>
-  |
   <%= link_to 'Back', admin_configurations_path, class:'btn btn-default btn-S' %>
 </p>

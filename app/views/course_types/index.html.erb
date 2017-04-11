@@ -1,8 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Course Types</h1>
+<div class="container">
+  <ol class="breadcrumb">
+    <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
+    <li> <%=link_to 'Configurations',admin_configurations_path%> </li>
+    <li class="active">Course Types</li>
+  </ol>
+<h1 class="page-header">Course Types</h1>
+  <div class="pull-right">
+  <%= link_to 'Create New Course Type', new_course_type_path, class:'btn btn-info btn-S' %>
+</div>
 
-<table>
+  <div class="col-md-12">
+    </br>
+    <div class="panel panel-default">
+      <table class="table table-striped">
   <thead>
   <tr>
     <th>Course type</th>
@@ -14,17 +26,17 @@
   <% @course_types.each do |course_type| %>
       <tr>
         <td><p><%= course_type.course_type %></p></td>
-        <td><p><%= link_to 'Show', course_type, class:'btn btn-default btn-xs' %></p></td>
-        <td><p><%= link_to 'Edit', edit_course_type_path(course_type), class:'btn btn-default btn-xs' %></p></td>
-        <td><p><%= link_to 'Delete', course_type, method: :delete, class:'btn btn-default btn-xs', data: { confirm: 'Are you sure?' } %></p></td>
+        <td><p><%= link_to 'Edit', edit_course_type_path(course_type), class:'btn btn-warning btn-xs' %></p></td>
+        <td><p><%= link_to 'Delete', course_type, method: :delete, class:'btn btn-danger btn-xs', data: { confirm: 'Are you sure?' } %></p></td>
       </tr>
   <% end %>
   </tbody>
 </table>
-
+</div>
+  </div>
 <br>
 <p>
-  <%= link_to 'New Course Type', new_course_type_path, class:'btn btn-default btn-S' %>
-  |
+
+</br>
   <%= link_to 'Back', admin_configurations_path, class:'btn btn-default btn-S' %>
 </p>

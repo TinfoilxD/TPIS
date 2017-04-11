@@ -69,3 +69,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap3-datetimepicker-rails'
 
 gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+

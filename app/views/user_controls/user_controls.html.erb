@@ -8,11 +8,6 @@
 
     <%if user_signed_in? and current_user.system_admin? then%>
         <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
-        <li><%= link_to 'User Controls', admin_user_controls_path%></li>
-        <li><%= link_to 'Candidate Application Forms', admin_view_applications_path%></li>
-        <li><%= link_to 'Input Available Times', input_available_timeslots_path%></li>
-        <li><%= link_to 'View Appointments', appointments_calendar_list_path%></li>
-        <li><%= link_to 'Reports', reports_landing_path%></li>
         <li><%= link_to 'Configurations', admin_configurations_path%></li>
 
         </ul>

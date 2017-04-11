@@ -11,7 +11,6 @@
 
       <%if user_signed_in? and current_user.system_admin? then%>
           <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
-          <li><%= link_to 'Configurations', admin_configurations_path%></li>
 
           </ul>
       <%end%>
@@ -24,8 +23,15 @@
 
 <div id="page-wrapper">
   <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Configurations</h1>
+    <div class="col-lg-14">
+  <ol class="breadcrumb">
+    <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
+    <li class="active">Configurations</li>
+  </ol>
+
+      <h1 class="page-header"><span class="glyphicon glyphicon-cog"></span> Configurations
+        <p>This menu enables you to access different elements and manage them.</p></h1>
+
     </div>
     <!-- /.col-lg-12 -->
   </div>
@@ -33,94 +39,98 @@
 
   <div class="row">
     <div class="col-lg-3 col-md-6">
-      <div class="panel panel-primary">
+      <div class="panel panel-default">
         <div class="panel-heading">
           <div class="row">
             <div class="col-xs-3">
               <i class="fa fa-comments fa-5x"></i>
             </div>
-            <div class="col-xs-9 text-right">
-
-              <div>Courses</div>
+            <div class="col-lg-6">
+              <div> <span class="glyphicon glyphicon-cog"></span> <strong>Selection List</strong> <p>This section allows you to manage selection lists.</p></div>
             </div>
           </div>
         </div>
         <div class="panel-footer">
-          <%= link_to 'Edit Courses', admin_course_crud_path %></br>
-          <%= link_to 'Edit Course-Types', admin_course_type_crud_path%>
+          <span class="glyphicon glyphicon-chevron-right"></span><%= link_to 'Course Types', admin_course_type_crud_path%></br>
+          <span class="glyphicon glyphicon-chevron-right"></span><%= link_to 'Course Location', admin_course_crud_path %> </br>
+          <span class="glyphicon glyphicon-chevron-right"></span><%= link_to 'Alignment Types', admin_alignment_type_crud_path %>
           <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
           <div class="clearfix"></div>
         </div>
-
       </div>
     </div>
+
+
+
+
+
+
     <div class="col-lg-3 col-md-6">
-      <div class="panel panel-primary">
+      <div class="panel panel-default">
         <div class="panel-heading">
           <div class="row">
             <div class="col-xs-3">
               <i class="fa fa-tasks fa-5x"></i>
             </div>
-            <div class="col-xs-9 text-right">
-              <div>Alignment Type</div>
+            <div class="col-lg-6">
+              <div><span class="glyphicon glyphicon-cog"></span> <strong>Administration</strong><p>This section allows you to manage information about the users.<p></p> </div>
             </div>
           </div>
         </div>
-        <a href="#">
           <div class="panel-footer">
-            <%= link_to 'Edit Alignment Types', admin_alignment_type_crud_path %>
+            <span class="glyphicon glyphicon-chevron-right"></span><%= link_to 'User Accounts', admin_user_controls_path%> </br>
+            <span class="glyphicon glyphicon-chevron-right"></span><%= link_to 'User Faculty Types', faculty_type_crud_path%>
             <span class="pull-left"></span>
             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
             <div class="clearfix"></div>
           </div>
-        </a>
       </div>
     </div>
-    <div class="col-lg-3 col-md-6">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <div class="row">
-            <div class="col-xs-3">
-              <i class="fa fa-shopping-cart fa-5x"></i>
-            </div>
-            <div class="col-xs-9 text-right">
-              <div>Faculty</div>
-            </div>
-          </div>
-        </div>
-        <a href="#">
-          <div class="panel-footer">
-            <%= link_to 'Edit Faculty Types', faculty_type_crud_path  %>
-            <span class="pull-left">
+    <!--<div class="col-lg-3 col-md-6">-->
+      <!--<div class="panel panel-default">-->
+        <!--<div class="panel-heading">-->
+          <!--<div class="row">-->
+            <!--<div class="col-xs-3">-->
+              <!--<i class="fa fa-shopping-cart fa-5x"></i>-->
+            <!--</div>-->
+            <!--<div class="col-xs-9 text-left">-->
+              <!--<div>Anything else?</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<a href="#">-->
+          <!--<div class="panel-footer">-->
 
-                            </span>
-            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-            <div class="clearfix"></div>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <div class="row">
-            <div class="col-xs-3">
-              <i class="fa fa-support fa-5x"></i>
-            </div>
-            <div class="col-xs-9 text-right">
-              <div>Nothing Yet</div>
-            </div>
-          </div>
-        </div>
-        <div class="panel-footer">
-          <%= link_to 'Create Application', admin_create_app_for_index_path %>
-          <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-          <div class="clearfix"></div>
-        </div>
-        </a>
-      </div>
-    </div>
-  </div>
+            <!--<span class="pull-left">-->
+
+                            <!--</span>-->
+            <!--<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>-->
+            <!--<div class="clearfix"></div>-->
+          <!--</div>-->
+        <!--</a>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-lg-3 col-md-6">-->
+      <!--<div class="panel panel-default">-->
+        <!--<div class="panel-heading">-->
+          <!--<div class="row">-->
+            <!--<div class="col-xs-3">-->
+              <!--<i class="fa fa-support fa-5x"></i>-->
+            <!--</div>-->
+            <!--<div class="col-xs-9 text-left">-->
+              <!--<div>Nothing Yet</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="panel-footer">-->
+          <!--<#%= link_to 'Create Application', admin_create_app_for_index_path %>-->
+          <!--<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>-->
+          <!--<div class="clearfix"></div>-->
+        <!--</div>-->
+        <!--</a>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
 
   <!-- /#page-wrapper -->
 </div>
