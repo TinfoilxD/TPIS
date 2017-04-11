@@ -24,7 +24,7 @@
 
   <div class="panel-body">
     <div class="row">
-      <div class="col-lg-6">
+      <div class="col-lg-8">
         <form role="form">
 
     <div class="group-form">
@@ -34,54 +34,84 @@
 
 
     <div class="form-group">
-    <%= f.label :candidate_id, "For Candidate: #{@current_application_form.candidate&.full_name}" %>
+    <%= f.label :candidate_id, "For Candidate: #{@current_application_form.candidate&.first_name}" %>
   </div>
 
-    <div id="ic_screening_form">
-  <div class="field">
-    <%= f.label :training_center_id, "Please pick a training center to assign with." %>
-    <%= f.collection_select :training_center_id, TrainingCenter.all, :id, :training_center_name %>
-  </div>
+
+<div id="ic_screening_form">
 
   <div class="field">
-    <%= f.label :course_type_id, "Which course are you applying for?" %>
+    <%= f.label :course_type_id, "What type of instructor are you interested in becoming?" %>
     <%= f.collection_select :course_type_id, CourseType.all, :id, :course_type %>
   </div>
+
+
+
+<div class="field">
+  <%= f.label "Do you have any experience teaching?" %>
+   <%= f.radio_button :experience_check, true %>
+   <%= f.label "Yes" %>
+   <%= f.radio_button :experience_check, false %>
+   <%= f.label "No" %>
+ </div>
+
+
+
+  <div class="field">
+   <%= f.label :experience_description, "If yes, please explain:" %>
+  <br>
+   <%= f.text_area :experience_description, class: 'form-control' ,size: "2x5"%>
+  </div>
+
+
+  <div class="field">
+     <%= f.label "Have you ever been a CPR instructor?" %>
+     <%= f.radio_button :cpr_instructor_check, true %>
+     <%= f.label "Yes" %>
+     <%= f.radio_button :cpr_instructor_check, false %>
+     <%= f.label "No" %>
+  </div>
+
+  <div class="field">
+            <%= f.label "If yes, with who?" %>
+    <br>
+            <%= f.check_box :aha_check %>
+            <%= f.label "American Heart Association - Name of Training Center:" %>  <%=f.text_field :aha_training_canter,class: 'form-control' %>
+    <br>
+            <%= f.check_box :merica_cross_check %>
+            <%= f.label "American Red Cross - National Safety Council or Other:" %> <%=f.text_field :ns_council_other,class: 'form-control' %>
+          </div>
+
+
 
 
   <div class="field">
     <%= f.label :aha_instructor_motivation, "Why do you want to become an AHA instructor?" %>
     <br>
-    <%= f.text_area :aha_instructor_motivation, size: "130x5"%>
+    <%= f.text_area :aha_instructor_motivation,class: 'form-control' ,size: "2x5"%>
   </div>
   
-   <div class="field">
-    <%= f.label "Do you have any experience teaching?" %>
-    <%= f.radio_button :experience_check, true %>
-    <%= f.label "Yes" %>
-    <%= f.radio_button :experience_check, false %>
-    <%= f.label "No" %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :experience_description, "If yes, please explain:" %>
-    <br>
-    <%= f.text_area :experience_description, size: "130x5"%>
-  </div>
+
   
   <div class="field">
     <%= f.label :marketing_origin, "How did you hear about Therapeutical Professionals?" %>
     <br>
-    <%= f.text_area :marketing_origin, size: "130x5"%>
+    <%= f.text_area :marketing_origin, class: 'form-control' ,size: "2x5"%>
   </div>
+
+    <div class="field">
+   <%= f.label :training_center, "If no, please provide the Training Center name." %>
+    <%= f.text_field :training_center, class:'form-control' %>
+    </div>
+
 
   <div class="field">
     <%= f.label :teaching_frequency, "How often do you plan to teach your classes?" %>
-    <%= f.text_field :teaching_frequency%>
+    <%= f.text_field :teaching_frequency, class:'form-control'%>
   </div>
 
   <div class="field">
-    <%= f.label :owned_equipment, "Do you own teaching equipment?" %>
+    <%= f.label :owned_equipment, "Do you own manikins and other CPR equipment?" %>
     <%= f.radio_button :owned_equipment, true %>
     <%= f.label :owned_equipent, "Yes" %>
     <%= f.radio_button :owned_equipment, false %>
@@ -118,14 +148,17 @@ with the guidelines of the American Heart Association.<br> I also agree to stren
 Survival and the mission of the American Heart Association in my community.
   </p>
   </div>
-    <div class="field">
+      <div class="col-lg-4">
+    <div class="row">
       <%= f.label :date_agreed %>
-      <%= f.text_field :date_agreed, :placeholder =>"mm/dd/yyyy" %>
+      <%= f.text_field :date_agreed,class: 'form-control',:placeholder =>"mm/dd/yyyy" %>
     </div>
+        <br>
       <div class="actions">
         <button type="button" class="btn btn-default" id="back_button">Back</button>
         <%= f.submit'Submit', data: {confirm: 'By submitting this application, I acknowledge that I have answered each question completely and truthfully to the best of my ability.'} , class:'btn btn-default btn-S' %>
   </div>
+      </div>
       </div>
         </form>
     </div>
