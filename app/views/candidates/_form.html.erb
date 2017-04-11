@@ -88,15 +88,14 @@
           <div class="col-xs-4"><label for="fax">Fax number</label>
             <%=f.text_field :fax, placeholder: 'Fax number (optional)', class: 'form-control'%>
           </div>
-        </div>
 
-        <br>
 
-        <div class="field">
+
+        <div class="col-xs-4">
           <%= f.label :email %>
           <%= f.text_field :email, :value => current_user.email, :readonly => true,class:'form-control' %>
         </div>
-
+        </div>
         <br>
         <!--- row 5 ----------->
         <div class="row">
@@ -106,12 +105,10 @@
           </div>
 
 
-
-          <div class="form-group">
+          <div class="col-xs-4">
             <%= f.label :alignment_type_id %>
-            <%= f.collection_select(:alignment_type_id, AlignmentType.all, :id, :alignment_type, class:'custom-select') %>
+            <%= f.collection_select :alignment_type_id, AlignmentType.all, :id, :alignment_type, {prompt: "Select a category"}, {class: "form-control"} %>
           </div>
-
         </div>
         <br>
         <!--- Submit Button ----------->
