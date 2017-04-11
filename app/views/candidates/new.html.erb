@@ -4,7 +4,6 @@
 
 <%= render 'form', candidate: @candidate %>
 
-<br>
 
 <%if user_signed_in? and current_user.system_admin? then%>
     <%= link_to 'Back', candidates_path, class:'btn btn-default btn-S'  %>

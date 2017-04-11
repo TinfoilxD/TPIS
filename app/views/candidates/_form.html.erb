@@ -39,10 +39,10 @@
             <%=f.text_field :last_name, placeholder: 'Last Name', class: 'form-control'%>
           </div>
         </div>
-        <br>
+        </br>
         <!--- row 2 ----------->
         <div class="row">
-          <div class="col-xs-8">
+          <div class="col-xs-7">
             <label for="address">Street address</label>
             <%=f.text_field :address, placeholder: 'Address', class: 'form-control'%>
           </div>
@@ -52,11 +52,7 @@
             <%=f.text_field :city, placeholder: 'City', class: 'form-control'%>
           </div>
 
-          <div class="col-xs-8">
-            <%= f.label 'State', class:'State' %>
-            <%= f.select :state, options_for_select(us_states, "TX")%>
 
-          </div>
         </div>
 
         <br>
@@ -65,19 +61,19 @@
 
         <div class="row">
 
+          <div class="col-xs-3">
+            <%= f.label :state_code, 'State', class: 'control-label' %>
+            <%= f.collection_select(:state_code, State.select(:state_name, :state_code),
+                                    :state_code, :state_name, {selected: 'TX'}, {class: 'form-control'}) %>
+          </div>
+
           <div class="col-xs-2">
             <label for="zipcode">Zip code</label>
             <%=f.text_field :zipcode, placeholder: 'Zip Code', class: 'form-control'%>
           </div>
+         </div>
 
-
-          <div class="mr-sm-8">
-            <%= f.label :country %>
-            <%= f.select :country, options_for_select(countries, "United States")%>
-          </div>
-
-        </div>
-
+     </br>
         <!--- row 4 ----------->
         <div class="row">
           <div class="col-xs-4">
@@ -88,8 +84,6 @@
           <div class="col-xs-4"><label for="fax">Fax number</label>
             <%=f.text_field :fax, placeholder: 'Fax number (optional)', class: 'form-control'%>
           </div>
-
-
 
         <div class="col-xs-4">
           <%= f.label :email %>
@@ -104,10 +98,9 @@
             <%=f.text_field :occupation, placeholder: 'Occupation', class: 'form-control'%>
           </div>
 
-
           <div class="col-xs-4">
-            <%= f.label :alignment_type_id %>
-            <%= f.collection_select :alignment_type_id, AlignmentType.all, :id, :alignment_type, {prompt: "Select a category"}, {class: "form-control"} %>
+            <label for="alignment">Alignment Type</label>
+            <%= f.collection_select :alignment_type_id, AlignmentType.all, :id, :alignment_type, {prompt: "Select an Alignment"}, {class: "form-control"} %>
           </div>
         </div>
         <br>
