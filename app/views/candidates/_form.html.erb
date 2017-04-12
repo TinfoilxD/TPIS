@@ -29,12 +29,12 @@
       <form>
         <!--- row 1 ----------->
         <div class="row">
-          <div class="col-xs-4">
+          <div class="col-xs-3">
             <label for="first_name"> First name</label>
             <%=f.text_field :first_name, placeholder: 'First Name', class: 'form-control'%>
           </div>
 
-          <div class="col-xs-4">
+          <div class="col-xs-3">
             <label for="last_name">Last name</label>
             <%=f.text_field :last_name, placeholder: 'Last Name', class: 'form-control'%>
           </div>
@@ -42,26 +42,17 @@
         </br>
         <!--- row 2 ----------->
         <div class="row">
-          <div class="col-xs-7">
+          <div class="col-xs-5">
             <label for="address">Street address</label>
             <%=f.text_field :address, placeholder: 'Address', class: 'form-control'%>
           </div>
 
-          <div class="col-xs-4">
+          <div class="col-xs-3">
             <label for="city">City</label>
             <%=f.text_field :city, placeholder: 'City', class: 'form-control'%>
           </div>
 
-
-        </div>
-
-        <br>
-        <!--- row 3 ----------->
-
-
-        <div class="row">
-
-          <div class="col-xs-3">
+          <div class="col-xs-2">
             <%= f.label :state_code, 'State', class: 'control-label' %>
             <%= f.collection_select(:state_code, State.select(:state_name, :state_code),
                                     :state_code, :state_name, {selected: 'TX'}, {class: 'form-control'}) %>
@@ -71,21 +62,26 @@
             <label for="zipcode">Zip code</label>
             <%=f.text_field :zipcode, placeholder: 'Zip Code', class: 'form-control'%>
           </div>
-         </div>
+        </div>
 
-     </br>
+
+        <br>
+        <!--- row 3 ----------->
+
+
+
         <!--- row 4 ----------->
         <div class="row">
-          <div class="col-xs-4">
+          <div class="col-xs-3">
             <label for="phone">Phone number</label>
             <%=f.text_field :phone, placeholder: 'Phone number', class: 'form-control'%>
           </div>
 
-          <div class="col-xs-4"><label for="fax">Fax number</label>
+          <div class="col-xs-3"><label for="fax">Fax number</label>
             <%=f.text_field :fax, placeholder: 'Fax number (optional)', class: 'form-control'%>
           </div>
 
-        <div class="col-xs-4">
+        <div class="col-xs-3">
           <%= f.label :email %>
           <%= f.text_field :email, :value => current_user.email, :readonly => true,class:'form-control' %>
         </div>
@@ -93,12 +89,12 @@
         <br>
         <!--- row 5 ----------->
         <div class="row">
-          <div class="col-xs-4">
+          <div class="col-xs-3">
             <label for="occupation">Occupation</label>
             <%=f.text_field :occupation, placeholder: 'Occupation', class: 'form-control'%>
           </div>
 
-          <div class="col-xs-4">
+          <div class="col-xs-3">
             <label for="alignment">Alignment Type</label>
             <%= f.collection_select :alignment_type_id, AlignmentType.all, :id, :alignment_type, {prompt: "Select an Alignment"}, {class: "form-control"} %>
           </div>
