@@ -1,49 +1,75 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @faculty.first_name %>
-</p>
+<div id="form-wrapper">
+  <div class="row">
+    <div class="col-xs-6 col-sm-8 col-md-6 col-md-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-3">
 
-<p>
-  <strong>Last name:</strong>
-  <%= @faculty.last_name %>
-</p>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Instructor Candidate Profile</h3>
+        </div>
 
-<p>
-  <strong>Faculty type:</strong>
-  <%= @faculty.faculty_type %>
-</p>
+        <div class="panel-body" >
+          <div class="row">
+            <div class="col-lg-14">
+              <table class="profile-table table-profile-information ">
+                <tbody>
+ <tr>
 
-<p>
-  <strong>Email:</strong>
-  <%= @faculty.email %>
-</p>
+<td>  <strong>First name:</strong></td>
+ <td>  <%= @faculty.first_name %> </td>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @faculty.phone %>
-</p>
+</tr>
 
-<p>
-  <strong>Office address:</strong>
-  <%= @faculty.office_address %>
-</p>
+ <tr>
+ <td> <strong>Last name:</strong> </td>
+<td>  <%= @faculty.last_name %></td>
+ </tr>
 
-<p>
-  <strong>State:</strong>
-  <%= @faculty.state %>
-</p>
+<tr>
+  <td><strong>Faculty type:</strong></td>
+  <td><%= @faculty.faculty_type %></td>
+</tr>
 
-<p>
-  <strong>Zipcode:</strong>
-  <%= @faculty.zip_code %>
-</p>
+<tr>
+  <td><strong>Email:</strong></td>
+ <td> <%= @faculty.email %></td>
+</tr>
 
-<p>
-  <strong>Country:</strong>
-  <%= @faculty.country %>
-</p>
+<tr>
+ <td><strong>Phone:</strong></td>
+  <td><%= @faculty.phone %></td>
+</tr>
 
-<%= link_to 'Edit', edit_faculty_path(@faculty) %> |
-<%= link_to 'Back', faculties_path %>
+<tr>
+ <td> <strong>Office address:</strong></td>
+  <td><%= @faculty.office_address %></td>
+</tr>
+
+<tr>
+  <td><strong>State:</strong></td>
+  <td><%= @faculty.state %></td>
+</tr>
+
+<tr>
+  <td><strong>Zipcode:</strong></td>
+  <td><%= @faculty.zip_code %></td>
+</tr>
+
+      </tbody>
+  </table>
+
+ <div id="panel-footer">
+
+  <span class="pull-right">
+
+<%= link_to 'Edit', edit_faculty_path(@faculty), class:'btn btn-primary' %> |
+<%= link_to 'Back', faculties_path, class:'btn btn-default' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
