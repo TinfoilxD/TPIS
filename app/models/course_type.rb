@@ -1,5 +1,4 @@
 class CourseType < ApplicationRecord
-  has_many :courses
   has_many :application_forms
 
   validates_presence_of :course_type
@@ -8,4 +7,5 @@ class CourseType < ApplicationRecord
     course_type = CourseType.find(course_type_id).course_type
     "#{course_type}"
   end
+
 end
