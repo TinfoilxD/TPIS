@@ -17,7 +17,7 @@
 
 <p>
   <strong>Course:</strong>
-  <%= @course.course_start_date %>
+  <%= @application_form.course_type&.course_type %>
 </p>
 
 <p>
@@ -74,6 +74,32 @@
 <p>
   <strong>AHA form agreement:</strong>
   <%= yesno(@application_form.aha_form_agreement) %>
+</p>
+
+<p>
+  <strong>CPR instructor:</strong>
+  <%= yesno(@application_form.cpr_instructor_check) %>
+</p>
+
+<p>
+  <strong>AHA check:</strong>
+  <%= yesno(@application_form.aha_check) %>
+</p>
+
+
+<p>
+  <strong>American Red Cross:</strong>
+  <%= yesno(@application_form.merica_cross_check) %>
+</p>
+
+<p>
+  <strong>AHA Training Center:</strong>
+  <%= @application_form.aha_training_canter %>
+</p>
+
+<p>
+  <strong>National Safety Council:</strong>
+  <%= @application_form.ns_council_other %>
 </p>
 
     </table>

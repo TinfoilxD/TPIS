@@ -3,16 +3,16 @@
 
 <%= render 'form', application_form: @application_form %>
 
-<%= link_to 'View', @application_form %> 
+<%= link_to 'View', @application_form, class: 'btn btn-default btn-S' %>
 
 <%if user_signed_in? and current_user.system_admin? then%>|
-<%= link_to 'Back', application_forms_path %>
+<%= link_to 'Back', application_forms_path,class: 'btn btn-default btn-S' %>
 <%end%>
 
 
 
 <%if user_signed_in? and current_user.candidate? then%>
-    <%= link_to 'Back', application_form_path %>
+    <%= link_to 'Back', application_form_path ,class:  'btn btn-default btn-S'%>
 <%end%>
 
 

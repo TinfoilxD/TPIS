@@ -9,10 +9,9 @@
       <tr>
         <div class="application_view_headers">
           <th>Name</th>
-          <th class="coursecolumn">Course</th>
+          <th>Course</th>
           <th>Aha Instructor Motivation</th>
           <th>Experience</th>
-          <th>Describe Experience</th>
           <th>Marketing Origin</th>
           <th>Teaching Frequency</th>
           <th>Owned Equipment</th>
@@ -21,6 +20,11 @@
           <th>Screening Form Agreement</th>
           <th>Date Agreed</th>
           <th>Aha Form Agreement</th>
+          <th>CPR Instructor Experience</th>
+          <th>AHA Check</th>
+          <th>AHA Training Center:</th>
+          <th>Red Cross Member </th>
+          <th>National Safety Council</th>
           <th colspan="3"></th>
         </div>
       </tr>
@@ -30,20 +34,30 @@
       <% @application_forms.each do |application_form| %>
           <tr>
             <td><%= application_form.candidate.full_name %> </td>
-            <td class="coursecolumn"><%= application_form.course&.course_identifier %></td>
+            <td><%= application_form.course&.course_identifier %></td>
             <td><%= application_form.aha_instructor_motivation %></td>
             <td><%= yesno(application_form.experience_check) %></td>
-            <td><%= application_form.experience_description %></td>
             <td><%= application_form.marketing_origin %></td>
             <td><%= application_form.teaching_frequency %></td>
             <td><%= yesno(application_form.owned_equipment) %></td>
             <td><%= yesno(application_form.public_class_availability) %></td>
             <td><%= yesno(application_form.teaching_location) %></td>
             <td><%= yesno(application_form.screening_form_agreement) %></td>
-            <td><%= application_form.date_agreed %></td>
+            <td><%= application_form.date_agreed&.strftime('%M %d, %Y') %></td>
             <td><%= yesno(application_form.aha_form_agreement) %></td>
+            <td><%= yesno(application_form.cpr_instructor_check) %> </td>
+            <td><%= yesno(application_form.aha_check) %></td>
+            <td><%= application_form.aha_training_canter %></td>
+            <td><%= yesno(application_form.merica_cross_check) %></td>
+            <td><%= application_form.ns_council_other %></td>
           </tr>
           <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>

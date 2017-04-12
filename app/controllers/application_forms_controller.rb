@@ -106,7 +106,7 @@ class ApplicationFormsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def application_form_params
-    params.require(:application_form).permit(:candidate_id, :training_center_id, :course_id, :aha_instructor_motivation, :experience_check, :experience_description, :marketing_origin, :teaching_frequency, :owned_equipment, :class_availability, :boolean, :teaching_location, :screening_form_agreement, :date_agreed, :aha_form_agreement)
+    params.require(:application_form).permit(:candidate_id, :training_center_id, :course_id, :course_type_id, :aha_instructor_motivation, :experience_check, :experience_description, :marketing_origin, :teaching_frequency, :owned_equipment, :class_availability, :boolean, :teaching_location, :screening_form_agreement, :date_agreed, :aha_form_agreement, :cpr_instructor_check, :aha_check, :aha_training_canter, :merica_cross_check, :ns_council_other)
   end
 end
 

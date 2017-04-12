@@ -10,7 +10,6 @@
           <th class="coursecolumn">Course</th>
           <th>Aha Instructor Motivation</th>
           <th>Experience</th>
-          <th>Describe Experience</th>
           <th>Marketing Origin</th>
           <th>Teaching Frequency</th>
           <th>Owned Equipment</th>
@@ -28,10 +27,9 @@
       <% @application_forms.each do |application_form| %>
           <tr>
             <td><%= application_form.candidate.full_name %> </td>
-            <td class="coursecolumn"><%= application_form.course&.course_identifier %></td>
+            <td class="coursecolumn"><%= application_form.course_type.course_type %></td>
             <td><%= application_form.aha_instructor_motivation %></td>
             <td><%= yesno(application_form.experience_check) %></td>
-            <td><%= application_form.experience_description %></td>
             <td><%= application_form.marketing_origin %></td>
             <td><%= application_form.teaching_frequency %></td>
             <td><%= yesno(application_form.owned_equipment) %></td>

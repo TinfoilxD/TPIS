@@ -38,7 +38,6 @@
         <td class="bycan"><%= appointment.end.strftime('%B %e, %l:%M %p') %></td>
         <td class="bycan"><%= appointment.get_candidate(appointment)%></td>
         <td class="bycan"><%= appointment.get_faculty(appointment)%></td>
-        <td><%= link_to 'Show', appointment , class:'btn btn-default btn-xs'%></td>
         <td><%= link_to 'Change', edit_appointment_path(appointment) ,class:'btn btn-default btn-xs'%></td>
         <td><%= link_to 'Delete', appointment, method: :delete, data: { confirm: 'Are you sure?' } ,class:'btn btn-default btn-xs'%></td>
       </tr>
