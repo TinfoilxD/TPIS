@@ -10,6 +10,18 @@
     <li class="active">Instructor Candidate ProfileCourse Location</li>
   </ol>
   <h1 class="page-header">Instructor Candidate Profile</h1>
+  <div class="col-md-5">
+    <!--<form action="#" method="get">-->
+    <div class="input-group">
+      <input class="form-control" id="system-search" name="q" placeholder="Search for" required autofocus>
+      <span class="input-group-btn">
+                        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                    </span>
+    </div>
+    <!--</form>-->
+    <br>
+  </div>
+
   <div class="pull-right">
     <%= link_to 'Create New Candidate', new_candidate_path, class:'btn btn-info btn-S'  %>
   </div>
@@ -18,17 +30,16 @@
     </br>
     <div class="panel panel-default">
   <div class ="container-body">
-    <table id="myTable" class='table table-hover table-striped'>
+    <table id="myTable" class='table table-hover table-striped table-list-search'>
 
   <thead>
     <tr>
-      <th onclick="sortTable(0)"> First name </th>
-      <th onclick="sortTable(0)"> Last name </th>
-      <th onclick="sortTable(0)"> Email </th>
+      <th onclick="sortTable(0)"> First name  </th>
+      <th onclick="sortTable(0)"> Last name</th>
+      <th onclick="sortTable(0)"> Email</th>
       <th onclick="sortTable(0)"> Phone number</th>
-      <th onclick="sortTable(0)"> Zip code </th>
       <th onclick="sortTable(0)"> Occupation</th>
-      <th onclick="sortTable(0)"> Alignment type </th>
+      <th onclick="sortTable(0)"> Alignment type</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -39,8 +50,7 @@
         <td><%= candidate.first_name %></td>
         <td><%= candidate.last_name %></td>
         <td><%= candidate.email %></td>
-        <td><%= candidate.phone %></td>
-        <td><%= candidate.zipcode %></td>
+        <td><%=candidate.phone%></td>
         <td><%= candidate.occupation %> </td>
         <td><%= candidate.alignment_type&.alignment_type %></td>
         <td><%= link_to 'View Profile', candidate , class:'btn btn-default btn-xs' %></td>
