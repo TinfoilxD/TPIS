@@ -9,7 +9,7 @@
     <tr>
       <div class="application_view_headers">
       <th>Name</th>
-      <th>Course</th>
+      <th>Course Type</th>
       <th>AHA Instructor Motivation</th>
       <th>Experience</th>
       <th>Experience Description</th>
@@ -30,7 +30,7 @@
     <% @application_forms.each do |application_form| %>
       <tr>
         <td><%= application_form.candidate.full_name %> </td>
-        <td><%= application_form.course&.course_identifier %></td>
+        <td><%= application_form.course_type.course_type_identifier(application_form.course_type_id) %></td>
         <td><%= application_form.aha_instructor_motivation %></td>
         <td><%= yesno(application_form.experience_check)%></td>
         <td><%= application_form.experience_description %></td>
