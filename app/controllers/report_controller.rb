@@ -24,8 +24,7 @@ class ReportController < ApplicationController
                     "FROM appointments INNER JOIN faculties ON appointments.faculty_id = faculties.id "\
                     "INNER JOIN application_forms ON appointments.application_form_id = application_forms.id "\
                     "INNER JOIN candidates ON application_forms.candidate_id = candidates.id "\
-                    "INNER JOIN courses ON application_forms.course_id = courses.id "\
-                    "INNER JOIN course_types ON courses.course_type_id = course_types.id "\
+                    "INNER JOIN course_types ON application_forms.course_type_id = course_types.id "\
                     "WHERE appointments.start BETWEEN '#{formatted_start_time}' AND '#{formatted_end_time}'"
     results = ActiveRecord::Base.connection.execute(sql_statement)
     render :json => results
