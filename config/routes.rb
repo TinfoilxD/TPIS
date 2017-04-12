@@ -91,4 +91,5 @@ Rails.application.routes.draw do
   get '/report_upcoming_appointments', to: 'report#upcoming_appointments', as: :report_upcoming_appointments
   get 'report_candidates_without_applications', to: 'report#candidates_without_applications', as: :report_candidates_without_applications
   get 'report_applications_without_appointments', to: 'report#applications_without_appointments', as: :report_applications_without_appointments
+  get '/report_candidates_by_course', to: 'report#candidates_by_course', as: :report_candidates_by_course
 end

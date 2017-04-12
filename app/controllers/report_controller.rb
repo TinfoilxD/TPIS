@@ -53,4 +53,13 @@ class ReportController < ApplicationController
     @application_forms = ApplicationForm.where.not(id: Appointment.pluck(:application_form_id).reject {|x| x.nil?})
   end
 
+  def candidates_by_course
+    @candidates = Candidate.all
+    @course_types = CourseType.all
+
+    sql_statement = "SELECT course_types.course_type as an, count(*)"\
+                     "FROM course_types"
+    @sql = ActiveRecord::Base.connection.execute(sql_statement)
+  end
+
 end

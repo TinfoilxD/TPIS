@@ -1,0 +1,46 @@
+<div id="wrapper">
+
+
+<div id="page-wrapper">
+  <div class="row">
+   <div class="col-md-10">
+    <div class="panel panel-default">
+     <div class="panel-heading"> Candidates by Course </div>
+
+
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th> First name </th>
+          <th> Last name </th>
+          <th> Course </th>
+        </tr>
+
+        </thead>
+        <tbody>
+        <% @candidates.each do |candidate| %>
+            <% @course_types.each do |course_type| %>
+        <tr>
+              <td><%= candidate.first_name %></td>
+              <td><%= candidate.last_name %></td>
+              <td><%= course_type.course_type %></td>
+            </tr>
+        <% end %>
+        <% end %>
+        </table>
+
+      </tbody>
+    </div>
+  </div>
+</div>
+
+</div>
+
+   </div>
+  </div>
+</div>
+</div>
