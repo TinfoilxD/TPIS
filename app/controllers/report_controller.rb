@@ -48,10 +48,11 @@ class ReportController < ApplicationController
 
   def upcoming_appointments_per_faculty
     @faculty = Faculty.where(email: current_user.email).first
-    if(!@faculty)
+    if(@faculty)
+      @appointments = Appointment.where('faculty_id = ? AND start BETWEEN ? AND ?', @faculty.id, Time.now, Time.now + 2.weeks).order(:start)
+    else
       redirect_to error_path(:error_message => 1)
     end
-    @appointments = Appointment.where('faculty_id = ? AND start BETWEEN ? AND ?', @faculty.id, Time.now, Time.now + 2.weeks).order(:start)
   end
 
   def candidates_without_applications
