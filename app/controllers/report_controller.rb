@@ -55,16 +55,5 @@ class ReportController < ApplicationController
   def candidates_by_course
     @candidates = Candidate.all
     @course_types = CourseType.all
-
-  #   sql_statement = "SELECT course_types.course_type as an, count(*)"\
-  #                    "FROM course_types"
-  #   @sql = ActiveRecord::Base.connection.execute(sql_statement)
    end
-
-  def candidates_by_course_count
-    @courses = Course.all
-    @candidates = Candidate.all
-
-  end
-
 end

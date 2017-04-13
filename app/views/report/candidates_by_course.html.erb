@@ -1,6 +1,6 @@
 <div id="wrapper">
-
-  <%= column_chart CourseType.group(:course_type).count %>
+<%results = CourseType.joins(:application_forms).group('course_type').count %>
+  <%= column_chart results %>
 
 <br>
 
