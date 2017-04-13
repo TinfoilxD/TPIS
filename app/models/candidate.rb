@@ -2,6 +2,7 @@ class Candidate < ApplicationRecord
   belongs_to :alignment_type
   has_many :experiences
   has_many :application_forms
+  belongs_to :state
 
   validates :first_name, presence: true
   validates :last_name, presence: true
