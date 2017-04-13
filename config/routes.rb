@@ -54,7 +54,7 @@ Rails.application.routes.draw do
   get '/appointments_list', to: 'appointments#list'
   get '/appointments_calendar_list', to: 'appointments#calendar_index'
   get '/application_forms/:id', to: 'application_forms#show'
-
+  post '/appointments_calendar_show', to: 'appointments#calendar_show'
   # show appointments by candidates
 
   get '/bycandidate/:id', to: 'appointments#bycandidate', as: :admin_view_appt_percandidate
@@ -92,4 +92,5 @@ Rails.application.routes.draw do
   get '/report_upcoming_appointments_per_faculty', to: 'report#upcoming_appointments_per_faculty', as: :report_upcoming_per_faculty
   get 'report_candidates_without_applications', to: 'report#candidates_without_applications', as: :report_candidates_without_applications
   get 'report_applications_without_appointments', to: 'report#applications_without_appointments', as: :report_applications_without_appointments
+  get '/report_candidates_by_course', to: 'report#candidates_by_course', as: :report_candidates_by_course
 end
