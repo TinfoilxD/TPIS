@@ -20,6 +20,13 @@ class AppointmentsController < ApplicationController
     @candidate = Candidate.find(@application_form.candidate_id)
   end
 
+  def calendar_show
+    id = params[:id]
+    if(id)
+    render :json => {path:  "appointments/#{id}"}
+    end
+  end
+
   def book_appointment
     @application_form = ApplicationForm.find(params[:id])
     if @application_form.nil?
