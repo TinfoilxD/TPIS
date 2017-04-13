@@ -2,6 +2,29 @@
   <!-- /.navbar-header -->
 
 
+  <div class="btn-group">
+    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Action
+    </button>
+    <div class="dropdown-menu">
+     <li><a class="dropdown-item" href="#">
+    <%= link_to 'All', root_path %>
+     </a></li>
+  <% AlignmentType.order('alignment_type ASC').each do |alignment_type| %>
+          <li><a class="dropdown-item" href="#">
+        <%= link_to "#{alignment_type.alignment_type}" %>
+          </a></li>
+
+          <li><a class="dropdown-item" href="#">
+          <%= link_to 'Employee', alignment_employees_path, @employees %>
+          </a></li>
+    <% end %>
+  </ul>
+  </div>
+
+
+
+
   <!-- /.navbar-top-links -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav side-nav">
@@ -19,6 +42,7 @@
   <!-- /.navbar-static-side -->
 </div>
 
+
 <!---- Pie graph for Alignment Type Report --------------->
 <div id="page-wrapper">
   <div class="row">
@@ -30,11 +54,14 @@
         <%= pie_chart @results%>
 
 <br>
+
+
 <!-------- Table to support the Alignment Type Chart Report ------------>
-  <div class="row">
+ <div class="row">
     <div class="col-md-12">
       <div class="panel panel-default">
       <table class="table table-striped">
+
         <thead>
         <tr>
     <th> First name </th>
@@ -51,13 +78,18 @@
         <td><%= candidate.alignment_type&.alignment_type %></td>
     </tr>
   <% end %>
+
   </table>
 
         </tbody>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
       </div>
     </div>
-  </div>
 </div>
-    </div>
-  </div>
-</div>
+
+
