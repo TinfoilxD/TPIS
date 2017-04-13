@@ -1,4 +1,5 @@
 class ReportController < ApplicationController
+  before_action :authenticate_user!
 
 
   # GET /courses/new
@@ -43,6 +44,15 @@ class ReportController < ApplicationController
 
   def upcoming_appointments
     @appointments = Appointment.where('start BETWEEN ? AND ?', Time.now, Time.now + 2.weeks).order(:start)
+  end
+
+  def upcoming_appointments_per_faculty
+    @faculty = Faculty.where(email: current_user.email).first
+    if(@faculty)
+      @appointments = Appointment.where('faculty_id = ? AND start BETWEEN ? AND ?', @faculty.id, Time.now, Time.now + 2.weeks).order(:start)
+    else
+      redirect_to error_path(:error_message => 1)
+    end
   end
 
   def candidates_without_applications
