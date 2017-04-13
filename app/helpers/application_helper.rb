@@ -13,7 +13,12 @@ module ApplicationHelper
   end
   def security_questions
     [['What is your favorite color?', 0],
-     ['What was the make and model of your first car?', 1]]
+     ['What was the make and model of your first car?', 1],
+     ['What is the name of the middle school you went to?', 2],
+     ['What is your favorite Chick-Fil-A sauce?', 3],
+     ['Who is your favorite NBA sports team?', 4],
+     ['Who is your favorite WNBA sports team?', 5]
+    ]
   end
   def us_states
     [
