@@ -37,6 +37,7 @@ $( document ).on('turbolinks:load', function() {
     datePickerSet()
     addListeners()
     systemSearch()
+    sortTable()
 });
 
 
@@ -257,7 +258,7 @@ function datePickerSet()
                 for(key in data) {
                     candidate_first_name = data[key].cfn
                     candidate_last_name = data[key].cln
-                    course_name = data[key].course_name
+                    course_type = data[key].course_type
                     faculty_name = ((data[key].ffn) + " ").concat(data[key].fln)
                     //2017-04-06 19:09:39.719376
                     created_at_substring = (data[key].created_at).substring(0,10)
@@ -266,7 +267,7 @@ function datePickerSet()
                     $('#report_display_table tbody').append("<tr><td>"
                         + candidate_first_name + "</td><td>"
                         + candidate_last_name + "</td><td>"
-                        + course_name + "</td><td>"
+                        + course_type + "</td><td>"
                         + faculty_name + "</td><td>"
                         + created_at.toString('mm-dd-yyyy') + "</td> ")
 
