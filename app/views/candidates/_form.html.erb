@@ -54,7 +54,9 @@
 
           <div class="col-xs-2">
             <%= f.label :state_code, 'State', class: 'control-label' %>
+
             <%= f.collection_select :state_id, State.all, :id, :state_name, {selected: 'Texas'}, {class: 'form-control'} %>
+
           </div>
 
           <div class="col-xs-2">
