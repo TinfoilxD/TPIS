@@ -1,5 +1,5 @@
 
-<h1>Application Forms</h1>
+<h1>Application History</h1>
 
 <div class="container">
   <div class ="container-body">
@@ -10,21 +10,7 @@
           <th>Name</th>
           <th>Course</th>
           <th>Course Info</th>
-          <th>Aha Instructor Motivation</th>
-          <th>Experience</th>
-          <th>Marketing Origin</th>
-          <th>Teaching Frequency</th>
-          <th>Owned Equipment</th>
-          <th>Class Availability</th>
-          <th>Teaching Location</th>
-          <th>Screening Form Agreement</th>
           <th>Date Agreed</th>
-          <th>Aha Form Agreement</th>
-          <th>CPR Instructor Experience</th>
-          <th>AHA Check</th>
-          <th>AHA Training Center:</th>
-          <th>Red Cross Member </th>
-          <th>National Safety Council</th>
           <th colspan="3"></th>
         </div>
       </tr>
@@ -36,45 +22,10 @@
             <td><%= application_form.candidate.full_name %> </td>
             <td><%= application_form.course_type&.course_type %></td>
             <td><%= application_form.get_course_address %></td>
-            <td><%= application_form.aha_instructor_motivation %></td>
-            <td><%= yesno(application_form.experience_check) %></td>
-            <td><%= application_form.marketing_origin %></td>
-            <td><%= application_form.teaching_frequency %></td>
-            <td><%= yesno(application_form.owned_equipment) %></td>
-            <td><%= yesno(application_form.public_class_availability) %></td>
-            <td><%= yesno(application_form.teaching_location) %></td>
-            <td><%= yesno(application_form.screening_form_agreement) %></td>
             <td><%= application_form.date_agreed.strftime('%m/%d/%y') %></td>
-            <td><%= yesno(application_form.aha_form_agreement) %></td>
-            <td><%= yesno(application_form.cpr_instructor_check) %> </td>
-            <td><%= yesno(application_form.aha_check) %></td>
-            <td><%= application_form.aha_training_canter %></td>
-            <td><%= yesno(application_form.merica_cross_check) %></td>
-            <td><%= application_form.ns_council_other %></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
             <td class="CRUD">
               <%= link_to 'View Application', application_form, class:'btn btn-default btn-sm' %></td>
-            <td class="CRUD">
-              <%= link_to 'Edit Application', edit_application_form_path(application_form), class:'btn btn-default btn-sm'  %>
-            </td>
-            <td class="CRUD">
-              <%= link_to 'Delete', application_form, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default btn-sm'  %>
-            </td>
+
           </tr>
       <% end %>
       </tbody>

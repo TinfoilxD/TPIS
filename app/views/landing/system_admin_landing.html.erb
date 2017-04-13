@@ -13,7 +13,8 @@
 
                             <%if user_signed_in? and current_user.system_admin? then%>
                             <li class="active"><%= link_to 'Dashboard', system_admin_landing_path%></li>
-                            <li><%=link_to 'View All Upcoming Appointments', report_upcoming_appointments_path %></li>
+                            <li><%= link_to 'View All Candidate Information', admin_view_appointments_index_path %> </li>
+                            <li><%= link_to 'View All Upcoming Appointments', report_upcoming_appointments_path %></li>
                             <li><%= link_to 'Input Available Times', input_available_timeslots_path%></li>
                             <li><%= link_to 'View Appointments', appointments_calendar_list_path%></li>
                             <li><%= link_to 'Reports', reports_landing_path%></li>
@@ -101,7 +102,6 @@
                         </div>
                         <a href="#">
                           <div class="panel-body">
-                            <%= link_to 'Appointments/Applications', admin_view_appointments_index_path  %>
 
                             <span class="pull-left">
 
