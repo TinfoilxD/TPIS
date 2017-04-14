@@ -19,7 +19,12 @@
   <%=@candidate.full_name%>
 </p>
 
-<p><%=link_to 'View Application',application_forms_path(@application_form)%></p>
+<p>
+  <strong>Candidate Phone:</strong>
+  <%=@candidate.phone%>
+</p>
+
+<p><%=link_to 'View Application', "/application_forms/#{@application_form.id}"%></p>
 
 <p>
   <strong>Interview Complete:</strong>

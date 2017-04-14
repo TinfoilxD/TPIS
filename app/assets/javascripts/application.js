@@ -209,6 +209,21 @@ function setAppointmentCalendar()
             center : 'title',
             right : 'agendaWeek, month'
         },
+        eventClick: function(calEvent, jsEvent, view)
+        {
+            eventData = {id : calEvent.id}
+            $.ajax({
+                url: "/appointments_calendar_show/",
+                type: "POST",
+                data: eventData,
+                datatype: 'json',
+                success: function(json) {
+                    if(json.path)
+                    window.location = json.path
+                }
+            });
+
+        },
         eventSources: [{url : '/appointments_list', color: 'rgb(89,26,20)'}],
         defaultView: 'agendaWeek',
         slotDuration: '01:00:00',

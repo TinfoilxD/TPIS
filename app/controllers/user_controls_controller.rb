@@ -37,8 +37,8 @@ class UserControlsController < ApplicationController
 
   def security_question_render
     @user = User.where(email: params[:email]).first
-    question_list = security_questions.first
-    question_text = question_list[@user.security_question]
+    question_list = security_questions
+    question_text = question_list[@user.security_question].first
     render :json => {security_question: question_text}
   end
 
