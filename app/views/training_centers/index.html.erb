@@ -1,32 +1,47 @@
+<div class="container">
+  <ol class="breadcrumb">
+    <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
+    <li> <%=link_to 'Configurations',admin_configurations_path%> </li>
+    <li class="active">Training Centers</li>
+  </ol>
+  <h1 class="page-header">Training Centers</h1>
+  <div class="pull-right">
+    <%= link_to 'Create New Training Center', new_training_center_path, class:'btn btn-info btn-S' %>
+  </div>
 
-<h1>Training Centers</h1>
+  <div class="col-md-12">
+    </br>
+    <div class="panel panel-default">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Course type</th>
+          <th>Primary Contact</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th colspan="3"></th>
+        </tr>
+        </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Training center name</th>
-      <th>Primary contact</th>
-      <th>Phone</th>
-      <th>Email</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+        <tbody>
     <% @training_centers.each do |training_center| %>
       <tr>
         <td><%= training_center.training_center_name %></td>
         <td><%= training_center.primary_contact %></td>
         <td><%= training_center.phone %></td>
         <td><%= training_center.email %></td>
-        <td><%= link_to 'Show', training_center %></td>
-        <td><%= link_to 'Edit', edit_training_center_path(training_center) %></td>
-        <td><%= link_to 'Destroy', training_center, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_training_center_path(training_center), class:'btn btn-warning btn-xs' %></td>
+        <td><%= link_to 'Delete', training_center, method: :delete, class:'btn btn-danger btn-xs', data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-  </tbody>
-</table>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <br>
+  <p>
 
-<br>
-
-<%= link_to 'New Training Center', new_training_center_path %>
+    </br>
+    <%= link_to 'Back', admin_configurations_path, class:'btn btn-default btn-S' %>
+  </p>
+</div>

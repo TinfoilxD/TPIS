@@ -17,7 +17,7 @@
 
 <tr>
   <td><strong>Candidate:</strong></td>
-  <td><%= @application_form.candidate_id %></td>
+  <td><%= @application_form.candidate&.full_name %></td>
 </tr>
 
 <tr>
@@ -82,8 +82,13 @@
 </tr>
 
 <tr>
+  <td><strong>Align with TP?</strong></td>
+  <td><%= yesno(@application_form.align_w_tp_check) %></td>
+</tr>
+
+<tr>
   <td><strong>Date agreed:</strong></td>
- <td> <%= @application_form.date_agreed.strftime("%m/%d/%y") %></td>
+ <td> <%= @application_form.date_agreed&.strftime("%m/%d/%y") %></td>
 </tr>
 
 <tr>
