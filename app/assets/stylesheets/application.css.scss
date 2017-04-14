@@ -327,12 +327,12 @@ strong {
 
 .body-background {
 
-  background:url("can_back4.jpg")no-repeat 0px 0px !important;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("can_back4.jpg")no-repeat 0px 0px !important;
 }
 
 .form_div {
   background-color: white;
-  opacity: 0.84;
+  opacity: 0.80;
   padding: 2em;
   border-radius: 3%;
 }
