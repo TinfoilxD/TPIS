@@ -39,7 +39,12 @@ class ReportController < ApplicationController
                     "FROM alignment_types "\
                     "JOIN candidates ON alignment_types.id = candidates.alignment_type_id GROUP BY an"
     @results = ActiveRecord::Base.connection.execute(sql_statement)
-    @candidates = Candidate.all
+    @alignment_type = params[:alignment_type]
+    if(@alignment_type)
+      @candidates = Candidate.joins(:alignment_type).where("alignment_types.alignment_type = '#{@alignment_type}'")
+    else
+      @candidates = Candidate.all
+    end
   end
 
   def upcoming_appointments
@@ -65,5 +70,19 @@ class ReportController < ApplicationController
   def candidates_by_course
     @candidates = Candidate.all
     @course_types = CourseType.all
-   end
+  end
+
+  def alignment_employees
+    aligned_type = "'Employee'"
+    sql_statement = "SELECT candidates.first_name as afn, "\
+                    "candidates.last_name as aln, "\
+                    "alignment_types.alignment_type as aat "\
+                    "FROM candidates "\
+                    "INNER JOIN alignment_types ON candidates.alignment_type_id =  alignment_types.id "\
+                    "WHERE alignment_types.alignment_type = #{aligned_type}"
+    @employees = ActiveRecord::Base.connection.execute(sql_statement)
+    @candidates = Candidate.joins(:alignment_type).where("alignment_types.alignment_type = 'Employee'").
+        pluck(:first_name, :last_name, :alignment_type)
+
+  end
 end
