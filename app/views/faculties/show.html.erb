@@ -63,7 +63,15 @@
   <span class="pull-right">
 
 <%= link_to 'Edit', edit_faculty_path(@faculty), class:'btn btn-primary' %> |
+
+    <%if user_signed_in? and current_user.tcf_admin? then%>
+<%= link_to 'continue', tcf_admin_landing_path, class:'btn btn-default' %>
+       <%end%>
+    <%if user_signed_in? and current_user.system_admin? then%>
 <%= link_to 'Back', faculties_path, class:'btn btn-default' %>
+<%end%>
+
+
             </div>
           </div>
         </div>

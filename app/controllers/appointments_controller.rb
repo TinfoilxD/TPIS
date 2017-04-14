@@ -61,7 +61,7 @@ class AppointmentsController < ApplicationController
       @appointment.save
       Timeslot.where(start: @appointment.start.to_datetime).delete_all
       NotificationMailer.appointment_notification(@appointment).deliver_later
-      render :json => {success: true}
+      render :json => {success: true, id: @candidate.id}
     else
       render :json => {success: false}
     end
