@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+<div class="container">
 <body>
-<h3> Welcome Traning Center Faculty Admin!</h3>
+<h3 class="page-header"> Welcome Traning Center Faculty Admin!</h3>
 
-
+<div class="btn-tfc">
 
 <%= link_to 'Input Available Times', input_available_timeslots_path,class:'btn btn-default'%>
-<%= link_to 'View Current Appointments', appointments_calendar_list_path, class:'btn btn-default'%>
-
+<%= link_to 'View Current Appointments', appointments_calendar_list_path, class:'btn btn-primary pull-right'%>
+</div>
 </br>
 </br>
 
@@ -22,7 +24,7 @@
         <div class="panel-heading"> My Upcoming Appointments</div>
 
         <div class="panel-body">
-          <div class ="container-body">
+
 
             <table class="table table-bordered table-striped table-highlight" id="report_display_table">
               <thead>
@@ -58,8 +60,10 @@
       </div>
     </div>
   </div>
+
 </div>
 </div>
 
 </body>
+</div>
 </html>
