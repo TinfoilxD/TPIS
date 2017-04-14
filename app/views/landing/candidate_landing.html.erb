@@ -1,5 +1,7 @@
 
+<body class="body-background">
 
+<div class="form_div container">
 <h1 class="page-header">Welcome! </h1>
 
 
@@ -18,28 +20,41 @@
 <!--Logic for displaying actions only if appointments or applications exist.-->
 
 <!--Normal Buttons for fresh candidate-->
-<div class="pull-center">
+
+<div class="button-candidate">
 <% if @current_candidate.application?(@current_candidate) == false %>
     <p><%= "It seems you do not have not yet applied. Click below to begin an application." %></p>
 <%end%>
-<p><%= link_to 'Click To Begin Application', new_application_form_path,class:'btn btn-info' %></p>
+<p><%= link_to 'Click To Begin Application', new_application_form_path,class:'btn btn-primary' %></p>
 <!--If application exists show option for view applications nad new appointment -->
 <p>
   <% if @current_candidate.application?(@current_candidate) %>
-      <%= link_to 'My Applications', view_my_application_path(@current_candidate.id),  class:'btn btn-info' %></p>
+      <%= link_to 'View My Applications History', view_my_application_path(@current_candidate.id),  class:'btn btn-primary' %></p>
   <% end %>
 <!--If candidate has appointment -->
 <p>
   <% if @current_candidate.appointment?(@current_candidate) %>
-    <%= link_to 'My Appointments', view_my_appointment_path(@current_candidate), class:'btn btn-info' %>
+    <%= link_to 'View All My Appointments', view_my_appointment_path(@current_candidate), class:'btn btn-primary' %>
   <% end %>
 </p>
 
   </div>
 
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
 
 <!--Avi: change the 'appointment' link like example 'new_application_form_path', for now for button to show-->
 
-
-
+</div>
+</body>
 

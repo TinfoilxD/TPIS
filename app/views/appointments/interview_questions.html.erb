@@ -1,5 +1,7 @@
-<h4>TCF will contact IC and discuss the following:</h4>
-<br>
+<div class="container">
+
+<h3 class="page-header">Interview Questions:</h3>
+
 
 <p>
 <input type="checkbox" name="" value="1">  Teaching Experience<br>
@@ -24,8 +26,9 @@
 <%=form_tag interview_complete_path do%>
     <input type="hidden" name="appointment_id" id="appointment_id" value="<%=@appointment.id%>">
     Interview Summary/Comments:<br>
-    <%= text_area_tag(:comments, nil, size: '110x15') %>
+    <%= text_area_tag(:comments, nil, size: '145x15') %>
     <br>
     <%=submit_tag 'Submit'%>
 
 <%end%> </div></p>
+</div>

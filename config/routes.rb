@@ -55,6 +55,7 @@ Rails.application.routes.draw do
   get '/appointments_calendar_list', to: 'appointments#calendar_index'
   get '/application_forms/:id', to: 'application_forms#show'
   post '/appointments_calendar_show', to: 'appointments#calendar_show'
+
   # show appointments by candidates
 
   get '/bycandidate/:id', to: 'appointments#bycandidate', as: :admin_view_appt_percandidate
