@@ -1,45 +1,68 @@
+<div id="form-wrapper">
+  <div class="row">
+    <div class="col-xs-6 col-sm-8 col-md-6 col-md-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-3">
 
-<p>
-  <strong>Start:</strong>
-  <%= @appointment.start.strftime('%B %d, %Y  %l:%M %p') %>
-</p>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Instructor Candidate Profile </h3>
 
-<p>
-  <strong>End:</strong>
-  <%= @appointment.end.strftime('%B %d, %Y  %l:%M %p') %>
-</p>
+        </div>
 
-<p>
-  <strong>Faculty:</strong>
-  <%=@faculty.full_name%>
-</p>
+        <div class="panel-body" >
+          <div class="row">
+            <div class="col-lg-14">
+              <table class="profile-table table-profile-information ">
+                <tbody>
+<tr>
+ <td> <strong>Start:</strong></td>
+ <td> <%= @appointment.start.strftime('%B %d, %Y  %l:%M %p') %></td>
+</tr>
 
-<p>
-  <strong>Candidate:</strong>
-  <%=@candidate.full_name%>
-</p>
+<tr>
+ <td> <strong>End:</strong></td>
+  <td><%= @appointment.end.strftime('%B %d, %Y  %l:%M %p') %></td>
+</tr>
 
-<p>
-  <strong>Candidate Phone:</strong>
-  <%=@candidate.phone%>
-</p>
+<tr>
+  <td><strong>Faculty:</strong></td>
+  <td><%=@faculty.full_name%></td>
+</tr>
+
+<tr>
+ <td> <strong>Candidate:</strong></td>
+  <td><%=@candidate.full_name%></td>
+</tr>
+
+<tr>
+ <td> <strong>Candidate Phone:</strong></td>
+ <td><%=@candidate.phone%></td>
+</tr>
 
 
-<p>
-  <strong>Interview Complete:</strong>
-  <%= yesno(@appointment.complete) %>
-</p>
+<tr>
+  <td><strong>Interview Complete:</strong></td>
+  <td><%= yesno(@appointment.complete) %></td>
+</tr>
 
-<p>
-  <strong>Interview Comments:</strong>
-  <%=@appointment.comments%>
-</p>
+<tr>
+ <td> <strong>Interview Comments:</strong></td>
+  <td><%=@appointment.comments%></td>
+</tr>
 
-<p>
-<%= link_to 'Edit', edit_appointment_path(@appointment), class:'btn btn-default btn-S'  %> |
-<%= link_to 'Interview', interview_questions_path(@appointment), class:'btn btn-default btn-S'  %> |
-<%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %>
-  <br> <br>
-</p>
-<p>
-<%=link_to 'View Application', "/application_forms/#{@application_form.id}", class:'btn btn-default btn-S' %></p>
+
+<tr>
+ <td> <%=link_to 'View Application', "/application_forms/#{@application_form.id}", class:'btn btn-info btn-S' %>|<%= link_to 'Edit', edit_appointment_path(@appointment), class:'btn btn-info btn-S'%> </td>
+  <td></td>
+</tr>
+</tbody>
+  <p><%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'%> <%= link_to 'Interview', interview_questions_path(@appointment), class:'btn btn-primary btn-S pull-right RbtnMargin'%> </p>
+
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
