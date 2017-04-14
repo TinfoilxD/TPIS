@@ -24,8 +24,8 @@ class CandidatesController < ApplicationController
   end
 
   # GET /candidates/1/edit
+
   def edit
-      #@candidate = Candidate.find_by id: session[:candidate_id]
       @candidate = Candidate.find(params[:id])
   end
 
