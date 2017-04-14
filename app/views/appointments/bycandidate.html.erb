@@ -23,6 +23,7 @@
     <th>Candidate</th>
     <th>Faculty</th>
     <th>Appointment Complete?</th>
+    <th>Comments</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -39,6 +40,7 @@
         <td class="bycan"><%= appointment.get_candidate(appointment)%></td>
         <td class="bycan"><%= appointment.get_faculty(appointment)%></td>
         <td class="bycan"><%= yesno(appointment.complete) %></td>
+        <td class="bycan"><%= appointment.comments %></td>
         <td><%= link_to 'Change', edit_appointment_path(appointment) ,class:'btn btn-default btn-xs'%></td>
         <td><%= link_to 'Delete', appointment, method: :delete, data: { confirm: 'Are you sure?' } ,class:'btn btn-default btn-xs'%></td>
       </tr>

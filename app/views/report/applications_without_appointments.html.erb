@@ -27,7 +27,7 @@
       <% @application_forms.each do |application_form| %>
           <tr>
             <td><%= application_form.candidate.full_name %> </td>
-            <td class="coursecolumn"><%= application_form.course_type.course_type %></td>
+            <td class="coursecolumn"><%= application_form.course_type&.course_type %></td>
             <td><%= application_form.aha_instructor_motivation %></td>
             <td><%= yesno(application_form.experience_check) %></td>
             <td><%= application_form.marketing_origin %></td>
@@ -36,11 +36,10 @@
             <td><%= yesno(application_form.public_class_availability) %></td>
             <td><%= yesno(application_form.teaching_location) %></td>
             <td><%= yesno(application_form.screening_form_agreement) %></td>
-            <td><%= application_form.date_agreed %></td>
+            <td><%= application_form.date_agreed.strftime('%m/%d/%y') %></td>
             <td><%= yesno(application_form.aha_form_agreement) %></td>
           </tr>
           <tr>
-            <td></td>
             <td></td>
             <td></td>
             <td></td>

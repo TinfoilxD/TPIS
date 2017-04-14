@@ -1,118 +1,143 @@
 
 
-<div class="workers">
-  <div class ="workers-body">
-    <table class = "table table-hover">
+<div id="form-wrapper">
+  <div class="row">
+    <div class="col-xs-6 col-sm-8 col-md-6 col-md-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-3">
 
-<p>
-  <strong>Candidate:</strong>
-  <%= @application_form.candidate_id %>
-</p>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Application Form</h3>
+        </div>
 
-<p>
-  <strong>Training center:</strong>
-  <%= @application_form.training_center_id %>
-</p>
+        <div class="panel-body" >
+          <div class="row">
+            <div class="col-lg-14">
+              <table class="profile-table table-profile-information ">
+                <tbody>
 
-<p>
-  <strong>Course:</strong>
-  <%= @application_form.course_type&.course_type %>
-</p>
+<tr>
+  <td><strong>Candidate:</strong></td>
+  <td><%= @application_form.candidate_id %></td>
+</tr>
 
-<p>
-  <strong>AHA instructor motivation:</strong>
-  <%= @application_form.aha_instructor_motivation %>
-</p>
+<tr>
+  <td><strong>Training center:</strong></td>
+  <td><%= @application_form.training_center_id %></td>
+</tr>
 
-<p>
-  <strong>Experience:</strong>
-  <%= yesno(@application_form.experience_check)%>
-</p>
+<tr>
+  <td><strong>Course:</strong></td>
+  <td><%= @application_form.course_type&.course_type %></td>
+</tr>
 
-<p>
-  <strong>Experience Description:</strong>
-  <%= @application_form.experience_description %>
-</p>
+<tr>
+  <td><strong>Course Location:</strong></td>
+  <td><%= @application_form.get_course_address %></td>
+</tr>
 
-<p>
-  <strong>Marketing origin:</strong>
-  <%= @application_form.marketing_origin %>
-</p>
+<tr>
+  <td><strong>AHA instructor motivation:</strong></td>
+  <td><%= @application_form.aha_instructor_motivation %></td>
+</tr>
 
-<p>
-  <strong>Teaching frequency:</strong>
-  <%= @application_form.teaching_frequency %>
-</p>
+<tr>
+ <td><strong>Experience:</strong></td>
+  <td><%= yesno(@application_form.experience_check)%></td>
+</tr>
 
-<p>
-  <strong>Owned equipment:</strong>
-  <%= yesno(@application_form.owned_equipment) %>
-</p>
+<tr>
+ <td> <strong>Experience Description:</strong></td>
+ <td><%= @application_form.experience_description %></td>
+</tr>
 
-<p>
-  <strong>Class availability:</strong>
-  <%= yesno(@application_form.public_class_availability) %>
-</p>
+<tr>
+ <td><strong>Marketing origin:</strong></td>
+  <td><%= @application_form.marketing_origin %></td>
+</tr>
 
+<tr>
+  <td><strong>Teaching frequency:</strong></td>
+  <td><%= @application_form.teaching_frequency %></td>
+</tr>
 
-<p>
-  <strong>Teaching location:</strong>
-  <%= yesno(@application_form.teaching_location) %>
-</p>
+<tr>
+  <td><strong>Owned equipment:</strong></td>
+  <td><%= yesno(@application_form.owned_equipment) %></td>
+</tr>
 
-<p>
-  <strong>Screening form agreement:</strong>
-  <%= yesno(@application_form.screening_form_agreement) %>
-</p>
-
-<p>
-  <strong>Date agreed:</strong>
-  <%= @application_form.date_agreed %>
-</p>
-
-<p>
-  <strong>AHA form agreement:</strong>
-  <%= yesno(@application_form.aha_form_agreement) %>
-</p>
-
-<p>
-  <strong>CPR instructor:</strong>
-  <%= yesno(@application_form.cpr_instructor_check) %>
-</p>
-
-<p>
-  <strong>AHA check:</strong>
-  <%= yesno(@application_form.aha_check) %>
-</p>
+<tr>
+  <td><strong>Class availability:</strong></td>
+  <td><%= yesno(@application_form.public_class_availability) %></td>
+</tr>
 
 
-<p>
-  <strong>American Red Cross:</strong>
-  <%= yesno(@application_form.merica_cross_check) %>
-</p>
+<tr>
+ <td> <strong>Teaching location:</strong></td>
+ <td> <%= yesno(@application_form.teaching_location) %></td>
+</tr>
 
-<p>
-  <strong>AHA Training Center:</strong>
-  <%= @application_form.aha_training_canter %>
-</p>
+<tr>
+  <td><strong>Screening form agreement:</strong></td>
+ <td> <%= yesno(@application_form.screening_form_agreement) %></td>
+</tr>
 
-<p>
-  <strong>National Safety Council:</strong>
-  <%= @application_form.ns_council_other %>
-</p>
+<tr>
+  <td><strong>Date agreed:</strong></td>
+ <td> <%= @application_form.date_agreed.strftime("%m/%d/%y") %></td>
+</tr>
 
+<tr>
+  <td><strong>AHA form agreement:</strong></td>
+  <td><%= yesno(@application_form.aha_form_agreement) %></td>
+</tr>
+
+<tr>
+  <td><strong>CPR instructor:</strong></td>
+  <td><%= yesno(@application_form.cpr_instructor_check) %></td>
+</tr>
+
+<tr>
+  <td><strong>AHA check:</strong></td>
+  <td> <%= yesno(@application_form.aha_check) %></td>
+</tr>
+
+
+<tr>
+  <td><strong>American Red Cross:</strong></td>
+  <td><%= yesno(@application_form.merica_cross_check) %></td>
+</tr>
+
+<tr>
+  <td><strong>AHA Training Center:</strong></td>
+  <td><%= @application_form.aha_training_canter %></td>
+</tr>
+
+<tr>
+  <td><strong>National Safety Council:</strong></td>
+  <td><%= @application_form.ns_council_other %></td>
+</tr>
+                </tbody>
     </table>
+              <div id="panel-footer">
   </div>
 </div>
 
-
+<span class="pull-right">
 <%= link_to 'Edit', edit_application_form_path(@application_form), class:'btn btn-default btn-S'  %> |
-<%= link_to 'Book Appointment', "/book_appointment/#{@application_form.id}", class:'btn btn-default btn-S'  %> |
 
-<%if user_signed_in? and current_user.system_admin? then%>|
-<%= link_to 'Back', application_forms_path, class:'btn btn-default btn-S'  %>
+
+<%if user_signed_in? and current_user.system_admin? then%>
+<%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %>
 <%end%>
 
 <%if user_signed_in? and current_user.candidate? then%>
-    <%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %>
+    <%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %> |
+    <%= link_to 'Book Appointment', "/book_appointment/#{@application_form.id}", class:'btn btn-default btn-S'  %> |
 <%end%>
+          </span> <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

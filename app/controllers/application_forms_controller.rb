@@ -110,7 +110,7 @@ class ApplicationFormsController < ApplicationController
                                              :experience_check, :experience_description, :marketing_origin, :teaching_frequency, :owned_equipment,
                                              :class_availability, :boolean, :teaching_location, :screening_form_agreement,
                                              :date_agreed, :aha_form_agreement, :cpr_instructor_check, :aha_check, :aha_training_canter,
-                                             :merica_cross_check, :ns_council_other, :course_start_date, :course_address, :course_city, :course_zipcode)
+                                             :merica_cross_check, :ns_council_other, :course_start_date, :course_address, :state_id, :course_city, :course_zipcode)
   end
 end
 

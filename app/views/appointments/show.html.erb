@@ -1,12 +1,12 @@
 
 <p>
   <strong>Start:</strong>
-  <%= @appointment.start %>
+  <%= @appointment.start.strftime('%B %d, %Y  %l:%M %p') %>
 </p>
 
 <p>
   <strong>End:</strong>
-  <%= @appointment.end %>
+  <%= @appointment.end.strftime('%B %d, %Y  %l:%M %p') %>
 </p>
 
 <p>
@@ -24,7 +24,6 @@
   <%=@candidate.phone%>
 </p>
 
-<p><%=link_to 'View Application', "/application_forms/#{@application_form.id}"%></p>
 
 <p>
   <strong>Interview Complete:</strong>
@@ -36,8 +35,11 @@
   <%=@appointment.comments%>
 </p>
 
-
-<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
-<%= link_to 'Interview', interview_questions_path(@appointment) %> |
+<p>
+<%= link_to 'Edit', edit_appointment_path(@appointment), class:'btn btn-default btn-S'  %> |
+<%= link_to 'Interview', interview_questions_path(@appointment), class:'btn btn-default btn-S'  %> |
 <%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %>
-
+  <br> <br>
+</p>
+<p>
+<%=link_to 'View Application', "/application_forms/#{@application_form.id}", class:'btn btn-default btn-S' %></p>
