@@ -17,9 +17,16 @@ class LandingController < ApplicationController
     if !@current_faculty
       redirect_to new_faculty_path
     end
+
+    @current_faculty = Faculty.where(email: current_user.email).first
+    if(@current_faculty)
+      @appointments = Appointment.where('faculty_id = ? AND start BETWEEN ? AND ?', @current_faculty.id, Time.now, Time.now + 2.weeks).order(:start)
+    end
   end
   def tcf_landing
-  end
+
+    end
+
   def error
     params.permit(:error_message)
     if params.has_key?(:error_message)

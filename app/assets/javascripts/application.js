@@ -173,9 +173,7 @@ function setBookingCalendar()
                     datatype: 'json',
                     success: function(json) {
 
-                        $("#booking_calendar").fullCalendar('refetchEvents')
-                        $("#booking_calendar").fullCalendar('rerenderEvents')
-                        location.href = "/"
+                        location.href = "/bycandidate/" + json.id
                     }
                 });
             }
