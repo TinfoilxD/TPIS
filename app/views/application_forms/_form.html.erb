@@ -50,10 +50,10 @@
 
   </br>
 <div class="row">
-
+  <div class="col-md-8">
     <%=f.label :course_start_date, "Start Date" %>
-    <%= f.datetime_select :course_start_date%>
-
+    <%= f.date_select :course_start_date, order: [:month, :day, :year]%>
+    </div>
 </div>
 
  </br>
@@ -94,7 +94,7 @@
 
   <div id="ic_screening_form">
   <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-5">
   <%= f.label "Do you have any experience teaching?" %>
    <%= f.radio_button :experience_check, true %>
    <%= f.label "Yes" %>
