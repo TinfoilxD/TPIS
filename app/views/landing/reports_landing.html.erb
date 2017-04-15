@@ -26,12 +26,74 @@
 
 
 <div id="page-wrapper">
+<<<<<<< HEAD
 
   <%=link_to 'Upcoming Appointments', report_upcoming_appointments_path%><br>
   <%=link_to 'My Upcoming Appointments', report_upcoming_per_faculty_path%><br>
   <%=link_to 'Candidates without Applications', report_candidates_without_applications_path%><br>
   <%=link_to 'Applications Without Appointments', report_applications_without_appointments_path%><br>
+=======
+  <div class="row">
+    <div class="col-lg-14">
+      <ol class="breadcrumb">
+        <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
+        <li class="active">Reports</li>
+      </ol>
+      <h1 class="page-header"><span class="glyphicon glyphicon-list-alt"></span>
+        Reports
+        <p>This menu will direct you to all special reports available.</p></h1>
+>>>>>>> 2c1820894c689af6ca2e702e91b23409fa9f439d
 
+    </div>
+    <!-- /.col-lg-12 -->
+  </div>
+  <!-- /.row -->
+  <div class="row">
+
+    <div class="col-lg-4 col-md-7">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-3">
+              <i class="fa fa-comments fa-5x"></i>
+            </div>
+            <div class="col-lg-6">
+              <div> <span class="glyphicon glyphicon-calendar"></span> <strong>Appointment Reports</strong>
+                <p>This section links to reports regarding appointments.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="panel-footer">
+            <span class="glyphicon glyphicon-chevron-right"></span><%=link_to 'Upcoming Appointments', report_upcoming_appointments_path%><br>
+            <span class="glyphicon glyphicon-chevron-right"></span><%=link_to 'My Upcoming Appointments', report_upcoming_per_faculty_path%><br>
+            <span class="glyphicon glyphicon-chevron-right"></span><%=link_to 'Applications Without Appointments', report_applications_without_appointments_path%><br>
+            <div class="clearfix"></div>
+          </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-7">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-3">
+              <i class="fa fa-tasks fa-5x"></i>
+            </div>
+            <div class="col-lg-6">
+              <div><span class="glyphicon glyphicon-user"></span> <strong>Candidate Reports</strong><p>This section allows you to manage information about the users.<p></p> </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <span class="glyphicon glyphicon-chevron-right"></span><%=link_to 'Candidates without Applications', report_candidates_without_applications_path%><br>
+          <span class="pull-left"></span>
+          <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+</div>
 </div>
 
 

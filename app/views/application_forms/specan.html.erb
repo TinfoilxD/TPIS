@@ -22,9 +22,9 @@
             <td><%= application_form.candidate.full_name %> </td>
             <td><%= application_form.course_type&.course_type %></td>
             <td><%= application_form.get_course_address %></td>
-            <td><%= application_form.date_agreed.strftime('%m/%d/%y') %></td>
+            <td><%= application_form.date_agreed&.strftime('%m/%d/%y') %></td>
             <td class="CRUD">
-              <%= link_to 'View Application', application_form, class:'btn btn-default btn-sm' %></td>
+              <%= link_to 'View Application', application_form, class:'btn btn-info btn-sm' %></td>
 
           </tr>
       <% end %>
@@ -36,5 +36,24 @@
 <br>
 <p>
 <%= link_to 'New Application Form', new_application_form_path, class:'btn btn-default btn-S'  %> |
-<%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %>
+  <!--Navigation for Admin-->
+  <% if user_signed_in? and current_user.system_admin? then %>
+      <!--If last screen was listing of all go back there-->
+    <% if URI(request.referer).path == '/viewappt' || URI(request.referer).path == 'application_forms/:id' %>
+        <%= link_to 'Back' ,admin_view_appointments_index_path, class: 'btn btn-default btn-S' %>
+          <!--If not just throw back to homepage-->
+    <% elsif URI(request.referer).path == '/system_admin_landing' %>
+        <%= link_to 'Back', system_admin_landing_path, class: 'btn btn-default btn-S' %>
+    <% else %>
+      <%= link_to 'Back', admin_view_appointments_index_path, class: 'btn btn-default btn-S' %>
+    <%end %>
+      <!--Navigation for candidate-->
+  <% elsif user_signed_in? and current_user.candidate? %>
+      <% if URI(request.referer).path == '/candidate_landing' %>
+          <%= link_to 'Back', candidate_landing_path, class: 'btn btn-default btn-S' %>
+      <% else %>
+          <%= link_to 'Back', candidate_landing_path, class: 'btn btn-default btn-S' %>
+      <%end%>
+  <% end%>
+
 </p>

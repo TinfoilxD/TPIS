@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   get '/candidates/:id/edit', to: 'candidates#edit', as: :profile_edit
   get '/candidates/:id', to: 'candidates#show', as: :profile_show
   get '/application_forms_all', to: 'application_forms#appform_candidate', as: :appform_all
-
+  get '/faculties/:id', to: 'faculties#show', as: :faculty_profile_show
 
   # Create_Application_For task from quest log routes
   # specan = "Specific Candidate"
@@ -78,7 +78,7 @@ Rails.application.routes.draw do
   get '/courses', to: 'courses#index', as: :admin_course_crud
   get '/alignment_types', to: 'alignment_types#index', as: :admin_alignment_type_crud
   get '/faculty_types', to: 'faculty_types#index', as: :faculty_type_crud
-
+  get '/training_centers', to: 'training_centers#index', as: :admin_training_crud
 
 
 
@@ -95,4 +95,6 @@ Rails.application.routes.draw do
   get 'report_candidates_without_applications', to: 'report#candidates_without_applications', as: :report_candidates_without_applications
   get 'report_applications_without_appointments', to: 'report#applications_without_appointments', as: :report_applications_without_appointments
   get '/report_candidates_by_course', to: 'report#candidates_by_course', as: :report_candidates_by_course
+
+
 end

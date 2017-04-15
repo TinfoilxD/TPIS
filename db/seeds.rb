@@ -66,8 +66,8 @@ State.create([
 
 user = User.new
 user.email = 'tin@sdc.com'
-user.password = 'GSupremeWarmAndFuzziesCL'
-user.password_confirmation = 'GSupremeWarmAndFuzziesCL'
+user.password = 'stupidlyeasypassword'
+user.password_confirmation = 'stupidlyeasypassword'
 user.role = 'system_admin'
 user.skip_confirmation!
 user.save!
@@ -177,6 +177,13 @@ user.role = 'tcf_admin'
 user.skip_confirmation!
 user.save!
 
+user = User.new
+user.email = 'wangwangpiff@sdc.com'
+user.password = 'PraiseTheDemonLord~~teehee'
+user.password_confirmation = 'PraiseTheDemonLord~~teehee'
+user.role = 'tcf_admin'
+user.skip_confirmation!
+user.save!
 
 user = User.new
 user.email = 'ray.smith@therapeuticprofessionals.com'
@@ -814,79 +821,79 @@ FacultyType.create(job_title: 'Doctor')
 f1 = Faculty.create(first_name: 'Ashley' , last_name: 'Micheal', faculty_type_id: 1, email: 'ashmchl@hotmail.com', phone: '713-455-2309' ,  office_address: '3354 Stafford Rd.' , state_id: 45, zip_code: '77006'  )
 f2 = Faculty.create(first_name: 'Jessica' , last_name: 'Sheng', faculty_type_id: 2, email: 'jesssheng@hotmail.com', phone: '713-333-4309' ,  office_address: '3355 Chimary Rock Rd.' , state_id: 45, zip_code: '76005'  )
 f3 = Faculty.create(first_name: 'Cheri', last_name: 'Berry', faculty_type_id: 3, email: 'tin@sdc.com', phone: 'num-num-yumm', office_address: 'Dark Side', state_id: 45, zip_code: '99999')
-
+f4 = Faculty.create(first_name: 'Wangchuk', last_name: 'Sieger', faculty_type_id: 1, email: 'wangwangpiff@sdc.com', phone: '800-736-4846', office_address: '510 Mare Crisium', state_id: 45, zip_code: '77099')
 
 # Application Form
 
 
 
 
-afc2 = ApplicationForm.create(candidate: c2,training_center_id: t1, aha_instructor_motivation: 'Because  my passion is to teach HS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'No' ,
+afc2 = ApplicationForm.create(candidate: c2,training_center_id: t1.id, aha_instructor_motivation: 'Because  my passion is to teach HS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'No' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/28/2017', "%m/%d/%Y") , aha_form_agreement: 'No', course_type_id: 1, cpr_instructor_check: 'Yes', aha_check: 'No',  merica_cross_check: 'Yes', ns_council_other: ' ',
-                              course_start_date: '2017-4-2', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77099')
-ApplicationForm.create(candidate: c2,training_center_id: t1, aha_instructor_motivation: 'Because  my passion is to teach BLS' , experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'No' ,
+                              course_start_date: '2017-4-2', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77099', align_w_tp_check: 'Yes')
+ApplicationForm.create(candidate: c2,training_center_id: t1.id, aha_instructor_motivation: 'Because  my passion is to teach BLS' , experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'No' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/28/2017', "%m/%d/%Y") , aha_form_agreement: 'No', course_type_id: 1, cpr_instructor_check: 'Yes', aha_check: 'No',  merica_cross_check: 'Yes', ns_council_other: ' ',
-                              course_start_date: '2017-4-2', course_address: '4312 Dancers Image', state_id: 45, course_city: 'Houston', course_zipcode:'77099')
-ApplicationForm.create(candidate: c2,training_center_id: t1, aha_instructor_motivation: 'Because my passion is to teach ACLS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'No' ,
+                              course_start_date: '2017-4-2', course_address: '4312 Dancers Image', state_id: 45, course_city: 'Houston', course_zipcode:'77099', align_w_tp_check: 'Yes')
+ApplicationForm.create(candidate: c2,training_center_id: t1.id, aha_instructor_motivation: 'Because my passion is to teach ACLS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'No' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/28/2017', "%m/%d/%Y") , aha_form_agreement: 'No', course_type_id: 1, cpr_instructor_check: 'Yes', aha_check: 'No',  merica_cross_check:  'Yes', ns_council_other: ' ',
-                              course_start_date: '2017-4-2', course_address: '1515 Big Street', state_id: 45, course_city: 'Houston', course_zipcode:'77099')
+                              course_start_date: '2017-4-2', course_address: '1515 Big Street', state_id: 45, course_city: 'Houston', course_zipcode:'77099', align_w_tp_check: 'Yes')
 
-afc3 = ApplicationForm.create(candidate: c3,training_center_id: t1, aha_instructor_motivation: 'Because  my passion is to teach HS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Family',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+afc3 = ApplicationForm.create(candidate: c3,training_center_id: t1.id, aha_instructor_motivation: 'Because  my passion is to teach HS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Family',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('05/1/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 1, cpr_instructor_check: 'Yes', aha_check: 'Yes' , aha_training_canter:' ' , merica_cross_check: 'Yes', ns_council_other: ' ',
-                              course_start_date: '2017-4-2', course_address: '42 Happy Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77099')
+                              course_start_date: '2017-4-2', course_address: '42 Happy Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77099', align_w_tp_check: 'Yes')
 ApplicationForm.create(candidate: c3,training_center_id: t1, aha_instructor_motivation: 'Because  my passion is to teach HS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Family',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('05/1/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 1, cpr_instructor_check: 'Yes', aha_check: 'Yes', aha_training_canter:' ' , merica_cross_check: 'Yes', ns_council_other: ' ',
-                              course_start_date: '2017-4-2', course_address: '6050 Strauss', state_id: 45, course_city: 'Houston', course_zipcode:'77099')
+                              course_start_date: '2017-4-2', course_address: '6050 Strauss', state_id: 45, course_city: 'Houston', course_zipcode:'77099', align_w_tp_check: 'Yes')
 ApplicationForm.create(candidate: c3,training_center_id: t1, aha_instructor_motivation: 'Because  my passion is to teach HS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Family',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('05/1/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 1, cpr_instructor_check: 'Yes', aha_check: 'Yes', aha_training_canter:' ' , merica_cross_check: 'Yes', ns_council_other: ' ',
-                              course_start_date: '2017-4-9', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77099')
+                              course_start_date: '2017-4-9', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77099', align_w_tp_check: 'Yes')
 
 afc5 = ApplicationForm.create(candidate: c5,training_center_id: t1, aha_instructor_motivation: 'Because my passion is to teach BLS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('05/2/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 2, cpr_instructor_check: 'No', aha_check: 'Yes', aha_training_canter:' ' , merica_cross_check: 'Yes', ns_council_other: ' ',
-                              course_start_date: '2017-4-9', course_address: '4244 Lasting Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77099')
+                              course_start_date: '2017-4-9', course_address: '4244 Lasting Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77099', align_w_tp_check: 'No')
 ApplicationForm.create(candidate: c5,training_center_id: t1, aha_instructor_motivation: 'Because my passion is to teach HS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('05/2/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 2, cpr_instructor_check: 'No', aha_check: 'Yes', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
-                              course_start_date: '2017-4-9', course_address: '888 Lucky Road', state_id: 45, course_city: 'Houston', course_zipcode:'77099')
+                              course_start_date: '2017-4-9', course_address: '888 Lucky Road', state_id: 45, course_city: 'Houston', course_zipcode:'77099', align_w_tp_check: 'Yes')
 
 afc1 = ApplicationForm.create(candidate: c1,training_center_id: t1, aha_instructor_motivation: 'Because my passion is to teach BLS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 2, cpr_instructor_check: 'No', aha_check: 'Yes', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
-                              course_start_date: '2017-4-12', course_address: '4111 Sumpton', state_id: 45, course_city: 'Houston', course_zipcode:'77099')
+                              course_start_date: '2017-4-12', course_address: '4111 Sumpton', state_id: 45, course_city: 'Houston', course_zipcode:'77099', align_w_tp_check: 'No')
 ApplicationForm.create(candidate: c1,training_center_id: t1, aha_instructor_motivation: 'Because my passion is to teach ACLS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 2, cpr_instructor_check: 'No', aha_check: 'Yes', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
-                              course_start_date: '2017-4-12', course_address: '302 Drive Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77294')
+                              course_start_date: '2017-4-12', course_address: '302 Drive Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77294', align_w_tp_check: 'No')
 ApplicationForm.create(candidate: c1,training_center_id: t1, aha_instructor_motivation: 'Because my passion is to teach HS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 2, cpr_instructor_check: 'No', aha_check: 'Yes', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
-                              course_start_date: '2017-4-15', course_address: '688 Truth Road', state_id: 45, course_city: 'Houston', course_zipcode:'77199')
+                              course_start_date: '2017-4-15', course_address: '688 Truth Road', state_id: 45, course_city: 'Houston', course_zipcode:'77199', align_w_tp_check: 'No')
 
 afc4 = ApplicationForm.create(candidate: c4,training_center_id: t1, aha_instructor_motivation: 'Because my passion is to teach BLS ', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Friend',teaching_frequency: '3 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/29/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 3, cpr_instructor_check: 'No', aha_check: 'Yes', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
-                              course_start_date: '2017-4-15', course_address: '99 Zepeda Road', state_id: 45, course_city: 'Houston', course_zipcode:'77039')
+                              course_start_date: '2017-4-15', course_address: '99 Zepeda Road', state_id: 45, course_city: 'Houston', course_zipcode:'77039', align_w_tp_check: 'Yes')
 ApplicationForm.create(candidate: c4,training_center_id: t1, aha_instructor_motivation: 'Because my passion is to teach HS ', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Friend',teaching_frequency: '3 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/29/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 3, cpr_instructor_check: 'No', aha_check: 'No', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
-                              course_start_date: '2017-4-16', course_address: '555 Queensland', state_id: 45, course_city: 'Houston', course_zipcode:'77096')
+                              course_start_date: '2017-4-16', course_address: '555 Queensland', state_id: 45, course_city: 'Houston', course_zipcode:'77096', align_w_tp_check: 'Yes')
 ApplicationForm.create(candidate: c4,training_center_id: t1, aha_instructor_motivation: 'Because my passion is to teach ACLS ', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Friend',teaching_frequency: '3 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/29/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 3, cpr_instructor_check: 'No', aha_check: 'No', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
-                              course_start_date: '2017-4-13', course_address: '3333 Road Drive', state_id: 45, course_city: 'Houston', course_zipcode:'77097')
+                              course_start_date: '2017-4-13', course_address: '3333 Road Drive', state_id: 45, course_city: 'Houston', course_zipcode:'77097', align_w_tp_check: 'Yes')
 
 afc10 = ApplicationForm.create(candidate: c10,training_center_id: t1, aha_instructor_motivation: 'Because my passion is to teach BLS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'Yes' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 3, cpr_instructor_check: 'Yes', aha_check: 'No', aha_training_canter:' ' , merica_cross_check: 'Yes', ns_council_other: ' ',
-                                course_start_date: '2017-3-28', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77093')
+                                course_start_date: '2017-3-28', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77093', align_w_tp_check: 'Yes')
 ApplicationForm.create(candidate: c10,training_center_id: t1, aha_instructor_motivation: 'Because my passion is to teach HS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'Yes' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes' , course_type_id: 3, cpr_instructor_check: 'Yes', aha_check: 'No', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other:' ',
-                                course_start_date: '2017-3-29', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77099')
+                                course_start_date: '2017-3-29', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77099', align_w_tp_check: 'Yes')
 ApplicationForm.create(candidate: c10,training_center_id: t1, aha_instructor_motivation: 'Because my passion is to teach ACLS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Friend',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'Yes' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 4, cpr_instructor_check: 'Yes', aha_check: 'No', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
-                                course_start_date: '2017-3-21', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77094')
+                                course_start_date: '2017-3-21', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77094', align_w_tp_check: 'Yes')
 
 afc9 = ApplicationForm.create(candidate: c9,training_center_id: t1, aha_instructor_motivation: 'Because my passion is to teach BLS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 4, cpr_instructor_check: 'Yes', aha_check: 'No', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
-                              course_start_date: '2017-4-4', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77099')
+                              course_start_date: '2017-4-4', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77099', align_w_tp_check: 'Yes')
 ApplicationForm.create(candidate: c9,training_center_id: t1, aha_instructor_motivation: 'Because my passion is to teach HS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 4, cpr_instructor_check: 'Yes', aha_check: 'No', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
-                              course_start_date: '2017-4-3', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77099')
+                              course_start_date: '2017-4-3', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77099', align_w_tp_check: 'Yes')
 ApplicationForm.create(candidate: c9,training_center_id: t1, aha_instructor_motivation: 'Because my passion is to teach ACLS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 4, cpr_instructor_check: 'Yes', aha_check: 'No', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
-                              course_start_date: '2017-4-2', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77095')
+                              course_start_date: '2017-4-2', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77095', align_w_tp_check: 'Yes')
 
 # Timeslot seed data to use for testing
 

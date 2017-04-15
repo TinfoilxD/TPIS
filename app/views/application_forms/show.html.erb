@@ -8,7 +8,17 @@
         <div class="panel-heading">
           <h3 class="panel-title">Application Form</h3>
         </div>
+        </br>
+        <span class="pull-right">
+          <%if user_signed_in? and current_user.system_admin? then%>
+<%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %>
+<%end%>
 
+          <%if user_signed_in? and current_user.candidate? then%>
+    <%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %> | <%= link_to 'Edit', edit_application_form_path(@application_form), class:'btn btn-info btn-S'  %> |
+              <%= link_to 'Click To Book Appointment', "/book_appointment/#{@application_form.id}", class:'btn btn-primary RbtnMargin btn-S'  %>
+<%end%>
+          </span> <br>
         <div class="panel-body" >
           <div class="row">
             <div class="col-lg-14">
@@ -17,7 +27,8 @@
 
 <tr>
   <td><strong>Candidate:</strong></td>
-  <td><%= @application_form.candidate_id %></td>
+  <td><%= @application_form.candidate&.full_name %></td>
+
 </tr>
 
 <tr>
@@ -30,9 +41,33 @@
   <td><%= @application_form.course_type&.course_type %></td>
 </tr>
 
+
 <tr>
-  <td><strong>Course Location:</strong></td>
-  <td><%= @application_form.get_course_address %></td>
+  <td><strong>Course Date:</strong></td>
+<td><%=@application_form.course_start_date %> </td>
+
+</tr>
+
+<tr>
+  <td><strong>Course Address:</strong></td>
+  <td><%= @application_form.course_address %></td>
+</tr>
+
+<tr>
+  <td><strong>Course State :</strong></td>
+  <td><%= @application_form.state %></td>
+</tr>
+
+
+<tr>
+  <td><strong>Course City:</strong></td>
+  <td><%= @application_form.course_city %></td>
+</tr>
+
+
+<tr>
+  <td><strong>Course Zip Code:</strong></td>
+  <td><%= @application_form.course_zipcode %></td>
 </tr>
 
 <tr>
@@ -82,6 +117,11 @@
 </tr>
 
 <tr>
+  <td><strong>Align with TP?</strong></td>
+  <td><%= yesno(@application_form.align_w_tp_check) %></td>
+</tr>
+
+<tr>
   <td><strong>Date agreed:</strong></td>
  <td> <%= @application_form.date_agreed&.strftime("%m/%d/%y") %></td>
 </tr>
@@ -122,22 +162,44 @@
   </div>
 </div>
 
+<<<<<<< Updated upstream
 <span class="pull-right">
 <%= link_to 'Edit', edit_application_form_path(@application_form), class:'btn btn-default btn-S'  %> |
 
-
+<!--Logic to direct admin through pages with back button-->
 <%if user_signed_in? and current_user.system_admin? then%>
-<%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %>
+      <!--If from specan, go back to specan-->
+  <% if URI(request.referer).path == "/specan/#{@application_form.candidate_id}" %>
+    <%= link_to 'Back', "/specan/#{@application_form.candidate_id}", class:'btn btn-default btn-S'  %> |
+  <!--If from app forms go back to appforms-->
+  <% elsif URI(request.referer).path == '/application_forms' %>
+      <%= link_to 'Back', application_forms_path, class:'btn btn-default btn-S'  %>
+  <!--If coming from report-->
+  <% elsif URI(request.referer).path == '/report_applications_without_appointments' %>
+      <%= link_to 'Back', report_applications_without_appointments_path, class:'btn btn-default btn-S' %>
+  <!--If navigation unclear go back to apporms-->
+  <% else %>
+      <%= link_to 'Back', application_forms_path, class:'btn btn-default btn-S'  %>
+  <% end %>
 <%end%>
 
 <%if user_signed_in? and current_user.candidate? then%>
-    <%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %> |
+    <%= link_to 'Back', view_my_application_path, class:'btn btn-default btn-S'  %> |
     <%= link_to 'Book Appointment', "/book_appointment/#{@application_form.id}", class:'btn btn-default btn-S'  %> |
 <%end%>
+
+<%if user_signed_in? and current_user.tcf_admin? then%>
+  <%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %> |
+<% end %>
           </span> <br>
+=======
+
+>>>>>>> Stashed changes
         </div>
       </div>
     </div>
   </div>
+</div>
+</div>
 </div>
 </div>

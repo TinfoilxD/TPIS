@@ -57,8 +57,24 @@
 
 <br>
 
+  <p>
+    <!--Logic to ensure proper navigation from candidate-->
+    <% if user_signed_in? and current_user.candidate? then %>
+      <% if URI(request.referer).path == 'book_appointment' %>
+        <%= link_to 'Back',  candidate_landing_path, class:'btn btn-default btn-S'  %>
+      <% else %>
+         <%= link_to 'Back', candidate_landing_path, class:'btn btn-default btn-S'  %>
+      <% end %>
+    <% end %>
+    <!--Logic to ensure proper navigation from admin--></p>
+    <% if user_signed_in? and current_user.system_admin? then %>
+      <% if URI(request.referer).path == '/viewappt' %>
+          <%= link_to 'Back', admin_view_appointments_index_path, class:'btn btn-default btn-S'  %>
+      <% else %>
+          <%= link_to 'Back', admin_view_appointments_index_path, class:'btn btn-default btn-S'  %>
+      <%end %>
+    <% end %>
 
 </div>
-  </div>
-  <%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %>
-  </div>
+</div>
+</div>
