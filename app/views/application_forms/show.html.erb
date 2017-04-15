@@ -30,9 +30,33 @@
   <td><%= @application_form.course_type&.course_type %></td>
 </tr>
 
+
 <tr>
-  <td><strong>Course Location:</strong></td>
-  <td><%= @application_form.get_course_address %></td>
+  <td><strong>Course Date:</strong></td>
+<td><%=@application_form.course_start_date %> </td>
+
+</tr>
+
+<tr>
+  <td><strong>Course Address:</strong></td>
+  <td><%= @application_form.course_address %></td>
+</tr>
+
+<tr>
+  <td><strong>Course State :</strong></td>
+  <td><%= @application_form.state %></td>
+</tr>
+
+
+<tr>
+  <td><strong>Course City:</strong></td>
+  <td><%= @application_form.course_city %></td>
+</tr>
+
+
+<tr>
+  <td><strong>Course Zip Code:</strong></td>
+  <td><%= @application_form.course_zipcode %></td>
 </tr>
 
 <tr>
