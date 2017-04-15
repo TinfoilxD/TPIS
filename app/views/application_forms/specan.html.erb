@@ -48,7 +48,8 @@
       <%= link_to 'Back', admin_view_appointments_index_path, class: 'btn btn-default btn-S' %>
     <%end %>
       <!--Navigation for candidate-->
-  <% elsif user_signed_in? and current_user.candidate? %>
+  <% elsif user_signed_in? and curren
+       t_user.candidate? %>
       <% if URI(request.referer).path == '/candidate_landing' %>
           <%= link_to 'Back', candidate_landing_path, class: 'btn btn-default btn-S' %>
       <% else %>
