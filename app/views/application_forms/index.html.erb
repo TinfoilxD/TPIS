@@ -23,7 +23,7 @@
         <td><%= application_form.course_type&.course_type %></td>
         <td><%= application_form.get_course_address %></td>
 
-        <td><%= application_form.date_agreed.strftime("%m/%d/%y") %></td>
+        <td><%= application_form.date_agreed&.strftime("%m/%d/%y") %></td>
 
 
         <td class="CRUD">
