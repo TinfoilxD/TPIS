@@ -242,9 +242,9 @@ function setTimeslotIndexCalendar()
 {
     $('#timeslot_index').fullCalendar({
         header: {
-            left   : 'prev,next',
+            left   : 'prev',
             center : 'title',
-            right : 'none'
+            right : 'next'
         },
         eventSources: [{url : '/timeslots/list', color: 'rgb(40,167,255)'}],
         defaultView: 'agendaWeek',

@@ -1,8 +1,26 @@
 <div id="wrapper">
-<%results = CourseType.joins(:application_forms).group('course_type').count %>
+<h2 class="page-header"> Candidates By Course</h2>
+  <%results = CourseType.joins(:application_forms).group('course_type').count %>
   <%= column_chart results %>
 
 <br>
+
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav side-nav">
+
+      <%if user_signed_in? and current_user.system_admin? then%>
+          <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
+          <li><%= link_to 'Candidate Appointments By Date Range Selector', candidate_created_appointments_by_date_path%></li>
+          <li><%= link_to 'Alignment Type Charts', report_candidates_by_allignment_type_path %> </li>
+          <li><%=link_to 'Candidates By Course Chart', report_candidates_by_course_path %></li>
+
+
+      <%end%>
+    </ul>
+    <!-- /.sidebar-collapse -->
+  </div>
+  <!-- /.navbar-static-side -->
+</div>
 
 <div id="page-wrapper">
   <div class="row">
