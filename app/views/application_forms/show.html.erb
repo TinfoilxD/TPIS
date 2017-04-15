@@ -8,17 +8,8 @@
         <div class="panel-heading">
           <h3 class="panel-title">Application Form</h3>
         </div>
-        </br>
         <span class="pull-right">
-          <%if user_signed_in? and current_user.system_admin? then%>
-<%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %>
-<%end%>
-
-          <%if user_signed_in? and current_user.candidate? then%>
-    <%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %> | <%= link_to 'Edit', edit_application_form_path(@application_form), class:'btn btn-info btn-S'  %> |
-              <%= link_to 'Click To Book Appointment', "/book_appointment/#{@application_form.id}", class:'btn btn-primary RbtnMargin btn-S'  %>
-<%end%>
-          </span> <br>
+          </span>
         <div class="panel-body" >
           <div class="row">
             <div class="col-lg-14">
@@ -55,7 +46,7 @@
 
 <tr>
   <td><strong>Course State :</strong></td>
-  <td><%= @application_form.state %></td>
+  <td><%= @application_form.state&.state_name %></td>
 </tr>
 
 
@@ -162,9 +153,9 @@
   </div>
 </div>
 
-<<<<<<< Updated upstream
-<span class="pull-right">
-<%= link_to 'Edit', edit_application_form_path(@application_form), class:'btn btn-default btn-S'  %> |
+
+<span class="pull-left">
+<%= link_to 'Edit', edit_application_form_path(@application_form), class:'btn btn-primary btn-S'  %> |
 
 <!--Logic to direct admin through pages with back button-->
 <%if user_signed_in? and current_user.system_admin? then%>
@@ -184,7 +175,7 @@
 <%end%>
 
 <%if user_signed_in? and current_user.candidate? then%>
-    <%= link_to 'Back', view_my_application_path, class:'btn btn-default btn-S'  %> |
+    <%= link_to 'Back', "/specan/#{@application_form.candidate_id}", class:'btn btn-default btn-S'  %> |
     <%= link_to 'Book Appointment', "/book_appointment/#{@application_form.id}", class:'btn btn-default btn-S'  %> |
 <%end%>
 
@@ -192,9 +183,7 @@
   <%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %> |
 <% end %>
           </span> <br>
-=======
 
->>>>>>> Stashed changes
         </div>
       </div>
     </div>
