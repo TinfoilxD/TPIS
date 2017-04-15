@@ -68,8 +68,9 @@ class ReportController < ApplicationController
   end
 
   def candidates_by_course
-    @candidates = Candidate.all
-    @course_types = CourseType.all
+    # @candidates = Candidate.all
+    # @course_types = CourseType.all
+    @application_forms = ApplicationForm.all
   end
 
   def alignment_employees
