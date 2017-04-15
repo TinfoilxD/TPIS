@@ -42,14 +42,12 @@
 
         </thead>
         <tbody>
-        <% @candidates.each do |candidate| %>
-            <% @course_types.each do |course_type| %>
+        <% @application_forms.each do |application_form| %>
         <tr>
-              <td><%= candidate.first_name %></td>
-              <td><%= candidate.last_name %></td>
-              <td><%= course_type.course_type %></td>
+              <td><%= application_form.candidate&.first_name %></td>
+              <td><%= application_form.candidate&.last_name %></td>
+              <td><%= application_form.course_type&.course_type %></td>
             </tr>
-        <% end %>
         <% end %>
         </table>
 

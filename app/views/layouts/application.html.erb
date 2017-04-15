@@ -28,23 +28,23 @@
          <div class="navbar-brand">
            <% if user_signed_in? == false then %>
                <%=link_to root_path, class:'navbar-brand' do %>
-                   <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '100px' %>
+                   <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '150px' %>
                <%end%>
            <%end%>
 
            <% if user_signed_in? and current_user.candidate? then%>
                <%= link_to candidate_landing_path, class: 'navbar-brand' do %>
-                   <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '100px' %>
+                   <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '150px' %>
                <%end%>
            <%end%>
            <% if user_signed_in? and current_user.system_admin? then%>
                <%= link_to system_admin_landing_path, class: 'navbar-brand' do %>
-                   <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '100px' %>
+                   <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '150px' %>
                <% end %>
            <% end %>
            <% if user_signed_in? and current_user.tcf_admin? then%>
                <%= link_to tcf_admin_landing_path, class: 'navbar-brand' do %>
-                   <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '100px' %>
+                   <%= image_tag "/TPIS_Logo.png", class: "logolink", height: '150px' %>
                <% end %>
            <% end %>
          </div>
@@ -83,7 +83,7 @@
                     <%end%>
 
                    <%signed_faculty = Faculty.where(email: current_user.email).first%>
-                   <%if user_signed_in? and current_user.tcf_admin? then %>
+                   <%if user_signed_in? and current_user.tcf_admin? and signed_faculty then %>
                        <li><%= link_to 'My Profile', faculty_profile_show_path(signed_faculty) %></li>
                    <%end%>
                    <li class="divider"></li>

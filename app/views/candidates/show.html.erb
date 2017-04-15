@@ -96,6 +96,10 @@
         <%= link_to 'Back', report_candidates_without_applications_path , class:'btn btn-default btn-S' %>
       <% elsif URI(request.referer).path == '/candidates' %>
         <%= link_to 'Back', candidates_path, class:'btn btn-default btn-S' %>
+      <% elsif URI(request.referer).path == '/candidates/new' %>
+        <%= link_to 'Back', candidate_landing_path, class:'btn btn-default btn-S' %>
+      <% else %>
+        <%= link_to 'Back', candidate_landing_path, class:'btn btn-default btn-S' %>
       <% end %>
     <%end%>
   </span> <br>
