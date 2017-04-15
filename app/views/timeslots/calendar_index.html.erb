@@ -16,8 +16,8 @@
   <tbody>
   <% @timeslots.each do |timeslot| %>
       <tr>
-        <td><%= timeslot.start %></td>
-        <td><%= timeslot.end %></td>
+        <td><%= timeslot.start&.strftime("%m/%d/%y %l:%M %p") %></td>
+        <td><%= timeslot.end&.strftime("%m/%d/%y %l:%M %p") %></td>
         <td><%= Faculty.find(timeslot.faculty_id)&.full_name%></td>
       </tr>
   <% end %>
