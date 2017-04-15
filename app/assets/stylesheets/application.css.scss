@@ -266,7 +266,7 @@ ol, ul {
 }
 
 
-// Sidebar nav hyperliniks //
+ //Sidebar nav hyperliniks //
 .side-nav li a {
   color:#ffffff;
 
@@ -280,6 +280,21 @@ ol, ul {
   }
 }
 
+
+// Button's //
+.container .btn-tcf a .btn .btn-info{
+  color: white;
+
+  &:visited {
+    color: white;
+  }
+
+  &:hover {
+    color: white;
+    background-color: none;
+  }
+
+}
 
 
 // user controls //

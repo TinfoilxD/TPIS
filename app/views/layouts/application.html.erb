@@ -75,13 +75,14 @@
 
 
                  <ul class="dropdown-menu">
+    <!----- Sign in view for Canddiate -------------------------------------------------------------------->
                    <%signed_candidate = Candidate.where(email: current_user.email).first%>
                    <%if user_signed_in? and current_user.candidate? and signed_candidate then%>
                        <li><%= link_to 'Change Password', edit_user_registration_path(signed_candidate) %></li>
                       <li><%= link_to 'My Profile', profile_show_path(signed_candidate)%></li>
                        <li><%= link_to 'My Application', appform_all_path(signed_candidate)%></li>
                     <%end%>
-
+     <!--------- Sign in view for Faculty -------------------------------------------------------------------->
                    <%signed_faculty = Faculty.where(email: current_user.email).first%>
                    <%if user_signed_in? and current_user.tcf_admin? and signed_faculty then %>
                        <li><%= link_to 'My Profile', faculty_profile_show_path(signed_faculty) %></li>
@@ -118,5 +119,4 @@
 </div>
 <%= yield %>
 </body>
-
 </html>
