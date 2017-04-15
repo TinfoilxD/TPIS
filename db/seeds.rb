@@ -896,20 +896,20 @@ ApplicationForm.create(candidate: c9,training_center_id: t1, aha_instructor_moti
                               course_start_date: '2017-4-2', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77095', align_w_tp_check: 'Yes')
 
 # Demo Appointments for Wang Wang
-ApplicationForm.create(candidate: c11,training_center_id: t1, aha_instructor_motivation: 'Its my dream.', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+afc11 = ApplicationForm.create(candidate: c11,training_center_id: t1, aha_instructor_motivation: 'Its my dream.', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 4, cpr_instructor_check: 'Yes', aha_check: 'No', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
                        course_start_date: '2017-4-31', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77095', align_w_tp_check: 'Yes')
-ApplicationForm.create(candidate: c12,training_center_id: t1, aha_instructor_motivation: '', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'Yes' ,
-                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 4, cpr_instructor_check: 'Yes', aha_check: 'No', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
+afc12 = ApplicationForm.create(candidate: c12,training_center_id: t1, aha_instructor_motivation: '', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 2, cpr_instructor_check: 'Yes', aha_check: 'No', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
                        course_start_date: '2017-4-31', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77095', align_w_tp_check: 'Yes')
-ApplicationForm.create(candidate: c13,training_center_id: t1, aha_instructor_motivation: 'My mother told me to.', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '3 weeks', owned_equipment: 'Yes' ,
-                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 4, cpr_instructor_check: 'Yes', aha_check: 'No', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
+afc13 = ApplicationForm.create(candidate: c13,training_center_id: t1, aha_instructor_motivation: 'My mother told me to.', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '3 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 1, cpr_instructor_check: 'Yes', aha_check: 'No', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
                        course_start_date: '2017-4-31', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77095', align_w_tp_check: 'Yes')
-ApplicationForm.create(candidate: c14,training_center_id: t1, aha_instructor_motivation: 'I like to help people.', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '5 weeks', owned_equipment: 'Yes' ,
-                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 4, cpr_instructor_check: 'Yes', aha_check: 'No', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
+afc14 = ApplicationForm.create(candidate: c14,training_center_id: t1, aha_instructor_motivation: 'I like to help people.', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '5 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 3, cpr_instructor_check: 'Yes', aha_check: 'No', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
                        course_start_date: '2017-4-31', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77095', align_w_tp_check: 'Yes')
-ApplicationForm.create(candidate: c15,training_center_id: t1, aha_instructor_motivation: 'I did it in high school.', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'Yes' ,
-                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 4, cpr_instructor_check: 'Yes', aha_check: 'No', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
+afc15 = ApplicationForm.create(candidate: c15,training_center_id: t1, aha_instructor_motivation: 'I did it in high school.', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 1, cpr_instructor_check: 'Yes', aha_check: 'No', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
                        course_start_date: '2017-4-31', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77095', align_w_tp_check: 'Yes')
 
 
@@ -939,6 +939,12 @@ Timeslot.create(start: '2017-4-15 13:00:00', title: 'Timeslot Available for Ashl
 Timeslot.create(start: '2017-4-18 10:00:00', title: 'Timeslot Available for Ashley Michael', end: '2017-4-18 11:00:00', faculty_id: f1.id)
 Timeslot.create(start: '2017-4-17 15:00:00', title: 'Timeslot Available for Ashley Michael', end: '2017-4-17 16:00:00', faculty_id: f1.id)
 
+#Timeslots for Demo
+Timeslot.create(start: '2017-4-26 12:00:00', title: 'Timeslot Available for Wangchuk Sieger', end: '2017-4-26 13:00:00', faculty_id: f4.id)
+Timeslot.create(start: '2017-4-26 15:00:00', title: 'Timeslot Available for Wangchuk Sieger', end: '2017-4-26 16:00:00', faculty_id: f4.id)
+Timeslot.create(start: '2017-4-27 13:00:00', title: 'Timeslot Available for Wangchuk Sieger', end: '2017-4-27 14:00:00', faculty_id: f4.id)
+Timeslot.create(start: '2017-4-29 16:00:00', title: 'Timeslot Available for Wangchuk Sieger', end: '2017-4-29 17:00:00', faculty_id: f4.id)
+
 
 
 # Appointment Seed Data for the c# applications
@@ -963,6 +969,14 @@ Appointment.create(start: '2017-4-13 14:00:00', end:'2017-4-13 15:00:00',  facul
 Appointment.create(start: '2017-4-15 13:00:00', end:'2017-4-15 14:00:00',  faculty_id:f1.id,  title:'Appointment for David Jacques with Ashley Michael', application_form_id:afc3.id)
 Appointment.create(start: '2017-4-18 10:00:00', end:'2017-4-18 11:00:00',  faculty_id:f1.id,  title:'Appointment for Michelle Sasser with Ashley Michael', application_form_id:afc4.id)
 Appointment.create(start: '2017-4-17 15:00:00', end:'2017-4-17 16:00:00',  faculty_id:f1.id,  title:'Appointment for Allison Castilliano with Ashley Michael', application_form_id:afc5.id)
+
+#Appointments for Demo
+Appointment.create(start: '2017-4-26 11:00:00', end:'2017-4-17 12:00:00',  faculty_id:f4.id,  title:'Appointment for Sarah Jones with Wangchuk Sieger', application_form_id:afc11.id)
+Appointment.create(start: '2017-4-27 11:00:00', end:'2017-4-17 12:00:00',  faculty_id:f4.id,  title:'Appointment for Emilia Cortez with Wangchuk Sieger', application_form_id:afc12.id)
+Appointment.create(start: '2017-4-28 14:00:00', end:'2017-4-17 15:00:00',  faculty_id:f4.id,  title:'Appointment for Blavin DiMAssio with Wangchuk Sieger', application_form_id:afc13.id)
+Appointment.create(start: '2017-4-28 17:00:00', end:'2017-4-17 18:00:00',  faculty_id:f4.id,  title:'Appointment for Vincent LeEngardien with Wangchuk Sieger', application_form_id:afc14.id)
+Appointment.create(start: '2017-4-29 12:00:00', end:'2017-4-17 13:00:00',  faculty_id:f4.id,  title:'Appointment for Julio Villanueva with Wangchuk Sieger', application_form_id:afc15.id)
+
 
 user = User.new
 user.email = 'ghreek@gmail.com'
