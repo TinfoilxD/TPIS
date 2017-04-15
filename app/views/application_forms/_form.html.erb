@@ -52,8 +52,7 @@
 <div class="row">
 
     <%=f.label :course_start_date, "Start Date" %>
-    <%= f.datetime_select :course_start_date%>
-
+    <%= f.datetime_select :course_start_date, :ampm=> true, :minute_step => 5%>
 </div>
 
  </br>
