@@ -1,1 +1,28 @@
 <div id="timeslot_index"></div>
+
+
+<h1>Timeslots</h1>
+
+<table class='table table-hover'>
+  <thead>
+  <tr>
+    <th>Start</th>
+    <th>End</th>
+    <th>Faculty</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @timeslots.each do |timeslot| %>
+      <tr>
+        <td><%= timeslot.start %></td>
+        <td><%= timeslot.end %></td>
+        <td><%= Faculty.find(timeslot.faculty_id)&.full_name%></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+

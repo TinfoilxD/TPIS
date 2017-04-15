@@ -9,6 +9,7 @@ class TimeslotsController < ApplicationController
   end
 
   def calendar_index
+    @timeslots = Timeslot.all
   end
 
   # GET /timeslots/1
