@@ -54,7 +54,6 @@
         <div class="panel-footer">
           <span class="glyphicon glyphicon-chevron-right"></span><%= link_to 'Course Types', admin_course_type_crud_path%></br>
           <span class="glyphicon glyphicon-chevron-right"></span><%= link_to 'Alignment Types', admin_alignment_type_crud_path %></br>
-          <span class="glyphicon glyphicon-chevron-right"></span><%= link_to 'Training Centers', admin_training_crud_path %>
           <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
           <div class="clearfix"></div>
         </div>
@@ -79,7 +78,7 @@
           </div>
         </div>
           <div class="panel-footer">
-            <span class="glyphicon glyphicon-chevron-right"></span><%= link_to 'User Accounts', admin_user_controls_path%> </br>
+            <span class="glyphicon glyphicon-chevron-right"></span><%= link_to 'User Account Types', admin_user_controls_path%> </br>
             <span class="glyphicon glyphicon-chevron-right"></span><%= link_to 'User Faculty Types', faculty_type_crud_path%>
             <span class="pull-left"></span>
             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -87,24 +86,26 @@
           </div>
       </div>
     </div>
-    <!--<div class="col-lg-3 col-md-6">-->
-      <!--<div class="panel panel-default">-->
-        <!--<div class="panel-heading">-->
-          <!--<div class="row">-->
-            <!--<div class="col-xs-3">-->
-              <!--<i class="fa fa-shopping-cart fa-5x"></i>-->
-            <!--</div>-->
-            <!--<div class="col-xs-9 text-left">-->
-              <!--<div>Anything else?</div>-->
-            <!--</div>-->
-          <!--</div>-->
-        <!--</div>-->
-        <!--<a href="#">-->
-          <!--<div class="panel-footer">-->
 
-            <!--<span class="pull-left">-->
 
-                            <!--</span>-->
+    <div class="col-lg-4 col-md-7">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-3">
+              <i class="fa fa-shopping-cart fa-5x"></i>
+            </div>
+            <div class="col-lg-6">
+             <div> <span class="glyphicon glyphicon-cog"></span> <strong> Training Centers </strong><p>This sections allows you to manage information about the training centers.</p></div>
+            </div>
+          </div>
+        </div>
+        <a href="#">
+          <div class="panel-footer">
+            <span class="glyphicon glyphicon-chevron-right"></span><%= link_to 'Training Center Location', admin_training_crud_path %>
+            <span class="pull-left">
+
+                            </span>
             <!--<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>-->
             <!--<div class="clearfix"></div>-->
           <!--</div>-->

@@ -53,14 +53,14 @@
               <% if candidate.application?(candidate) == true%>
                   <%= link_to 'View Applications', admin_view_all_apps_path(candidate), class:'btn btn-info btn-xs'  %>
               <% else %>
-                  <%= link_to 'View Applications', url_for, class: 'btn btn-default btn-xs', data: { confirm: 'No Applications for this user.' } %>
+                  <%= link_to 'View Applications', url_for, class: 'btn btn-info disabled btn-xs', data: { confirm: 'No Applications for this user.' } %>
               <% end %>
             </td>
             <td>
               <!--Logic to see if Candidate has application form -->
                 <!-- Appointment method found in candidate.rb based on negatives for no actual reason-->
               <% if candidate.appointment?(candidate) == false%>
-                <%= link_to 'View Appointments', url_for , class: 'btn btn-default btn-xs', data: { confirm: 'No Appointments for this user.' }  %>
+                <%= link_to 'View Appointments', url_for , class: 'btn btn-info disabled btn-xs', data: { confirm: 'No Appointments for this user.' }  %>
               <% else %>
                 <%=  link_to 'View Appointments',admin_view_appt_percandidate_path(candidate) , class: 'btn btn-info btn-xs' %>
               <% end %>

@@ -45,7 +45,7 @@
             <td><%= yesno(application_form.public_class_availability) %></td>
             <td><%= yesno(application_form.teaching_location) %></td>
             <td><%= yesno(application_form.screening_form_agreement) %></td>
-            <td><%= application_form.date_agreed.strftime('%m/%d/%y') %></td>
+            <td><%= application_form.date_agreed&.strftime('%m/%d/%y') %></td>
             <td><%= yesno(application_form.aha_form_agreement) %></td>
           </tr>
           <tr>
