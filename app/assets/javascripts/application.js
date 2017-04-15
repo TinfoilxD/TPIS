@@ -33,6 +33,7 @@ $( document ).on('turbolinks:load', function() {
     setTimeslotCalendar()
     setBookingCalendar()
     setAppointmentCalendar()
+    setTimeslotIndexCalendar()
     overrideArrowButtons()
     datePickerSet()
     addListeners()
@@ -237,6 +238,66 @@ function setAppointmentCalendar()
 }
 
 
+function setTimeslotIndexCalendar()
+{
+    $('#timeslot_index').fullCalendar({
+        header: {
+            left   : 'prev,next',
+            center : 'title',
+            right : 'none'
+        },
+        eventSources: [{url : '/timeslots/list', color: 'rgb(40,167,255)'}],
+        defaultView: 'agendaWeek',
+        slotDuration: '01:00:00',
+        slotLabelInterval: '01:00:00',
+        minTime: '09:00',
+        maxTime: '18:00',
+        contentHeight: 'auto',
+        allDaySlot: false,
+        disableDragging: true,
+        allDayDefault: false,
+        timezone: 'local'
+    });
+
+}
+
+function setAppointmentCalendar()
+{
+    $('#appointment_calendar').fullCalendar({
+
+        header: {
+            left   : 'prev,next',
+            center : 'title',
+            right : 'agendaWeek, month'
+        },
+        eventClick: function(calEvent, jsEvent, view)
+        {
+            eventData = {id : calEvent.id}
+            $.ajax({
+                url: "/appointments_calendar_show/",
+                type: "POST",
+                data: eventData,
+                datatype: 'json',
+                success: function(json) {
+                    if(json.path)
+                        window.location = json.path
+                }
+            });
+
+        },
+        eventSources: [{url : '/appointments_list', color: 'rgb(89,26,20)'}],
+        defaultView: 'agendaWeek',
+        slotDuration: '01:00:00',
+        slotLabelInterval: '01:00:00',
+        minTime: '09:00',
+        maxTime: '18:00',
+        contentHeight: 'auto',
+        allDaySlot: false,
+        disableDragging: true,
+        allDayDefault: false,
+        timezone: 'local'
+    });
+}
 //Uncomment this if we want to have dropdowns expand on hover instead of click
 // function setNaviToggle() {
 //     $('ul.nav li.dropdown').hover(function() {
