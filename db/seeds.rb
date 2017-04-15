@@ -737,11 +737,11 @@ c9 = Candidate.create(email:'alcapont45@gmail.com', first_name: 'Alex', last_nam
 c10 = Candidate.create(email:'candlemandell@gmail.com', first_name: 'Joseph', last_name: 'Mandell', address: '858 Crepe St', phone: '281-555-2011', state_id:45, zipcode: '77401',  occupation: 'Masseuse' , alignment_type_id: '1')
 
 # 6-10
-Candidate.create(email:'sunrisegoddess@yahoo.com', first_name: 'Sarah', last_name: 'Jones', address: '11482 Sunkissed Rd', phone: '713-555-5030', state_id:45, zipcode: '79201',  occupation: 'none' , alignment_type_id: '1')
-Candidate.create(email:'DanceEmiliaDance@aol.com', first_name: 'Emilia', last_name: 'Cortez', address: '6 Kings Manor', phone: '210-555-1213', state_id:45, zipcode: '77010',  occupation: 'Nurse' , alignment_type_id: '1')
-Candidate.create(email:'pressurepointprince@yahoo.com', first_name: 'Blaivin', last_name: 'DiMassio', address: '4401 Wheeler St.', phone: '832-555-2111', state_id:45, zipcode: '77004',  occupation: 'Masseuse' , alignment_type_id: '1')
-Candidate.create(email:'yogamaster65@gmail.com', first_name: 'Vincent', last_name: 'LeEngardien', address: '123 Cullen', phone: '832-555-6640', state_id:45, zipcode: '76950',  occupation: 'Yoga Instructor' , alignment_type_id: '1')
-Candidate.create(email:'conventionalking@gmail.com', first_name: 'Julio', last_name: 'Villanueva', address: '987 Spanish Trail', phone: '832-555-3333', state_id:45, zipcode: '77099',  occupation: 'Healer' , alignment_type_id: '1')
+c11 = Candidate.create(email:'sunrisegoddess@yahoo.com', first_name: 'Sarah', last_name: 'Jones', address: '11482 Sunkissed Rd', phone: '713-555-5030', state_id:45, zipcode: '79201',  occupation: 'none' , alignment_type_id: '1')
+c12 = Candidate.create(email:'DanceEmiliaDance@aol.com', first_name: 'Emilia', last_name: 'Cortez', address: '6 Kings Manor', phone: '210-555-1213', state_id:45, zipcode: '77010',  occupation: 'Nurse' , alignment_type_id: '1')
+c13 = Candidate.create(email:'pressurepointprince@yahoo.com', first_name: 'Blaivin', last_name: 'DiMassio', address: '4401 Wheeler St.', phone: '832-555-2111', state_id:45, zipcode: '77004',  occupation: 'Masseuse' , alignment_type_id: '1')
+c14 = Candidate.create(email:'yogamaster65@gmail.com', first_name: 'Vincent', last_name: 'LeEngardien', address: '123 Cullen', phone: '832-555-6640', state_id:45, zipcode: '76950',  occupation: 'Yoga Instructor' , alignment_type_id: '1')
+c15 = Candidate.create(email:'conventionalking@gmail.com', first_name: 'Julio', last_name: 'Villanueva', address: '987 Spanish Trail', phone: '832-555-3333', state_id:45, zipcode: '77099',  occupation: 'Healer' , alignment_type_id: '1')
 
 # 11-15
 Candidate.create(email:'scorpioking@yahoo.com', first_name: 'Kevin', last_name: 'Sucho', address: '111 Dumax Rd', phone: '713-555-1100', state_id:45, zipcode: '77055',  occupation: 'Nurse' , alignment_type_id: '1')
@@ -894,6 +894,27 @@ ApplicationForm.create(candidate: c9,training_center_id: t1, aha_instructor_moti
 ApplicationForm.create(candidate: c9,training_center_id: t1, aha_instructor_motivation: 'Because my passion is to teach ACLS', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'Yes' ,
                        public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 4, cpr_instructor_check: 'Yes', aha_check: 'No', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
                               course_start_date: '2017-4-2', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77095', align_w_tp_check: 'Yes')
+
+# Demo Appointments for Wang Wang
+ApplicationForm.create(candidate: c11,training_center_id: t1, aha_instructor_motivation: 'Its my dream.', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '1 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 4, cpr_instructor_check: 'Yes', aha_check: 'No', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
+                       course_start_date: '2017-4-31', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77095', align_w_tp_check: 'Yes')
+ApplicationForm.create(candidate: c12,training_center_id: t1, aha_instructor_motivation: '', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 4, cpr_instructor_check: 'Yes', aha_check: 'No', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
+                       course_start_date: '2017-4-31', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77095', align_w_tp_check: 'Yes')
+ApplicationForm.create(candidate: c13,training_center_id: t1, aha_instructor_motivation: 'My mother told me to.', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '3 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 4, cpr_instructor_check: 'Yes', aha_check: 'No', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
+                       course_start_date: '2017-4-31', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77095', align_w_tp_check: 'Yes')
+ApplicationForm.create(candidate: c14,training_center_id: t1, aha_instructor_motivation: 'I like to help people.', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '5 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 4, cpr_instructor_check: 'Yes', aha_check: 'No', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
+                       course_start_date: '2017-4-31', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77095', align_w_tp_check: 'Yes')
+ApplicationForm.create(candidate: c15,training_center_id: t1, aha_instructor_motivation: 'I did it in high school.', experience_check: 'Yes', experience_description: 'Experience include.....', marketing_origin: 'Online',teaching_frequency: '2 weeks', owned_equipment: 'Yes' ,
+                       public_class_availability: 'No', teaching_location: 'Yes', screening_form_agreement: 'No' , date_agreed: DateTime.strptime('04/26/2017', "%m/%d/%Y") , aha_form_agreement: 'Yes', course_type_id: 4, cpr_instructor_check: 'Yes', aha_check: 'No', aha_training_canter: ' ', merica_cross_check: 'Yes', ns_council_other: ' ',
+                       course_start_date: '2017-4-31', course_address: '1234 Building Lane', state_id: 45, course_city: 'Houston', course_zipcode:'77095', align_w_tp_check: 'Yes')
+
+
+
+
 
 # Timeslot seed data to use for testing
 

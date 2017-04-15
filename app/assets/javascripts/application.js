@@ -33,6 +33,7 @@ $( document ).on('turbolinks:load', function() {
     setTimeslotCalendar()
     setBookingCalendar()
     setAppointmentCalendar()
+    setTimeslotIndexCalendar()
     overrideArrowButtons()
     datePickerSet()
     addListeners()
@@ -237,6 +238,66 @@ function setAppointmentCalendar()
 }
 
 
+function setTimeslotIndexCalendar()
+{
+    $('#timeslot_index').fullCalendar({
+        header: {
+            left   : 'prev,next',
+            center : 'title',
+            right : 'none'
+        },
+        eventSources: [{url : '/timeslots/list', color: 'rgb(40,167,255)'}],
+        defaultView: 'agendaWeek',
+        slotDuration: '01:00:00',
+        slotLabelInterval: '01:00:00',
+        minTime: '09:00',
+        maxTime: '18:00',
+        contentHeight: 'auto',
+        allDaySlot: false,
+        disableDragging: true,
+        allDayDefault: false,
+        timezone: 'local'
+    });
+
+}
+
+function setAppointmentCalendar()
+{
+    $('#appointment_calendar').fullCalendar({
+
+        header: {
+            left   : 'prev,next',
+            center : 'title',
+            right : 'agendaWeek, month'
+        },
+        eventClick: function(calEvent, jsEvent, view)
+        {
+            eventData = {id : calEvent.id}
+            $.ajax({
+                url: "/appointments_calendar_show/",
+                type: "POST",
+                data: eventData,
+                datatype: 'json',
+                success: function(json) {
+                    if(json.path)
+                        window.location = json.path
+                }
+            });
+
+        },
+        eventSources: [{url : '/appointments_list', color: 'rgb(89,26,20)'}],
+        defaultView: 'agendaWeek',
+        slotDuration: '01:00:00',
+        slotLabelInterval: '01:00:00',
+        minTime: '09:00',
+        maxTime: '18:00',
+        contentHeight: 'auto',
+        allDaySlot: false,
+        disableDragging: true,
+        allDayDefault: false,
+        timezone: 'local'
+    });
+}
 //Uncomment this if we want to have dropdowns expand on hover instead of click
 // function setNaviToggle() {
 //     $('ul.nav li.dropdown').hover(function() {
@@ -271,18 +332,20 @@ function datePickerSet()
                 for(key in data) {
                     candidate_first_name = data[key].cfn
                     candidate_last_name = data[key].cln
-                    course_type = data[key].course_type
+                    course_type = data[key].course_name
                     faculty_name = ((data[key].ffn) + " ").concat(data[key].fln)
                     //2017-04-06 19:09:39.719376
-                    created_at_substring = (data[key].created_at).substring(0,10)
-                    created_at = Date.parseExact(created_at_substring, 'yyyy-mm-dd')
+                    start_date_substring = (data[key].start).substring(0,10)
+                    start_date = Date.parseExact(start_date_substring, 'yyyy-mm-dd')
+                    // created_at_substring = (data[key].created_at).substring(0,10)
+                    // created_at = Date.parseExact(created_at_substring, 'yyyy-mm-dd')
 
                     $('#report_display_table tbody').append("<tr><td>"
                         + candidate_first_name + "</td><td>"
                         + candidate_last_name + "</td><td>"
                         + course_type + "</td><td>"
                         + faculty_name + "</td><td>"
-                        + created_at.toString('mm-dd-yyyy') + "</td> ")
+                        + start_date.toString('mm-dd-yyyy') + "</td> ")
 
                 }
 

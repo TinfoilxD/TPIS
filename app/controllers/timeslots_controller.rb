@@ -8,6 +8,10 @@ class TimeslotsController < ApplicationController
     @timeslots = Timeslot.all
   end
 
+  def calendar_index
+    @timeslots = Timeslot.all
+  end
+
   # GET /timeslots/1
   # GET /timeslots/1.json
   def show

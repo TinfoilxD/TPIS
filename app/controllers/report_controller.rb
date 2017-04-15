@@ -20,7 +20,7 @@ class ReportController < ApplicationController
                     "faculties.first_name as ffn, "\
                     "faculties.last_name as fln, "\
                     "course_types.course_type as course_name, "\
-                    "appointments.created_at, "\
+                    "appointments.start, "\
                     "appointments.end "\
                     "FROM appointments INNER JOIN faculties ON appointments.faculty_id = faculties.id "\
                     "INNER JOIN application_forms ON appointments.application_form_id = application_forms.id "\
