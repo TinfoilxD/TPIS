@@ -52,7 +52,7 @@
 <div class="row">
 
     <%=f.label :course_start_date, "Start Date" %>
-    <%= f.datetime_select :course_start_date%>
+    <%= f.date_select :course_start_date, order: [:month, :day, :year]%>
 
 </div>
 
