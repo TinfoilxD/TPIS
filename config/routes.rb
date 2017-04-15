@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   get '/candidates/:id/edit', to: 'candidates#edit', as: :profile_edit
   get '/candidates/:id', to: 'candidates#show', as: :profile_show
   get '/application_forms_all', to: 'application_forms#appform_candidate', as: :appform_all
-
+  get '/faculties/:id', to: 'faculties#show', as: :faculty_profile_show
 
   # Create_Application_For task from quest log routes
   # specan = "Specific Candidate"

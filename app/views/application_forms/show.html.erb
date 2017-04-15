@@ -8,7 +8,17 @@
         <div class="panel-heading">
           <h3 class="panel-title">Application Form</h3>
         </div>
+        </br>
+        <span class="pull-right">
+          <%if user_signed_in? and current_user.system_admin? then%>
+<%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %>
+<%end%>
 
+          <%if user_signed_in? and current_user.candidate? then%>
+    <%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %> | <%= link_to 'Edit', edit_application_form_path(@application_form), class:'btn btn-info btn-S'  %> |
+              <%= link_to 'Click To Book Appointment', "/book_appointment/#{@application_form.id}", class:'btn btn-primary RbtnMargin btn-S'  %>
+<%end%>
+          </span> <br>
         <div class="panel-body" >
           <div class="row">
             <div class="col-lg-14">
@@ -18,6 +28,7 @@
 <tr>
   <td><strong>Candidate:</strong></td>
   <td><%= @application_form.candidate&.full_name %></td>
+
 </tr>
 
 <tr>
@@ -151,6 +162,7 @@
   </div>
 </div>
 
+<<<<<<< Updated upstream
 <span class="pull-right">
 <%= link_to 'Edit', edit_application_form_path(@application_form), class:'btn btn-default btn-S'  %> |
 
@@ -180,9 +192,14 @@
   <%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %> |
 <% end %>
           </span> <br>
+=======
+
+>>>>>>> Stashed changes
         </div>
       </div>
     </div>
   </div>
+</div>
+</div>
 </div>
 </div>
