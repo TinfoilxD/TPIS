@@ -66,8 +66,8 @@ State.create([
 
 user = User.new
 user.email = 'tin@sdc.com'
-user.password = 'GSupremeWarmAndFuzziesCL'
-user.password_confirmation = 'GSupremeWarmAndFuzziesCL'
+user.password = 'stupidlyeasypassword'
+user.password_confirmation = 'stupidlyeasypassword'
 user.role = 'system_admin'
 user.skip_confirmation!
 user.save!
@@ -177,6 +177,13 @@ user.role = 'tcf_admin'
 user.skip_confirmation!
 user.save!
 
+user = User.new
+user.email = 'wangwangpiff@sdc.com'
+user.password = 'PraiseTheDemonLord~~teehee'
+user.password_confirmation = 'PraiseTheDemonLord~~teehee'
+user.role = 'tcf_admin'
+user.skip_confirmation!
+user.save!
 
 user = User.new
 user.email = 'ray.smith@therapeuticprofessionals.com'
@@ -814,7 +821,7 @@ FacultyType.create(job_title: 'Doctor')
 f1 = Faculty.create(first_name: 'Ashley' , last_name: 'Micheal', faculty_type_id: 1, email: 'ashmchl@hotmail.com', phone: '713-455-2309' ,  office_address: '3354 Stafford Rd.' , state_id: 45, zip_code: '77006'  )
 f2 = Faculty.create(first_name: 'Jessica' , last_name: 'Sheng', faculty_type_id: 2, email: 'jesssheng@hotmail.com', phone: '713-333-4309' ,  office_address: '3355 Chimary Rock Rd.' , state_id: 45, zip_code: '76005'  )
 f3 = Faculty.create(first_name: 'Cheri', last_name: 'Berry', faculty_type_id: 3, email: 'tin@sdc.com', phone: 'num-num-yumm', office_address: 'Dark Side', state_id: 45, zip_code: '99999')
-
+f4 = Faculty.create(first_name: 'Wangchuk', last_name: 'Sieger', faculty_type_id: 1, email: 'wangwangpiff@sdc.com', phone: '800-736-4846', office_address: '510 Mare Crisium', state_id: 45, zip_code: '77099')
 
 # Application Form
 

@@ -86,6 +86,8 @@
         <%= link_to 'Back', candidates_path, class:'btn btn-default btn-S' %>
       <% elsif URI(request.referer).path == "/candidates/#{@candidate.id}/edit" %>
         <%= link_to 'Back', "/candidates", class:'btn btn-default btn-S' %>
+      <% elsif URI(request.referer).path == '/viewappt' %>
+        <%= link_to 'Back', admin_view_appointments_index_path, class: 'btn btn-default btn-S' %>
       <% end %>
     <%end%>
 
