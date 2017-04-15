@@ -51,9 +51,11 @@
           <%= link_to 'Back' ,reports_landing_path, class: 'btn btn-default btn-S' %>
         <% elsif URI(request.referer).path == '/system_admin_landing' %>
           <%= link_to 'Back', system_admin_landing_path, class: 'btn btn-default btn-S' %>
+        <% else %>
+           <%= link_to 'Back', reports_landing_path ,class: 'btn btn-default btn-S' %>
         <%end %>
 
-          </p>
+      </p>
     </div>
   </div>
 </div>

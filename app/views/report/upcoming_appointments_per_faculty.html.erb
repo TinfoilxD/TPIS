@@ -45,7 +45,7 @@
                     <td><%= appointment&.application_form&.course_type&.course_type %></td>
                     <td><%= Faculty.find(appointment&.faculty_id)&.full_name %></td>
                     <td><%= appointment&.start.strftime('%B %e, %l:%M %p')%></td>
-                    <td><%= link_to 'Show', appointment %></td>
+                    <td><%= link_to 'Show', appointment, class: 'btn btn-default btn-xs' %></td>
                   </tr>
               <% end %>
               </tbody>
@@ -53,6 +53,9 @@
           </div>
         </div>
         <br>
+        <p>
+        <%= link_to 'Back', reports_landing_path, class: 'btn btn-default btn-S' %>
+        </p>
 
       </div>
     </div>

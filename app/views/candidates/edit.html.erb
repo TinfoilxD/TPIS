@@ -9,6 +9,8 @@
     <%= link_to 'Back', candidates_path, class:'btn btn-default btn-S'  %>
   <% elsif URI(request.referer).path == "/candidates/#{@candidate.id}" %>
     <%= link_to 'Back', "/candidates/#{@candidate.id}", class:'btn btn-default btn-S' %>
+  <% else %>
+    <%= link_to 'Back', url_for(:back), class: 'btn btn-default btn-S' %>
   <%end %>
 <%end%>
 

@@ -3,16 +3,20 @@
 
 <%= render 'form', application_form: @application_form %>
 
-<%= link_to 'View', @application_form, class: 'btn btn-default btn-S' %>
+<%= link_to 'View', @application_form, class: 'btn btn-default btn-S' %>|
 
 <!--Naviagtion for admin-->
 <% if user_signed_in? and current_user.system_admin? then %>
     <!--If last screen was listing of all go back there-->
     <% if URI(request.referer).path == "/application_forms/#{@application_form.id}"%>
-        <%= link_to 'Back' ,"/specan/#{@application_form.candidate_id}", class: 'btn btn-default btn-S' %>
+        <%= link_to 'Back' ,"/application_forms/#{@application_form.candidate_id}", class: 'btn btn-default btn-S' %>
         <!--If not just throw back to homepage-->
     <% elsif URI(request.referer).path == '/application_forms' %>
         <%= link_to 'Back', application_forms_path, class: 'btn btn-default btn-S' %>
+    <% elsif URI(request.referer).path == "/specan/#{@application_form.candidate_id}" %>
+        <%= link_to 'Back', "/specan/#{@application_form.id}" %>
+    <% else %>
+        <%= link_to 'Back', url_for(:back) %>
     <%end %>
 
     <!--Navigation for candidate-->
