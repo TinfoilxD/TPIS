@@ -136,7 +136,7 @@
 <%end%>
 
 <%if user_signed_in? and current_user.candidate? then%>
-    <%= link_to 'Back', url_for(:back), class:'btn btn-default btn-S'  %> |
+    <%= link_to 'Back', "/specan/#{@application_form.candidate_id}", class:'btn btn-default btn-S'  %> |
     <%= link_to 'Book Appointment', "/book_appointment/#{@application_form.id}", class:'btn btn-default btn-S'  %> |
 <%end%>
 

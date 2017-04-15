@@ -5,14 +5,23 @@
 
 <%= link_to 'View', @application_form, class: 'btn btn-default btn-S' %>
 
-<%if user_signed_in? and current_user.system_admin? then%>|
-<%= link_to 'Back', application_forms_path,class: 'btn btn-default btn-S' %>
-<%end%>
+<!--Naviagtion for admin-->
+<% if user_signed_in? and current_user.system_admin? then %>
+    <!--If last screen was listing of all go back there-->
+    <% if URI(request.referer).path == "/application_forms/#{@application_form.id}"%>
+        <%= link_to 'Back' ,"/specan/#{@application_form.candidate_id}", class: 'btn btn-default btn-S' %>
+        <!--If not just throw back to homepage-->
+    <% elsif URI(request.referer).path == '/application_forms' %>
+        <%= link_to 'Back', application_forms_path, class: 'btn btn-default btn-S' %>
+    <%end %>
 
-
-
-<%if user_signed_in? and current_user.candidate? then%>
-    <%= link_to 'Back', application_form_path ,class:  'btn btn-default btn-S'%>
-<%end%>
+    <!--Navigation for candidate-->
+<% elsif user_signed_in? and current_user.candidate? %>
+    <% if URI(request.referer).path == '/candidate_landing' %>
+        <%= link_to 'Back', candidate_landing_path, class: 'btn btn-default btn-S' %>
+    <% else %>
+        <%= link_to 'Back', url_for(:back), class: 'btn btn-default btn-S' %>
+    <%end%>
+<% end%>
 
 
