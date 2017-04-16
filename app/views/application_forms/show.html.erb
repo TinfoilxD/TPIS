@@ -155,15 +155,15 @@
 
 
 
-<span class="pull-right">
-<%= link_to 'Edit', edit_application_form_path(@application_form), class:'btn btn-default btn-S'  %> |
+<span class="pull-center">
+|
 
 
 <!--Logic to direct admin through pages with back button-->
 <%if user_signed_in? and current_user.system_admin? then%>
       <!--If from specan, go back to specan-->
   <% if URI(request.referer).path == "/specan/#{@application_form.candidate_id}" %>
-    <%= link_to 'Back', "/specan/#{@application_form.candidate_id}", class:'btn btn-default btn-S'  %> |
+    <%= link_to 'Back', "/specan/#{@application_form.candidate_id}", class:'btn btn-default btn-S'  %>
   <!--If from app forms go back to appforms-->
   <% elsif URI(request.referer).path == '/application_forms' %>
       <%= link_to 'Back', application_forms_path, class:'btn btn-default btn-S'  %>
@@ -174,6 +174,7 @@
   <% else %>
       <%= link_to 'Back', application_forms_path, class:'btn btn-default btn-S'  %>
   <% end %>
+      <%= link_to 'Edit', edit_application_form_path(@application_form), class:'btn btn-primary btn-S'  %>
 <%end%>
 
 <%if user_signed_in? and current_user.candidate? then%>

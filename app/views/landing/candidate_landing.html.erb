@@ -2,7 +2,7 @@
 <body class="body-background">
 
 <div class="form_div container">
-<h1 class="page-header">Welcome! </h1>
+<h1 class="page-header">Welcome <%=@current_candidate&.full_name%>! </h1>
 
 
 <br>
@@ -15,6 +15,7 @@
       <!-- %= link_to 'Profile', new_candidate_path%> -->
   <!-- %end%> -->
 <!--</li> -->
+
 
 
 <!--Logic for displaying actions only if appointments or applications exist.-->
@@ -51,10 +52,11 @@
   </br>
   </br>
   </br>
-  </br>
 
-<!--Avi: change the 'appointment' link like example 'new_application_form_path', for now for button to show-->
 
 </div>
+<p style="color: white;"> For More: </p>
+<p><a href="http://cpr.heart.org/AHAECC/CPRAndECC/Training/AHAInstructors/UCM_476669_AHA-Instructors.jsp" target="_blank" style="color: white;" > About American Heart Association</a>
+<p><a href="https://www.therapeuticprofessionals.com/default.aspx" target="_blank" style="color: white;"> Therapeutic Professionals </a></p>
 </body>
 

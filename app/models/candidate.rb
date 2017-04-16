@@ -10,6 +10,10 @@ class Candidate < ApplicationRecord
   validates :phone, presence: true
 
 
+
+
+
+
   def full_name
     full_name = "#{first_name} #{last_name}"
     return full_name
@@ -44,4 +48,6 @@ class Candidate < ApplicationRecord
   end
 
 end
+
+
 

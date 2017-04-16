@@ -77,7 +77,7 @@ class CandidatesController < ApplicationController
     @candidates = Candidate.all
   end
 
-  
+
 
 
 
