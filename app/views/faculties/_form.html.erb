@@ -24,6 +24,15 @@
               <div class="col-lg-6">
                 <form role="form">
                   <div class="container-fluid">
+
+  <div class="row">
+     <div class="col-md-4">
+        <%= f.label :training_center_id %>
+         <%= f.collection_select :training_center_id, TrainingCenter.all, :id, :training_center_name,{prompt: "Select One"}, {class: "form-control"} %>
+    </div>
+ </div>
+  </br>
+
  <div class="row">
    <div class="col-md-2">
      <%= f.label :faculty_type %>

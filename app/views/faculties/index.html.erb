@@ -4,8 +4,9 @@
 <table class='table table-hover'>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Training Center </th>
       <th>Faculty type</th>
+      <th>Name</th>
       <th>Email</th>
       <th>Phone</th>
       <th>Office address</th>
@@ -18,8 +19,9 @@
   <tbody>
     <% @faculties.each do |faculty| %>
       <tr>
-        <td><%= faculty.full_name %></td>
+        <td><%=faculty.training_center&.training_center_name %></td>
         <td><%= faculty.faculty_type&.job_title %></td>
+        <td><%= faculty.full_name %></td>
         <td><%= faculty.email %></td>
         <td><%= faculty.phone %></td>
         <td><%= faculty.office_address %></td>

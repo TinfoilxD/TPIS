@@ -91,6 +91,12 @@
                <%if user_signed_in? and current_user.tcf_admin? and signed_faculty then %>
                    <li><%= link_to 'My Profile', faculty_profile_show_path(signed_faculty) %></li>
                <%end%>
+
+               <!----------System Admin ------------->
+               <%signed_admin = Faculty.where(email: current_user.email).first%>
+               <%if user_signed_in? and current_user.system_admin? and signed_admin then %>
+                   <li><%= link_to 'My Profile', faculty_profile_show_path(signed_admin) %></li>
+               <%end%>
                <li class="divider"></li>
                <li>  <%= link_to 'Log out', destroy_user_session_path, method: :delete%></li>
 

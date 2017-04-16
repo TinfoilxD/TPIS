@@ -15,6 +15,19 @@
                 <tbody>
  <tr>
 
+ <tr>
+   <td><strong>Training Center:</strong></td>
+   <td><%= @faculty.training_center&.training_center_name %></td>
+ </tr>
+
+
+ <tr>
+   <td><strong>Faculty type:</strong></td>
+   <td><%= @faculty.faculty_type&.job_title %></td>
+ </tr>
+
+
+
 <td>  <strong>First name:</strong></td>
  <td>  <%= @faculty.first_name %> </td>
 
@@ -25,10 +38,7 @@
 <td>  <%= @faculty.last_name %></td>
  </tr>
 
-<tr>
-  <td><strong>Faculty type:</strong></td>
-  <td><%= @faculty.faculty_type %></td>
-</tr>
+
 
 <tr>
   <td><strong>Email:</strong></td>

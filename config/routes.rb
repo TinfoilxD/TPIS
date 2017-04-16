@@ -83,6 +83,7 @@ Rails.application.routes.draw do
 
 
 
+
   # reports
   get '/candidate_created_appointments_by_date', to: 'report#index'
   post '/appointment_date_between', to: 'report#apply'
