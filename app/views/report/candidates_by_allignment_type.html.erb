@@ -7,8 +7,7 @@
 
       <%if user_signed_in? and current_user.system_admin? then%>
           <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
-          <li><%= link_to 'Candidate by Ranged Appointments', candidate_created_appointments_by_date_path%></li>
-          <li><%= link_to 'Charts', report_candidates_by_allignment_type_path %> </li>
+          <li><%= link_to 'Reports', reports_landing_path%></li>
 
 
       <%end%>
@@ -21,6 +20,7 @@
 
 <!---- Pie graph for Alignment Type Report --------------->
 <div id="page-wrapper">
+  <h3 class="page-header">Candidates by Alignment Type Chart & Table </h3>
   <div class="row">
     <div class="col-md-10">
       <div class="panel panel-default">
@@ -29,13 +29,16 @@
 
         <%= pie_chart @results%>
 
-<br>
+</br>
 
  <!-------- Dropdown for Alignment Type Report ------------>
-   <div class="btn-group pull-right">
-     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Select Alignment Type
+       </br>
+        <div class="btn-group pull-left">
+          </br>
+     <button type="form-control" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Select Alignment Type <span class=" glyphicon glyphicon-triangle-bottom "></span>
       </button>
+
        <div class="dropdown-menu">
          <li><a class="dropdown-item" href="#">
            <%= link_to 'All', report_candidates_by_allignment_type_path %>
@@ -49,9 +52,11 @@
        </div>
    </div>
 </div>
+      </br>
 
 <!-------- Table to support the Alignment Type Chart Report ------------>
- <div class="row">
+ </br>
+      <div class="row">
     <div class="col-md-12">
       <div class="panel panel-default">
       <table class="table table-striped">

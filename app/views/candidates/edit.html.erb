@@ -1,21 +1,11 @@
-<div id="form-wrapper">
+
 <h1 class="page-header">Editing Candidate</h1>
 
-  <p>
+
+
+
+
 <%= render 'form', candidate: @candidate %>
 
-<%if user_signed_in? and current_user.system_admin? then%>
-  <% if URI(request.referer).path == '/candidates'%>
-    <%= link_to 'Back', candidates_path, class:'btn btn-default btn-S'  %>
-  <% elsif URI(request.referer).path == "/candidates/#{@candidate.id}" %>
-    <%= link_to 'Back', "/candidates/#{@candidate.id}", class:'btn btn-default btn-S' %>
-  <% else %>
-    <%= link_to 'Back', url_for(:back), class: 'btn btn-default btn-S' %>
-  <%end %>
-<%end%>
-
-<%if user_signed_in? and current_user.candidate? then%>
-    <%= link_to 'Back', profile_show_path, class:'btn btn-default btn-S'  %>
-<%end%>
-  </p>
 </div>
+

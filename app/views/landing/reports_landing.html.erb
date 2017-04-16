@@ -13,9 +13,9 @@
 
       <%if user_signed_in? and current_user.system_admin? then%>
           <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
-          <li><%= link_to 'Candidate Appointments By Date Range Selector', candidate_created_appointments_by_date_path%></li>
-          <li><%= link_to 'Alignment Type Charts', report_candidates_by_allignment_type_path %> </li>
-          <li><%=link_to 'Another Chart', report_candidates_by_course_path %></li>
+
+          <li></li>
+          <li></li>
 
 
       <%end%>
@@ -61,6 +61,7 @@
             <span class="glyphicon glyphicon-chevron-right"></span><%=link_to 'Upcoming Appointments', report_upcoming_appointments_path%><br>
             <span class="glyphicon glyphicon-chevron-right"></span><%=link_to 'My Upcoming Appointments', report_upcoming_per_faculty_path%><br>
             <span class="glyphicon glyphicon-chevron-right"></span><%=link_to 'Applications Without Appointments', report_applications_without_appointments_path%><br>
+            <span class="glyphicon glyphicon-chevron-right"></span><%= link_to 'Candidate Appointments By Date Range Selector', candidate_created_appointments_by_date_path%>
             <div class="clearfix"></div>
           </div>
       </div>
@@ -86,6 +87,35 @@
         </div>
       </div>
     </div>
+
+
+
+
+
+    <div class="col-lg-6 col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-3">
+              <i class="fa fa-tasks fa-5x"></i>
+            </div>
+            <div class="col-lg-6">
+              <div><span class="glyphicon glyphicon-stats"></span> <strong>Charts</strong><p> Visually Displays Important Statistics based on entries. </p> </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <span class="glyphicon glyphicon-chevron-right"> </span><%= link_to 'Alignment Type Pie Chart', report_candidates_by_allignment_type_path %> </br>
+          <span class="glyphicon glyphicon-chevron-right"> </span><%=link_to 'Candidate By Course Bar Chart', report_candidates_by_course_path %>
+          <span class="pull-left"></span>
+          <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+
+
+
 </div>
 </div>
 

@@ -1,5 +1,5 @@
 <div id="wrapper">
-<h2 class="page-header"> Candidates By Course</h2>
+<h3 class="page-header"> Candidates By Course Type & Table</h3>
   <%results = CourseType.joins(:application_forms).group('course_type').count %>
   <%= column_chart results %>
 
@@ -10,9 +10,8 @@
 
       <%if user_signed_in? and current_user.system_admin? then%>
           <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
-          <li><%= link_to 'Candidate Appointments By Date Range Selector', candidate_created_appointments_by_date_path%></li>
-          <li><%= link_to 'Alignment Type Charts', report_candidates_by_allignment_type_path %> </li>
-          <li><%=link_to 'Candidates By Course Chart', report_candidates_by_course_path %></li>
+          <li><%= link_to 'Reports', reports_landing_path%></li>
+
 
 
       <%end%>
