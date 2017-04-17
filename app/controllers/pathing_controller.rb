@@ -12,7 +12,7 @@ class PathingController < ApplicationController
       redirect_to tcf_admin_landing_path
 
     elsif current_user.tcf? then
-      redirect_to tcf_landing_path
+      redirect_to tcf_admin_landing_path
     end
 
   end

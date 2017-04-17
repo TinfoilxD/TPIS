@@ -2,7 +2,23 @@
 <h1 class="page-header">Editing Candidate</h1>
 
 
+<!--<div class="pull-right">-->
+  <!--<div style="margin-top: -6px">-->
+    <!--<#%if user_signed_in? and current_user.system_admin? then%>-->
+        <!--<#% if URI(request.referer).path == '/candidates'%>-->
+            <!--<#%= link_to 'Cancel', candidates_path, class:'btn btn-danger btn-S'  %>-->
+        <!--<#% elsif URI(request.referer).path == "/candidates/#{@candidate.id}" %>-->
+            <!--<%= link_to 'Cancel', "/candidates/#{@candidate.id}", class:'btn btn-danger btn-S' %>-->
+        <!--<#% else %>-->
+            <!--<#%= link_to 'Cancel', url_for(:back), class: 'btn btn-danger btn-S' %>-->
+        <!--<#%end %>-->
+    <!--<#%end%>-->
 
+    <!--<#%if user_signed_in? and current_user.candidate? then%>-->
+        <!--<#%= link_to 'Cancel', profile_show_path, class:'btn btn-danger btn-S'  %>-->
+    <!--<#%end%>-->
+  <!--</div>-->
+<!--</div>-->
 
 
 <%= render 'form', candidate: @candidate %>

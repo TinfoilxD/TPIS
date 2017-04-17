@@ -72,13 +72,17 @@
 
   <span class="pull-right">
 
-<%= link_to 'Edit', edit_faculty_path(@faculty), class:'btn btn-primary' %> |
+<%= link_to 'Edit', edit_faculty_path(@faculty), class:'btn btn-info' %> |
 
     <%if user_signed_in? and current_user.tcf_admin? then%>
-<%= link_to 'continue', tcf_admin_landing_path, class:'btn btn-default' %>
+<%= link_to 'continue', tcf_admin_landing_path, class:'btn btn-primary' %>
        <%end%>
+    <%if user_signed_in? and current_user.tcf? then%>
+<%= link_to 'continue', tcf_admin_landing_path, class:'btn btn-primary' %>
+       <%end%>
+
     <%if user_signed_in? and current_user.system_admin? then%>
-<%= link_to 'Back', faculties_path, class:'btn btn-default' %>
+<%= link_to 'Back', faculties_path, class:'btn btn-primary' %>
 <%end%>
 
 
