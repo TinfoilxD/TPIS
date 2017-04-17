@@ -22,20 +22,20 @@
 
 <!--Normal Buttons for fresh candidate-->
 
-<div class="button-candidate">
+<div class="col-md-8">
 <% if @current_candidate.application?(@current_candidate) == false %>
     <p><%= "It seems you do not have not yet applied. Click below to begin an application." %></p>
 <%end%>
-<p><%= link_to 'Click To Begin Application', new_application_form_path,class:'btn btn-primary' %></p>
+<p><%= link_to 'Click To Begin Application', new_application_form_path,class:'btn btn-success center-block' %></p>
 <!--If application exists show option for view applications nad new appointment -->
 <p>
   <% if @current_candidate.application?(@current_candidate) %>
-      <%= link_to 'View My Applications History', view_my_application_path(@current_candidate.id),  class:'btn btn-primary' %></p>
+      <%= link_to 'View My Applications History', view_my_application_path(@current_candidate.id),  class:'btn btn-primary center-block' %></p>
   <% end %>
 <!--If candidate has appointment -->
 <p>
   <% if @current_candidate.appointment?(@current_candidate) %>
-    <%= link_to 'View All My Appointments', view_my_appointment_path(@current_candidate), class:'btn btn-primary' %>
+    <%= link_to 'View All My Appointments', view_my_appointment_path(@current_candidate), class:'btn btn-primary center-block' %>
   <% end %>
 </p>
 
