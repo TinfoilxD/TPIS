@@ -1,3 +1,5 @@
+<div class="container">
+  </br>
 <ol class="breadcrumb">
   <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
   <li><%=link_to 'Reports', reports_landing_path%></li>
@@ -5,19 +7,19 @@
 </ol>
 
 
-<h1>Application Forms Without Appointments</h1>
+<h3 class="page-header">Application Forms Without Appointments</h3>
+<p><%= link_to 'Back', reports_landing_path, class: 'btn btn-primary btn-S' %></p>
 
 
-<div class="container">
 
   <div class ="container-body">
-    <table class='table table-hover'>
+    <div class="panel panel-default">
+      <table class="table table-striped">
       <thead>
       <tr>
         <div class="application_view_headers">
           <th>Name</th>
           <th class="coursecolumn">Course</th>
-          <th>Aha Instructor Motivation</th>
           <th>Experience</th>
           <th>Marketing Origin</th>
           <th>Teaching Frequency</th>
@@ -37,7 +39,6 @@
           <tr>
             <td><%= application_form.candidate.full_name %> </td>
             <td class="coursecolumn"><%= application_form.course_type&.course_type %></td>
-            <td><%= application_form.aha_instructor_motivation %></td>
             <td><%= yesno(application_form.experience_check) %></td>
             <td><%= application_form.marketing_origin %></td>
             <td><%= application_form.teaching_frequency %></td>
@@ -59,12 +60,12 @@
             <td></td>
             <td></td>
             <td class="CRUD">
-              <%= link_to 'View Application', application_form, class:'btn btn-default btn-sm' %></td>
+              <%= link_to 'View Application', application_form, class:'btn btn-info btn-sm' %></td>
             <td class="CRUD">
-              <%= link_to 'Edit Application', edit_application_form_path(application_form), class:'btn btn-default btn-sm'  %>
+              <%= link_to 'Edit Application', edit_application_form_path(application_form), class:'btn btn-info btn-sm'  %>
             </td>
             <td class="CRUD">
-              <%= link_to 'Delete', application_form, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default btn-sm'  %>
+              <%= link_to 'Delete', application_form, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger btn-sm'  %>
             </td>
           </tr>
       <% end %>
@@ -74,4 +75,4 @@
 </div>
 
 <br>
-<p><%= link_to 'Back', reports_landing_path, class: 'btn btn-default btn-S' %></p>
+
