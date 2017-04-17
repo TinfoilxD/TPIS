@@ -11,17 +11,44 @@
     </div>
   <% end %>
 
-  <div class="field">
+
+
+    <div class="container">
+      <div  style="margin-top:50px;" class="col-md-5 col-md-offset-3 col-sm-7 col-sm-offset-2">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+
+            <div class="panel-title"><strong>Alignment Type</strong>
+              <div class="pull-right">
+                <div style="margin-top: -6px">
+                  <%= link_to 'Cancel', admin_alignment_type_crud_path, class:'btn btn-danger' %>
+                </div></div>
+            </div>
+
+          </div>
+          <div style="padding-top:30px" class="panel-body" >
+          <div class="row">
+  <div class="col-md-7">
     <%= f.label :alignment_type %>
-    <%= f.text_field :alignment_type %>
+    <%= f.text_field :alignment_type, class:'form-control' %>
   </div>
+            </div>
 
-  <div class="field">
+          <div class="row">
+  <div class="col-lg-4">
     <%= f.label :abbrev %>
-    <%= f.text_field :abbrev %>
+    <%= f.text_field :abbrev, class:'form-control' %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+            </div>
+            </br>
+            <button type="submit" class="btn btn-success">Update Alignment Type</button>
+
   </div>
 <% end %>
+
+</div>
+</div>
+</div>
+</div>
+</div>
