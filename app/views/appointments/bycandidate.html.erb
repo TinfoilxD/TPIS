@@ -15,6 +15,23 @@
 
 <h1 class="page-header">Appointments for <%= @name %> </h1>
 
+  <!--Logic to ensure proper navigation from candidate-->
+  <% if user_signed_in? and current_user.candidate? then %>
+      <% if URI(request.referer).path == 'book_appointment' %>
+          <%= link_to 'Complete',  candidate_landing_path, class:'btn btn-primary btn-S'  %>
+      <% else %>
+          <%= link_to 'Complete', candidate_landing_path, class:'btn btn-primary btn-S'  %>
+      <% end %>
+  <% end %>
+  <!--Logic to ensure proper navigation from admin--></p>
+  <% if user_signed_in? and current_user.system_admin? then %>
+      <% if URI(request.referer).path == '/viewappt' %>
+          <%= link_to 'Back', admin_view_appointments_index_path, class:'btn btn-default btn-S'  %>
+      <% else %>
+          <%= link_to 'Back', admin_view_appointments_index_path, class:'btn btn-default btn-S'  %>
+      <%end %>
+  <% end %>
+
 <div class="col-md-12">
   </br>
   <div class="panel panel-default">
@@ -44,7 +61,7 @@
         <td class="bycan"><%= appointment.get_faculty(appointment)%></td>
         <td class="bycan"><%= yesno(appointment.complete) %></td>
         <td class="bycan"><%= appointment.comments %></td>
-        <td><%= link_to 'Change', edit_appointment_path(appointment) ,class:'btn btn-warning btn-xs'%></td>
+
         <td><%= link_to 'Delete', appointment, method: :delete, data: { confirm: 'Are you sure?' } ,class:'btn btn-danger btn-xs'%></td>
       </tr>
 
@@ -55,25 +72,8 @@
   </tbody>
 </table>
 
-<br>
 
-  <p>
-    <!--Logic to ensure proper navigation from candidate-->
-    <% if user_signed_in? and current_user.candidate? then %>
-      <% if URI(request.referer).path == 'book_appointment' %>
-        <%= link_to 'Back',  candidate_landing_path, class:'btn btn-default btn-S'  %>
-      <% else %>
-         <%= link_to 'Back', candidate_landing_path, class:'btn btn-default btn-S'  %>
-      <% end %>
-    <% end %>
-    <!--Logic to ensure proper navigation from admin--></p>
-    <% if user_signed_in? and current_user.system_admin? then %>
-      <% if URI(request.referer).path == '/viewappt' %>
-          <%= link_to 'Back', admin_view_appointments_index_path, class:'btn btn-default btn-S'  %>
-      <% else %>
-          <%= link_to 'Back', admin_view_appointments_index_path, class:'btn btn-default btn-S'  %>
-      <%end %>
-    <% end %>
+
 
 </div>
 </div>

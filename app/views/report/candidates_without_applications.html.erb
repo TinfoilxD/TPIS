@@ -1,16 +1,39 @@
 <p id="notice"><%= notice %></p>
 
+<div class="container">
+
 <ol class="breadcrumb">
   <li><%=link_to 'Dashboard', system_admin_landing_path%></li>
   <li><%=link_to 'Reports', reports_landing_path%></li>
   <li class="active">Candidates That Have Not Applied</li>
 </ol>
 
-<h1>Candidates That Have Not Applied</h1>
+<h3 class="page-header">Candidates That Have Not Applied</h3>
 
-<div class="container">
-  <div class ="container-body">
-    <table class='table table-hover'>
+  <div class="col-md-5">
+    <!--<form action="#" method="get">-->
+    <div class="input-group">
+      <input class="form-control" id="system-search" name="q" placeholder="Search for" required autofocus>
+      <span class="input-group-btn">
+                        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                    </span>
+    </div>
+    </br>
+  </div>
+  </br>
+  </br>
+  </br>
+
+
+
+<div class="row">
+
+  <div class="col-lg-14">
+    <div class="panel panel-default">
+
+      <div class="panel-body">
+        <div class ="container-body">
+    <table class='table table-hover table-striped table-list-search'>
       <thead>
       <tr>
         <th> First name </th>
@@ -20,6 +43,7 @@
         <th> Zip code </th>
         <th> Occupation</th>
         <th> Alignment type </th>
+        <th>Profile Creation Date</th>
         <th colspan="3"></th>
       </tr>
       </thead>
@@ -34,12 +58,16 @@
             <td><%= candidate.zipcode %></td>
             <td><%= candidate.occupation %> </td>
             <td><%= candidate.alignment_type&.alignment_type %></td>
-            <td><%= link_to 'View Profile', candidate , class:'btn btn-default btn-xs' %></td>
+            <td><%=candidate.created_at.strftime("%b %d %Y") %></td>
+            <td><%= link_to 'View Profile', candidate , class:'btn btn-info btn-xs' %></td>
           </tr>
       <% end %>
       </tbody>
     </table>
   </div>
 </div>
-</br>
-<p><%= link_to 'Back', reports_landing_path, class: 'btn btn-default btn-S' %></p>
+</div>
+</div>
+    </div>
+  </div>
+

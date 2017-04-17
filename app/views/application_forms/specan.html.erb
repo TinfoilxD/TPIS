@@ -1,9 +1,35 @@
 
-<h1>Application History</h1>
-
 <div class="container">
+
+<h1 class="page-header">Application History</h1>
+ <div class="pull-right">
+  <%= link_to 'New Application Form', new_application_form_path, class:'btn btn-info btn-S'  %>
+  </div>
+  <!--Navigation for Admin-->
+  <% if user_signed_in? and current_user.system_admin? then %>
+      <!--If last screen was listing of all go back there-->
+      <% if URI(request.referer).path == '/viewappt' || URI(request.referer).path == 'application_forms/:id' %>
+          <%= link_to 'Back' ,admin_view_appointments_index_path, class: 'btn btn-success btn-S' %>
+          <!--If not just throw back to homepage-->
+      <% elsif URI(request.referer).path == '/system_admin_landing' %>
+          <%= link_to 'Back', system_admin_landing_path, class: 'btn btn-success btn-S' %>
+      <% else %>
+          <%= link_to 'Back', admin_view_appointments_index_path, class: 'btn btn-success btn-S' %>
+      <%end %>
+      <!--Navigation for candidate-->
+  <% elsif user_signed_in? and current_user.candidate? %>
+      <% if URI(request.referer).path == '/candidate_landing' %>
+          <%= link_to 'Back', candidate_landing_path, class: 'btn btn-success btn-S' %>
+      <% else %>
+          <%= link_to 'Back', candidate_landing_path, class: 'btn btn-success btn-S' %>
+      <%end%>
+  <% end%>
+
+
   <div class ="container-body">
-    <table class='table table-hover'>
+    </br>
+    <div class="panel panel-default">
+    <table class='table table-hover table-striped'>
       <thead>
       <tr>
         <div class="application_view_headers">
@@ -32,29 +58,4 @@
     </table>
   </div>
 </div>
-
-<br>
-<p>
-<%= link_to 'New Application Form', new_application_form_path, class:'btn btn-default btn-S'  %> |
-  <!--Navigation for Admin-->
-  <% if user_signed_in? and current_user.system_admin? then %>
-      <!--If last screen was listing of all go back there-->
-    <% if URI(request.referer).path == '/viewappt' || URI(request.referer).path == 'application_forms/:id' %>
-        <%= link_to 'Back' ,admin_view_appointments_index_path, class: 'btn btn-default btn-S' %>
-          <!--If not just throw back to homepage-->
-    <% elsif URI(request.referer).path == '/system_admin_landing' %>
-        <%= link_to 'Back', system_admin_landing_path, class: 'btn btn-default btn-S' %>
-    <% else %>
-      <%= link_to 'Back', admin_view_appointments_index_path, class: 'btn btn-default btn-S' %>
-    <%end %>
-      <!--Navigation for candidate-->
-  <% elsif user_signed_in? and curren
-       t_user.candidate? %>
-      <% if URI(request.referer).path == '/candidate_landing' %>
-          <%= link_to 'Back', candidate_landing_path, class: 'btn btn-default btn-S' %>
-      <% else %>
-          <%= link_to 'Back', candidate_landing_path, class: 'btn btn-default btn-S' %>
-      <%end%>
-  <% end%>
-
-</p>
+</div>
