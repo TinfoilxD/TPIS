@@ -28,7 +28,7 @@ class AlignmentTypesController < ApplicationController
 
     respond_to do |format|
       if @alignment_type.save
-        format.html { redirect_to @alignment_type, notice: 'Alignment type was successfully created.' }
+        format.html { redirect_to alignment_types_path, notice: 'Alignment type was successfully created.' }
         format.json { render :show, status: :created, location: @alignment_type }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class AlignmentTypesController < ApplicationController
   def update
     respond_to do |format|
       if @alignment_type.update(alignment_type_params)
-        format.html { redirect_to @alignment_type, notice: 'Allignment type was successfully updated.' }
+        format.html { redirect_to alignment_types_path, notice: 'Allignment type was successfully updated.' }
         format.json { render :show, status: :ok, location: @alignment_type }
       else
         format.html { render :edit }

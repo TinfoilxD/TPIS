@@ -28,7 +28,7 @@ class FacultyTypesController < ApplicationController
 
     respond_to do |format|
       if @faculty_type.save
-        format.html { redirect_to @faculty_type, notice: 'Faculty type was successfully created.' }
+        format.html { redirect_to faculty_types_path, notice: 'Faculty type was successfully created.' }
         format.json { render :show, status: :created, location: @faculty_type }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class FacultyTypesController < ApplicationController
   def update
     respond_to do |format|
       if @faculty_type.update(faculty_type_params)
-        format.html { redirect_to @faculty_type, notice: 'Faculty type was successfully updated.' }
+        format.html { redirect_to faculty_types_path, notice: 'Faculty type was successfully updated.' }
         format.json { render :show, status: :ok, location: @faculty_type }
       else
         format.html { render :edit }
