@@ -29,6 +29,7 @@ class AppointmentsController < ApplicationController
 
   def book_appointment
     @application_form = ApplicationForm.find(params[:id])
+    @candidate = Candidate.find(@application_form.candidate_id)
     if @application_form.nil?
       redirect_to error_path(:error_message => 2)
     end

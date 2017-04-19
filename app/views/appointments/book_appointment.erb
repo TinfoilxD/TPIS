@@ -1,5 +1,5 @@
 <%=hidden_field(:application_form_id, value: @application_form.id)%>
-<!--<strong>Hello <#%=@candidate.full_name%>. Please select from one of the available appointment timeslots from the calendar below.</strong>-->
+<strong>Hello <%=@candidate&.full_name%>. Please select from one of the available appointment timeslots from the calendar below.</strong>
 <div id="booking_calendar"></div>
 
 <input type="hidden" name="application_form_id" id="application_form_id" value="<%=@application_form.id%>" />
