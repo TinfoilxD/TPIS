@@ -919,25 +919,25 @@ afc15 = ApplicationForm.create(candidate: c15,training_center_id: t1, aha_instru
 # Timeslot seed data to use for testing
 
 # f3
-Timeslot.create(start: '2017-4-12 10:00:00', title: 'Timeslot Available for Cheri Berry',    end: '2017-4-12 11:00:00', faculty_id: f3.id)
-Timeslot.create(start: '2017-4-14 12:00:00', title: 'Timeslot Available for Cheri Berry',    end: '2017-4-14 13:00:00', faculty_id: f3.id)
-Timeslot.create(start: '2017-4-15 13:00:00', title: 'Timeslot Available for Cheri Berry',    end: '2017-4-15 14:00:00', faculty_id: f3.id)
-Timeslot.create(start: '2017-4-16 10:00:00', title: 'Timeslot Available for Cheri Berry',    end: '2017-4-16 11:00:00', faculty_id: f3.id)
-Timeslot.create(start: '2017-4-16 15:00:00', title: 'Timeslot Available for Cheri Berry',    end: '2017-4-16 16:00:00', faculty_id: f3.id)
+Timeslot.create(start: '2017-4-22 10:00:00', title: 'Timeslot Available for Cheri Berry',    end: '2017-4-22 11:00:00', faculty_id: f3.id)
+Timeslot.create(start: '2017-4-24 12:00:00', title: 'Timeslot Available for Cheri Berry',    end: '2017-4-24 13:00:00', faculty_id: f3.id)
+Timeslot.create(start: '2017-4-25 13:00:00', title: 'Timeslot Available for Cheri Berry',    end: '2017-4-25 14:00:00', faculty_id: f3.id)
+Timeslot.create(start: '2017-4-26 10:00:00', title: 'Timeslot Available for Cheri Berry',    end: '2017-4-26 11:00:00', faculty_id: f3.id)
+Timeslot.create(start: '2017-4-26 15:00:00', title: 'Timeslot Available for Cheri Berry',    end: '2017-4-26 16:00:00', faculty_id: f3.id)
 
 # f2
-Timeslot.create(start: '2017-4-13 11:00:00', title: 'Timeslot Available for Jessica Sheng',  end: '2017-4-13 12:00:00', faculty_id: f2.id)
-Timeslot.create(start: '2017-4-13 14:00:00', title: 'Timeslot Available for Jessica Sheng',  end: '2017-4-13 15:00:00', faculty_id: f2.id)
-Timeslot.create(start: '2017-4-15 9:00:00',  title: 'Timeslot Available for Jessica Sheng',  end: '2017-4-15 10:00:00', faculty_id: f2.id)
-Timeslot.create(start: '2017-4-16 11:00:00', title: 'Timeslot Available for Jessica Sheng',  end: '2017-4-16 12:00:00', faculty_id: f2.id)
-Timeslot.create(start: '2017-4-16 15:00:00', title: 'Timeslot Available for Jessica Sheng',  end: '2017-4-16 16:00:00', faculty_id: f2.id)
+Timeslot.create(start: '2017-4-23 11:00:00', title: 'Timeslot Available for Jessica Sheng',  end: '2017-4-23 12:00:00', faculty_id: f2.id)
+Timeslot.create(start: '2017-4-23 14:00:00', title: 'Timeslot Available for Jessica Sheng',  end: '2017-4-23 15:00:00', faculty_id: f2.id)
+Timeslot.create(start: '2017-4-25 9:00:00',  title: 'Timeslot Available for Jessica Sheng',  end: '2017-4-25 10:00:00', faculty_id: f2.id)
+Timeslot.create(start: '2017-4-26 11:00:00', title: 'Timeslot Available for Jessica Sheng',  end: '2017-4-26 12:00:00', faculty_id: f2.id)
+Timeslot.create(start: '2017-4-26 15:00:00', title: 'Timeslot Available for Jessica Sheng',  end: '2017-4-26 16:00:00', faculty_id: f2.id)
 
 # f1
-Timeslot.create(start: '2017-4-14 11:00:00', title: 'Timeslot Available for Ashley Michael', end: '2017-4-14 12:00:00', faculty_id: f1.id)
-Timeslot.create(start: '2017-4-13 14:00:00', title: 'Timeslot Available for Ashley Michael', end: '2017-4-13 15:00:00', faculty_id: f1.id)
-Timeslot.create(start: '2017-4-15 13:00:00', title: 'Timeslot Available for Ashley Michael', end: '2017-4-15 14:00:00', faculty_id: f1.id)
-Timeslot.create(start: '2017-4-18 10:00:00', title: 'Timeslot Available for Ashley Michael', end: '2017-4-18 11:00:00', faculty_id: f1.id)
-Timeslot.create(start: '2017-4-17 15:00:00', title: 'Timeslot Available for Ashley Michael', end: '2017-4-17 16:00:00', faculty_id: f1.id)
+Timeslot.create(start: '2017-4-24 11:00:00', title: 'Timeslot Available for Ashley Michael', end: '2017-4-24 12:00:00', faculty_id: f1.id)
+Timeslot.create(start: '2017-4-23 14:00:00', title: 'Timeslot Available for Ashley Michael', end: '2017-4-23 15:00:00', faculty_id: f1.id)
+Timeslot.create(start: '2017-4-25 13:00:00', title: 'Timeslot Available for Ashley Michael', end: '2017-4-25 14:00:00', faculty_id: f1.id)
+Timeslot.create(start: '2017-4-28 10:00:00', title: 'Timeslot Available for Ashley Michael', end: '2017-4-28 11:00:00', faculty_id: f1.id)
+Timeslot.create(start: '2017-4-27 15:00:00', title: 'Timeslot Available for Ashley Michael', end: '2017-4-27 16:00:00', faculty_id: f1.id)
 
 #Timeslots for Demo
 Timeslot.create(start: '2017-4-26 12:00:00', title: 'Timeslot Available for Wangchuk Sieger', end: '2017-4-26 13:00:00', faculty_id: f4.id)
@@ -950,39 +950,37 @@ Timeslot.create(start: '2017-4-29 16:00:00', title: 'Timeslot Available for Wang
 # Appointment Seed Data for the c# applications
 
 # f3 time slot appointments
-Appointment.create(start: '2017-4-12 10:00:00', end:'2017-4-12 11:00:00',  faculty_id:f3.id,  title:'Appointment for Jessie Klein with Cheri Berry', application_form_id:afc1.id)
-Appointment.create(start: '2017-4-14 12:00:00', end:'2017-4-14 13:00:00',  faculty_id:f3.id,  title:'Appointment for Sarah Johann with Cheri Berry', application_form_id:afc2.id)
-Appointment.create(start: '2017-4-15 13:00:00', end:'2017-4-15 14:00:00',  faculty_id:f3.id,  title:'Appointment for David Jacques with Cheri Berry', application_form_id:afc3.id)
-Appointment.create(start: '2017-4-16 10:00:00', end:'2017-4-16 11:00:00',  faculty_id:f3.id,  title:'Appointment for Michelle Sasser with Cheri Berry', application_form_id:afc4.id)
-Appointment.create(start: '2017-4-16 15:00:00', end:'2017-4-16 16:00:00',  faculty_id:f3.id,  title:'Appointment for Allison Castilliano with Cheri Berry', application_form_id:afc5.id)
+Appointment.create(start: '2017-4-22 10:00:00', end:'2017-4-22 11:00:00',  faculty_id:f3.id,  title:'Appointment for Jessie Klein with Cheri Berry', application_form_id:afc1.id)
+Appointment.create(start: '2017-4-24 12:00:00', end:'2017-4-24 13:00:00',  faculty_id:f3.id,  title:'Appointment for Sarah Johann with Cheri Berry', application_form_id:afc2.id)
+Appointment.create(start: '2017-4-25 13:00:00', end:'2017-4-25 14:00:00',  faculty_id:f3.id,  title:'Appointment for David Jacques with Cheri Berry', application_form_id:afc3.id)
+Appointment.create(start: '2017-4-26 10:00:00', end:'2017-4-26 11:00:00',  faculty_id:f3.id,  title:'Appointment for Michelle Sasser with Cheri Berry', application_form_id:afc4.id)
+Appointment.create(start: '2017-4-26 15:00:00', end:'2017-4-26 16:00:00',  faculty_id:f3.id,  title:'Appointment for Allison Castilliano with Cheri Berry', application_form_id:afc5.id)
 
 # f2 time slot appointments
-Appointment.create(start: '2017-4-13 11:00:00', end:'2017-4-13 12:00:00',  faculty_id:f2.id,  title:'Appointment for Alex Capont with Jessica Sheng', application_form_id:afc9.id)
-Appointment.create(start: '2017-4-13 14:00:00', end:'2017-4-13 15:00:00',  faculty_id:f2.id,  title:'Appointment for Alex Capont with Jessica Sheng', application_form_id:afc9.id)
-Appointment.create(start: '2017-4-15 9:00:00',  end:'2017-4-15 10:00:00',  faculty_id:f2.id,  title:'Appointment for Alex Capont with Jessica Sheng', application_form_id:afc9.id)
-Appointment.create(start: '2017-4-16 11:00:00', end:'2017-4-16 12:00:00',  faculty_id:f2.id,  title:'Appointment for Alex Capont with Jessica Sheng', application_form_id:afc9.id)
-Appointment.create(start: '2017-4-16 15:00:00', end:'2017-4-16 16:00:00',  faculty_id:f2.id,  title:'Appointment for Joseph Mandell with Jessica Sheng', application_form_id:afc10.id)
+Appointment.create(start: '2017-4-23 11:00:00', end:'2017-4-23 12:00:00',  faculty_id:f2.id,  title:'Appointment for Alex Capont with Jessica Sheng', application_form_id:afc9.id)
+Appointment.create(start: '2017-4-23 14:00:00', end:'2017-4-23 15:00:00',  faculty_id:f2.id,  title:'Appointment for Alex Capont with Jessica Sheng', application_form_id:afc9.id)
+Appointment.create(start: '2017-4-25 9:00:00',  end:'2017-4-25 10:00:00',  faculty_id:f2.id,  title:'Appointment for Alex Capont with Jessica Sheng', application_form_id:afc9.id)
+Appointment.create(start: '2017-4-26 11:00:00', end:'2017-4-26 12:00:00',  faculty_id:f2.id,  title:'Appointment for Alex Capont with Jessica Sheng', application_form_id:afc9.id)
+Appointment.create(start: '2017-4-26 15:00:00', end:'2017-4-26 16:00:00',  faculty_id:f2.id,  title:'Appointment for Joseph Mandell with Jessica Sheng', application_form_id:afc10.id)
 
 # f1 time slot appointments
-Appointment.create(start: '2017-4-14 11:00:00', end:'2017-4-14 12:00:00',  faculty_id:f1.id,  title:'Appointment for Jessie Klein with Ashley Michael', application_form_id:afc1.id)
-Appointment.create(start: '2017-4-13 14:00:00', end:'2017-4-13 15:00:00',  faculty_id:f1.id,  title:'Appointment for Sarah Johann with Ashley Michael', application_form_id:afc2.id)
-Appointment.create(start: '2017-4-15 13:00:00', end:'2017-4-15 14:00:00',  faculty_id:f1.id,  title:'Appointment for David Jacques with Ashley Michael', application_form_id:afc3.id)
-Appointment.create(start: '2017-4-18 10:00:00', end:'2017-4-18 11:00:00',  faculty_id:f1.id,  title:'Appointment for Michelle Sasser with Ashley Michael', application_form_id:afc4.id)
-Appointment.create(start: '2017-4-17 15:00:00', end:'2017-4-17 16:00:00',  faculty_id:f1.id,  title:'Appointment for Allison Castilliano with Ashley Michael', application_form_id:afc5.id)
+Appointment.create(start: '2017-4-24 11:00:00', end:'2017-4-24 12:00:00',  faculty_id:f1.id,  title:'Appointment for Jessie Klein with Ashley Michael', application_form_id:afc1.id)
+Appointment.create(start: '2017-4-23 14:00:00', end:'2017-4-23 15:00:00',  faculty_id:f1.id,  title:'Appointment for Sarah Johann with Ashley Michael', application_form_id:afc2.id)
+Appointment.create(start: '2017-4-25 13:00:00', end:'2017-4-25 14:00:00',  faculty_id:f1.id,  title:'Appointment for David Jacques with Ashley Michael', application_form_id:afc3.id)
+Appointment.create(start: '2017-4-28 10:00:00', end:'2017-4-28 11:00:00',  faculty_id:f1.id,  title:'Appointment for Michelle Sasser with Ashley Michael', application_form_id:afc4.id)
+Appointment.create(start: '2017-4-27 15:00:00', end:'2017-4-27 16:00:00',  faculty_id:f1.id,  title:'Appointment for Allison Castilliano with Ashley Michael', application_form_id:afc5.id)
 
 #Appointments for Demo
-Appointment.create(start: '2017-4-26 11:00:00', end:'2017-4-17 12:00:00',  faculty_id:f4.id,  title:'Appointment for Sarah Jones with Wangchuk Sieger', application_form_id:afc11.id)
-Appointment.create(start: '2017-4-27 11:00:00', end:'2017-4-17 12:00:00',  faculty_id:f4.id,  title:'Appointment for Emilia Cortez with Wangchuk Sieger', application_form_id:afc12.id)
-Appointment.create(start: '2017-4-28 14:00:00', end:'2017-4-17 15:00:00',  faculty_id:f4.id,  title:'Appointment for Blavin DiMAssio with Wangchuk Sieger', application_form_id:afc13.id)
-Appointment.create(start: '2017-4-28 17:00:00', end:'2017-4-17 18:00:00',  faculty_id:f4.id,  title:'Appointment for Vincent LeEngardien with Wangchuk Sieger', application_form_id:afc14.id)
-Appointment.create(start: '2017-4-29 12:00:00', end:'2017-4-17 13:00:00',  faculty_id:f4.id,  title:'Appointment for Julio Villanueva with Wangchuk Sieger', application_form_id:afc15.id)
+Appointment.create(start: '2017-4-26 11:00:00', end:'2017-4-26 12:00:00',  faculty_id:f4.id,  title:'Appointment for Sarah Jones with Wangchuk Sieger', application_form_id:afc11.id)
+Appointment.create(start: '2017-4-27 11:00:00', end:'2017-4-27 12:00:00',  faculty_id:f3.id,  title:'Appointment for Emilia Cortez with Wangchuk Sieger', application_form_id:afc12.id)
+Appointment.create(start: '2017-4-28 14:00:00', end:'2017-4-28 15:00:00',  faculty_id:f4.id,  title:'Appointment for Blavin DiMAssio with Wangchuk Sieger', application_form_id:afc13.id)
+Appointment.create(start: '2017-4-28 17:00:00', end:'2017-4-28 18:00:00',  faculty_id:f2.id,  title:'Appointment for Vincent LeEngardien with Wangchuk Sieger', application_form_id:afc14.id)
+Appointment.create(start: '2017-4-29 12:00:00', end:'2017-4-29 13:00:00',  faculty_id:f4.id,  title:'Appointment for Julio Villanueva with Wangchuk Sieger', application_form_id:afc15.id)
 
+Appointment.create(start: '2017-5-1 11:00:00', end:'2017-5-1 12:00:00',  faculty_id:f4.id,  title:'Appointment for Sarah Jones with Wangchuk Sieger', application_form_id:afc11.id)
+Appointment.create(start: '2017-5-1 13:00:00', end:'2017-5-1 14:00:00',  faculty_id:f1.id,  title:'Appointment for Emilia Cortez with Wangchuk Sieger', application_form_id:afc12.id)
+Appointment.create(start: '2017-5-2 14:00:00', end:'2017-5-2 15:00:00',  faculty_id:f4.id,  title:'Appointment for Blavin DiMAssio with Wangchuk Sieger', application_form_id:afc13.id)
+Appointment.create(start: '2017-5-2 17:00:00', end:'2017-5-2 18:00:00',  faculty_id:f2.id,  title:'Appointment for Vincent LeEngardien with Wangchuk Sieger', application_form_id:afc14.id)
+Appointment.create(start: '2017-5-4 12:00:00', end:'2017-5-4 13:00:00',  faculty_id:f3.id,  title:'Appointment for Julio Villanueva with Wangchuk Sieger', application_form_id:afc15.id)
 
-user = User.new
-user.email = 'ghreek@gmail.com'
-user.password = 'slammer3'
-user.password_confirmation = 'slammer3'
-user.role = 'candidate'
-user.skip_confirmation!
-user.save!
 
