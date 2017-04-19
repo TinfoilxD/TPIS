@@ -24,7 +24,7 @@
 
 <div class="col-md-4">
 <% if @current_candidate.application?(@current_candidate) == false %>
-    <p><%= "It seems you do not have not yet applied. Click below to begin an application." %></p>
+    <p><%= "It seems you have not applied yet. Click below to begin an application." %></p>
 <%end%>
 <p><%= link_to 'Click To Begin Application', new_application_form_path,class:'btn btn-success center-block' %></p>
 <!--If application exists show option for view applications nad new appointment -->
